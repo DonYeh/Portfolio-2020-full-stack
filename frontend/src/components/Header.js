@@ -106,7 +106,7 @@ const Header = () => {
 						/>
 					</Typography>
 
-					<Typography variant="h4" zeroMinWidth>
+					<Typography variant="h4">
 						<Typed
 							strings={[
 								"I'm a full stack developer ^11800",

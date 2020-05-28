@@ -45,29 +45,26 @@ const useStyles = makeStyles({
 	},
 });
 
-const handleSubmit = (values, actions) => {
+const handleSubmit = async (values, actions) => {
 	// const preventDefault = (event) =>
 	// 	event.preventDefault();
-	axios
-		.post("api/sendMail", values)
-		.then((res) => console.log(res))
-		.catch(() => {
-			console.log("message not sent");
-		});
+	let res = await axios.post("api/sendMail", values);
+
+	console.log(res);
 	console.log({ values, actions });
 	// alert(JSON.stringify(values, null, 2));
 	actions.setSubmitting(false);
 };
 
-const Contact = ({ onSubmit }) => {
+const Contact = () => {
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
-	// const initialValues = {
-	// 	firstName: "",
-	// 	lastName: "",
-	// 	email: "",
-	// 	message: "",
-	// };
+	const initialValues = {
+		firstName: "",
+		lastName: "",
+		email: "",
+		message: "",
+	};
 
 	return (
 		<>
