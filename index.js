@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/sendMail", (req, res) => {
-	console.log(req.body);
 	const emailData = {
 		firstName: req.body.firstName,
 		lastName: req.body.lastName,
@@ -37,7 +36,8 @@ app.post("/api/sendMail", (req, res) => {
 		message: req.body.message,
 	};
 	sendEmail(emailData);
-	console.log("backend server received a request", req.body, emailData);
+	console.log(`backend server received the email data
+	and has sent it to sendEmail()`);
 });
 
 const port = 5000;

@@ -15,7 +15,8 @@ const sendEmail = ({ firstName, lastName, email, message }) => {
 		from: email,
 		to: process.env.EMAIL_USER,
 		subject: `new message from ${firstName} ${lastName}`,
-		text: message,
+		text: `from: ${email}
+message: ${message}`,
 	};
 
 	smtpTransport.sendMail(mail, (err, response) => {
@@ -26,8 +27,6 @@ const sendEmail = ({ firstName, lastName, email, message }) => {
 		}
 		smtpTransport.close();
 	});
-
-	console.log("mail sent! from sendEmail");
 };
 
 // sendEmail();
