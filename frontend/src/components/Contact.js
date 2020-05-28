@@ -48,17 +48,29 @@ const useStyles = makeStyles({
 const handleSubmit = async (values, actions) => {
 	// const preventDefault = (event) =>
 	// 	event.preventDefault();
-	let res = await axios.post("api/sendMail", values);
 
-	console.log(res);
-	console.log({ values, actions });
+	// setTimeout(() => {
+	// 	alert(JSON.stringify(values, null, 2));
+	// }, 1000);
+	let res = await axios.post("api/sendMail", values).then(
+		(response) => {
+			console.log(response);
+		},
+		(error) => {
+			console.log(error);
+		}
+	);
+
+	console.log(
+		`inside handleSubmit: values:${values.json()},actions:${actions.json()}`
+	);
 	// alert(JSON.stringify(values, null, 2));
 	actions.setSubmitting(false);
 };
 
 const Contact = () => {
 	const classes = useStyles();
-	const preventDefault = (event) => event.preventDefault();
+	// const preventDefault = (event) => event.preventDefault();
 	const initialValues = {
 		firstName: "",
 		lastName: "",
@@ -98,22 +110,22 @@ const Contact = () => {
 							onSubmit={handleSubmit}
 						>
 							{
-								({ values }) => (
+								({ values, handleChange, handleBlur }) => (
 									<Form>
 										<div>
 											<Field
 												name="firstName"
 												component={MyField}
 												label="first name"
-											/>
-
-											{/* <TextField
-									name="firstName"
-									placeholder="first name"
-									value={values.firstName}
-									onChange={handleChange}
-									onBlur={handleBlur}
-								/> */}
+											>
+												<TextField
+													name="firstName"
+													// placeholder="first name"
+													value={values.firstName}
+													onChange={handleChange}
+													onBlur={handleBlur}
+												/>
+											</Field>
 										</div>
 
 										<div>
@@ -121,14 +133,15 @@ const Contact = () => {
 												name="lastName"
 												component={MyField}
 												label="last name"
-											/>
-											{/* <TextField
-									name="lastName"
-									placeholder="last name"
-									value={values.lastName}
-									onChange={handleChange}
-									onBlur={handleBlur}
-								/> */}
+											>
+												<TextField
+													name="lastName"
+													// placeholder="last name"
+													value={values.lastName}
+													onChange={handleChange}
+													onBlur={handleBlur}
+												/>
+											</Field>
 										</div>
 
 										<div>
@@ -136,28 +149,30 @@ const Contact = () => {
 												name="email"
 												component={MyField}
 												label="email"
-											/>
-											{/* <TextField
-									name="email"
-									placeholder="email"
-									value={values.email}
-									onChange={handleChange}
-									onBlur={handleBlur}
-								/> */}
+											>
+												<TextField
+													name="email"
+													// placeholder="email"
+													value={values.email}
+													onChange={handleChange}
+													onBlur={handleBlur}
+												/>
+											</Field>
 										</div>
 										<div>
 											<Field
 												name="message"
 												component={MyField}
 												label="message"
-											/>
-											{/* <TextField
-									name="email"
-									placeholder="email"
-									value={values.email}
-									onChange={handleChange}
-									onBlur={handleBlur}
-								/> */}
+											>
+												<TextField
+													name="email"
+													// placeholder="email"
+													value={values.email}
+													onChange={handleChange}
+													onBlur={handleBlur}
+												/>
+											</Field>
 										</div>
 										<Button type="submit">submit</Button>
 										{/* <pre>

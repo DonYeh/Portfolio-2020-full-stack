@@ -10,8 +10,8 @@ const { sendEmail } = require("./src/mail.js");
 
 const app = express();
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(cookieParser);
 // app.use(cors());
 
@@ -29,8 +29,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/sendMail", (req, res) => {
-	sendEmail();
-	console.log("message was posted", req.body);
+	console.log(req.body);
+	const emailData = {
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		email: req.body.email,
+		message: req.body.message,
+	};
+	sendEmail(emailData);
+	console.log("backend server received a request", req.body, emailData);
 });
 
 const port = 5000;

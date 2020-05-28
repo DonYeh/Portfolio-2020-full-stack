@@ -10,12 +10,12 @@ const smtpTransport = nodemailer.createTransport({
 	},
 });
 
-const sendEmail = () => {
+const sendEmail = ({ firstName, lastName, email, message }) => {
 	const mail = {
-		from: "stranger@danger.com",
-		to: "donalducky@gmail.com",
-		subject: "sending mail through node.js",
-		text: "my message here 5 w/ ENV credentials!",
+		from: email,
+		to: process.env.EMAIL_USER,
+		subject: `new message from ${firstName} ${lastName}`,
+		text: message,
 	};
 
 	smtpTransport.sendMail(mail, (err, response) => {
