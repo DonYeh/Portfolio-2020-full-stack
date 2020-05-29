@@ -1,7 +1,18 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Box, Paper, Grid, Card } from "@material-ui/core";
+import {
+	Typography,
+	Box,
+	Paper,
+	Grid,
+	Card,
+	Container,
+	Link,
+} from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
+
+import GetAppIcon from "@material-ui/icons/GetApp";
 // import { FullscreenExit } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +27,19 @@ const useStyles = makeStyles((theme) => ({
 		paddingBottom: "1.2rem",
 		textTransform: "uppercase",
 		// zIndex: "1",
+	},
+	downloadResume: {
+		display: "flex",
+		padding: "1rem",
+
+		background: "lightslategray",
+	},
+	downloadResumeText: {
+		// width: "50%",
+		// paddingTop: "1rem",
+		color: "white",
+
+		// background: "pink",
 	},
 	boxTechnologies: {
 		// color: "cadetblue",
@@ -314,6 +338,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+// const LinkBehavior = React.forwardRef((props, ref) => (
+// 	<RouterLink ref={ref} to="../images/Boone.png" {...props} />
+// ));
+
 const Resume = () => {
 	const classes = useStyles();
 
@@ -322,6 +350,26 @@ const Resume = () => {
 			<Navbar />
 			{/* <div>Resume here - tsx</div> */}
 			<Box component="header" className={classes.mainContainer}>
+				<Grid
+					container
+					className={classes.downloadResume}
+					justify="center"
+				>
+					<Grid item>
+						<GetAppIcon />
+					</Grid>
+					<Grid item>
+						<Link
+							href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
+							// onClick={preventDefault}
+							variant="body2"
+						>
+							{/* {'variant="body2"'} */}
+							<Typography> Download Resume</Typography>
+						</Link>
+					</Grid>
+				</Grid>
+
 				<Box component="div" className={classes.timeLineBox}>
 					<Typography
 						variant="h4"

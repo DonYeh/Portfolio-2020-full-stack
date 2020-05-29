@@ -46,7 +46,7 @@ const useStyles = makeStyles({
 		margin: "1rem",
 	},
 	mainPaper: {
-		padding: "1.25rem",
+		padding: "1.5rem",
 	},
 	hasError: {
 		border: "1px solid #f44336",

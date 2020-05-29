@@ -38,7 +38,7 @@
 }
 
 body {
-	background: url(./images/Atlant.jpg) no-repeat center center fixed;
+	background: url(./assets/Atlant.jpg) no-repeat center center fixed;
 	background-position: center center;
 	/* color: white; */
 	background-size: cover;

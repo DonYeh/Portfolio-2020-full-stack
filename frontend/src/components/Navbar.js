@@ -30,7 +30,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import MenuDrawerSlider from "@material-ui/core/Drawer";
 
-import avatar from "../images/Boone.png";
+import avatar from "../assets/Boone.png";
 import { Link } from "react-router-dom";
 
 // CSS STYLES

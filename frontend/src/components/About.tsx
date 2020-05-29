@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box, Paper, Grid, Avatar, Card } from "@material-ui/core";
-import avatar from "../images/Boone.png";
+import avatar from "../assets/Boone.png";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
