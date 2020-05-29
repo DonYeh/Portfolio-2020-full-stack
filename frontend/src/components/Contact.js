@@ -129,8 +129,10 @@ const Contact = () => {
 				>
 					<Grid item xs={12} className={classes.gridItem}>
 						<Paper className={classes.paper}>
-							<Typography>Let's build together</Typography>
-							<Typography>
+							<Typography variant="h6">
+								Let's build together
+							</Typography>
+							<Typography variant="body1" color="textSecondary">
 								Have a project you're looking to get off the
 								ground? I'd love to hear from you. Send a
 								message to get the ball rolling.
@@ -303,12 +305,11 @@ const Contact = () => {
 						item
 						container
 						xs={12}
-						md={6}
 						className={classes.gridItem}
 						justify="center"
 					>
 						<Paper className={classes.paper}>
-							<Typography>Let's Connect</Typography>
+							<Typography variant="h6">Let's Connect</Typography>
 							<Grid container justify="space-evenly">
 								<Grid item>
 									<Link
