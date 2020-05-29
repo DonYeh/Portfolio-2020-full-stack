@@ -47,18 +47,21 @@ const useStyles = makeStyles({
 	},
 	hasError: {
 		border: "1px solid #f44336",
+		background: "#f44336",
 		// border: "1px solid purple",
 	},
 
 	formMessage: {
 		fontSize: "10px",
 		paddingTop: "2px",
-		"&$valid": {
-			color: "#4caf50",
-		},
-		"&$invalid": {
-			color: "#f44336",
-		},
+	},
+	valid: {
+		color: "#4caf50",
+		background: "#4caf50",
+	},
+	invalid: {
+		color: "#f44336",
+		background: "#f44336",
 	},
 });
 
@@ -140,161 +143,140 @@ const Contact = () => {
 							}}
 							onSubmit={handleSubmit}
 							validationSchema={validationSchema}
-							// validate={(values) => {
-							// 	// values.firstName values.lastName values.email values.message
-							// 	// errors.firstName errors.lastName errors.email errors.message
-							// 	//errors.firstName= "this field is required"
-							// 	let errors = {};
-
-							// 	if (!values.firstName) {
-							// 		errors.firstName = "Required";
-							// 	}
-							// 	if (!values.lastName) {
-							// 		errors.lastName = "Required";
-							// 	}
-							// 	if (!values.email) {
-							// 		errors.email = "Required";
-							// 	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
-							// 		errors.email = 'Invalid email'
-							// 	}
-							// 	if (!values.message) {
-							// 		errors.message = "Required";
-							// 	}
-
-							// 	return errors;
-							// }}
 						>
-							{
-								({
-									values,
-									errors,
-									touched,
-									handleChange,
-									handleBlur,
-								}) => (
-									<Form>
-										<div>
-											<Field
+							{({
+								values,
+								errors,
+								touched,
+								handleChange,
+								handleBlur,
+							}) => (
+								<Form>
+									<div>
+										<Field
+											name="firstName"
+											component={MyField}
+											label="first name"
+										>
+											<TextField
 												name="firstName"
-												component={MyField}
-												label="first name"
-											>
-												<TextField
-													name="firstName"
-													// placeholder="first name"
-													value={values.firstName}
-													onChange={handleChange}
-													onBlur={handleBlur}
-													className={
-														touched.firstName &&
-														errors.firstName
-															? "classes.hasError"
-															: null
-													}
-												/>
-											</Field>
-											<Error
-												touched={touched.firstName}
-												message={errors.firstName}
-											/>
-										</div>
-
-										<div>
-											<Field
-												name="lastName"
-												component={MyField}
-												label="last name"
-											>
-												<TextField
-													name="lastName"
-													// placeholder="last name"
-													value={values.lastName}
-													onChange={handleChange}
-													onBlur={handleBlur}
-													className={
-														touched.lastName &&
-														errors.lastName
-															? "classes.hasError"
-															: null
-													}
-												/>
-											</Field>
-											<Error
-												touched={touched.lastName}
-												message={errors.lastName}
+												value={values.firstName}
+												onChange={handleChange}
+												onBlur={handleBlur}
 												// className={
-												// 	touched.lastName &&
-												// 	errors.lastName
+												// 	touched.firstName &&
+												// 	errors.firstName
 												// 		? "classes.hasError"
 												// 		: null
 												// }
+												variant="filled"
 											/>
-										</div>
+										</Field>
+										<Error
+											touched={touched.firstName}
+											message={errors.firstName}
+											className={classes.invalid}
+											// className={
+											// 	touched.firstName &&
+											// 	errors.firstName
+											// 		? "classes.hasError"
+											// 		: null
+											// }
+										/>
+									</div>
 
-										<div
+									<div>
+										<Field
+											name="lastName"
+											component={MyField}
+											label="last name"
+										>
+											<TextField
+												name="lastName"
+												value={values.lastName}
+												onChange={handleChange}
+												onBlur={handleBlur}
+												className={
+													touched.lastName &&
+													errors.lastName
+														? "classes.hasError"
+														: null
+												}
+												variant="filled"
+											/>
+										</Field>
+										<Error
+											touched={touched.lastName}
+											message={errors.lastName}
+											className={
+												touched.lastName &&
+												errors.lastName
+													? "classes.hasError"
+													: null
+											}
+										/>
+									</div>
+
+									<div>
+										<Field
+											name="email"
+											component={MyField}
+											label="email"
 											className={
 												touched.email && errors.email
 													? "classes.hasError"
 													: null
 											}
 										>
-											<Field
+											<TextField
 												name="email"
-												component={MyField}
-												label="email"
-											>
-												<TextField
-													name="email"
-													// placeholder="email"
-													value={values.email}
-													onChange={handleChange}
-													onBlur={handleBlur}
-												/>
-											</Field>
-											<Error
-												touched={touched.email}
-												message={errors.email}
+												value={values.email}
+												onChange={handleChange}
+												onBlur={handleBlur}
+												variant="outlined"
 											/>
-										</div>
-										<div
-											className={
-												touched.message &&
-												errors.message
-													? "classes.hasError"
-													: null
-											}
+										</Field>
+										<Error
+											touched={touched.email}
+											message={errors.email}
+										/>
+									</div>
+									<div
+										className={
+											touched.message && errors.message
+												? "classes.hasError"
+												: null
+										}
+									>
+										<Field
+											name="message"
+											component={MyField}
+											label="message"
 										>
-											<Field
-												name="message"
-												component={MyField}
-												label="message"
-											>
-												<TextField
-													name="message here"
-													// placeholder="email"
-													value={values.message}
-													onChange={handleChange}
-													onBlur={handleBlur}
-												/>
-											</Field>
-											<Error
-												touched={touched.message}
-												message={errors.message}
+											<TextField
+												name="message here"
+												value={values.message}
+												onChange={handleChange}
+												onBlur={handleBlur}
+												variant="outlined"
+												helperText={errors.message}
 											/>
-										</div>
-										<Button type="submit">submit</Button>
-										{/* <pre>
+										</Field>
+										<Error
+											touched={touched.message}
+											message={errors.message}
+										/>
+									</div>
+									<Button type="submit">submit</Button>
+									{/* <pre>
 												{JSON.stringify(
 													values,
 													null,
 													2
 												)}
 											</pre> */}
-									</Form>
-								)
-
-								// <div>Contact me herrrrrreee</div>
-							}
+								</Form>
+							)}
 						</Formik>
 					</Paper>
 				</Grid>
