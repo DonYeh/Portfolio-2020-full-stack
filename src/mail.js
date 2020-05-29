@@ -24,6 +24,7 @@ message: ${message}`,
 			console.log(err);
 		} else {
 			console.log("email has been sent!", response);
+			//code confirmation page modal here
 		}
 		smtpTransport.close();
 	});
