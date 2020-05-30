@@ -124,7 +124,7 @@ const Contact = () => {
 					container
 					justify="center"
 					alignItems="center"
-					spacing={3}
+					spacing={2}
 					className={classes.gridContainer}
 				>
 					<Grid item xs={12} className={classes.gridItem}>
@@ -135,7 +135,7 @@ const Contact = () => {
 							<Typography variant="body1" color="textSecondary">
 								Have a project you're looking to get off the
 								ground? I'd love to hear from you. Send a
-								message to get the ball rolling.
+								message and let's get the ball rolling!
 							</Typography>
 						</Paper>
 					</Grid>
