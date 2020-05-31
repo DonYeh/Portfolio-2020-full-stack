@@ -39,7 +39,7 @@ export default function ImgMediaCard() {
 				<Grid
 					className="classes.mainGridContainer"
 					container
-					spacing={4}
+					spacing={5}
 					justify="space-evenly"
 					alignContent="center"
 					style={{ padding: "11%" }}
