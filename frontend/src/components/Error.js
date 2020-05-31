@@ -37,7 +37,7 @@ const Error = ({ touched, message }) => {
 	return (
 		<div className="classes.valid">
 			<Typography variant="subtitle2" className={classes.valid}>
-				all good in the hood
+				all good
 			</Typography>
 		</div>
 	);

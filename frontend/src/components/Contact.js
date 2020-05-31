@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 	},
 	gridItem: {
 		background: "white",
-		// padding: "2.5rem",
+		padding: "2rem",
 		// margin: "2.5rem",
 	},
 	paper: {
@@ -52,6 +52,9 @@ const useStyles = makeStyles({
 		border: "1px solid #f44336",
 		background: "#f44336",
 		// border: "1px solid purple",
+	},
+	noError: {
+		width: "100%",
 	},
 
 	formMessage: {
@@ -103,12 +106,12 @@ const validationSchema = Yup.object().shape({
 	email: Yup.string()
 		.email("Must be a valid email address")
 		.max(255, "Must be shorter than 255 characters")
-		.required("must enter an email so that I can email you back!"),
+		.required("must enter an email so that I can email you back"),
 
 	message: Yup.string()
 		.max(255, "Must be shorter than 255 characters")
 		.required(
-			"well don't you want to say something? I'm not a mind reader...yet"
+			"must enter a message. I'm not a mind reader...at least, not yet"
 		),
 });
 
@@ -127,7 +130,7 @@ const Contact = () => {
 					spacing={2}
 					className={classes.gridContainer}
 				>
-					<Grid item xs={12} className={classes.gridItem}>
+					<Grid item xs={12} md={6} className={classes.gridItem}>
 						<Paper className={classes.paper}>
 							<Typography variant="h6">
 								Let's build together
@@ -143,10 +146,11 @@ const Contact = () => {
 						item
 						container
 						xs={12}
+						md={6}
 						justify="center"
 						className={classes.gridItem}
 					>
-						<Grid item md={6}>
+						<Grid item xs={12} lg={6}>
 							<Paper className={classes.paper}>
 								<Formik
 									initialValues={{
@@ -166,17 +170,22 @@ const Contact = () => {
 										handleBlur,
 									}) => (
 										<Form>
-											<div>
+											<div style={{ width: "100%" }}>
 												<Field
 													name="firstName"
 													component={MyField}
 													label="first name"
+													style={{
+														// minWidth: "81%",
+														width: "100%",
+													}}
 												>
 													<TextField
 														name="firstName"
 														value={values.firstName}
 														onChange={handleChange}
 														onBlur={handleBlur}
+														fullWidth
 														// className={
 														// 	touched.firstName &&
 														// 	errors.firstName
@@ -199,14 +208,20 @@ const Contact = () => {
 												/>
 											</div>
 
-											<div>
+											<div style={{ width: "100%" }}>
 												<Field
 													name="lastName"
 													component={MyField}
 													label="last name"
+													style={{
+														// minWidth: "81%",
+														width: "100%",
+														background: "#f44336",
+													}}
 												>
 													<TextField
 														name="lastName"
+														fullWidth
 														value={values.lastName}
 														onChange={handleChange}
 														onBlur={handleBlur}
@@ -231,23 +246,28 @@ const Contact = () => {
 												/>
 											</div>
 
-											<div>
+											<div style={{ width: "100%" }}>
 												<Field
 													name="email"
 													component={MyField}
 													label="email"
-													className={
-														touched.email &&
-														errors.email
-															? "classes.hasError"
-															: null
-													}
+													style={{
+														// minWidth: "81%",
+														width: "100%",
+													}}
 												>
 													<TextField
 														name="email"
+														fullWidth
 														value={values.email}
 														onChange={handleChange}
 														onBlur={handleBlur}
+														className={
+															touched.email &&
+															errors.email
+																? "classes.hasError"
+																: "classes.noError"
+														}
 														variant="outlined"
 													/>
 												</Field>
@@ -256,25 +276,30 @@ const Contact = () => {
 													message={errors.email}
 												/>
 											</div>
-											<div
-												className={
-													touched.message &&
-													errors.message
-														? "classes.hasError"
-														: null
-												}
-											>
+											<div style={{ width: "100%" }}>
 												<Field
 													name="message"
 													component={MyField}
 													label="message"
+													style={{
+														// minWidth: "81%",
+														width: "100%",
+													}}
+													autocomplete="false"
 												>
 													<TextField
 														name="message here"
+														fullWidth
 														value={values.message}
 														onChange={handleChange}
 														onBlur={handleBlur}
 														variant="outlined"
+														className={
+															touched.message &&
+															errors.message
+																? "classes.hasError"
+																: null
+														}
 														helperText={
 															errors.message
 														}
