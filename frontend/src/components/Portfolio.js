@@ -16,12 +16,12 @@ const useStyles = makeStyles({
 		// background: "white",
 	},
 	mainBox: {
-		margin: "2rem",
+		margin: "1.25rem",
 	},
 	mainGridContainer: {
 		// display: "flex",
 		// background: "black",
-		margin: "3rem",
+		margin: "2rem",
 		padding: "2em",
 		height: "50%",
 		// background: "pink",

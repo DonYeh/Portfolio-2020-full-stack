@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		backgroundColor: "white",
 		padding: "1.5rem",
-		margin: "1.2rem",
+		margin: "1rem",
 	},
 	gridContainer: {
 		display: "flex",

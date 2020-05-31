@@ -175,43 +175,88 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineBoxE: {
 		postion: "relative",
+		display: "flex",
+		// flexGrow: "1",
+		flexDirection: "column",
 		// transform: "translate(0px, .5rem)",
-
+		height: "96%",
 		padding: "1.3rem",
 		margin: "0 auto",
 		// backgroundColor: "purple",
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "94%",
-			border: "1px solid lightgrey ",
+			height: "140%",
+			maxHeight: "70em",
+			border: "1px solid darkgrey ",
 			right: "40px",
+			paddingBottom: "20px",
 			// top: "44px",
 			// top: 0,
 		},
-		"&:after": {
-			content: "''",
-			height: "87%",
-			// position: "absolute",
-			// top: "60px",
-			// clear: "both",
+		// "&:after": {
+		// 	content: "''",
+		// 	height: "27%",
+		// 	border: "1px solid red ",
+		// 	right: "40px",
+		// 	// position: "absolute",
+		// 	// top: "60px",
+		// 	// clear: "both",
+		// },
+		// [theme.breakpoints.up("xs")]: {
+		// 	padding: "1rem",
+		// 	// height: "99%",
+
+		// 	"&:before": {
+		// 		// transform: "translate(0px, 6rem)",
+		// 		height: "67%",
+		// 		maxHeight: "40%",
+		// 		// left: "calc(50% - 1px)",
+		// 		right: "40px",
+		// 		// zIndex: "-1",
+		// 	},
+		// 	// "&:after": {
+		// 	// 	content: "''",
+		// 	// 	height: "98%",
+		// 	// 	clear: "both",
+		// 	// },
+		// },
+		[theme.breakpoints.up("sm")]: {
+			padding: "1rem",
+			// height: "99%",
+
+			"&:before": {
+				// transform: "translate(0px, 6rem)",
+				height: "50%",
+				maxHeight: "51%",
+				// left: "calc(50% - 1px)",
+				right: "40px",
+				// zIndex: "-1",
+			},
+			// "&:after": {
+			// 	content: "''",
+			// 	height: "98%"
+			// 	clear: "both",
+			// },
 		},
+
 		[theme.breakpoints.up("md")]: {
 			padding: "1rem",
 			// height: "99%",
 
 			"&:before": {
-				transform: "translate(0px, .6rem)",
-				height: "86%",
+				// transform: "translate(0px, 6rem)",
+				height: "54%",
+				maxHeight: "54%",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
 			},
-			"&:after": {
-				content: "''",
-				height: "98%",
-				clear: "both",
-			},
+			// "&:after": {
+			// 	content: "''",
+			// 	height: "98%",
+			// 	clear: "both",
+			// },
 		},
 	},
 	timeLineItemE: {
@@ -314,27 +359,28 @@ const useStyles = makeStyles((theme) => ({
 	},
 	experienceBox: {
 		paddingTop: "1.2rem",
-		paddingBottom: "4rem",
+		// paddingBottom: "4rem",
 		backgroundColor: "white",
-		textTransform: "uppercase",
+		// textTransform: "uppercase",
 		color: "#234",
-		[theme.breakpoints.up("md")]: {
-			paddingBottom: "19rem",
+		// [theme.breakpoints.up("md")]: {
+		// 	paddingBottom: "19rem",
 
-			"&:before": {
-				transform: "translate(0px, 5rem)",
-				height: "78%",
-				left: "calc(50% - 1px)",
-				right: "auto",
-				// zIndex: "-1",
-			},
-			"&:after": {
-				content: "''",
-				height: "15%",
-				clear: "both",
-				// zIndex: "-1",
-			},
-		},
+		// 	"&:before": {
+		// 		transform: "translate(0px, 5rem)",
+		// 		height: "78%",
+		// 		left: "calc(50% - 1px)",
+		// 		right: "auto",
+		// 		// zIndex: "-1",
+		// 	},
+		// 	"&:after": {
+		// 		content: "''",
+		// 		height: "15%",
+		// 		clear: "both",
+		// 		// zIndex: "-1",
+		// 		background: "red",
+		// 	},
+		// },
 	},
 }));
 
@@ -364,7 +410,7 @@ const Resume = () => {
 							// onClick={preventDefault}
 							variant="body2"
 						>
-							{/* {'variant="body2"'} */}
+							{/* {3variant="body2"'} */}
 							<Typography> Download Resume</Typography>
 						</Link>
 					</Grid>
@@ -557,7 +603,7 @@ const Resume = () => {
 									className={classes.paper}
 									// square
 								>
-									Js
+									Javascript
 								</Paper>
 							</Grid>
 							<Grid item xs={4} sm={4} md={4}>
@@ -567,7 +613,7 @@ const Resume = () => {
 									className={classes.paper}
 									// square
 								>
-									Ts
+									Typescript
 								</Paper>
 							</Grid>
 							<Grid item xs={4} sm={4} md={4}>

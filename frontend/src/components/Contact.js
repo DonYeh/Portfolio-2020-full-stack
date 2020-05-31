@@ -42,11 +42,11 @@ const useStyles = makeStyles({
 	},
 	paper: {
 		background: "white",
-		padding: "1.75rem",
-		margin: "1rem",
+		padding: "1.5rem",
+		margin: ".8rem",
 	},
 	mainPaper: {
-		padding: "1.5rem",
+		padding: "1.75rem",
 	},
 	hasError: {
 		border: "1px solid #f44336",
@@ -127,7 +127,7 @@ const Contact = () => {
 					container
 					justify="center"
 					alignItems="center"
-					spacing={2}
+					spacing={1}
 					className={classes.gridContainer}
 				>
 					<Grid item xs={12} md={6} className={classes.gridItem}>
