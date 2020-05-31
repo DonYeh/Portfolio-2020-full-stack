@@ -9,7 +9,8 @@ import { ViewColumn } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		// direction: "column",
-		alignContent: "center",
+		// alignContent: "center",
+		padding: "22% 10% 0%",
 	},
 	// avatarContainer: {
 	// width: "100%",
@@ -55,16 +56,17 @@ const useStyles = makeStyles((theme) => ({
 		// paddingTop: "5rem",
 		alignItems: "center",
 		textAlign: "center",
-		height: "80vh",
+		// height: "80vh",
 		// padding: "0 10%",
 		[theme.breakpoints.up("lg")]: {
+			justify: "center",
 			alignItems: "center",
 			fontSize: "8em",
 		},
 	},
 	whiteFont: {
 		color: "white",
-		marginTop: "10%",
+		// marginTop: "10%",
 		// textAlign: "flex-start",
 		// backgroundColor: "blue",
 
@@ -80,7 +82,7 @@ const Header = () => {
 		<CssBaseline>
 			<Grid
 				container
-				spacing={2}
+				spacing={1}
 				className={classes.mainContainer}
 				alignItems="center"
 				// margin="dense"
@@ -88,7 +90,6 @@ const Header = () => {
 			>
 				<Grid
 					item
-					container
 					justify="center"
 					// alignItems="top"
 					xs={12}
@@ -105,7 +106,17 @@ const Header = () => {
 							showCursor={false}
 						/>
 					</Typography>
-
+				</Grid>
+				<Grid
+					item
+					justify="center"
+					// alignItems="top"
+					xs={12}
+					sm={12}
+					lg={8}
+					className={classes.typedContainer}
+					// style={{ background: "brown" }}
+				>
 					<Typography variant="h4">
 						<Typed
 							strings={[
@@ -128,7 +139,17 @@ const Header = () => {
 							// fadeOut="true"
 						/>
 					</Typography>
-
+				</Grid>
+				<Grid
+					item
+					justify="center"
+					// alignItems="top"
+					xs={12}
+					sm={12}
+					lg={8}
+					className={classes.typedContainer}
+					// style={{ background: "brown" }}
+				>
 					<Typography variant="h4">
 						<Typed
 							strings={["from^3"]}
@@ -138,9 +159,19 @@ const Header = () => {
 							className={classes.whiteFont}
 						/>
 					</Typography>
+				</Grid>
+				{/* <br /> */}
 
-					{/* <br /> */}
-
+				<Grid
+					item
+					justify="center"
+					// alignItems="top"
+					xs={12}
+					sm={12}
+					lg={8}
+					className={classes.typedContainer}
+					// style={{ background: "brown" }}
+				>
 					<Typography variant="h4">
 						<Typed
 							strings={[
@@ -157,7 +188,7 @@ const Header = () => {
 							backDelay={250}
 							smartBackspace="true"
 							// cursorChar=" "
-							showCursor={true}
+							showCursor={false}
 							className={classes.whiteFont}
 							fadeOut="false"
 							loop
@@ -165,6 +196,18 @@ const Header = () => {
 							// smartBackspace="true"
 						/>
 					</Typography>
+				</Grid>
+
+				<Grid
+					item
+					justify="center"
+					// alignItems="top"
+					xs={12}
+					sm={12}
+					lg={8}
+					className={classes.typedContainer}
+					// style={{ background: "brown" }}
+				>
 					<Typography variant="h4">
 						<Typed
 							strings={["Georgia^60 🍑"]}
@@ -177,6 +220,7 @@ const Header = () => {
 					</Typography>
 				</Grid>
 			</Grid>
+
 			{/* </Grid> */}
 			{/* // </Grid> */}
 		</CssBaseline>
