@@ -12,7 +12,7 @@ import { Form, Formik, Field, FieldProps } from "formik";
 import * as React from "react";
 import Navbar from "./Navbar";
 import { MyField } from "./MyField";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -20,12 +20,16 @@ import axios from "axios";
 import * as Yup from "yup";
 import Error from "./Error";
 
+import { createMuiTheme } from "@material-ui/core/styles";
+
 const useStyles = makeStyles({
 	// root: {
 	// 	// borderBlock: "2px dotted",
 	// 	border: "2px",
 	// },
-
+	root: {
+		fullWidth: "true",
+	},
 	gridContainer: {
 		justify: "center",
 		alignContent: "center",
@@ -115,6 +119,18 @@ const validationSchema = Yup.object().shape({
 		),
 });
 
+const formTheme = createMuiTheme({
+	overrides: {
+		// Style sheet name ⚛️
+		MuiFormControl: {
+			// fullWidth: "true",
+			minWidth: "88%",
+
+			// Name of the rule
+		},
+	},
+});
+
 const Contact = () => {
 	const classes = useStyles();
 
@@ -122,258 +138,301 @@ const Contact = () => {
 		<>
 			<Navbar />
 			{/* <Box> */}
-			<Paper className={classes.mainPaper}>
-				<Grid
-					container
-					justify="center"
-					alignItems="center"
-					spacing={1}
-					className={classes.gridContainer}
-				>
-					<Grid item xs={12} md={6} className={classes.gridItem}>
-						<Paper className={classes.paper}>
-							<Typography variant="h6">
-								Let's build together
-							</Typography>
-							<Typography variant="body1" color="textSecondary">
-								Have a project you're looking to get off the
-								ground? I'd love to hear from you. Send a
-								message and let's get the ball rolling!
-							</Typography>
-						</Paper>
-					</Grid>
+			<ThemeProvider theme={formTheme}>
+				<Paper className={classes.mainPaper}>
 					<Grid
-						item
 						container
-						xs={12}
-						md={6}
 						justify="center"
-						className={classes.gridItem}
+						alignItems="center"
+						spacing={1}
+						className={classes.gridContainer}
 					>
-						<Grid item xs={12} lg={6}>
+						<Grid item xs={12} md={6} className={classes.gridItem}>
 							<Paper className={classes.paper}>
-								<Formik
-									initialValues={{
-										firstName: "",
-										lastName: "",
-										email: "",
-										message: "",
-									}}
-									onSubmit={handleSubmit}
-									validationSchema={validationSchema}
+								<Typography variant="h6" align="center">
+									Let's build together
+								</Typography>
+								<Typography
+									variant="body1"
+									color="textSecondary"
 								>
-									{({
-										values,
-										errors,
-										touched,
-										handleChange,
-										handleBlur,
-									}) => (
-										<Form>
-											<div style={{ width: "100%" }}>
-												<Field
-													name="firstName"
-													component={MyField}
-													label="first name"
-													style={{
-														// minWidth: "81%",
-														width: "100%",
-													}}
-												>
-													<TextField
+									Have a project you're looking to get off the
+									ground? I'd love to hear from you. Send a
+									message and let's get the ball rolling!
+								</Typography>
+							</Paper>
+						</Grid>
+						<Grid
+							item
+							container
+							xs={12}
+							md={6}
+							justify="center"
+							className={classes.gridItem}
+						>
+							<Grid item xs={12} lg={6}>
+								<Paper className={classes.paper}>
+									<Formik
+										initialValues={{
+											firstName: "",
+											lastName: "",
+											email: "",
+											message: "",
+										}}
+										onSubmit={handleSubmit}
+										validationSchema={validationSchema}
+										fullWidth
+									>
+										{({
+											values,
+											errors,
+											touched,
+											handleChange,
+											handleBlur,
+										}) => (
+											<Form>
+												<div style={{ width: "100%" }}>
+													<Field
 														name="firstName"
-														value={values.firstName}
-														onChange={handleChange}
-														onBlur={handleBlur}
+														component={MyField}
+														label="first name"
+														style={{
+															minWidth: "81%",
+															// width: "100%",
+														}}
+														as={TextField}
 														fullWidth
+													>
+														<TextField
+															name="firstName"
+															value={
+																values.firstName
+															}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															fullWidth
+															// className={
+															// 	touched.firstName &&
+															// 	errors.firstName
+															// 		? "classes.hasError"
+															// 		: null
+															// }
+															variant="filled"
+														/>
+													</Field>
+													<Error
+														touched={
+															touched.firstName
+														}
+														message={
+															errors.firstName
+														}
+														className={
+															classes.invalid
+														}
 														// className={
 														// 	touched.firstName &&
 														// 	errors.firstName
 														// 		? "classes.hasError"
 														// 		: null
 														// }
-														variant="filled"
 													/>
-												</Field>
-												<Error
-													touched={touched.firstName}
-													message={errors.firstName}
-													className={classes.invalid}
-													// className={
-													// 	touched.firstName &&
-													// 	errors.firstName
-													// 		? "classes.hasError"
-													// 		: null
-													// }
-												/>
-											</div>
+												</div>
 
-											<div style={{ width: "100%" }}>
-												<Field
-													name="lastName"
-													component={MyField}
-													label="last name"
-													style={{
-														// minWidth: "81%",
-														width: "100%",
-														background: "#f44336",
-													}}
-												>
-													<TextField
+												<div style={{ width: "100%" }}>
+													<Field
 														name="lastName"
-														fullWidth
-														value={values.lastName}
-														onChange={handleChange}
-														onBlur={handleBlur}
+														component={MyField}
+														label="last name"
+														style={{
+															minWidth: "81%",
+															// width: "100%",
+															background:
+																"#f44336",
+														}}
+													>
+														<TextField
+															name="lastName"
+															fullWidth
+															value={
+																values.lastName
+															}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															className={
+																touched.lastName &&
+																errors.lastName
+																	? "classes.hasError"
+																	: null
+															}
+															variant="filled"
+														/>
+													</Field>
+													<Error
+														touched={
+															touched.lastName
+														}
+														message={
+															errors.lastName
+														}
 														className={
 															touched.lastName &&
 															errors.lastName
 																? "classes.hasError"
 																: null
 														}
-														variant="filled"
 													/>
-												</Field>
-												<Error
-													touched={touched.lastName}
-													message={errors.lastName}
-													className={
-														touched.lastName &&
-														errors.lastName
-															? "classes.hasError"
-															: null
-													}
-												/>
-											</div>
+												</div>
 
-											<div style={{ width: "100%" }}>
-												<Field
-													name="email"
-													component={MyField}
-													label="email"
-													style={{
-														// minWidth: "81%",
-														width: "100%",
-													}}
-												>
-													<TextField
+												<div style={{ width: "100%" }}>
+													<Field
 														name="email"
-														fullWidth
-														value={values.email}
-														onChange={handleChange}
-														onBlur={handleBlur}
-														className={
-															touched.email &&
-															errors.email
-																? "classes.hasError"
-																: "classes.noError"
-														}
-														variant="outlined"
+														component={MyField}
+														label="email"
+														style={{
+															minWidth: "81%",
+															// width: "100%",
+														}}
+													>
+														<TextField
+															name="email"
+															fullWidth
+															value={values.email}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															className={
+																touched.email &&
+																errors.email
+																	? "classes.hasError"
+																	: "classes.noError"
+															}
+															variant="outlined"
+														/>
+													</Field>
+													<Error
+														touched={touched.email}
+														message={errors.email}
 													/>
-												</Field>
-												<Error
-													touched={touched.email}
-													message={errors.email}
-												/>
-											</div>
-											<div style={{ width: "100%" }}>
-												<Field
-													name="message"
-													component={MyField}
-													label="message"
-													style={{
-														// minWidth: "81%",
-														width: "100%",
-													}}
-													autocomplete="false"
-												>
-													<TextField
-														name="message here"
-														fullWidth
-														value={values.message}
-														onChange={handleChange}
-														onBlur={handleBlur}
-														variant="outlined"
-														className={
-															touched.message &&
-															errors.message
-																? "classes.hasError"
-																: null
+												</div>
+												<div>
+													<Field
+														name="message"
+														component={MyField}
+														label="message"
+														style={{
+															minWidth: "81%",
+															// width: "100%",
+														}}
+														autocomplete="false"
+													>
+														<TextField
+															name="message here"
+															multiline
+															rows="3"
+															fullWidth
+															value={
+																values.message
+															}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															variant="outlined"
+															className={
+																touched.message &&
+																errors.message
+																	? "classes.hasError"
+																	: null
+															}
+															helperText={
+																errors.message
+															}
+														/>
+													</Field>
+													<Error
+														touched={
+															touched.message
 														}
-														helperText={
-															errors.message
-														}
+														message={errors.message}
 													/>
-												</Field>
-												<Error
-													touched={touched.message}
-													message={errors.message}
-												/>
-											</div>
-											<Button type="submit">
-												submit
-											</Button>
-											{/* <pre>
+												</div>
+												<Button type="submit">
+													submit
+												</Button>
+												{/* <pre>
 												{JSON.stringify(
 													values,
 													null,
 													2
 												)}
 											</pre> */}
-										</Form>
-									)}
-								</Formik>
+											</Form>
+										)}
+									</Formik>
+								</Paper>
+							</Grid>
+						</Grid>
+						<Grid
+							item
+							xs={12}
+							container
+							spacing={2}
+							className={classes.gridItem}
+							justify="center"
+						>
+							<Paper className={classes.paper}>
+								<Grid item>
+									<Typography variant="h6">
+										Let's Connect
+									</Typography>
+								</Grid>
+
+								<Grid container justify="space-evenly">
+									<Grid item>
+										<Link
+											href="https://www.linkedin.com/in/donald-yeh-b3b1426/"
+											// onClick={preventDefault}
+											variant="body2"
+										>
+											{/* {'variant="body2"'} */}
+											<LinkedInIcon />
+										</Link>
+									</Grid>
+
+									<Grid item>
+										<Link
+											href="https://github.com/DonYeh"
+											// onClick={preventDefault}
+											variant="body2"
+										>
+											{/* {'variant="body2"'} */}
+											<GitHubIcon />
+										</Link>
+									</Grid>
+
+									<Grid item>
+										<Link
+											href="https://twitter.com/heydonaldyeh"
+											// onClick={preventDefault}
+											variant="body2"
+										>
+											{/* {'variant="body2"'} */}
+											<TwitterIcon />
+										</Link>
+									</Grid>
+								</Grid>
 							</Paper>
 						</Grid>
 					</Grid>
-					<Grid
-						item
-						container
-						xs={12}
-						className={classes.gridItem}
-						justify="center"
-					>
-						<Paper className={classes.paper}>
-							<Typography variant="h6">Let's Connect</Typography>
-							<Grid container justify="space-evenly">
-								<Grid item>
-									<Link
-										href="https://www.linkedin.com/in/donald-yeh-b3b1426/"
-										// onClick={preventDefault}
-										variant="body2"
-									>
-										{/* {'variant="body2"'} */}
-										<LinkedInIcon />
-									</Link>
-								</Grid>
-
-								<Grid item>
-									<Link
-										href="https://github.com/DonYeh"
-										// onClick={preventDefault}
-										variant="body2"
-									>
-										{/* {'variant="body2"'} */}
-										<GitHubIcon />
-									</Link>
-								</Grid>
-
-								<Grid item>
-									<Link
-										href="https://twitter.com/heydonaldyeh"
-										// onClick={preventDefault}
-										variant="body2"
-									>
-										{/* {'variant="body2"'} */}
-										<TwitterIcon />
-									</Link>
-								</Grid>
-							</Grid>
-						</Paper>
-					</Grid>
-				</Grid>
-			</Paper>
-			{/* </Box> */}
+				</Paper>
+				{/* </Box> */}
+			</ThemeProvider>
 		</>
 	);
 };
