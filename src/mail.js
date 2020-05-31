@@ -48,7 +48,7 @@ const sendConfirmationEmail = ({ firstName, lastName, email, message }) => {
 		from: process.env.SG_FROM_EMAIL,
 		subject: "Confirmation email",
 		text: "texttexttextext",
-		html: "<h1>Thanks for contacting me! I will get back to you soon!</h1>",
+		html: `<h1>Hi ${firstName},</h1><br><h2>Thanks for contacting me.</h2><h2>This is just a quick email to say that I've received your message and will get back to you soon!</h2><br><br><h2>Sincerely,</h2><h2>Donald</h2>`,
 	};
 
 	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -67,10 +67,4 @@ const sendConfirmationEmail = ({ firstName, lastName, email, message }) => {
 	//
 };
 
-// sendEmail({
-// 	firstName: "d",
-// 	lastName: "yeh",
-// 	email: "donald.yeh@gmail.com",
-// 	message: "testing",
-// });
 module.exports = { sendEmail };
