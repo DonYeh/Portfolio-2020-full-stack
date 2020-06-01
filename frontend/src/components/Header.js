@@ -1,8 +1,19 @@
 import React from "react";
-import { Typography, Avatar, Grid, Box, CssBaseline } from "@material-ui/core/";
+import {
+	Typography,
+	Avatar,
+	Grid,
+	Box,
+	CssBaseline,
+	ThemeProvider,
+} from "@material-ui/core/";
 // import avatar from "../images/Boone.png";
 import Typed from "react-typed";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+	makeStyles,
+	createMuiTheme,
+	responsiveFontSizes,
+} from "@material-ui/core/styles";
 import { ViewColumn } from "@material-ui/icons";
 // import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -10,47 +21,9 @@ const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		// direction: "column",
 		// alignContent: "center",
-		padding: "22% 10% 0%",
+		padding: "25% 10% 0%",
 	},
-	// avatarContainer: {
-	// width: "100%",
-	// margin: "auto",
-	// width: theme.spacing(12),
-	// height: "20vh",
-	// margin:
-	// backgroundColor: "white",
-	// margin: "30px 0px 0px 0px",
-	// backgroundColor: "red",
-	// textAlign: "center",
 
-	// maxWidth: "100%",
-	// },
-	// avatar: {
-	// 	textAlign: "center",
-	// 	width: theme.spacing(14),
-	// 	height: theme.spacing(14),
-	// margin: theme.spacing(6),
-	// textAlign: "center",
-	// border: "black",
-	// maxWidth: "50%",
-	// margin: theme.spacing(2),
-	// alignItems: "center",
-	// justifyContent: "center",
-	// backgroundColor: "purple",
-	// margin: "auto",
-	// },
-	// boxContainer: {
-	// 	flexDirection: "column",
-	// 	alignContent: "stretch",
-	// 	position: "absolute",
-	// 	display: "flex",
-	// 	// top: "20%",
-	// 	// left: "10%",
-	// 	// transform: "translate(-50%, -50%)",
-	// 	width: "100%",
-	// 	textAlign: "left",
-	// 	zIndex: 1,
-	// },
 	typedContainer: {
 		// margin: theme.spacing(8),
 		// paddingTop: "5rem",
@@ -69,20 +42,22 @@ const useStyles = makeStyles((theme) => ({
 		// marginTop: "10%",
 		// textAlign: "flex-start",
 		// backgroundColor: "blue",
-
-		// margin: "auto",
-		// backgroundColor: "grey",
 	},
 }));
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const Header = () => {
 	const classes = useStyles();
 
 	return (
-		<CssBaseline>
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
 			<Grid
 				container
-				spacing={1}
+				spacing={2}
+				justify="center"
 				className={classes.mainContainer}
 				alignItems="center"
 				// margin="dense"
@@ -98,11 +73,11 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h4" className={classes.whiteFont}>
+					<Typography variant="h3" className={classes.whiteFont}>
 						<Typed
 							strings={["Hello^2", "Hi!^4 👋", "I'm Donald^5"]}
 							typeSpeed={26}
-							startDelay={2700}
+							startDelay={2000}
 							showCursor={false}
 						/>
 					</Typography>
@@ -117,7 +92,7 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h4">
+					<Typography variant="h3">
 						<Typed
 							strings={[
 								"I'm a full stack developer ^11800",
@@ -150,7 +125,7 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h4">
+					<Typography variant="h3">
 						<Typed
 							strings={["from^3"]}
 							typeSpeed={18}
@@ -172,7 +147,7 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h4">
+					<Typography variant="h3">
 						<Typed
 							strings={[
 								// "Atlanta^1800",
@@ -208,7 +183,7 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h4">
+					<Typography variant="h3">
 						<Typed
 							strings={["Georgia^60 🍑"]}
 							typeSpeed={11}
@@ -223,7 +198,7 @@ const Header = () => {
 
 			{/* </Grid> */}
 			{/* // </Grid> */}
-		</CssBaseline>
+		</ThemeProvider>
 	);
 };
 

@@ -2,17 +2,18 @@ import React from "react";
 import Navbar from "./Navbar";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box, Paper, Grid, Avatar, Card } from "@material-ui/core";
-import avatar from "../assets/Boone.png";
+import avatar from "../assets/IMG_1953.jpg";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		backgroundColor: "white",
-		padding: "1.5rem",
+		padding: "1rem",
 		margin: "1rem",
 	},
 	gridContainer: {
 		display: "flex",
 		justify: "center",
+		padding: "1rem",
 		// alignContent: "center",
 	},
 	gridItems: {
@@ -71,7 +72,7 @@ const About = () => {
 						spacing={2}
 					>
 						<Grid item>
-							<Paper elevation={4} className={classes.paper}>
+							<Paper elevation={0} className={classes.paper}>
 								<Typography variant="h6">About Me</Typography>
 							</Paper>
 						</Grid>
@@ -79,7 +80,7 @@ const About = () => {
 							<Paper elevation={4}>
 								<Avatar
 									src={avatar}
-									alt="Doggie"
+									alt="Donaldpicture"
 									className={classes.avatar}
 									variant="rounded"
 									// style={{ paddingTop: ".5em" }}

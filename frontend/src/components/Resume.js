@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 	heading2Title: {
 		// paddingTop: ".75rem",
 		color: "#234",
+		textTransform: "uppercase",
 	},
 	subHeading2: {
 		color: "peachpuff",
@@ -71,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
 		postion: "relative",
 		transform: "translate(0px, 1.5rem)",
 
-		padding: ".5rem",
+		padding: ".5rem .5rem 1.5rem",
 		margin: "0 auto",
 		// backgroundColor: "pink",
 		"&:before": {
@@ -112,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: "1rem",
 		// borderBottom: "8px solid tan",
 		position: "relative",
-		margin: "1rem 3.3rem 1rem 1rem",
+		margin: ".6rem 3.3rem .6rem .6rem",
 		clear: "both",
 		"&:after": {
 			content: "''",
@@ -170,7 +171,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	subHeading2E: {
-		color: "cadetblue",
+		color: "#234",
 	},
 	subHeadingE: {
 		color: "sandybrown",
@@ -267,7 +268,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: "1rem",
 		// borderBottom: "2px solid tan",
 		position: "relative",
-		margin: "1rem 3rem 1rem 1rem",
+		margin: ".6rem 3rem .6rem .6rem",
 		clear: "both",
 		// backgroundColor: "white",
 		"&:after": {
@@ -362,7 +363,7 @@ const useStyles = makeStyles((theme) => ({
 		// width: "1rem",
 	},
 	experienceBox: {
-		paddingTop: "1.2rem",
+		paddingTop: "1.5rem",
 		paddingBottom: "9rem",
 		backgroundColor: "white",
 		// marginBottom: "10rem",
@@ -887,7 +888,14 @@ const Resume = () => {
 					</Grid>
 				</Box>
 				<Box className={classes.experienceBox}>
-					<Typography variant="h4" align="center">
+					<Typography
+						variant="h4"
+						align="center"
+						style={{
+							textTransform: "uppercase",
+							color: "cadetblue",
+						}}
+					>
 						Experience
 					</Typography>
 					<Box component="div" className={classes.timeLineBoxE}>
