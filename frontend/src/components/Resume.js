@@ -145,13 +145,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineYear: {
 		textAlign: "center",
-		maxWidth: "7rem",
+		maxWidth: "6.5rem",
 		margin: "0 3rem 0 auto",
 		fontSize: "1.8rem",
 		background: "grey",
 		color: "#234",
 		lineHeight: 1,
-		padding: "0.5rem 0 1rem",
+		padding: "0.6rem",
 		// zIndex: "1",
 		"&:before": {
 			display: "none",
@@ -179,7 +179,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineBoxE: {
 		postion: "relative",
-		display: "flex",
+		// display: "flex",
 		// flexGrow: "1",
 		flexDirection: "column",
 		// transform: "translate(0px, .5rem)",
@@ -190,11 +190,11 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "140%",
-			maxHeight: "70em",
+			height: "90%",
+			maxHeight: "88%",
 			border: "1px solid darkgrey ",
 			right: "40px",
-			paddingBottom: "20px",
+			// paddingBottom: "40px",
 			// top: "44px",
 			// top: 0,
 		},
@@ -231,8 +231,8 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
-				height: "50%",
-				maxHeight: "51%",
+				height: "42rem",
+				// maxHeight: "51%",
 				// left: "calc(50% - 1px)",
 				right: "40px",
 				// zIndex: "-1",
@@ -250,8 +250,8 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
-				height: "54%",
-				maxHeight: "54%",
+				height: "78%",
+				maxHeight: "79%",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
@@ -267,7 +267,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: "1rem",
 		// borderBottom: "2px solid tan",
 		position: "relative",
-		margin: "1rem 3.3rem 1rem 1rem",
+		margin: "1rem 3rem 1rem 1rem",
 		clear: "both",
 		// backgroundColor: "white",
 		"&:after": {
@@ -301,13 +301,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineYearE: {
 		textAlign: "center",
-		maxWidth: "7rem",
-		margin: "0 3rem 0 auto",
+		maxWidth: "6.5rem",
+		margin: "0 2.5rem 0 auto",
 		fontSize: "1.8rem",
 		background: "#234",
 		color: "lightgrey",
 		lineHeight: 1,
-		padding: "0.5rem 0 .5rem",
+		padding: ".6rem",
 		// zIndex: "1",
 		"&:before": {
 			display: "none",
@@ -363,8 +363,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	experienceBox: {
 		paddingTop: "1.2rem",
-		// paddingBottom: "4rem",
+		paddingBottom: "9rem",
 		backgroundColor: "white",
+		// marginBottom: "10rem",
 		// textTransform: "uppercase",
 		color: "#234",
 		// [theme.breakpoints.up("md")]: {
@@ -385,6 +386,16 @@ const useStyles = makeStyles((theme) => ({
 		// 		background: "red",
 		// 	},
 		// },
+		[theme.breakpoints.up("md")]: {
+			paddingBottom: "22rem",
+			// height: "99%",
+
+			// "&:after": {
+			// 	content: "''",
+			// 	height: "98%",
+			// 	clear: "both",
+			// },
+		},
 	},
 }));
 
@@ -556,7 +567,7 @@ const Resume = () => {
 						justify="center"
 						// alignItems="flex-start"
 						alignItems="center"
-						alignContent="center"
+						// alignContent="center"
 						className={classes.papersGridContainer}
 						// wrap="wrap"
 						// style={{ backgroundColor: "purple" }}
