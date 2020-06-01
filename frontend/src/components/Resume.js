@@ -18,7 +18,8 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		background: "#234",
-		width: "100vw",
+		width: "100%",
+		margin: "0",
 		// paddingTop: "0",
 	},
 	heading: {
@@ -44,13 +45,16 @@ const useStyles = makeStyles((theme) => ({
 	boxTechnologies: {
 		// color: "cadetblue",
 		// padding: "1rem 0 0",
-		textTransform: "uppercase",
+		// textTransform: "uppercase",
+		// margin: "0 10%",
 		background: "lightgrey",
-		padding: "1.2em",
+		// padding: "1.5em ",
 		marginTop: "1rem",
+		padding: "0 1rem",
+		// marginRight: "1.4rem",
 	},
 	heading2Title: {
-		paddingTop: ".75rem",
+		// paddingTop: ".75rem",
 		color: "#234",
 	},
 	subHeading2: {
@@ -324,9 +328,9 @@ const useStyles = makeStyles((theme) => ({
 	papersGridContainer: {
 		display: "flex",
 		// justify: "space-evenly",
-		width: "100vw",
-		padding: "1.2em 0 1.5em",
-		alignItems: "flex-start",
+		width: "100%",
+		padding: "1.2em 1em 3em",
+		// alignItems: "flex-start",
 		// backgroundColor: "purple",
 		// wrap: "wrap",
 		// gridItem: {
@@ -335,10 +339,10 @@ const useStyles = makeStyles((theme) => ({
 	frontEndGridItem: {
 		// display: "flex",
 		// flexWrap: "wrap",
-
 		// justify: "space-evenly",
-		alignItems: "center",
+		// alignItems: "center",
 		// backgroundColor: "teal",
+		// padding: "0 1.3em",
 	},
 	backEndGridItem: {
 		// backgroundColor: "lightgrey",
@@ -350,9 +354,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paper: {
 		color: "cadetblue",
-		fontSize: "1.2em",
+		fontSize: "1.1em",
 		textAlign: "center",
-		padding: "theme.spacing(3)",
+		padding: "theme.spacing(2.5)",
 		overflow: "hidden",
 		textOverflow: "ellipsis",
 		// width: "1rem",
@@ -546,36 +550,45 @@ const Resume = () => {
 					className={classes.boxTechnologies}
 					justifyContent="center"
 				>
-					<Typography
-						variant="h4"
-						align="center"
-						className={classes.heading2Title}
-						// display="block"
-					>
-						Technologies
-					</Typography>
-
 					<Grid
 						container
-						spacing={4}
-						justify="space-evenly"
+						spacing={2}
+						justify="center"
 						// alignItems="flex-start"
-						// alignContent="space-around"
+						alignItems="center"
+						alignContent="center"
 						className={classes.papersGridContainer}
-						wrap="wrap"
+						// wrap="wrap"
 						// style={{ backgroundColor: "purple" }}
 					>
+						<Grid item container justify="center">
+							<Grid item>
+								<Typography
+									variant="h4"
+									align="center"
+									className={classes.heading2Title}
+									// display="block"
+								>
+									Technologies
+								</Typography>
+							</Grid>
+						</Grid>
 						<Grid
 							item
+							justify="center"
 							container
 							xs={12}
 							sm={6}
 							md={4}
-							spacing={2}
+							spacing={1}
 							className={classes.frontEndGridItem}
 						>
 							{/* <Box className="feBox"></Box> */}
-							<Typography align="center">Front End</Typography>
+							<Grid item xs={12}>
+								<Typography align="center">
+									Front End
+								</Typography>
+							</Grid>
 							<Grid item xs={4} sm={4} md={4}>
 								<Paper
 									elevation={3}
@@ -583,7 +596,7 @@ const Resume = () => {
 									className={classes.paper}
 									// square
 								>
-									html5
+									HTML5
 								</Paper>
 							</Grid>
 							<Grid item xs={4} sm={4} md={4}>
@@ -593,7 +606,7 @@ const Resume = () => {
 									className={classes.paper}
 									// square
 								>
-									css3
+									CSS3
 								</Paper>
 							</Grid>
 							<Grid item xs={4} sm={4} md={4}>
@@ -664,10 +677,13 @@ const Resume = () => {
 							sm={6}
 							md={4}
 							container
-							spacing={2}
+							spacing={1}
+							justify="center"
 							className={classes.backEndGridItem}
 						>
-							<Typography align="center">Back End</Typography>
+							<Grid item xs={12}>
+								<Typography align="center">Back End</Typography>
+							</Grid>
 
 							<Grid item xs={4} sm={4} md={4}>
 								<Paper
@@ -676,7 +692,7 @@ const Resume = () => {
 									className={classes.paper}
 									// square
 								>
-									<div>Node.js</div>
+									<div>Node</div>
 								</Paper>
 							</Grid>
 							<Grid item xs={4} sm={4} md={4}>
@@ -756,10 +772,13 @@ const Resume = () => {
 							sm={6}
 							md={4}
 							container
-							spacing={2}
+							justify="center"
+							spacing={1}
 							className={classes.toolsGridItem}
 						>
-							<Typography align="center">Tools</Typography>
+							<Grid item xs={12}>
+								<Typography align="center">Tools</Typography>
+							</Grid>
 
 							<Grid item xs={4} sm={4} md={4}>
 								<Paper

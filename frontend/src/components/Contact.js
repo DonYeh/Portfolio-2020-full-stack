@@ -28,13 +28,14 @@ const useStyles = makeStyles({
 	// 	border: "2px",
 	// },
 	root: {
-		fullWidth: "true",
+		// fullWidth: "true",
 	},
 	gridContainer: {
 		justify: "center",
 		alignContent: "center",
 		// width: "100vw",
-		height: "100vh",
+		// height: "100vh",
+		width: "100vw",
 		background: "aliceblue",
 		// padding: "1rem",
 		// margin: "1rem",
