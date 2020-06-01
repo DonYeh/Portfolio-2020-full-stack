@@ -1,7 +1,19 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Box, Paper, Grid, Avatar, Card } from "@material-ui/core";
+import {
+	makeStyles,
+	responsiveFontSizes,
+	createMuiTheme,
+} from "@material-ui/core/styles";
+import {
+	Typography,
+	Box,
+	Paper,
+	Grid,
+	Avatar,
+	Card,
+	ThemeProvider,
+} from "@material-ui/core";
 import avatar from "../assets/IMG_1953.jpg";
 import { FullscreenExit } from "@material-ui/icons";
 
@@ -21,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 		// display: "flex",
 		// direction: "column",
 		justify: "space-evenly",
-		padding: "1.2rem",
+		padding: "1.5rem 0 2rem",
 		alignItems: "center",
 		[theme.breakpoints.up("sm")]: {
 			// padding: "14% 20% 0",
@@ -78,101 +90,113 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
+
 const About = () => {
 	const classes = useStyles();
 
 	return (
 		<>
-			<Navbar />
-			{/* <Grid
+			<ThemeProvider theme={theme}>
+				<Navbar />
+				{/* <Grid
 				container
 				// alignItems="center"
 				style={{ flexDirection: "column" }}
 				// justify="center"
 				className={classes.mainContainer}
 			> */}
-			{/* <Box className={classes.mainContainer}> */}
-			<Grid
-				container
-				className={classes.gridContainer}
-				// spacing={2}
-				// direction="column"
-				justify="center"
-				style={{ backgroundColor: "azure" }}
-				// justify="center"
-			>
+				{/* <Box className={classes.mainContainer}> */}
 				<Grid
-					item
 					container
-					className={classes.gridItems1}
-					justify="space-evenly"
-					alignItems="center"
-					spacing={1}
+					className={classes.gridContainer}
+					// spacing={2}
+					// direction="column"
+					justify="center"
+					style={{ backgroundColor: "aliceblue" }}
+					// justify="center"
 				>
-					<Grid item alignContent="center">
+					<Grid
+						item
+						container
+						className={classes.gridItems1}
+						justify="space-evenly"
+						alignItems="center"
+						spacing={1}
+					>
+						<Grid item alignContent="center">
+							<Paper
+								elevation={0}
+								className={classes.paper}
+								style={{
+									backgroundColor: "aliceblue",
+									color: "darkslategray",
+									textTransform: "lowercase",
+									fontWeight: "bold",
+								}}
+							>
+								<Typography variant="h2" align="center">
+									About Me
+								</Typography>
+							</Paper>
+						</Grid>
+						<Grid item>
+							<Paper elevation={4}>
+								<Avatar
+									src={avatar}
+									alt="Donaldpicture"
+									className={classes.avatar}
+									variant="rounded"
+								/>
+							</Paper>
+						</Grid>
+					</Grid>
+
+					<Grid item className={classes.gridItems}>
 						<Paper
-							elevation={0}
+							elevation={3}
 							className={classes.paper}
-							style={{
-								backgroundColor: "azure",
-								color: "slategray",
-							}}
+							style={{ color: "midnightblue" }}
 						>
-							<Typography variant="h4" align="center">
-								About Me
+							<Typography variant="body1">
+								Hello. I’m a full-stack developer who is
+								passionate about writing clean, efficient code
+								and solving real world problems - making the
+								world a better place, one line of code at a
+								time.
 							</Typography>
 						</Paper>
 					</Grid>
-					<Grid item>
-						<Paper elevation={4}>
-							<Avatar
-								src={avatar}
-								alt="Donaldpicture"
-								className={classes.avatar}
-								variant="rounded"
-							/>
+					<Grid item className={classes.gridItems}>
+						<Paper elevation={3} className={classes.paper}>
+							<Typography>
+								I enjoy turning complex problems into simple,
+								beautiful and intuitive designs. I love to build
+								things and I'm obsessed with making things
+								better. I have a thirst for knowlede and coding
+								really quenches my desire to learn.
+							</Typography>
+						</Paper>
+					</Grid>
+
+					<Grid
+						item
+						className={classes.gridItems}
+						style={{ paddingBottom: ".75em" }}
+					>
+						<Paper elevation={3} className={classes.paper}>
+							<Typography>
+								When Im not at the computer, you can find me
+								cooking something fierce in the kitchen, out in
+								the garden, or out walking my dogs.
+							</Typography>
 						</Paper>
 					</Grid>
 				</Grid>
-
-				<Grid item className={classes.gridItems}>
-					<Paper elevation={3} className={classes.paper}>
-						<Typography>
-							Hello. I’m a full-stack developer who is passionate
-							about writing clean, efficient code and solving real
-							world problems - making the world a better place,
-							one line of code at a time.
-						</Typography>
-					</Paper>
-				</Grid>
-				<Grid item className={classes.gridItems}>
-					<Paper elevation={3} className={classes.paper}>
-						<Typography>
-							I enjoy turning complex problems into simple,
-							beautiful and intuitive designs. I love to build
-							things and I'm obsessed with making things better. I
-							have a thirst for knowlede and coding really
-							quenches my desire to learn.
-						</Typography>
-					</Paper>
-				</Grid>
-
-				<Grid
-					item
-					className={classes.gridItems}
-					style={{ paddingBottom: ".75em" }}
-				>
-					<Paper elevation={3} className={classes.paper}>
-						<Typography>
-							When Im not at the computer, you can find me cooking
-							something fierce in the kitchen, out in the garden,
-							or out walking my dogs.
-						</Typography>
-					</Paper>
-				</Grid>
-			</Grid>
-			{/* </Box> */}
-			{/* </Grid> */}
+				{/* </Box> */}
+				{/* </Grid> */}
+			</ThemeProvider>
 		</>
 	);
 };
