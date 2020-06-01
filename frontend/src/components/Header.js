@@ -73,9 +73,9 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h3" className={classes.whiteFont}>
+					<Typography variant="h1" className={classes.whiteFont}>
 						<Typed
-							strings={["Hello^2", "Hi!^4 👋", "I'm Donald^5"]}
+							strings={["Hello^2", "Hi!^4 👋", "I'm Donald^2"]}
 							typeSpeed={26}
 							startDelay={2000}
 							showCursor={false}
