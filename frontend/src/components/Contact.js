@@ -10,6 +10,7 @@ import Link from "@material-ui/core/Link";
 
 import { Form, Formik, Field, FieldProps } from "formik";
 import * as React from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
 import { MyField } from "./MyField";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
@@ -19,8 +20,13 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import axios from "axios";
 import * as Yup from "yup";
 import Error from "./Error";
+// import Modal from "@material-ui/core/Modal";
+import Modal from "react-modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 
 import { createMuiTheme } from "@material-ui/core/styles";
+Modal.setAppElement("#root"); //fixes the warning that react-modal: App element is not defined
 
 const useStyles = makeStyles({
 	// root: {
@@ -80,6 +86,9 @@ const handleSubmit = async (values, actions) => {
 	// setTimeout(() => {
 	// 	alert(JSON.stringify(values, null, 2));
 	// }, 1000);
+
+	// console.log(openModal);
+	console.log(actions);
 	let res = await axios.post("api/sendMail", values).then(
 		(response) => {
 			console.log(response);
@@ -126,8 +135,27 @@ const validationSchema = Yup.object().shape({
 // 	},
 // });
 
+// const handleCloseModal = () => {};
+
 const Contact = () => {
 	const classes = useStyles();
+	const [modalIsOpen, setModalIsOpen] = React.useState(false);
+
+	const handleOpen = () => {
+		setModalIsOpen(true);
+	};
+
+	const handleClose = () => {
+		setModalIsOpen(false);
+	};
+
+	const handleModal = () => {
+		setTimeout(() => {
+			console.log("yo!");
+			setModalIsOpen(true);
+		}, 500);
+		// console.log("you clicked the submit button!");
+	};
 
 	return (
 		<>
@@ -327,9 +355,78 @@ const Contact = () => {
 													message={errors.message}
 												/>
 											</div>
-											<Button type="submit">
+											<Button
+												type="submit"
+												onClick={handleModal}
+											>
 												submit
 											</Button>
+
+											<Modal
+												isOpen={modalIsOpen}
+												onRequestClose={() =>
+													setModalIsOpen(false)
+												}
+												style={{
+													overlay: {
+														backgroundColor:
+															"gainsboro",
+													},
+													content: {
+														color: "#234",
+													},
+												}}
+												// onClose={handleClose}
+												// closeAfterTransition
+												// BackdropComponent={Backdrop}
+												// BackdropProps={{
+												// 	timeout: 500,
+												// }}
+											>
+												<h2>
+													Thanks for reaching out!
+												</h2>
+												<p>
+													You should be receiving a
+													confirmation email soon and
+													can expect to hear back from
+													me in the next few days.
+												</p>
+
+												<Button
+													onClick={() =>
+														setModalIsOpen(false)
+													}
+												>
+													X Close
+												</Button>
+											</Modal>
+
+											{/* <Modal
+												isOpen={modalIsOpen}
+												// onClose={handleClose}
+												// shouldCloseOnOverlayClick={
+												// 	false
+												// }
+												// onRequestClose={() =>
+												// 	setModalIsOpen(false)
+												// }
+											>
+												<h2>Modal Title</h2>
+												<p>Modal Body</p>
+											</Modal> */}
+											{/* <div>
+													<Button
+														onClick={() =>
+															setModalIsOpen(
+																false
+															)
+														}
+													>
+														Close
+													</Button>
+												</div> */}
+
 											{/* <pre>
 												{JSON.stringify(
 													values,
