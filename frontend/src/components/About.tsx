@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 			justify: "center",
 			alignItems: "center",
 			fontSize: "8em",
+			padding: "0rem 3rem",
 			// transform: "translateX(-23%)",
 			transform: "scale(0.8,0.8)",
 			// padding: "2em",
@@ -183,7 +184,7 @@ const About = () => {
 					<Grid
 						item
 						className={classes.gridItems}
-						style={{ paddingBottom: ".75em" }}
+						style={{ paddingBottom: ".5em" }}
 					>
 						<Paper elevation={3} className={classes.paper}>
 							<Typography>

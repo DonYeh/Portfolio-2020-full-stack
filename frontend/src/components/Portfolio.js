@@ -10,9 +10,13 @@ import Navbar from "./Navbar";
 import { Typography, Box, Paper, Grid, Avatar, Card } from "@material-ui/core";
 import { FullscreenExit } from "@material-ui/icons";
 
+import portfolioImg from "../assets/donaldyehportoflioheader.png";
+import ChatrisImg from "../assets/tetris-game-retro-arcade-512.png";
+import movieExplorerGif from "../assets/newMovieGIFedited.gif";
+
 const useStyles = makeStyles({
 	root: {
-		maxWidth: 350,
+		maxWidth: 400,
 		// background: "white",
 	},
 	mainBox: {
@@ -26,8 +30,21 @@ const useStyles = makeStyles({
 		height: "50%",
 		// background: "pink",
 	},
+	media: {
+		// height: "0",
+		// paddingTop: "40.25%",
+	},
+
 	proj1: {},
 });
+
+const styles = {
+	media: {
+		height: 0,
+		paddingTop: "56.25%",
+		marginTop: "30",
+	},
+};
 
 export default function ImgMediaCard() {
 	const classes = useStyles();
@@ -46,14 +63,25 @@ export default function ImgMediaCard() {
 				>
 					<Grid item>
 						<Box className="proj1">
-							<Card className={classes.root}>
+							<Card className={classes.root} raised>
 								<CardActionArea>
 									<CardMedia
 										component="img"
-										alt="Contemplative Reptile"
+										alt="donaldyeh.dev"
 										height="140"
-										image="/static/images/cards/contemplative-reptile.jpg"
+										src={portfolioImg}
 										title="Contemplative Reptile"
+										// className="classes.media"
+										// style={{
+										// 	height: "0",
+										// 	paddingTop: "55%",
+										// }}
+
+										// style={{
+										// 	height: 0,
+										// 	paddingTop: "56.25%",
+										// }}
+										component="img"
 									/>
 									<CardContent>
 										<Typography
@@ -80,7 +108,7 @@ export default function ImgMediaCard() {
 								</CardActionArea>
 								<CardActions>
 									<Button size="small" color="primary">
-										Share
+										Github
 									</Button>
 									<Button size="small" color="primary">
 										Learn More
@@ -92,14 +120,16 @@ export default function ImgMediaCard() {
 
 					<Grid item>
 						<Box className="proj2">
-							<Card className={classes.root}>
+							<Card className={classes.root} raised>
 								<CardActionArea>
 									<CardMedia
 										component="img"
-										alt="Contemplative Reptile"
+										alt="puzzle blocks"
 										height="140"
-										image="/static/images/cards/contemplative-reptile.jpg"
-										title="Contemplative Reptile"
+										// image="https://play.vg/g2_imgs/g2_6.gif"
+										src={ChatrisImg}
+										title="Video Chat + Tetris = Chatris"
+										className="classes.media"
 									/>
 									<CardContent>
 										<Typography
@@ -127,11 +157,11 @@ export default function ImgMediaCard() {
 								</CardActionArea>
 								<CardActions>
 									<Button size="small" color="primary">
-										Share
+										Github link
 									</Button>
-									<Button size="small" color="primary">
+									{/* <Button size="small" color="primary">
 										Learn More
-									</Button>
+									</Button>  */}
 								</CardActions>
 							</Card>
 						</Box>
@@ -139,14 +169,15 @@ export default function ImgMediaCard() {
 
 					<Grid item>
 						<Box className="proj3">
-							<Card className={classes.root}>
+							<Card className={classes.root} raised>
 								<CardActionArea>
 									<CardMedia
 										component="img"
-										alt="Contemplative Reptile"
+										alt="Movie Explorer gif"
 										height="140"
-										image="/static/images/cards/contemplative-reptile.jpg"
-										title="Contemplative Reptile"
+										src={movieExplorerGif}
+										title="Movie Explorer"
+										className="classes.media"
 									/>
 									<CardContent>
 										<Typography
