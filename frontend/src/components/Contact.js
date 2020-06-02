@@ -30,26 +30,17 @@ Modal.setAppElement("#root"); //fixes the warning that react-modal: App element 
 
 const useStyles = makeStyles({
 	// root: {
-	// 	// borderBlock: "2px dotted",
-	// 	border: "2px",
+	// 	// fullWidth: "true",
 	// },
-	root: {
-		// fullWidth: "true",
-	},
 	gridContainer: {
 		justify: "center",
 		alignContent: "center",
-		// width: "100vw",
-		// height: "100vh",
 		width: "100%",
 		background: "aliceblue",
-		// padding: "1rem",
-		// margin: "1rem",
 	},
 	gridItem: {
 		background: "white",
 		padding: "2rem",
-		// margin: "2.5rem",
 	},
 	paper: {
 		background: "white",
@@ -62,7 +53,6 @@ const useStyles = makeStyles({
 	hasError: {
 		border: "1px solid #f44336",
 		background: "#f44336",
-		// border: "1px solid purple",
 	},
 	noError: {
 		width: "100%",
@@ -83,11 +73,6 @@ const useStyles = makeStyles({
 });
 
 const handleSubmit = async (values, actions) => {
-	// setTimeout(() => {
-	// 	alert(JSON.stringify(values, null, 2));
-	// }, 1000);
-
-	// console.log(openModal);
 	console.log(actions);
 	let res = await axios.post("api/sendMail", values).then(
 		(response) => {
@@ -135,8 +120,6 @@ const validationSchema = Yup.object().shape({
 // 	},
 // });
 
-// const handleCloseModal = () => {};
-
 const Contact = () => {
 	const classes = useStyles();
 	const [modalIsOpen, setModalIsOpen] = React.useState(false);
@@ -154,13 +137,11 @@ const Contact = () => {
 			console.log("yo!");
 			setModalIsOpen(true);
 		}, 500);
-		// console.log("you clicked the submit button!");
 	};
 
 	return (
 		<>
 			<Navbar />
-			{/* <Box> */}
 			{/* <ThemeProvider theme={formTheme}> */}
 			<Paper className={classes.mainPaper}>
 				<Grid
@@ -242,12 +223,6 @@ const Contact = () => {
 													touched={touched.firstName}
 													message={errors.firstName}
 													className={classes.invalid}
-													// className={
-													// 	touched.firstName &&
-													// 	errors.firstName
-													// 		? "classes.hasError"
-													// 		: null
-													// }
 												/>
 											</div>
 
@@ -258,7 +233,6 @@ const Contact = () => {
 													label="last name"
 													style={{
 														minWidth: "81%",
-														// width: "100%",
 														background: "#f44336",
 													}}
 												>
@@ -326,7 +300,6 @@ const Contact = () => {
 													label="message"
 													style={{
 														minWidth: "81%",
-														// width: "100%",
 													}}
 													autocomplete="false"
 												>
@@ -376,12 +349,6 @@ const Contact = () => {
 														color: "#234",
 													},
 												}}
-												// onClose={handleClose}
-												// closeAfterTransition
-												// BackdropComponent={Backdrop}
-												// BackdropProps={{
-												// 	timeout: 500,
-												// }}
 											>
 												<h2>
 													Thanks for reaching out!
@@ -401,31 +368,6 @@ const Contact = () => {
 													X Close
 												</Button>
 											</Modal>
-
-											{/* <Modal
-												isOpen={modalIsOpen}
-												// onClose={handleClose}
-												// shouldCloseOnOverlayClick={
-												// 	false
-												// }
-												// onRequestClose={() =>
-												// 	setModalIsOpen(false)
-												// }
-											>
-												<h2>Modal Title</h2>
-												<p>Modal Body</p>
-											</Modal> */}
-											{/* <div>
-													<Button
-														onClick={() =>
-															setModalIsOpen(
-																false
-															)
-														}
-													>
-														Close
-													</Button>
-												</div> */}
 
 											{/* <pre>
 												{JSON.stringify(
@@ -493,7 +435,7 @@ const Contact = () => {
 					</Grid>
 				</Grid>
 			</Paper>
-			{/* </Box> */}
+
 			{/* </ThemeProvider> */}
 		</>
 	);

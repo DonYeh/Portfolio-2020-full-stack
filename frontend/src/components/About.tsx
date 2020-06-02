@@ -158,7 +158,7 @@ const About = () => {
 						<Paper
 							elevation={3}
 							className={classes.paper}
-							style={{ color: "midnightblue" }}
+							style={{ color: "dimgrey" }}
 						>
 							<Typography variant="body1">
 								Hello. I’m a full-stack developer who is
@@ -170,7 +170,11 @@ const About = () => {
 						</Paper>
 					</Grid>
 					<Grid item className={classes.gridItems}>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper
+							elevation={3}
+							className={classes.paper}
+							style={{ color: "dimgrey" }}
+						>
 							<Typography>
 								I enjoy turning complex problems into simple,
 								beautiful and intuitive designs. I love to build
@@ -186,7 +190,11 @@ const About = () => {
 						className={classes.gridItems}
 						style={{ paddingBottom: ".5em" }}
 					>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper
+							elevation={3}
+							className={classes.paper}
+							style={{ color: "dimgrey" }}
+						>
 							<Typography>
 								When Im not at the computer, you can find me
 								cooking something fierce in the kitchen, out in

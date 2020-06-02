@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	whiteFont: {
 		color: "white",
+		textShadow: ".5px .5px rgb(20,33,61)", //dark blue
+		// textShadow: "1.5px 1.5px rgb(240,169,80)",
+
 		// marginTop: "10%",
 		// textAlign: "flex-start",
 		// backgroundColor: "blue",
@@ -73,7 +76,7 @@ const Header = () => {
 					className={classes.typedContainer}
 					// style={{ background: "brown" }}
 				>
-					<Typography variant="h2" className={classes.whiteFont}>
+					<Typography variant="h3" className={classes.whiteFont}>
 						<Typed
 							strings={["Hello^2", "Hi!^4 👋", "I'm Donald^2"]}
 							typeSpeed={26}
@@ -162,8 +165,8 @@ const Header = () => {
 							backSpeed={15}
 							backDelay={250}
 							smartBackspace="true"
-							// cursorChar=" "
-							showCursor={false}
+							cursorChar=" "
+							showCursor={true}
 							className={classes.whiteFont}
 							fadeOut="false"
 							loop

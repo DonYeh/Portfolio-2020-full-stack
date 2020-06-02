@@ -32,19 +32,19 @@ const useStyles = makeStyles({
 	},
 	media: {
 		// height: "0",
-		// paddingTop: "40.25%",
+		// padding: "29rem 40rem",
 	},
 
 	proj1: {},
 });
 
-const styles = {
-	media: {
-		height: 0,
-		paddingTop: "56.25%",
-		marginTop: "30",
-	},
-};
+// const styles = {
+// 	media: {
+// 		// height: 0,
+// 		paddingTop: "190rem",
+// 		marginTop: "100",
+// 	},
+// };
 
 export default function ImgMediaCard() {
 	const classes = useStyles();
@@ -68,17 +68,18 @@ export default function ImgMediaCard() {
 									<CardMedia
 										component="img"
 										alt="donaldyeh.dev"
-										height="140"
+										height="260rem"
 										src={portfolioImg}
-										title="Contemplative Reptile"
-										// className="classes.media"
+										// image="../assets/donaldyehportoflioheader.png"
+										title="donaldyeh.dev"
+										className="classes.media"
 										// style={{
 										// 	height: "0",
 										// 	paddingTop: "55%",
 										// }}
 
 										// style={{
-										// 	height: 0,
+										// 	height: "0",
 										// 	paddingTop: "56.25%",
 										// }}
 										component="img"
@@ -125,7 +126,7 @@ export default function ImgMediaCard() {
 									<CardMedia
 										component="img"
 										alt="puzzle blocks"
-										height="140"
+										height="260rem"
 										// image="https://play.vg/g2_imgs/g2_6.gif"
 										src={ChatrisImg}
 										title="Video Chat + Tetris = Chatris"
@@ -174,7 +175,7 @@ export default function ImgMediaCard() {
 									<CardMedia
 										component="img"
 										alt="Movie Explorer gif"
-										height="140"
+										height="260"
 										src={movieExplorerGif}
 										title="Movie Explorer"
 										className="classes.media"
