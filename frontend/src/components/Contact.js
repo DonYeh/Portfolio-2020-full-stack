@@ -37,21 +37,22 @@ const useStyles = makeStyles((theme) => ({
 		justify: "center",
 		alignContent: "center",
 		width: "100%",
-		background: "aliceblue",
+		background: "white",
 	},
 	gridItem: {
 		background: "white",
-		padding: "2rem",
+		// padding: "2rem",
 	},
 	paper: {
 		background: "white",
 		padding: "1.5rem",
-		margin: ".8rem",
+		marginTop: ".8rem",
 	},
 	mainPaper: {
 		padding: "21% 10%",
 
 		[theme.breakpoints.up("sm")]: {
+			padding: "7%",
 			margin: "20% 15% 20%",
 			// backgroundColor: "darkblue",
 		},
@@ -75,6 +76,10 @@ const useStyles = makeStyles((theme) => ({
 	invalid: {
 		color: "#f44336",
 		background: "#f44336",
+	},
+	paperContact: {
+		// padding: "10% 20% 10%"
+		padding: "2rem",
 	},
 }));
 
@@ -157,9 +162,22 @@ const Contact = () => {
 					spacing={1}
 					className={classes.gridContainer}
 				>
-					<Grid item xs={12} md={6} className={classes.gridItem}>
+					<Grid
+						item
+						xs={12}
+						md={6}
+						className={classes.gridItem}
+						// style={{ backgroundColor: "pink" }}
+					>
 						<Paper className={classes.paper}>
-							<Typography variant="h6" align="center">
+							<Typography
+								variant="h5"
+								align="center"
+								style={{
+									color: "darkslategrey",
+									paddingBottom: ".5rem",
+								}}
+							>
 								Let's build together
 							</Typography>
 							<Typography variant="body1" color="textSecondary">
@@ -174,10 +192,12 @@ const Contact = () => {
 						container
 						xs={12}
 						md={6}
+						// lg={6}
 						justify="center"
 						className={classes.gridItem}
+						// style={{ backgroundColor: "teal" }}
 					>
-						<Grid item xs={12} lg={6}>
+						<Grid item xs={12}>
 							<Paper className={classes.paper}>
 								<Formik
 									initialValues={{
@@ -391,19 +411,33 @@ const Contact = () => {
 					<Grid
 						item
 						xs={12}
+						md={6}
 						container
-						spacing={2}
-						className={classes.gridItem}
+						spacing={3}
+						className={classes.paperContact}
 						justify="center"
+						style={{
+							// backgroundColor: "purple",
+							marginTop: ".7rem",
+							padding: ".5rem 0",
+						}}
 					>
-						<Paper className={classes.paper}>
+						<Paper style={{ width: "98%", padding: ".75rem 0" }}>
 							<Grid item>
-								<Typography variant="h6">
+								<Typography
+									variant="h5"
+									align="center"
+									style={{ color: "darkslategrey" }}
+								>
 									Let's Connect
 								</Typography>
 							</Grid>
 
-							<Grid container justify="space-evenly">
+							<Grid
+								container
+								justify="space-evenly"
+								style={{ paddingTop: ".5rem" }}
+							>
 								<Grid item>
 									<Link
 										href="https://www.linkedin.com/in/donald-yeh-b3b1426/"
