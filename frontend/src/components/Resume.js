@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Navbar3 from "./Navbar3";
 import { makeStyles } from "@material-ui/core/styles";
 import {
 	Typography,
@@ -409,7 +410,7 @@ const Resume = () => {
 
 	return (
 		<>
-			<Navbar />
+			<Navbar3 />
 			{/* <div>Resume here - tsx</div> */}
 			<Box component="header" className={classes.mainContainer}>
 				<Grid

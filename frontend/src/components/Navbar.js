@@ -46,35 +46,7 @@ const useStyles = makeStyles((theme) => ({
 		width: theme.spacing(14),
 		height: theme.spacing(14),
 	},
-
-	// menuSliderContainer: {
-	// 	width: "20%",
-	// 	height: "100%",
-	// 	background: "inherit",
-	// 	position: "absolute",
-	// 	overflow: "hidden",
-	// 	top: "50%",
-	// 	left: "50%",
-	// margin-left: "-175px",
-	// margin-top: "-250px",
-	// border-radius: "8px",
 }));
-//   #container:before{
-
-//   }
-//   &::before: {
-// 	width: "100%",
-// 	height: "100%",
-// 	content: "''",
-// 	position: "absolute",
-// 	top: "-25px",
-// 	left: "-25px",
-// 	bottom: "0",
-// 	right: "0",
-// 	background: "inherit",
-// 	box-shadow: "inset 0 0 0 200px rgba(255,255,255,0.2)",
-// 	filter: "blur(10px)",
-//   }
 
 const menuIcons = [
 	{

@@ -7,6 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 
 import Navbar from "./Navbar";
+import Navbar3 from "./Navbar3";
 import { Typography, Box, Paper, Grid, Avatar, Card } from "@material-ui/core";
 import { FullscreenExit } from "@material-ui/icons";
 
@@ -20,15 +21,18 @@ const useStyles = makeStyles({
 		// background: "white",
 	},
 	mainBox: {
-		margin: "1.25rem",
+		// margin: "20rem 1.25rem 1.25rem 1.25rem",
+		// paddingTop: "20rem",
+		// marginTop: "15%",
 	},
 	mainGridContainer: {
 		// display: "flex",
 		// background: "black",
-		margin: "2rem",
+		marginTop: "80em ",
 		padding: "2em",
 		height: "50%",
 		// background: "pink",
+		padding: "20% 11%",
 	},
 	media: {
 		// height: "0",
@@ -51,7 +55,7 @@ export default function ImgMediaCard() {
 
 	return (
 		<>
-			<Navbar />
+			<Navbar3 />
 			<Box className="classes.mainBox">
 				<Grid
 					className="classes.mainGridContainer"
@@ -59,7 +63,7 @@ export default function ImgMediaCard() {
 					spacing={5}
 					justify="space-evenly"
 					alignContent="center"
-					style={{ padding: "11%" }}
+					style={{ padding: " 24% 11%" }}
 				>
 					<Grid item>
 						<Box className="proj1">

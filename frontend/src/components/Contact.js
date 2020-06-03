@@ -12,6 +12,7 @@ import { Form, Formik, Field, FieldProps } from "formik";
 import * as React from "react";
 import { useState } from "react";
 import Navbar from "./Navbar";
+import Navbar3 from "./Navbar3";
 import { MyField } from "./MyField";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -28,7 +29,7 @@ import Fade from "@material-ui/core/Fade";
 import { createMuiTheme } from "@material-ui/core/styles";
 Modal.setAppElement("#root"); //fixes the warning that react-modal: App element is not defined
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	// root: {
 	// 	// fullWidth: "true",
 	// },
@@ -48,7 +49,12 @@ const useStyles = makeStyles({
 		margin: ".8rem",
 	},
 	mainPaper: {
-		padding: "1.75rem",
+		padding: "21% 10%",
+
+		[theme.breakpoints.up("sm")]: {
+			margin: "20% 15% 20%",
+			// backgroundColor: "darkblue",
+		},
 	},
 	hasError: {
 		border: "1px solid #f44336",
@@ -70,7 +76,7 @@ const useStyles = makeStyles({
 		color: "#f44336",
 		background: "#f44336",
 	},
-});
+}));
 
 const handleSubmit = async (values, actions) => {
 	console.log(actions);
@@ -141,7 +147,7 @@ const Contact = () => {
 
 	return (
 		<>
-			<Navbar />
+			<Navbar3 />
 			{/* <ThemeProvider theme={formTheme}> */}
 			<Paper className={classes.mainPaper}>
 				<Grid

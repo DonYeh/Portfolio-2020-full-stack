@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Navbar3 from "./Navbar3";
 import {
 	makeStyles,
 	responsiveFontSizes,
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 		// display: "flex",
 		// direction: "column",
 		justify: "space-evenly",
-		padding: "1.5rem 0 2rem",
+		padding: "20% 2% 10%",
 		alignItems: "center",
 		[theme.breakpoints.up("sm")]: {
 			// padding: "14% 20% 0",
@@ -100,7 +101,7 @@ const About = () => {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				<Navbar />
+				<Navbar3 />
 				{/* <Grid
 				container
 				// alignItems="center"
