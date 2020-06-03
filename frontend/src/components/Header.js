@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		// direction: "column",
 		// alignContent: "center",
-		padding: "25% 10% 0%",
+		padding: "33% 10% 0%",
 	},
 
 	typedContainer: {

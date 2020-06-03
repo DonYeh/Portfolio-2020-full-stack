@@ -197,7 +197,7 @@ const Contact = () => {
 						className={classes.gridItem}
 						// style={{ backgroundColor: "teal" }}
 					>
-						<Grid item xs={12}>
+						<Grid item xs={12} lg={8}>
 							<Paper className={classes.paper}>
 								<Formik
 									initialValues={{
