@@ -101,7 +101,7 @@ const About = () => {
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				<Navbar3 />
+				{/* <Navbar3 /> */}
 				{/* <Grid
 				container
 				// alignItems="center"

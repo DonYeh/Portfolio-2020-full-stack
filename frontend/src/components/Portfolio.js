@@ -55,7 +55,7 @@ export default function ImgMediaCard() {
 
 	return (
 		<>
-			<Navbar3 />
+			{/* <Navbar3 /> */}
 			<Box className="classes.mainBox">
 				<Grid
 					className="classes.mainGridContainer"

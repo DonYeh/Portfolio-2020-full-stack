@@ -57,7 +57,7 @@ const Home = () => {
 				/> */}
 
 				{/* <Navbar /> */}
-				<Navbar3 />
+				{/* <Navbar3 /> */}
 				<Header />
 			</div>
 		</CssBaseline>

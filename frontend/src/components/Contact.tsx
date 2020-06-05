@@ -39,12 +39,11 @@ const useStyles = makeStyles({
 		alignContent: "center",
 		// width: "100vw",
 		height: "100vh",
-		background: "aliceblue",
 		// padding: "1rem",
 		// margin: "1rem",
 	},
 	gridItem: {
-		background: "white",
+		background: "red",
 		// padding: "2.5rem",
 		// margin: "2.5rem",
 	},
@@ -87,7 +86,9 @@ const Contact: React.FC<Props> = ({ onSubmit }) => {
 			>
 				<Grid item xs={12} className={classes.gridItem}>
 					<Paper className={classes.paper}>
-						<Typography>Let's build together</Typography>
+						<Typography variant="h3">
+							Let's build together
+						</Typography>
 						<Typography>
 							Have a project you're looking to get off the ground?
 							I'd love to hear from you. Send a message to get the
@@ -186,9 +187,10 @@ const Contact: React.FC<Props> = ({ onSubmit }) => {
 				</Grid>
 				<Grid item xs={12} className={classes.gridItem}>
 					<Paper className={classes.paper}>
-						<Typography>Let's Connect</Typography>
+						<Typography style={{ color: "red" }}>
+							Let's Connect
+						</Typography>
 						<Typography>
-							Social media links here
 							<Link
 								href="https://www.linkedin.com/in/donald-yeh-b3b1426/"
 								// onClick={preventDefault}

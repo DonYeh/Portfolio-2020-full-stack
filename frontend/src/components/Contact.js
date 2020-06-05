@@ -46,14 +46,14 @@ const useStyles = makeStyles((theme) => ({
 	paper: {
 		background: "white",
 		padding: "1.5rem",
-		marginTop: ".8rem",
+		marginTop: ".5rem",
 	},
 	mainPaper: {
 		padding: "21% 10%",
 
 		[theme.breakpoints.up("sm")]: {
 			padding: "7%",
-			margin: "20% 15% 20%",
+			margin: "18% 15% 20%",
 			// backgroundColor: "darkblue",
 		},
 	},
@@ -152,7 +152,7 @@ const Contact = () => {
 
 	return (
 		<>
-			<Navbar3 />
+			{/* <Navbar3 /> */}
 			{/* <ThemeProvider theme={formTheme}> */}
 			<Paper className={classes.mainPaper}>
 				<Grid
@@ -413,7 +413,7 @@ const Contact = () => {
 						xs={12}
 						md={6}
 						container
-						spacing={3}
+						// spacing={3}
 						className={classes.paperContact}
 						justify="center"
 						style={{
@@ -445,7 +445,11 @@ const Contact = () => {
 										variant="body2"
 									>
 										{/* {'variant="body2"'} */}
-										<LinkedInIcon />
+										<LinkedInIcon
+											style={{
+												color: "rgba(67,118,178)",
+											}}
+										/>
 									</Link>
 								</Grid>
 
@@ -456,7 +460,9 @@ const Contact = () => {
 										variant="body2"
 									>
 										{/* {'variant="body2"'} */}
-										<GitHubIcon />
+										<GitHubIcon
+											style={{ color: "rgba(42,45,49)" }}
+										/>
 									</Link>
 								</Grid>
 
@@ -467,7 +473,11 @@ const Contact = () => {
 										variant="body2"
 									>
 										{/* {'variant="body2"'} */}
-										<TwitterIcon />
+										<TwitterIcon
+											style={{
+												color: "rgb(94, 160,239)",
+											}}
+										/>
 									</Link>
 								</Grid>
 							</Grid>
