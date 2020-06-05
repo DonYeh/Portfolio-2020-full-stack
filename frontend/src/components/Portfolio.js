@@ -21,6 +21,8 @@ const useStyles = makeStyles({
 		// background: "white",
 	},
 	mainBox: {
+		display: "flex",
+		backgroundColor: "rgba(0,0,0,.8)",
 		// margin: "20rem 1.25rem 1.25rem 1.25rem",
 		// paddingTop: "20rem",
 		// marginTop: "15%",
@@ -42,184 +44,186 @@ const useStyles = makeStyles({
 	proj1: {},
 });
 
-// const styles = {
-// 	media: {
-// 		// height: 0,
-// 		paddingTop: "190rem",
-// 		marginTop: "100",
-// 	},
-// };
-
 export default function ImgMediaCard() {
 	const classes = useStyles();
 
 	return (
 		<>
-			{/* <Navbar3 /> */}
 			<Box className="classes.mainBox">
 				<Grid
 					className="classes.mainGridContainer"
 					container
-					spacing={5}
-					justify="space-evenly"
+					justify="center"
 					alignContent="center"
-					style={{ padding: " 24% 11%" }}
+					// spacing={2}
+					style={{
+						padding: " 24% 11%",
+						backgroundColor: "rgba(0,0,0,.75)",
+						backdropFilter: "blur(5px)",
+					}}
 				>
-					<Grid item>
-						<Box className="proj1">
-							<Card className={classes.root} raised>
-								<CardActionArea>
-									<CardMedia
-										component="img"
-										alt="donaldyeh.dev"
-										height="260rem"
-										src={portfolioImg}
-										// image="../assets/donaldyehportoflioheader.png"
-										title="donaldyeh.dev"
-										className="classes.media"
-										// style={{
-										// 	height: "0",
-										// 	paddingTop: "55%",
-										// }}
+					<Grid
+						container
+						item
+						// style={{ width: "100%" }}
+						justify="space-evenly"
+						spacing={7}
+					>
+						<Grid item>
+							<Box className="proj1">
+								<Card className={classes.root} raised>
+									<CardActionArea>
+										<CardMedia
+											component="img"
+											alt="donaldyeh.dev"
+											height="260rem"
+											src={portfolioImg}
+											// image="../assets/donaldyehportoflioheader.png"
+											title="donaldyeh.dev"
+											className="classes.media"
+											component="img"
+										/>
+										<CardContent>
+											<Typography
+												gutterBottom
+												variant="h5"
+												// component="h2"
+											>
+												donaldyeh.dev
+											</Typography>
+											<Typography
+												variant="body2"
+												color="textSecondary"
+												component="p"
+											>
+												This portfolio site is a full
+												stack Javascript app. The front
+												end is written in React and
+												leverages Material-UI responsive
+												design. The back end consists of
+												Node, Express, and Nodemailer,
+												which is used to send an email
+												from the contact form.
+											</Typography>
+										</CardContent>
+									</CardActionArea>
+									<CardActions>
+										<Button size="small" color="primary">
+											Github
+										</Button>
+										{/* <Button
+													size="small"
+													color="primary"
+												>
+													Learn More
+												</Button> */}
+									</CardActions>
+								</Card>
+							</Box>
+						</Grid>
 
-										// style={{
-										// 	height: "0",
-										// 	paddingTop: "56.25%",
-										// }}
-										component="img"
-									/>
-									<CardContent>
-										<Typography
-											gutterBottom
-											variant="h5"
-											component="h2"
-										>
-											donaldyeh.dev
-										</Typography>
-										<Typography
-											variant="body2"
-											color="textSecondary"
-											component="p"
-										>
-											This portfolio site is a full stack
-											Javascript app. The front end is
-											written in React and leverages
-											Material-UI responsive design. The
-											back end consists of Node, Express,
-											and Nodemailer, which is used to
-											send an email from the contact form.
-										</Typography>
-									</CardContent>
-								</CardActionArea>
-								<CardActions>
-									<Button size="small" color="primary">
-										Github
-									</Button>
-									<Button size="small" color="primary">
-										Learn More
-									</Button>
-								</CardActions>
-							</Card>
-						</Box>
-					</Grid>
-
-					<Grid item>
-						<Box className="proj2">
-							<Card className={classes.root} raised>
-								<CardActionArea>
-									<CardMedia
-										component="img"
-										alt="puzzle blocks"
-										height="260rem"
-										// image="https://play.vg/g2_imgs/g2_6.gif"
-										src={ChatrisImg}
-										title="Video Chat + Tetris = Chatris"
-										className="classes.media"
-									/>
-									<CardContent>
-										<Typography
-											gutterBottom
-											variant="h5"
-											component="h2"
-										>
-											Chatris
-										</Typography>
-										<Typography
-											variant="body2"
-											color="textSecondary"
-											component="p"
-										>
-											Chatris is a cross-platform,
-											full-stack mobile app that allows
-											you to enjoy a puzzle game classic
-											while connecting with your friends
-											over live video and voice chat.
-											Chatris is built using React Native,
-											PostgreSQL, Node, Express, and
-											Socket.io
-										</Typography>
-									</CardContent>
-								</CardActionArea>
-								<CardActions>
-									<Button size="small" color="primary">
-										Github link
-									</Button>
-									{/* <Button size="small" color="primary">
+						<Grid item>
+							<Box className="proj2">
+								<Card className={classes.root} raised>
+									<CardActionArea>
+										<CardMedia
+											component="img"
+											alt="puzzle blocks"
+											height="280rem"
+											// image="https://play.vg/g2_imgs/g2_6.gif"
+											src={ChatrisImg}
+											title="Video Chat + Tetris = Chatris"
+											className="classes.media"
+											// style={{ objectFit: "cover" }}
+										/>
+										<CardContent>
+											<Typography
+												gutterBottom
+												variant="h5"
+												component="h2"
+											>
+												Chatris
+											</Typography>
+											<Typography
+												variant="body2"
+												color="textSecondary"
+												component="p"
+											>
+												Chatris is a cross-platform,
+												full-stack mobile app that
+												allows you to enjoy a puzzle
+												game classic while connecting
+												with your friends over live
+												video and voice chat. Chatris is
+												built using React Native,
+												PostgreSQL, Node, Express, and
+												Socket.io
+											</Typography>
+										</CardContent>
+									</CardActionArea>
+									<CardActions>
+										<Button size="small" color="primary">
+											Github link
+										</Button>
+										{/* <Button size="small" color="primary">
 										Learn More
 									</Button>  */}
-								</CardActions>
-							</Card>
-						</Box>
-					</Grid>
+									</CardActions>
+								</Card>
+							</Box>
+						</Grid>
 
-					<Grid item>
-						<Box className="proj3">
-							<Card className={classes.root} raised>
-								<CardActionArea>
-									<CardMedia
-										component="img"
-										alt="Movie Explorer gif"
-										height="260"
-										src={movieExplorerGif}
-										title="Movie Explorer"
-										className="classes.media"
-									/>
-									<CardContent>
-										<Typography
-											gutterBottom
-											variant="h5"
-											component="h2"
-										>
-											Movie Explorer
-										</Typography>
-										<Typography
-											variant="body2"
-											color="textSecondary"
-											component="p"
-										>
-											Movie Explorer allows you to browse
-											and discover movies. It uses a
-											responsive, mobile-first design
-											featuring advanced filtering and
-											search functionality. It is built
-											with Javascript, HTML, CSS and it
-											calls the OMDB and TMDB APIs for
-											up-to-date movie information and
-											trailers.
-										</Typography>
-									</CardContent>
-								</CardActionArea>
-								<CardActions>
-									<Button size="small" color="primary">
-										Share
-									</Button>
-									<Button size="small" color="primary">
-										Learn More
-									</Button>
-								</CardActions>
-							</Card>
-						</Box>
+						<Grid item>
+							<Box className="proj3">
+								<Card className={classes.root} raised>
+									<CardActionArea>
+										<CardMedia
+											component="img"
+											alt="Movie Explorer gif"
+											height="280"
+											src={movieExplorerGif}
+											title="Movie Explorer"
+											className="classes.media"
+										/>
+										<CardContent>
+											<Typography
+												gutterBottom
+												variant="h5"
+												component="h2"
+											>
+												Movie Explorer
+											</Typography>
+											<Typography
+												variant="body2"
+												color="textSecondary"
+												component="p"
+											>
+												Movie Explorer allows you to
+												browse and discover movies. It
+												uses a responsive, mobile-first
+												design featuring advanced
+												filtering and search
+												functionality. It is built with
+												Javascript, HTML, CSS and it
+												calls the OMDB and TMDB APIs for
+												up-to-date movie information and
+												trailers.
+											</Typography>
+										</CardContent>
+									</CardActionArea>
+									<CardActions>
+										<Button size="small" color="primary">
+											Share
+										</Button>
+										<Button size="small" color="primary">
+											Learn More
+										</Button>
+									</CardActions>
+								</Card>
+							</Box>
+						</Grid>
 					</Grid>
+					{/* </Paper> */}
 				</Grid>
 			</Box>
 		</>

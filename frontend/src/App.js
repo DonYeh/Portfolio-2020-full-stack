@@ -106,7 +106,6 @@ const useStyles = makeStyles((theme) => ({
 
 	content: {
 		// paddingTop: theme.mixins.toolbar,
-		display: "flex",
 		flexGrow: 1,
 		// padding: "1rem", //adds padding to main content window view
 		width: "100vw",
@@ -261,8 +260,8 @@ function App(props) {
 						<Route path="/" element={<HomePage />} />
 						<Route path="about" element={<About />} />
 						<Route path="resume" element={<Resume />} />
-						{/* <Route path="/" element={<Projects />} />
-					<Route path="/" element={<Contact />} />  */}
+						<Route path="projects" element={<Projects />} />
+						<Route path="contact" element={<Contact />} />
 					</Routes>
 				</main>
 				{/* </div> */}
