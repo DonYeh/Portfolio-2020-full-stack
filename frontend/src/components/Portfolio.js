@@ -59,7 +59,7 @@ export default function ImgMediaCard() {
 					style={{
 						padding: " 24% 11%",
 						backgroundColor: "rgba(0,0,0,.75)",
-						backdropFilter: "blur(5px)",
+						// backdropFilter: "blur(5px)",
 					}}
 				>
 					<Grid

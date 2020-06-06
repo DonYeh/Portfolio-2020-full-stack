@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-// import HomePage from "./components/Header";
 import HomePage from "./components/HomePage";
 
 import About from "./components/About";
@@ -73,6 +72,7 @@ const menuIcons = [
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
+		// backdropFilter: "blur(3px)",
 	},
 	list: {
 		width: 280,
@@ -108,12 +108,15 @@ const useStyles = makeStyles((theme) => ({
 		// paddingTop: theme.mixins.toolbar,
 		flexGrow: 1,
 		// padding: "1rem", //adds padding to main content window view
-		// width: "100vw",
+		width: "100vw",
 		// backgroundColor: "aliceblue",
 		// height: "100vh",
 		// padding: theme.spacing(2),
+		backdropFilter: "blur(3px)",
 	},
-	toolbar: {
+	// toolbar: {
+	// 	display: "flex",
+	displayFlex: {
 		display: "flex",
 	},
 }));
@@ -129,7 +132,7 @@ function App(props) {
 	};
 
 	const drawerL = (
-		<div className={classes.toolbar}>
+		<div className={classes.displayFlex}>
 			{/* <div className={classes.toolbar} /> */}
 			{/* <Divider /> */}
 			<List>
@@ -155,7 +158,7 @@ function App(props) {
 
 	const drawerT = (
 		// <div>
-		<div className={classes.toolbar}>
+		<div className={classes.displayFlex}>
 			<List
 				style={{
 					// backgroundColor: "aliceblue",
@@ -243,9 +246,6 @@ function App(props) {
 					</Hidden>
 					<Hidden xsDown implementation="js">
 						<Drawer
-							// classes={{
-							// 	paper: classes.drawerPaper,
-							// }}
 							className={classes.root}
 							variant="permanent"
 							anchor="top"
