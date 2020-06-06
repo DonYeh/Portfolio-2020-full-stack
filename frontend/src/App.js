@@ -71,7 +71,7 @@ const menuIcons = [
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		display: "flex",
+		// display: "flex",
 		// backdropFilter: "blur(3px)",
 	},
 	list: {

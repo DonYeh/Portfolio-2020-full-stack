@@ -18,14 +18,14 @@ import avatar from "../assets/IMG_1953.jpg";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		backgroundColor: "black",
+		// backgroundColor: "black",
 	},
 	mainContainer: {
 		// flexDirection: "column",
 		width: "100vw",
 		backgroundColor: "white",
 		paddingTop: "42%",
-		backdropFilter: "blur(3px)",
+		// backdropFilter: "blur(3px)",
 		// padding: "1.2rem",
 		// margin: "1rem",
 		// width: "100%",
@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
 		// paddingTop: "8vh",
 		// width: "100vw",
 		// height: "100vh",
-		backgroundColor: "rgba(0,0,0,9)",
+		backgroundColor: "rgba(0,0,0,.2)",
+		// backgroundColor: "black",
 
 		justify: "space-evenly",
 		// padding: "20% 2% 10%",
@@ -50,11 +51,11 @@ const useStyles = makeStyles((theme) => ({
 			// margin: "14% 24% 0",
 			// paddingTop: "10%",
 			width: "100vw",
-			height: "100vh",
+			// height: "100vh",
 			justify: "center",
 			alignItems: "center",
 			fontSize: "8em",
-			paddingTop: "6vh",
+			paddingTop: "4.5vh",
 			// padding: "0rem 3rem",
 			// transform: "translateX(-23%)",
 			// transform: "scale(0.8,0.8)",
@@ -66,13 +67,14 @@ const useStyles = makeStyles((theme) => ({
 			// margin: "14% 24% 0",
 			// paddingTop: "10%",
 			width: "100vw",
+			heigh: "100%",
 			justify: "center",
 			alignItems: "center",
 			fontSize: "10em",
 			// padding: "0rem 3rem",
 			// transform: "translateX(-23%)",
 			transform: "scale(0.8,0.8)",
-			padding: "0 9vw",
+			padding: "5vh",
 			marginTop: "4vh",
 			// padding: "2em",
 			// spacing: "2",
@@ -84,12 +86,12 @@ const useStyles = makeStyles((theme) => ({
 			width: "100vw",
 			justify: "center",
 			alignItems: "center",
-			fontSize: "11em",
+			fontSize: "9em",
 			// padding: "0rem 3rem",
 			// transform: "translateX(-23%)",
 			transform: "scale(0.8,0.8)",
-			padding: "14vh 9vw 14vh",
-			marginTop: "6vh",
+			padding: "9vh 9vh 9vh",
+			// marginTop: "14vh",
 			// padding: "2em",
 			// spacing: "2",
 		},
@@ -105,13 +107,16 @@ const useStyles = makeStyles((theme) => ({
 	gridItems1: {
 		// justifyContent: "center",
 		// alignItems: "center",
-		padding: "1rem",
+		// padding: ".7rem",
 	},
 	paper: {
 		color: "dimgrey",
-		padding: "1rem 4rem",
+		padding: ".5rem 3rem",
 		[theme.breakpoints.down("sm")]: {
 			padding: "1rem",
+		},
+		[theme.breakpoints.up("sm")]: {
+			padding: "1 4rem",
 		},
 
 		// justifyContent: "space-evenly",
@@ -130,8 +135,20 @@ const useStyles = makeStyles((theme) => ({
 	},
 	avatar: {
 		textAlign: "center",
-		width: theme.spacing(12),
-		height: theme.spacing(12),
+		width: theme.spacing(15),
+		height: theme.spacing(15),
+		[theme.breakpoints.down("sm")]: {
+			width: "30vw",
+			height: "30vw",
+
+			// width: theme.spacing(12),
+			// height: theme.spacing(12),
+		},
+		[theme.breakpoints.up("sm")]: {
+			width: "22vw",
+			height: "22vw",
+		},
+		// textAlign: "center",
 		// margin: theme.spacing(6),
 		// textAlign: "center",
 		// border: "black",
@@ -143,7 +160,70 @@ const useStyles = makeStyles((theme) => ({
 		// margin: "auto",
 	},
 	mainPaper: {
-		padding: "1rem",
+		// height: "100vh",
+		backgroundColor: "rgba(0,0,0,.2)",
+		height: "100vh",
+		// backgroundColor: "green",
+
+		// backdropFilter: "blur(4px)",
+		// backgroundColor: "rgba(f,f,f,.5)",
+	},
+	titleAndAvatarGridContainer: {
+		// padding: "1rem 4rem",
+
+		// backgroundColor: "aliceblue",
+		// padding: "2vh",
+		// [theme.breakpoints.down("xs")]: {},
+		[theme.breakpoints.down("sm")]: {
+			padding: ".25rem .3rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			padding: "1rem 4rem",
+		},
+	},
+	typographyText: {
+		padding: "0 1rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.4rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			fontSize: "1.6rem",
+		},
+		// [theme.breakpoints.up("lg")]: {
+		// 	fontSize: "2em",
+		// },
+	},
+	typographyTextAboutMe: {
+		padding: "0 .2rem",
+		textAlign: "center",
+		fontSize: "1.1rem",
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "6vw",
+		},
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "2.3rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			fontSize: "2.5rem",
+		},
+	},
+	aboutMeGridContainer: {
+		backgroundColor: "orange",
+	},
+	avatarGridContainer: {
+		justifyContent: "center",
+
+		[theme.breakpoints.down("xs")]: { justifyContent: "flex-end" },
+		[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
+	},
+	aboutAvatarPaperGridItemContainer: {
+		backgroundColor: "white",
+		[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
+	},
+	firstGridItem: {
+		padding: ".5rem",
+		justify: "space-evenly",
+		// alignItems: "stretch",
 	},
 }));
 
@@ -156,103 +236,198 @@ const About = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Grid
-				container
-				className={classes.gridContainer}
-				// spacing={2}
-				// direction="column"
-				justify="center"
-				style={{ backgroundColor: "aliceblue" }}
-				// justify="center"
-			>
-				<Paper className={classes.mainPaper}>
-					<Grid
-						item
-						container
-						className={classes.gridItems1}
-						justify="space-evenly"
-						// alignItems="center"
-						spacing={2}
+			<Paper square className={classes.mainPaper} elevation={0}>
+				<Grid
+					container
+					className={classes.gridContainer}
+					// spacing={2}
+					// direction="column"
+					justify="center"
+					// alignItems="center"
+					// style={{ backgroundColor: "rgba(0,0,0,.5)" }}
+					// style={{ backgroundColor: "white" }}
+					// justify="center"
+				>
+					<Paper
+						style={{ padding: "5vh" }}
+						className={classes.aboutAvatarPaperGridItemContainer}
 					>
+						{/* <Grid
+							item
+							container
+							// direction="column"
+							className={classes.gridItems1}
+							justify="center"
+							alignItems="center"
+							spacing={2}
+						> */}
 						<Grid
 							item
-							alignContent="center"
-							className={classes.gridItems}
+							container
+							justify="space-evenly"
+							className={classes.titleAndAvatarGridContainer}
+							// style={{ backgroundColor: "aliceblue" }}
 						>
 							<Paper
-								elevation={0}
-								className={classes.paper}
 								style={{
-									// backgroundColor: "aliceblue",
-									backgroundColor: "white",
-									color: "darkslategray",
-									textTransform: "lowercase",
-									fontWeight: "bold",
+									width: "100%",
+									backgroundColor: "aliceblue",
 								}}
 							>
-								<Typography variant="h2" align="center">
-									About Me
+								<Grid
+									item
+									container
+									justify="space-evenly"
+									alignItems="stretch"
+									className={classes.firstGridItem}
+								>
+									<Grid
+										item
+										container
+										xs={6}
+										// md={6}
+										justify="center"
+										alignItems="center"
+									>
+										<Paper
+											style={{
+												backgroundColor: "lightgrey",
+												padding: ".4rem",
+											}}
+										>
+											<Grid
+												item
+												// direction="column"
+												// justify="center"
+
+												className={
+													classes.aboutMeGridContainer
+												}
+											>
+												{/* <Grid item> */}
+												<Paper
+													elevation={1}
+													className={classes.paper}
+													style={{
+														// backgroundColor: "aliceblue",
+														backgroundColor:
+															"white",
+														color: "darkslategray",
+														textTransform:
+															"lowercase",
+														fontWeight: "bold",
+														width: "100%",
+													}}
+												>
+													<Typography
+														variant="h4"
+														className={
+															classes.typographyTextAboutMe
+														}
+													>
+														About Me
+													</Typography>
+												</Paper>
+												{/* </Grid> */}
+											</Grid>
+										</Paper>
+									</Grid>
+									{/* </Grid> */}
+
+									<Grid
+										item
+										container
+										xs={6}
+										alignItems="center"
+										className={classes.avatarGridContainer}
+									>
+										{/* <Grid item> */}
+										<Paper
+											elevation={4}
+											style={{
+												backgroundColor: "lightgrey",
+												// width: "100%",
+												padding: ".3rem",
+											}}
+										>
+											<Grid
+												item
+												// direction="column"
+												// justify="center"
+												xs={12}
+												className={
+													classes.aboutMeGridContainer
+												}
+											></Grid>
+											<Avatar
+												src={avatar}
+												alt="Donaldpicture"
+												className={classes.avatar}
+												variant="rounded"
+											/>
+										</Paper>
+									</Grid>
+								</Grid>
+							</Paper>
+						</Grid>
+						{/* </Grid> */}
+						<Grid item className={classes.gridItems}>
+							<Paper elevation={3} className={classes.paper}>
+								<Typography
+									variant="body1"
+									className={classes.typographyText}
+								>
+									Hello. I’m a full-stack developer who is
+									passionate about writing clean, efficient
+									code and solving real world problems -
+									making the world a better place, one line of
+									code at a time.
 								</Typography>
 							</Paper>
 						</Grid>
-						<Grid item>
-							<Paper elevation={4}>
-								<Avatar
-									src={avatar}
-									alt="Donaldpicture"
-									className={classes.avatar}
-									variant="rounded"
-								/>
+						<Grid item className={classes.gridItems}>
+							<Paper
+								elevation={3}
+								className={classes.paper}
+								style={{ color: "dimgrey" }}
+							>
+								<Typography
+									variant="body1"
+									className={classes.typographyText}
+								>
+									I enjoy turning complex problems into
+									simple, beautiful and intuitive designs. I
+									love to build things and I'm obsessed with
+									making things better. I have a thirst for
+									knowlede and coding really quenches my
+									desire to learn.
+								</Typography>
 							</Paper>
 						</Grid>
-					</Grid>
-
-					<Grid item className={classes.gridItems}>
-						<Paper elevation={3} className={classes.paper}>
-							<Typography variant="body1">
-								Hello. I’m a full-stack developer who is
-								passionate about writing clean, efficient code
-								and solving real world problems - making the
-								world a better place, one line of code at a
-								time.
-							</Typography>
-						</Paper>
-					</Grid>
-					<Grid item className={classes.gridItems}>
-						<Paper
-							elevation={3}
-							className={classes.paper}
-							style={{ color: "dimgrey" }}
+						<Grid
+							item
+							className={classes.gridItems}
+							// style={{ paddingBottom: ".5em" }}
 						>
-							<Typography>
-								I enjoy turning complex problems into simple,
-								beautiful and intuitive designs. I love to build
-								things and I'm obsessed with making things
-								better. I have a thirst for knowlede and coding
-								really quenches my desire to learn.
-							</Typography>
-						</Paper>
-					</Grid>
-
-					<Grid
-						item
-						className={classes.gridItems}
-						style={{ paddingBottom: ".5em" }}
-					>
-						<Paper
-							elevation={3}
-							className={classes.paper}
-							style={{ color: "dimgrey" }}
-						>
-							<Typography>
-								When Im not at the computer, you can find me
-								cooking something fierce in the kitchen, out in
-								the garden, or out walking my dogs.
-							</Typography>
-						</Paper>
-					</Grid>
-				</Paper>
-			</Grid>
+							<Paper
+								elevation={3}
+								className={classes.paper}
+								style={{ color: "dimgrey" }}
+							>
+								<Typography
+									variant="body1"
+									className={classes.typographyText}
+									// style={{ paddingBottom: "0rem" }}
+								>
+									When Im not at the computer, you can find me
+									cooking something fierce in the kitchen, out
+									in the garden, or out walking my dogs.
+								</Typography>
+							</Paper>
+						</Grid>
+					</Paper>
+				</Grid>
+			</Paper>
 		</ThemeProvider>
 	);
 };
