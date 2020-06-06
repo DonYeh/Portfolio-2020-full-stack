@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	downloadResume: {
 		display: "flex",
-		paddingTop: "10vh",
+		paddingTop: "7vh",
 		paddingBottom: "2vh",
 		maxHeight: "18vh",
 		minHeight: "14vh",
@@ -64,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 		[theme.breakpoints.up("sm")]: {
-			paddingTop: "13vw",
-			paddingBottom: ".10vh",
+			// paddingTop: "13vw",
+			// paddingBottom: ".10vh",
 			maxHeight: "15vh",
 			// height: "99%",
 			// backgroundColor: "red",
@@ -80,11 +80,11 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 		[theme.breakpoints.up("md")]: {
-			paddingTop: "4vw",
+			paddingTop: "6vh",
 			// paddingBottom: ".2rem",
 			// height: "99%",
 			// maxHeight: "4rem",
-			backgroundColor: "purple",
+			// backgroundColor: "purple",
 			// "&:after": {
 			// 	content: "''",
 			// 	height: "98%",
@@ -138,6 +138,8 @@ const useStyles = makeStyles((theme) => ({
 			content: "''",
 			position: "absolute",
 			height: "98%",
+			minHeight: "47vh",
+
 			// maxHeight: ""
 			border: "1px solid lightgrey ",
 			right: "5vw",
@@ -162,7 +164,6 @@ const useStyles = makeStyles((theme) => ({
 				content: "''",
 				position: "absolute",
 				// height: "135vh",
-				minHeight: "93vh",
 				maxHeight: "115vh",
 				border: "1px solid lightgrey ",
 				right: "7vw",
@@ -183,7 +184,7 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
-				height: "60%",
+				height: "56vh",
 				// maxHeight: "51%",
 				// left: "calc(50% - 1px)",
 				right: "3vw",
@@ -200,9 +201,10 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				transform: "translate(0px, 5rem)",
-				height: "81%",
+				height: "55vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
+				maxHeight: "47vh",
 				// zIndex: "-1",
 			},
 			// "&:after": {
@@ -332,9 +334,10 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
-				height: "64%",
+				// height: "64%",
 				// maxHeight: "51%",
 				// left: "calc(50% - 1px)",
+				maxHeight: "55vh",
 				right: "3vw",
 				// zIndex: "-1",
 			},
@@ -351,8 +354,8 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
-				height: "56%",
-				maxHeight: "70%",
+				// height: "56%",
+				maxHeight: "64vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
@@ -366,7 +369,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineItemE: {
 		// padding: "1rem",
-		padding: "2em 8em 1em 2em",
+		padding: "2em 4em 1em 2em",
 		// borderBottom: "2px solid tan",
 		position: "relative",
 		// margin: ".6rem 3rem .6rem .6rem",
