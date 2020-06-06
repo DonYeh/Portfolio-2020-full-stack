@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 	},
 	mainBox: {
 		display: "flex",
-		backgroundColor: "rgba(0,0,0,.8)",
+		backgroundColor: "rgba(0,0,0,.6)",
 		// margin: "20rem 1.25rem 1.25rem 1.25rem",
 		// paddingTop: "20rem",
 		// marginTop: "15%",

@@ -41,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
 		justify: "center",
 		alignContent: "center",
 		width: "100%",
-		background: "white",
+		// background: "white",
+		backgroundColor: "rgba(0,0,0,.8)",
 	},
 	gridItem: {
 		background: "white",
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	mainPaper: {
 		padding: "21% 10%",
+		// backgroundColor: "rgba(0,0,0,.8)",
 
 		[theme.breakpoints.up("sm")]: {
 			padding: "7%",
@@ -83,7 +85,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paperContact: {
 		// padding: "10% 20% 10%"
-		padding: "2rem",
+		padding: "1rem",
+		backgroundColor: "lightgrey",
 	},
 	textField: {
 		width: "100%",
@@ -479,14 +482,12 @@ const Contact = () => {
 							// spacing={3}
 							className={classes.paperContact}
 							justify="center"
-							style={{
-								// backgroundColor: "purple",
-								marginTop: ".7rem",
-								padding: ".5rem 0",
-							}}
 						>
 							<Paper
-								style={{ width: "98%", padding: ".75rem 0" }}
+								style={{
+									width: "98%",
+									padding: ".75rem .2rem",
+								}}
 							>
 								<Grid item>
 									<Typography

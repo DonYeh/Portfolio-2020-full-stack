@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	downloadResume: {
 		display: "flex",
-		paddingTop: "7vh",
-		paddingBottom: "2vh",
+		// paddingTop: "7vh",
+		// paddingBottom: "2vh",
 		maxHeight: "18vh",
 		minHeight: "14vh",
 		// alignItems: "center",
@@ -48,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.down("sm")]: {
 			// paddingTop: "18vw",
+			paddingTop: "10vh",
+
 			// paddingTop: "10.5vh",
 			paddingBottom: ".2vh",
 			// maxHeight: "30vh",
@@ -355,7 +357,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
 				// height: "56%",
-				maxHeight: "64vh",
+				maxHeight: "55vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",

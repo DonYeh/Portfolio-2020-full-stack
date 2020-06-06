@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 		height: "100vh",
 		backgroundColor: "rgba(0,0,0,.2)",
 
-		backdropFilter: "blur(4px)",
+		// backdropFilter: "blur(4px)",
 		// backgroundColor: "rgba(f,f,f,.5)",
 	},
 }));

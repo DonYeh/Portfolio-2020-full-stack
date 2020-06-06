@@ -29,7 +29,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme, StylesProvider } from "@material-ui/core/styles";
 
-import { Grid } from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 
 import {
 	AssignmentInd,
@@ -83,9 +83,9 @@ const useStyles = makeStyles((theme) => ({
 			flexShrink: 0,
 		},
 	},
-	toolbar: {
-		display: "flex",
-	},
+	// toolbar: {
+	// 	display: "flex",
+	// },
 	appBar: {
 		[theme.breakpoints.up("sm")]: {
 			width: "100%",
@@ -113,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
 		// height: "100vh",
 		// padding: theme.spacing(2),
 		backdropFilter: "blur(3px)",
+		// backgroundColor: "rgba(0,0,0,.3)",
 	},
 	// toolbar: {
 	// 	display: "flex",
@@ -199,72 +200,77 @@ function App(props) {
 			<BrowserRouter>
 				{/* <div className={classes.root}> */}
 				<CssBaseline />
-				<AppBar position="fixed" className={classes.appBar}>
-					<Toolbar
-						style={{
-							backgroundColor: "#fafafa",
-							color: "#345",
-						}}
-					>
-						<IconButton
-							color="inherit"
-							aria-label="open drawer"
-							edge="start"
-							onClick={handleDrawerToggle}
-							className={classes.menuButton}
+				<Paper style={{ backgroundColor: "rgba(0,0,0,.4)" }}>
+					<AppBar position="fixed" className={classes.appBar}>
+						<Toolbar
 							style={{
-								color: "sandybrown",
+								backgroundColor: "#fafafa",
+								color: "#345",
 							}}
 						>
-							<MenuIcon />
-						</IconButton>
-						<Typography variant="h6" noWrap>
-							Portfolio
-						</Typography>
-					</Toolbar>
-				</AppBar>
-				<nav className={classes.drawer} aria-label="mailbox folders">
-					{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-					<Hidden smUp implementation="css">
-						<Drawer
-							container={container}
-							variant="temporary"
-							anchor={
-								theme.direction === "rtl" ? "right" : "left"
-							}
-							open={mobileOpen}
-							onClose={handleDrawerToggle}
-							classes={{
-								paper: classes.drawerPaper,
-							}}
-							ModalProps={{
-								keepMounted: true, // Better open performance on mobile.
-							}}
-						>
-							{drawerL}
-						</Drawer>
-					</Hidden>
-					<Hidden xsDown implementation="js">
-						<Drawer
-							className={classes.root}
-							variant="permanent"
-							anchor="top"
-							open
-						>
-							{drawerT}
-						</Drawer>
-					</Hidden>
-				</nav>
-				<main className={classes.content}>
-					<Routes>
-						<Route path="/" element={<HomePage />} />
-						<Route path="about" element={<About />} />
-						<Route path="resume" element={<Resume />} />
-						<Route path="projects" element={<Projects />} />
-						<Route path="contact" element={<Contact />} />
-					</Routes>
-				</main>
-				{/* </div> */}
+							<IconButton
+								color="inherit"
+								aria-label="open drawer"
+								edge="start"
+								onClick={handleDrawerToggle}
+								className={classes.menuButton}
+								style={{
+									color: "sandybrown",
+								}}
+							>
+								<MenuIcon />
+							</IconButton>
+							<Typography variant="h6" noWrap>
+								Portfolio
+							</Typography>
+						</Toolbar>
+					</AppBar>
+					<nav
+						className={classes.drawer}
+						aria-label="mailbox folders"
+					>
+						{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+						<Hidden smUp implementation="css">
+							<Drawer
+								container={container}
+								variant="temporary"
+								anchor={
+									theme.direction === "rtl" ? "right" : "left"
+								}
+								open={mobileOpen}
+								onClose={handleDrawerToggle}
+								classes={{
+									paper: classes.drawerPaper,
+								}}
+								ModalProps={{
+									keepMounted: true, // Better open performance on mobile.
+								}}
+							>
+								{drawerL}
+							</Drawer>
+						</Hidden>
+						<Hidden xsDown implementation="js">
+							<Drawer
+								className={classes.root}
+								variant="permanent"
+								anchor="top"
+								open
+							>
+								{drawerT}
+							</Drawer>
+						</Hidden>
+					</nav>
+					<main className={classes.content}>
+						<Routes>
+							<Route path="/" element={<HomePage />} />
+							<Route path="about" element={<About />} />
+							<Route path="resume" element={<Resume />} />
+							<Route path="projects" element={<Projects />} />
+							<Route path="contact" element={<Contact />} />
+						</Routes>
+					</main>
+					{/* </div> */}
+				</Paper>
 			</BrowserRouter>
 		</StylesProvider>
 		// {/* </div> */}
