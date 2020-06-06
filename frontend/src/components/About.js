@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 			// margin: "14% 24% 0",
 			// paddingTop: "10%",
 			width: "100vw",
-			heigh: "100%",
+			height: "100vh",
 			justify: "center",
 			alignItems: "center",
 			fontSize: "10em",
@@ -218,6 +218,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 	aboutAvatarPaperGridItemContainer: {
 		backgroundColor: "white",
+		height: "100vh",
+		[theme.breakpoints.down("sm")]: {
+			backgroundColor: "rgba(0,0,0,.4)",
+			paddingTop: "8vh",
+		},
+		[theme.breakpoints.up("sm")]: {
+			backgroundColor: "white",
+		},
 		[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
 	},
 	firstGridItem: {
