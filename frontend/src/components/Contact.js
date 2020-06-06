@@ -14,7 +14,11 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import Navbar3 from "./Navbar3";
 import { MyField } from "./MyField";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import {
+	makeStyles,
+	ThemeProvider,
+	StylesProvider,
+} from "@material-ui/core/styles";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -80,6 +84,10 @@ const useStyles = makeStyles((theme) => ({
 	paperContact: {
 		// padding: "10% 20% 10%"
 		padding: "2rem",
+	},
+	textField: {
+		width: "100%",
+		backgroundColor: "red",
 	},
 }));
 
@@ -154,339 +162,399 @@ const Contact = () => {
 		<>
 			{/* <Navbar3 /> */}
 			{/* <ThemeProvider theme={formTheme}> */}
-			<Paper className={classes.mainPaper}>
-				<Grid
-					container
-					justify="center"
-					alignItems="center"
-					spacing={1}
-					className={classes.gridContainer}
-				>
+			<StylesProvider injectFirst>
+				<Paper className={classes.mainPaper}>
 					<Grid
-						item
-						xs={12}
-						md={6}
-						className={classes.gridItem}
-						// style={{ backgroundColor: "pink" }}
-					>
-						<Paper className={classes.paper}>
-							<Typography
-								variant="h5"
-								align="center"
-								style={{
-									color: "darkslategrey",
-									paddingBottom: ".5rem",
-								}}
-							>
-								Let's build together
-							</Typography>
-							<Typography variant="body1" color="textSecondary">
-								Have a project you're looking to get off the
-								ground? I'd love to hear from you. Send a
-								message and let's get the ball rolling!
-							</Typography>
-						</Paper>
-					</Grid>
-					<Grid
-						item
 						container
-						xs={12}
-						md={6}
-						// lg={6}
 						justify="center"
-						className={classes.gridItem}
-						// style={{ backgroundColor: "teal" }}
+						alignItems="center"
+						spacing={1}
+						className={classes.gridContainer}
 					>
-						<Grid item xs={12} lg={8}>
+						<Grid
+							item
+							xs={12}
+							md={6}
+							className={classes.gridItem}
+							// style={{ backgroundColor: "pink" }}
+						>
 							<Paper className={classes.paper}>
-								<Formik
-									initialValues={{
-										firstName: "",
-										lastName: "",
-										email: "",
-										message: "",
+								<Typography
+									variant="h5"
+									align="center"
+									style={{
+										color: "darkslategrey",
+										paddingBottom: ".5rem",
 									}}
-									onSubmit={handleSubmit}
-									validationSchema={validationSchema}
-									fullWidth
 								>
-									{({
-										values,
-										errors,
-										touched,
-										handleChange,
-										handleBlur,
-									}) => (
-										<Form>
-											<div style={{ width: "100%" }}>
-												<Field
-													name="firstName"
-													component={MyField}
-													label="first name"
-													style={{
-														minWidth: "81%",
-														// width: "100%",
-													}}
-													as={TextField}
-													fullWidth
-												>
-													<TextField
+									Let's build together
+								</Typography>
+								<Typography
+									variant="body1"
+									color="textSecondary"
+								>
+									Have a project you're looking to get off the
+									ground? I'd love to hear from you. Send a
+									message and let's get the ball rolling!
+								</Typography>
+							</Paper>
+						</Grid>
+						<Grid
+							item
+							container
+							xs={12}
+							md={6}
+							// lg={6}
+							justify="center"
+							className={classes.gridItem}
+							// style={{ backgroundColor: "teal" }}
+						>
+							<Grid item xs={12} lg={8}>
+								<Paper className={classes.paper}>
+									<Formik
+										initialValues={{
+											firstName: "",
+											lastName: "",
+											email: "",
+											message: "",
+										}}
+										onSubmit={handleSubmit}
+										validationSchema={validationSchema}
+										fullWidth
+									>
+										{({
+											values,
+											errors,
+											touched,
+											handleChange,
+											handleBlur,
+										}) => (
+											<Form>
+												<div>
+													<Field
 														name="firstName"
-														value={values.firstName}
-														onChange={handleChange}
-														onBlur={handleBlur}
+														component={MyField}
+														label="first name"
+														// style={{
+														// 	width: "100%",
+														// 	// width: "100%",
+														// }}
+														as={TextField}
 														fullWidth
-														// className={
-														// 	touched.firstName &&
-														// 	errors.firstName
-														// 		? "classes.hasError"
-														// 		: null
-														// }
-														variant="filled"
+													>
+														<TextField
+															name="firstName"
+															value={
+																values.firstName
+															}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															// fullWidth
+															style={{
+																width: "100%",
+															}}
+															variant="filled"
+															fullWidth
+															className={
+																classes.textField
+															}
+															classes={{
+																MuiFormControl: {
+																	root: {
+																		width:
+																			"100%",
+																		backgroundColor:
+																			"pink",
+																	},
+																},
+															}}
+														/>
+													</Field>
+													<Error
+														touched={
+															touched.firstName
+														}
+														message={
+															errors.firstName
+														}
+														className={
+															classes.invalid
+														}
 													/>
-												</Field>
-												<Error
-													touched={touched.firstName}
-													message={errors.firstName}
-													className={classes.invalid}
-												/>
-											</div>
+												</div>
 
-											<div style={{ width: "100%" }}>
-												<Field
-													name="lastName"
-													component={MyField}
-													label="last name"
-													style={{
-														minWidth: "81%",
-														background: "#f44336",
-													}}
-												>
-													<TextField
+												<div>
+													<Field
 														name="lastName"
-														fullWidth
-														value={values.lastName}
-														onChange={handleChange}
-														onBlur={handleBlur}
+														component={MyField}
+														label="last name"
+														style={{
+															width: "100%",
+															// minWidth: "81%",
+															background:
+																"#f44336",
+														}}
+													>
+														<TextField
+															name="lastName"
+															fullWidth
+															value={
+																values.lastName
+															}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															className={
+																touched.lastName &&
+																errors.lastName
+																	? "classes.hasError"
+																	: null
+															}
+															variant="filled"
+															style={{
+																width: "100%",
+															}}
+														/>
+													</Field>
+													<Error
+														touched={
+															touched.lastName
+														}
+														message={
+															errors.lastName
+														}
 														className={
 															touched.lastName &&
 															errors.lastName
 																? "classes.hasError"
 																: null
 														}
-														variant="filled"
 													/>
-												</Field>
-												<Error
-													touched={touched.lastName}
-													message={errors.lastName}
-													className={
-														touched.lastName &&
-														errors.lastName
-															? "classes.hasError"
-															: null
-													}
-												/>
-											</div>
+												</div>
 
-											<div style={{ width: "100%" }}>
-												<Field
-													name="email"
-													component={MyField}
-													label="email"
-													style={{
-														minWidth: "81%",
-														// width: "100%",
-													}}
-												>
-													<TextField
+												<div style={{ width: "100%" }}>
+													<Field
 														name="email"
-														fullWidth
-														value={values.email}
-														onChange={handleChange}
-														onBlur={handleBlur}
-														className={
-															touched.email &&
-															errors.email
-																? "classes.hasError"
-																: "classes.noError"
-														}
-														variant="outlined"
+														component={MyField}
+														label="email"
+														style={{
+															minWidth: "81%",
+															// width: "100%",
+														}}
+													>
+														<TextField
+															name="email"
+															fullWidth
+															value={values.email}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															className={
+																touched.email &&
+																errors.email
+																	? "classes.hasError"
+																	: "classes.noError"
+															}
+															variant="outlined"
+															style={{
+																width: "100%",
+															}}
+														/>
+													</Field>
+													<Error
+														touched={touched.email}
+														message={errors.email}
 													/>
-												</Field>
-												<Error
-													touched={touched.email}
-													message={errors.email}
-												/>
-											</div>
-											<div>
-												<Field
-													name="message"
-													component={MyField}
-													label="message"
-													style={{
-														minWidth: "81%",
-													}}
-													autocomplete="false"
-												>
-													<TextField
-														name="message here"
-														multiline
-														rows="3"
-														fullWidth
-														value={values.message}
-														onChange={handleChange}
-														onBlur={handleBlur}
-														variant="outlined"
-														className={
-															touched.message &&
-															errors.message
-																? "classes.hasError"
-																: null
+												</div>
+												<div>
+													<Field
+														name="message"
+														component={MyField}
+														label="message"
+														style={{
+															minWidth: "81%",
+														}}
+														autocomplete="false"
+													>
+														<TextField
+															name="message here"
+															multiline
+															rows="3"
+															fullWidth
+															value={
+																values.message
+															}
+															onChange={
+																handleChange
+															}
+															onBlur={handleBlur}
+															variant="outlined"
+															className={
+																touched.message &&
+																errors.message
+																	? "classes.hasError"
+																	: null
+															}
+															helperText={
+																errors.message
+															}
+															style={{
+																width: "100%",
+															}}
+														/>
+													</Field>
+													<Error
+														touched={
+															touched.message
 														}
-														helperText={
-															errors.message
-														}
+														message={errors.message}
 													/>
-												</Field>
-												<Error
-													touched={touched.message}
-													message={errors.message}
-												/>
-											</div>
-											<Button
-												type="submit"
-												onClick={handleModal}
-											>
-												submit
-											</Button>
-
-											<Modal
-												isOpen={modalIsOpen}
-												onRequestClose={() =>
-													setModalIsOpen(false)
-												}
-												style={{
-													overlay: {
-														backgroundColor:
-															"gainsboro",
-													},
-													content: {
-														color: "#234",
-													},
-												}}
-											>
-												<h2>
-													Thanks for reaching out!
-												</h2>
-												<p>
-													You should be receiving a
-													confirmation email soon and
-													can expect to hear back from
-													me in the next few days.
-												</p>
-
+												</div>
 												<Button
-													onClick={() =>
+													type="submit"
+													onClick={handleModal}
+												>
+													submit
+												</Button>
+
+												<Modal
+													isOpen={modalIsOpen}
+													onRequestClose={() =>
 														setModalIsOpen(false)
 													}
+													style={{
+														overlay: {
+															backgroundColor:
+																"gainsboro",
+														},
+														content: {
+															color: "#234",
+														},
+													}}
 												>
-													X Close
-												</Button>
-											</Modal>
+													<h2>
+														Thanks for reaching out!
+													</h2>
+													<p>
+														You should be receiving
+														a confirmation email
+														soon and can expect to
+														hear back from me in the
+														next few days.
+													</p>
 
-											{/* <pre>
+													<Button
+														onClick={() =>
+															setModalIsOpen(
+																false
+															)
+														}
+													>
+														X Close
+													</Button>
+												</Modal>
+
+												{/* <pre>
 												{JSON.stringify(
 													values,
 													null,
 													2
 												)}
 											</pre> */}
-										</Form>
-									)}
-								</Formik>
+											</Form>
+										)}
+									</Formik>
+								</Paper>
+							</Grid>
+						</Grid>
+						<Grid
+							item
+							xs={12}
+							md={6}
+							container
+							// spacing={3}
+							className={classes.paperContact}
+							justify="center"
+							style={{
+								// backgroundColor: "purple",
+								marginTop: ".7rem",
+								padding: ".5rem 0",
+							}}
+						>
+							<Paper
+								style={{ width: "98%", padding: ".75rem 0" }}
+							>
+								<Grid item>
+									<Typography
+										variant="h5"
+										align="center"
+										style={{ color: "darkslategrey" }}
+									>
+										Let's Connect
+									</Typography>
+								</Grid>
+
+								<Grid
+									container
+									justify="space-evenly"
+									style={{ paddingTop: ".5rem" }}
+								>
+									<Grid item>
+										<Link
+											href="https://www.linkedin.com/in/donald-yeh-b3b1426/"
+											// onClick={preventDefault}
+											variant="body2"
+										>
+											{/* {'variant="body2"'} */}
+											<LinkedInIcon
+												style={{
+													color: "rgba(67,118,178)",
+												}}
+											/>
+										</Link>
+									</Grid>
+
+									<Grid item>
+										<Link
+											href="https://github.com/DonYeh"
+											// onClick={preventDefault}
+											variant="body2"
+										>
+											{/* {'variant="body2"'} */}
+											<GitHubIcon
+												style={{
+													color: "rgba(42,45,49)",
+												}}
+											/>
+										</Link>
+									</Grid>
+
+									<Grid item>
+										<Link
+											href="https://twitter.com/heydonaldyeh"
+											// onClick={preventDefault}
+											variant="body2"
+										>
+											{/* {'variant="body2"'} */}
+											<TwitterIcon
+												style={{
+													color: "rgb(94, 160,239)",
+												}}
+											/>
+										</Link>
+									</Grid>
+								</Grid>
 							</Paper>
 						</Grid>
 					</Grid>
-					<Grid
-						item
-						xs={12}
-						md={6}
-						container
-						// spacing={3}
-						className={classes.paperContact}
-						justify="center"
-						style={{
-							// backgroundColor: "purple",
-							marginTop: ".7rem",
-							padding: ".5rem 0",
-						}}
-					>
-						<Paper style={{ width: "98%", padding: ".75rem 0" }}>
-							<Grid item>
-								<Typography
-									variant="h5"
-									align="center"
-									style={{ color: "darkslategrey" }}
-								>
-									Let's Connect
-								</Typography>
-							</Grid>
+				</Paper>
 
-							<Grid
-								container
-								justify="space-evenly"
-								style={{ paddingTop: ".5rem" }}
-							>
-								<Grid item>
-									<Link
-										href="https://www.linkedin.com/in/donald-yeh-b3b1426/"
-										// onClick={preventDefault}
-										variant="body2"
-									>
-										{/* {'variant="body2"'} */}
-										<LinkedInIcon
-											style={{
-												color: "rgba(67,118,178)",
-											}}
-										/>
-									</Link>
-								</Grid>
-
-								<Grid item>
-									<Link
-										href="https://github.com/DonYeh"
-										// onClick={preventDefault}
-										variant="body2"
-									>
-										{/* {'variant="body2"'} */}
-										<GitHubIcon
-											style={{ color: "rgba(42,45,49)" }}
-										/>
-									</Link>
-								</Grid>
-
-								<Grid item>
-									<Link
-										href="https://twitter.com/heydonaldyeh"
-										// onClick={preventDefault}
-										variant="body2"
-									>
-										{/* {'variant="body2"'} */}
-										<TwitterIcon
-											style={{
-												color: "rgb(94, 160,239)",
-											}}
-										/>
-									</Link>
-								</Grid>
-							</Grid>
-						</Paper>
-					</Grid>
-				</Grid>
-			</Paper>
-
-			{/* </ThemeProvider> */}
+				{/* </ThemeProvider> */}
+			</StylesProvider>
 		</>
 	);
 };

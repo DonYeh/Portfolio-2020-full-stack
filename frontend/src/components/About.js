@@ -13,7 +13,7 @@ import {
 	ThemeProvider,
 	CssBaseline,
 } from "@material-ui/core";
-// import avatar from "../assets/IMG_1953.jpg";
+import avatar from "../assets/IMG_1953.jpg";
 // import { FullscreenExit } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -197,13 +197,12 @@ const About = () => {
 						</Grid>
 						<Grid item>
 							<Paper elevation={4}>
-								{/* <Avatar
+								<Avatar
 									src={avatar}
 									alt="Donaldpicture"
 									className={classes.avatar}
 									variant="rounded"
-								/> */}
-								<Typography>Avatar goes here</Typography>
+								/>
 							</Paper>
 						</Grid>
 					</Grid>

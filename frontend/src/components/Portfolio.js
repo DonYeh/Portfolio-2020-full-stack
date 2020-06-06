@@ -71,7 +71,11 @@ export default function ImgMediaCard() {
 					>
 						<Grid item>
 							<Box className="proj1">
-								<Card className={classes.root} raised>
+								<Card
+									className={classes.root}
+									raised
+									variant="outlined"
+								>
 									<CardActionArea>
 										<CardMedia
 											component="img"
@@ -124,7 +128,12 @@ export default function ImgMediaCard() {
 
 						<Grid item>
 							<Box className="proj2">
-								<Card className={classes.root} raised>
+								<Card
+									className={classes.root}
+									variant="outlined"
+									variant="outlined"
+									raised
+								>
 									<CardActionArea>
 										<CardMedia
 											component="img"
@@ -175,7 +184,12 @@ export default function ImgMediaCard() {
 
 						<Grid item>
 							<Box className="proj3">
-								<Card className={classes.root} raised>
+								<Card
+									className={classes.root}
+									raised
+									variant="outlined"
+									variant="outlined"
+								>
 									<CardActionArea>
 										<CardMedia
 											component="img"
