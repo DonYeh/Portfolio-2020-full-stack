@@ -366,7 +366,7 @@ const useStyles = makeStyles((theme) => ({
 	timeLineYearE: {
 		textAlign: "center",
 		maxWidth: "4.5rem",
-		margin: "0 auto 0 2rem",
+		margin: "0 auto 0 1.2rem",
 		fontSize: "1.3rem",
 		background: "#234",
 		color: "lightgrey",
@@ -427,8 +427,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	experienceBox: {
 		width: "100%",
+
 		paddingTop: "1.5rem",
-		paddingBottom: "3rem",
+		paddingBottom: "2.4rem",
 		backgroundColor: "white",
 		// marginBottom: "10rem",
 		// textTransform: "uppercase",
@@ -521,7 +522,7 @@ const Resume = () => {
 							Education
 						</Typography>
 						<Typography
-							variant="h3"
+							variant="h6"
 							className={`${classes.timeLineYear} ${classes.timeLineItem}`}
 						>
 							2019
@@ -560,7 +561,7 @@ const Resume = () => {
 							</Typography>
 						</Box>
 						<Typography
-							variant="h3"
+							variant="h6"
 							className={`${classes.timeLineYear} ${classes.timeLineItem}`}
 						>
 							2013
@@ -598,7 +599,7 @@ const Resume = () => {
 							</Typography>
 						</Box>
 						<Typography
-							variant="h3"
+							variant="h6"
 							className={`${classes.timeLineYear} ${classes.timeLineItem}`}
 						>
 							2007
@@ -989,7 +990,7 @@ const Resume = () => {
 						{/* <Box component="div" className={classes.timeLineBoxE}> */}
 						<Grid item className={classes.timeLineBoxE}>
 							<Typography
-								variant="h3"
+								variant="h6"
 								className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
 							>
 								2020
@@ -1011,7 +1012,7 @@ const Resume = () => {
 									className={classes.subHeading2E}
 									// style="{{ color: "tan"}}
 								>
-									server
+									Server
 								</Typography>
 								<Typography
 									variant="body1"
@@ -1045,7 +1046,7 @@ const Resume = () => {
 								</Typography>
 							</Box>
 							<Typography
-								variant="h3"
+								variant="h6"
 								className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
 							>
 								2018

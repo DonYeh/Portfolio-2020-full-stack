@@ -31,39 +31,55 @@ import { makeStyles, useTheme, StylesProvider } from "@material-ui/core/styles";
 
 import { Paper, Grid } from "@material-ui/core";
 
-import {
-	AssignmentInd,
-	Home,
-	Apps,
-	ContactMail,
-	InfoOutlined,
-} from "@material-ui/icons";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-const drawerWidth = 240;
+// import {
+// 	AssignmentInd,
+// 	Home,
+// 	Apps,
+// 	ContactMail,
+// 	InfoOutlined,
+// } from "@material-ui/icons";
+
+// import Home from "@material-ui/icons/HomeTwoTone";
+// import Apps from "@material-ui/icons/AppsTwoTone";
+// import AssignmentInd from "@material-ui/icons/AssignmentIndTwoTone";
+// import ContactMail from "@material-ui/icons/ContactMailTwoTone";
+// import InfoOutlined from "@material-ui/icons/InfoOutlinedTwoTone";
+// import HomeWorkSharp from "@material-ui/icons/HomeWorkSharp";
+
+import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
+import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
+import AssignmentIndTwoToneIcon from "@material-ui/icons/AssignmentIndTwoTone";
+import AppsTwoToneIcon from "@material-ui/icons/AppsTwoTone";
+import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
+
+const drawerWidth = 220;
 
 const menuIcons = [
 	{
-		listIcon: <Home />,
+		listIcon: <HomeTwoToneIcon />,
 		listText: "Home",
 		listPath: "/",
 	},
 	{
-		listIcon: <InfoOutlined />,
+		listIcon: <InfoTwoToneIcon />,
 		listText: "About me",
 		listPath: "/about",
 	},
 	{
-		listIcon: <AssignmentInd />,
+		listIcon: <AssignmentIndTwoToneIcon />,
 		listText: "Resume",
 		listPath: "/resume",
 	},
 	{
-		listIcon: <Apps />,
+		listIcon: <AppsTwoToneIcon />,
 		listText: "Projects",
 		listPath: "/projects",
 	},
 	{
-		listIcon: <ContactMail />,
+		listIcon: <ContactMailTwoToneIcon />,
 		listText: "Contact",
 		listPath: "/contact",
 	},
@@ -102,6 +118,8 @@ const useStyles = makeStyles((theme) => ({
 	toolbar: theme.mixins.toolbar,
 	drawerPaper: {
 		width: drawerWidth,
+		backgroundColor: "rgba(0,0,0,.5 )",
+		backdropFilter: "blur(5px)",
 	},
 
 	content: {
@@ -115,11 +133,25 @@ const useStyles = makeStyles((theme) => ({
 		// backdropFilter: "blur(3px)",
 		// backgroundColor: "rgba(0,0,0,.3)",
 		// padding: "1em",
+		backdropFilter: "blur(5px)",
 	},
 	// toolbar: {
 	// 	display: "flex",
 	displayFlex: {
 		display: "flex",
+	},
+	drawer: {
+		width: drawerWidth,
+		flexShrink: 0,
+	},
+	drawerHeader: {
+		display: "flex",
+		alignItems: "center",
+		padding: theme.spacing(0, 1),
+		// necessary for content to be below app bar
+		...theme.mixins.toolbar,
+		justifyContent: "flex-start",
+		backgroundColor: "rgba(124,124,124, .2)",
 	},
 }));
 
@@ -134,20 +166,36 @@ function App(props) {
 	};
 
 	const drawerL = (
-		<div className={classes.displayFlex}>
+		<div className={classes.drawer}>
 			{/* <div className={classes.toolbar} /> */}
 			{/* <Divider /> */}
+			<div className={classes.drawerHeader}>
+				<IconButton onClick={handleDrawerToggle}>
+					{theme.direction === "ltr" ? (
+						<ChevronLeftIcon
+							style={{
+								color: "sandybrown",
+								width: "1em",
+								height: "1em",
+							}}
+						/>
+					) : (
+						<ChevronRightIcon />
+					)}
+				</IconButton>
+			</div>
+			<Divider />
 			<List>
 				{menuIcons.map((menuIcon, key) => (
 					<Link to={menuIcon.listPath}>
 						<ListItem button key={key} onClick={handleDrawerToggle}>
-							<ListItemIcon style={{ color: "#234" }}>
+							<ListItemIcon style={{ color: "cadetblue" }}>
 								{menuIcon.listIcon}
 							</ListItemIcon>
 							<ListItemText
 								primary={menuIcon.listText}
 								style={{
-									color: "darkslategrey",
+									color: "aliceblue",
 									fontWeight: "bold",
 								}}
 							/>

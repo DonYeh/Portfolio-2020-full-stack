@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 		// direction: "column",
 		// alignContent: "center",
 		padding: "33% 10% 0%",
+		backdropFilter: "blur(5px)",
 	},
 
 	typedContainer: {

@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 	},
 	mainBox: {
 		display: "flex",
-		backgroundColor: "rgba(0,0,0,.6)",
+
 		// margin: "20rem 1.25rem 1.25rem 1.25rem",
 		// paddingTop: "20rem",
 		// marginTop: "15%",
@@ -30,6 +30,10 @@ const useStyles = makeStyles({
 	mainGridContainer: {
 		// display: "flex",
 		// background: "black",
+
+		// backdropFilter: "blur(5px)",
+		// backgroundColor: "rgba(0,0,0,.6)",
+
 		marginTop: "80em ",
 		padding: "2em",
 		height: "50%",
@@ -49,7 +53,10 @@ export default function ImgMediaCard() {
 
 	return (
 		<>
-			<Box className="classes.mainBox">
+			<Box
+				className="classes.mainBox"
+				style={{ backdropFilter: "blur(5px)" }}
+			>
 				<Grid
 					className="classes.mainGridContainer"
 					container
@@ -58,8 +65,6 @@ export default function ImgMediaCard() {
 					// spacing={2}
 					style={{
 						padding: " 24% 11%",
-						backgroundColor: "rgba(0,0,0,.75)",
-						// backdropFilter: "blur(5px)",
 					}}
 				>
 					<Grid
@@ -74,7 +79,7 @@ export default function ImgMediaCard() {
 								<Card
 									className={classes.root}
 									raised
-									variant="outlined"
+									// variant="outlined"
 								>
 									<CardActionArea>
 										<CardMedia
@@ -130,8 +135,7 @@ export default function ImgMediaCard() {
 							<Box className="proj2">
 								<Card
 									className={classes.root}
-									variant="outlined"
-									variant="outlined"
+									// variant="outlined"
 									raised
 								>
 									<CardActionArea>
@@ -187,8 +191,7 @@ export default function ImgMediaCard() {
 								<Card
 									className={classes.root}
 									raised
-									variant="outlined"
-									variant="outlined"
+									// variant="outlined"
 								>
 									<CardActionArea>
 										<CardMedia
