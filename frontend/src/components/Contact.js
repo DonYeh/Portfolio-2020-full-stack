@@ -39,12 +39,25 @@ const useStyles = makeStyles((theme) => ({
 	// },
 	gridContainer: {
 		justify: "center",
-		// alignContent: "center",
-		// width: "100%",
-		// paddingTop: "7vh",
-		// marginTop: "12vh",
-		// background: "white",
-		// backgroundColor: "rgba(0,0,0,.8)",
+		padding: "9vh 9vw 3vh",
+		// [theme.breakpoints.up("sm")]: {
+		// 	// marginTop: "14vh",
+		// 	// margin: "14vh 5vw 14vh",
+		// 	// margin: "12vh 10vw",
+		// 	// padding: "2em",
+		// 	// backgroundColor: "darkblue",
+		// 	// },
+		// 	// alignContent: "center",
+		// 	// width: "100%",
+		// 	// paddingTop: "7vh",
+		// 	// marginTop: "12vh",
+		// 	// background: "white",
+		// 	// backgroundColor: "rgba(0,0,0,.8)",
+		// },
+		// margin: "0",
+		[theme.breakpoints.up("md")]: {
+			spacing: "3",
+		},
 	},
 	gridItem: {
 		background: "white",
@@ -56,9 +69,9 @@ const useStyles = makeStyles((theme) => ({
 		// marginTop: ".5rem",
 	},
 	mainPaper: {
-		// backgroundColor: "rgba(0,0,0,.3)",
+		backgroundColor: "rgba(0,0,0,.3)",
 		padding: "4em",
-
+		// height: "100vh",
 		[theme.breakpoints.down("sm")]: {
 			padding: "5vh 5vw", // marginTop: "14vh",
 			// margin: "14vh 5vw 14vh",
@@ -66,9 +79,18 @@ const useStyles = makeStyles((theme) => ({
 			// backgroundColor: "darkblue",
 		},
 		[theme.breakpoints.up("sm")]: {
-			// marginTop: "14vh",
+			// marginTop: "10vh",
 			// margin: "14vh 5vw 14vh",
-			margin: "12vh 10vw",
+			padding: "6vh 9vw",
+			// padding: "2em",
+			// backgroundColor: "darkblue",
+		},
+		[theme.breakpoints.up("md")]: {
+			// marginTop: "10vh",
+			// margin: "14vh 5vw 14vh",
+			padding: "14vh 10vw",
+			height: "100vh",
+
 			// padding: "2em",
 			// backgroundColor: "darkblue",
 		},
@@ -95,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paperContact: {
 		// padding: "10% 20% 10%"
-		padding: "1rem",
+		padding: ".3rem",
 		backgroundColor: "lightgrey",
 	},
 	textField: {
@@ -151,6 +173,11 @@ const validationSchema = Yup.object().shape({
 // 		},
 // 	},
 // });
+const darkTheme = createMuiTheme({
+	palette: {
+		type: "dark",
+	},
+});
 
 const Contact = () => {
 	const classes = useStyles();
@@ -175,21 +202,25 @@ const Contact = () => {
 		<>
 			{/* <Navbar3 /> */}
 			{/* <ThemeProvider theme={formTheme}> */}
+			{/* <ThemeProvider theme={darkTheme}> */}
 			<StylesProvider injectFirst>
 				<Paper className={classes.mainPaper}>
 					<Grid
 						container
 						justify="center"
 						alignItems="center"
-						spacing={5}
+						spacing={1}
 						className={classes.gridContainer}
 					>
 						<Grid
 							item
 							xs={12}
-							md={6}
+							// md={6}
 							className={classes.gridItem}
-							style={{ backgroundColor: "purple" }}
+							style={{
+								backgroundColor: "aliceblue",
+								padding: "3rem 3rem 0rem",
+							}}
 							// style={{ backgroundColor: "pink" }}
 						>
 							<Paper className={classes.paper}>
@@ -217,17 +248,19 @@ const Contact = () => {
 							item
 							container
 							xs={12}
-							md={6}
+							// md={6}
+							// md={6}
 							// lg={6}
 							justify="center"
 							// alignItems="center"
 							className={classes.gridItem}
 							style={{
-								backgroundColor: "teal",
+								backgroundColor: "aliceblue",
+								padding: "2.5rem 3rem 0rem",
 								alignItems: "center",
 							}}
 						>
-							<Grid item xs={12} lg={8}>
+							<Grid item xs={12}>
 								<Paper className={classes.paper}>
 									<Formik
 										initialValues={{
@@ -353,7 +386,11 @@ const Contact = () => {
 													/>
 												</div>
 
-												<div style={{ width: "100%" }}>
+												<div
+													style={{
+														width: "100%",
+													}}
+												>
 													<Field
 														name="email"
 														component={MyField}
@@ -492,17 +529,20 @@ const Contact = () => {
 						<Grid
 							item
 							xs={12}
-							md={6}
+							// md={6}
 							container
 							// spacing={3}
 							className={classes.paperContact}
 							justify="center"
-							style={{ backgroundColor: "orange" }}
+							style={{
+								backgroundColor: "aliceblue",
+								padding: "2.5rem 3rem 2.5rem",
+							}}
 						>
 							<Paper
 								style={{
-									width: "98%",
-									padding: ".75rem .2rem",
+									width: "100%",
+									padding: ".75rem .2rem 1rem",
 								}}
 							>
 								<Grid item>
@@ -572,6 +612,7 @@ const Contact = () => {
 
 				{/* </ThemeProvider> */}
 			</StylesProvider>
+			{/* </ThemeProvider> */}
 		</>
 	);
 };

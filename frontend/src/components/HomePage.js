@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 	typedItem: {},
 	typedFont: {
 		color: "white",
-		// textShadow: ".5px .5px rgb(20,33,61)", //dark blue
+		textShadow: "1px 1px rgb(20,33,61)", //dark blue
 		// textShadow: "1.5px 1.5px rgb(240,169,80)",
 
 		// marginTop: "10%",
