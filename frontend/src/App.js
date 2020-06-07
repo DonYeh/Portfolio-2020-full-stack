@@ -108,12 +108,13 @@ const useStyles = makeStyles((theme) => ({
 		// paddingTop: theme.mixins.toolbar,
 		flexGrow: 1,
 		// padding: "1rem", //adds padding to main content window view
-		width: "100vw",
+		// width: "100vw",
 		// backgroundColor: "aliceblue",
 		// height: "100vh",
 		// padding: theme.spacing(2),
-		backdropFilter: "blur(3px)",
+		// backdropFilter: "blur(3px)",
 		// backgroundColor: "rgba(0,0,0,.3)",
+		// padding: "1em",
 	},
 	// toolbar: {
 	// 	display: "flex",

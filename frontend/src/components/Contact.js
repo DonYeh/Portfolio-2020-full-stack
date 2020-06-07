@@ -39,27 +39,37 @@ const useStyles = makeStyles((theme) => ({
 	// },
 	gridContainer: {
 		justify: "center",
-		alignContent: "center",
-		width: "100%",
+		// alignContent: "center",
+		// width: "100%",
+		// paddingTop: "7vh",
+		// marginTop: "12vh",
 		// background: "white",
-		backgroundColor: "rgba(0,0,0,.8)",
+		// backgroundColor: "rgba(0,0,0,.8)",
 	},
 	gridItem: {
 		background: "white",
-		// padding: "2rem",
+		padding: ".5rem",
 	},
 	paper: {
 		background: "white",
 		padding: "1.5rem",
-		marginTop: ".5rem",
+		// marginTop: ".5rem",
 	},
 	mainPaper: {
-		padding: "21% 10%",
-		// backgroundColor: "rgba(0,0,0,.8)",
+		// backgroundColor: "rgba(0,0,0,.3)",
+		padding: "4em",
 
+		[theme.breakpoints.down("sm")]: {
+			padding: "5vh 5vw", // marginTop: "14vh",
+			// margin: "14vh 5vw 14vh",
+			// margin: "10vh 0vw",
+			// backgroundColor: "darkblue",
+		},
 		[theme.breakpoints.up("sm")]: {
-			padding: "7%",
-			margin: "18% 15% 20%",
+			// marginTop: "14vh",
+			// margin: "14vh 5vw 14vh",
+			margin: "12vh 10vw",
+			// padding: "2em",
 			// backgroundColor: "darkblue",
 		},
 	},
@@ -171,7 +181,7 @@ const Contact = () => {
 						container
 						justify="center"
 						alignItems="center"
-						spacing={1}
+						spacing={5}
 						className={classes.gridContainer}
 					>
 						<Grid
@@ -179,6 +189,7 @@ const Contact = () => {
 							xs={12}
 							md={6}
 							className={classes.gridItem}
+							style={{ backgroundColor: "purple" }}
 							// style={{ backgroundColor: "pink" }}
 						>
 							<Paper className={classes.paper}>
@@ -209,8 +220,12 @@ const Contact = () => {
 							md={6}
 							// lg={6}
 							justify="center"
+							// alignItems="center"
 							className={classes.gridItem}
-							// style={{ backgroundColor: "teal" }}
+							style={{
+								backgroundColor: "teal",
+								alignItems: "center",
+							}}
 						>
 							<Grid item xs={12} lg={8}>
 								<Paper className={classes.paper}>
@@ -482,6 +497,7 @@ const Contact = () => {
 							// spacing={3}
 							className={classes.paperContact}
 							justify="center"
+							style={{ backgroundColor: "orange" }}
 						>
 							<Paper
 								style={{

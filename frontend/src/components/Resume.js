@@ -48,10 +48,10 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.down("sm")]: {
 			// paddingTop: "18vw",
-			paddingTop: "10vh",
+			paddingTop: "8vh",
 
 			// paddingTop: "10.5vh",
-			paddingBottom: ".2vh",
+			// paddingBottom: ".5vh",
 			// maxHeight: "30vh",
 			// height: "99%",
 			// backgroundColor: "red",
@@ -82,7 +82,9 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 		[theme.breakpoints.up("md")]: {
-			paddingTop: "6vh",
+			paddingTop: "5vh",
+			minHeight: "8.5vh",
+			// paddingTop: "6vh",
 			// paddingBottom: ".2rem",
 			// height: "99%",
 			// maxHeight: "4rem",
@@ -139,15 +141,15 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "98%",
-			minHeight: "47vh",
+			height: "83vh",
+			// minHeight: "47vh",
 
 			// maxHeight: ""
 			border: "1px solid lightgrey ",
 			right: "5vw",
 			// top: "24px",
 			// top: 0,
-			transform: "translate(0rem, 4rem)",
+			transform: "translate(0rem, 4.3rem)",
 		},
 		"&:after": {
 			content: "''",
@@ -155,38 +157,14 @@ const useStyles = makeStyles((theme) => ({
 			// top: "60px",
 			// clear: "both",
 		},
-		[theme.breakpoints.down("sm")]: {
-			// padding: "1rem",
-			// height: "99%",
 
-			"&:before": {
-				// transform: "translate(0px, 6rem)",
-				// height: "64%",
-				// maxHeight: "51%",
-				content: "''",
-				position: "absolute",
-				// height: "135vh",
-				maxHeight: "115vh",
-				border: "1px solid lightgrey ",
-				right: "7vw",
-
-				// left: "calc(50% - 1px)",
-
-				// zIndex: "-1",
-			},
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%"
-			// 	clear: "both",
-			// },
-		},
 		[theme.breakpoints.up("sm")]: {
 			// padding: "1rem",
 			// height: "99%",
 
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
-				height: "56vh",
+				height: "43.5vh",
 				// maxHeight: "51%",
 				// left: "calc(50% - 1px)",
 				right: "3vw",
@@ -199,14 +177,14 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 		[theme.breakpoints.up("md")]: {
-			padding: "2rem",
+			// padding: "2rem",
 
 			"&:before": {
-				transform: "translate(0px, 5rem)",
-				height: "55vh",
+				transform: "translate(0px, 7.3rem)",
+				height: "52vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
-				maxHeight: "47vh",
+				maxHeight: "84vh",
 				// zIndex: "-1",
 			},
 			// "&:after": {
@@ -218,7 +196,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	timeLineItem: {
-		padding: "2em 5em 1em 2em",
+		padding: "1em 4em 1em 2em",
 		// borderBottom: "8px solid tan",
 		position: "relative",
 		// margin: ".6rem 3.8rem .6rem .6rem",
@@ -299,39 +277,19 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "93vh",
-			maxHeight: "95vh",
+			height: "113vh",
+			// maxHeight: "95vh",
 			border: "1px solid darkgrey ",
-			right: "4.3vw",
+			// right: "4.3vw",
 			// paddingBottom: "40px",
 			// top: "44px",
 			// top: 0,
 			// transform: "translate(0px, 1.2rem)",
 		},
 
-		[theme.breakpoints.down("sm")]: {
-			padding: "1rem",
-			// height: "99%",
-
-			"&:before": {
-				// transform: "translate(0px, 6rem)",
-				// height: "64%",
-				// maxHeight: "51%",
-				// left: "calc(50% - 1px)",
-				height: "135vh",
-				maxHeight: "93vh",
-				right: "7vw",
-				// minHeight: "118vh",
-				// zIndex: "-1",
-			},
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%"
-			// 	clear: "both",
-			// },
-		},
 		[theme.breakpoints.up("sm")]: {
 			padding: "1rem",
+			height: "",
 			// height: "99%",
 
 			"&:before": {
@@ -339,8 +297,8 @@ const useStyles = makeStyles((theme) => ({
 				// height: "64%",
 				// maxHeight: "51%",
 				// left: "calc(50% - 1px)",
-				maxHeight: "55vh",
-				right: "3vw",
+				maxHeight: "49vh",
+				left: "3vw",
 				// zIndex: "-1",
 			},
 			// "&:after": {
@@ -357,7 +315,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				// transform: "translate(0px, 6rem)",
 				// height: "56%",
-				maxHeight: "55vh",
+				maxHeight: "48vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
@@ -371,7 +329,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineItemE: {
 		// padding: "1rem",
-		padding: "2em 4em 1em 2em",
+		padding: "1em 2em 1em 4em",
 		// borderBottom: "2px solid tan",
 		position: "relative",
 		// margin: ".6rem 3rem .6rem .6rem",
@@ -384,16 +342,15 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			right: "1.8rem",
+			left: "1.6rem",
 			top: "calc(50% - 5px)",
 			borderStyle: "solid",
 			borderColor: "cadetblue cadetblue transparent transparent",
 			borderWidth: "0.44rem",
-			transform: "rotate(45deg)",
+			transform: "rotate(225deg)",
 		},
 		[theme.breakpoints.up("md")]: {
-			width: "44%",
-			margin: "1rem",
+			width: "45%",
 			"&:nth-of-type(2n)": {
 				float: "right",
 				margin: "1rem",
@@ -409,7 +366,7 @@ const useStyles = makeStyles((theme) => ({
 	timeLineYearE: {
 		textAlign: "center",
 		maxWidth: "4.5rem",
-		margin: "0 2rem 0 auto",
+		margin: "0 auto 0 2rem",
 		fontSize: "1.3rem",
 		background: "#234",
 		color: "lightgrey",
@@ -471,7 +428,7 @@ const useStyles = makeStyles((theme) => ({
 	experienceBox: {
 		width: "100%",
 		paddingTop: "1.5rem",
-		paddingBottom: "4rem",
+		paddingBottom: "3rem",
 		backgroundColor: "white",
 		// marginBottom: "10rem",
 		// textTransform: "uppercase",
@@ -688,10 +645,9 @@ const Resume = () => {
 					item
 					container
 					// spacing={2}
-					justify="center"
+					justify="space-evenly"
 					// alignItems="flex-start"
-					alignItems="
-					flex-end"
+					alignItems="flex-end"
 					// alignContent="center"
 					// className={classes.papersGridContainer}
 					className={classes.boxTechnologies}
@@ -699,12 +655,12 @@ const Resume = () => {
 					// style={{ backgroundColor: "purple" }}
 				>
 					<Grid item container justify="center">
-						<Grid item>
+						<Grid item xs={12}>
 							<Typography
 								variant="h4"
 								align="center"
 								className={classes.heading2Title}
-								display="block"
+								// display="block"
 								// style={{ color: "red" }}
 							>
 								Technologies

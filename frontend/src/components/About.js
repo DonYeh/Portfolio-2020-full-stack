@@ -145,8 +145,8 @@ const useStyles = makeStyles((theme) => ({
 			// height: theme.spacing(12),
 		},
 		[theme.breakpoints.up("sm")]: {
-			width: "22vw",
-			height: "22vw",
+			width: "20vw",
+			height: "20vw",
 		},
 		// textAlign: "center",
 		// margin: theme.spacing(6),
@@ -201,20 +201,23 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "6vw",
 		},
 		[theme.breakpoints.up("sm")]: {
-			fontSize: "2.3rem",
+			fontSize: "2.2rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			fontSize: "2.5rem",
+			fontSize: "2.7rem",
 		},
 	},
 	aboutMeGridContainer: {
-		backgroundColor: "orange",
+		// backgroundColor: "orangessswqaswq",
 	},
 	avatarGridContainer: {
-		justifyContent: "center",
-
-		[theme.breakpoints.down("xs")]: { justifyContent: "flex-end" },
-		[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
+		// justify: "flex-end",
+		// justify: "center",
+		// [theme.breakpoints.up("sm")]: {
+		// 	justify: "center",
+		// },
+		// 	[theme.breakpoints.down("xs")]: { justifyContent: "flex-end" },
+		// 	[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
 	},
 	aboutAvatarPaperGridItemContainer: {
 		backgroundColor: "white",
@@ -229,10 +232,13 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
 	},
 	firstGridItem: {
-		padding: ".5rem",
-		justify: "space-evenly",
+		padding: ".5rem 0 .6rem .75rem",
+		backgroundColor: "aliceblue",
+		// justify: "space-evenly",
+
 		// alignItems: "stretch",
 	},
+	firstInnerGridItem: {},
 }));
 
 let theme = createMuiTheme();
@@ -274,7 +280,7 @@ const About = () => {
 							container
 							justify="space-evenly"
 							className={classes.titleAndAvatarGridContainer}
-							// style={{ backgroundColor: "aliceblue" }}
+							// spacing={2}
 						>
 							<Paper
 								style={{
@@ -286,8 +292,9 @@ const About = () => {
 									item
 									container
 									justify="space-evenly"
-									alignItems="stretch"
+									// alignItems="stretch"
 									className={classes.firstGridItem}
+									style={{}}
 								>
 									<Grid
 										item
@@ -296,6 +303,7 @@ const About = () => {
 										// md={6}
 										justify="center"
 										alignItems="center"
+										className={classes.firstInnerGridItem} // style={{ backgroundColor: "blue" }}
 									>
 										<Paper
 											style={{
@@ -311,6 +319,9 @@ const About = () => {
 												className={
 													classes.aboutMeGridContainer
 												}
+												style={{
+													backgroundColor: "purple",
+												}}
 											>
 												{/* <Grid item> */}
 												<Paper
@@ -346,8 +357,10 @@ const About = () => {
 										item
 										container
 										xs={6}
+										justify="center"
 										alignItems="center"
 										className={classes.avatarGridContainer}
+										// style={{ backgroundColor: "lightblue" }}
 									>
 										{/* <Grid item> */}
 										<Paper
