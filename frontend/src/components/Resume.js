@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
 		background: "lightgrey",
 		// padding: "1.5em ",
 		marginTop: "1rem",
-		padding: ".5rem 1rem 2rem",
+		padding: "1rem 1.5rem 2rem",
 		// marginRight: "1.4rem",
 	},
 	heading2Title: {
@@ -135,21 +135,30 @@ const useStyles = makeStyles((theme) => ({
 		width: "100vw",
 		// transform: "translate(0px, 1.2rem)",
 
-		padding: ".5rem 0 1rem",
+		// padding: ".5rem 0 1rem",
 		// margin: "0 auto",
 		// backgroundColor: "pink",
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "83vh",
-			// minHeight: "47vh",
+			height: "96vh",
+			minHeight: "47vh",
+			maxHeight: "95vh",
 
-			// maxHeight: ""
+			// maxHeight: "122vh",
 			border: "1px solid lightgrey ",
 			right: "5vw",
 			// top: "24px",
 			// top: 0,
 			transform: "translate(0rem, 4.3rem)",
+			[theme.breakpoints.down("sm")]: {
+				height: "122vh",
+				maxHeight: "112vh",
+			},
+			[theme.breakpoints.up("sm")]: {
+				height: "124vh",
+				maxHeight: "50vh",
+			},
 		},
 		"&:after": {
 			content: "''",
@@ -196,7 +205,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	timeLineItem: {
-		padding: "1em 4em 1em 2em",
+		padding: "1em 2em 1em 2em",
 		// borderBottom: "8px solid tan",
 		position: "relative",
 		// margin: ".6rem 3.8rem .6rem .6rem",
@@ -208,7 +217,7 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			right: "3rem",
+			right: "2.4rem",
 			top: "calc(50% - 5px)",
 			borderStyle: "solid",
 			borderColor: "sandybrown sandybrown transparent transparent",
@@ -218,6 +227,16 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("md")]: {
 			width: "44%",
 			margin: "1rem",
+			"&:before": {
+				content: "''",
+				position: "absolute",
+				left: "27.3rem",
+				top: "calc(50% - 5px)",
+				borderStyle: "solid",
+				borderColor: "sandybrown sandybrown transparent transparent",
+				borderWidth: "0.44rem",
+				transform: "rotate(45deg)",
+			},
 			"&:nth-of-type(2n)": {
 				float: "right",
 				margin: "1rem",
@@ -225,7 +244,7 @@ const useStyles = makeStyles((theme) => ({
 			},
 			"&:nth-of-type(2n):before": {
 				right: "auto",
-				left: "-0.625rem",
+				left: "-0.5rem",
 				borderColor: "transparent transparent sandybrown sandybrown",
 			},
 		},
@@ -265,10 +284,11 @@ const useStyles = makeStyles((theme) => ({
 		textTransform: "uppercase",
 	},
 	timeLineBoxE: {
-		postion: "relative",
 		// display: "flex",
+		postion: "relative",
+		width: "100vw",
 		// flexGrow: "1",
-		flexDirection: "column",
+		// flexDirection: "column",
 		// transform: "translate(0px, .5rem)",
 		// height: "96%",
 		padding: "1.3rem",
@@ -277,39 +297,37 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "113vh",
-			// maxHeight: "95vh",
+			height: "195vh",
 			border: "1px solid darkgrey ",
+			maxHeight: "140vh",
 			// right: "4.3vw",
 			// paddingBottom: "40px",
 			// top: "44px",
 			// top: 0,
-			// transform: "translate(0px, 1.2rem)",
-		},
 
-		[theme.breakpoints.up("sm")]: {
-			padding: "1rem",
-			height: "",
-			// height: "99%",
+			[theme.breakpoints.down("sm")]: {
+				// padding: "1rem",
+				// height: "99%",
 
-			"&:before": {
-				// transform: "translate(0px, 6rem)",
-				// height: "64%",
-				// maxHeight: "51%",
-				// left: "calc(50% - 1px)",
-				maxHeight: "49vh",
-				left: "3vw",
-				// zIndex: "-1",
+				height: " 144vh",
+				maxHeight: "113vh",
+				// maxHeight: "123vh",
+
+				// maxHeight: "113vh",
+
+				// maxHeight: "195vh",
 			},
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%"
-			// 	clear: "both",
-			// },
+			[theme.breakpoints.up("sm")]: {
+				// padding: "1rem",
+				// height: "99%",
+
+				height: "196vh",
+				maxHeight: "57vh",
+			},
 		},
 
 		[theme.breakpoints.up("md")]: {
-			padding: "1rem",
+			// padding: "1rem",
 			// height: "99%",
 
 			"&:before": {
@@ -351,14 +369,24 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.up("md")]: {
 			width: "45%",
+			"&:before": {
+				content: "''",
+				position: "absolute",
+				left: "27.3rem",
+				top: "calc(50% - 5px)",
+				borderStyle: "solid",
+				borderColor: "cadetblue cadetblue transparent transparent",
+				borderWidth: "0.44rem",
+				transform: "rotate(45deg)",
+			},
 			"&:nth-of-type(2n)": {
 				float: "right",
 				margin: "1rem",
 				borderColor: "tan",
 			},
 			"&:nth-of-type(2n):before": {
-				right: "auto",
-				left: "-0.625rem",
+				left: "auto",
+				left: ".2rem",
 				borderColor: "transparent transparent cadetblue cadetblue",
 			},
 		},
@@ -481,7 +509,7 @@ const Resume = () => {
 			<Grid
 				container
 				// direction="column"
-				// justify="center"
+				justify="center"
 				// component="header"
 				className={classes.mainContainer}
 			>
@@ -645,7 +673,7 @@ const Resume = () => {
 				<Grid
 					item
 					container
-					// spacing={2}
+					spacing={2}
 					justify="space-evenly"
 					// alignItems="flex-start"
 					alignItems="flex-end"
