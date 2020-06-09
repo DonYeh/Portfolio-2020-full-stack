@@ -23,7 +23,7 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
-		width: "100vw",
+		// width: "100vw",
 		background: "#234",
 	},
 	heading: {
@@ -50,20 +50,8 @@ const useStyles = makeStyles((theme) => ({
 			// paddingTop: "18vw",
 			paddingTop: "8vh",
 
-			// paddingTop: "10.5vh",
-			// paddingBottom: ".5vh",
-			// maxHeight: "30vh",
-			// height: "99%",
-			// backgroundColor: "red",
 			minHeight: "14vh",
 			alignItems: "flex-end",
-			// maxHeight: "11vh",
-			// height: "7vh",
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%",
-			// 	clear: "both",
-			// },
 		},
 		[theme.breakpoints.up("sm")]: {
 			// paddingTop: "13vw",
@@ -73,27 +61,10 @@ const useStyles = makeStyles((theme) => ({
 			// backgroundColor: "red",
 			minHeight: "14vh",
 			alignItems: "flex-end",
-			// maxHeight: "11vh",
-			// height: "7vh",
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%",
-			// 	clear: "both",
-			// },
 		},
 		[theme.breakpoints.up("md")]: {
 			paddingTop: "5vh",
 			minHeight: "8.5vh",
-			// paddingTop: "6vh",
-			// paddingBottom: ".2rem",
-			// height: "99%",
-			// maxHeight: "4rem",
-			// backgroundColor: "purple",
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%",
-			// 	clear: "both",
-			// },
 		},
 	},
 	downloadResumeText: {
@@ -166,25 +137,6 @@ const useStyles = makeStyles((theme) => ({
 			// position: "absolute",
 			// top: "60px",
 			// clear: "both",
-		},
-
-		[theme.breakpoints.up("sm")]: {
-			// padding: "1rem",
-			// height: "99%",
-
-			"&:before": {
-				// transform: "translate(0px, 6rem)",
-				height: "43.5vh",
-				// maxHeight: "51%",
-				// left: "calc(50% - 1px)",
-				right: "3vw",
-				// zIndex: "-1",
-			},
-			// "&:after": {
-			// 	content: "''",
-			// 	height: "98%"
-			// 	clear: "both",
-			// },
 		},
 		[theme.breakpoints.up("md")]: {
 			// padding: "2rem",

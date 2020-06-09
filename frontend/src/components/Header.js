@@ -49,8 +49,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+const darkTheme = createMuiTheme({
+	palette: {
+		type: "dark",
+	},
+});
+
 let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
+theme = responsiveFontSizes(darkTheme);
 
 const Header = () => {
 	const classes = useStyles();
@@ -60,7 +66,7 @@ const Header = () => {
 			<CssBaseline />
 			<Grid
 				container
-				spacing={2}
+				// spacing={2}
 				justify="center"
 				className={classes.mainContainer}
 				alignItems="center"

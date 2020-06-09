@@ -13,5 +13,12 @@ export const MyField: React.FC<FieldProps & TextFieldProps> = ({
 	field,
 	label,
 }) => {
-	return <TextField label={label} placeholder={placeholder} {...field} />;
+	return (
+		<TextField
+			label={label}
+			placeholder={placeholder}
+			{...field}
+			style={{ width: "99%" }}
+		/>
+	);
 };

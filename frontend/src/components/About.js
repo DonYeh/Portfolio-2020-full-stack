@@ -24,40 +24,45 @@ const useStyles = makeStyles((theme) => ({
 		// flexDirection: "column",
 		width: "100vw",
 		backgroundColor: "white",
-		paddingTop: "42%",
+		padding: "42% 1% 1%",
+		// paddingTop: "42%",
 	},
 	gridContainer: {
 		alignItems: "center",
-		paddingTop: "9vh",
-		padding: "9vh 5vw 7vh",
+		// paddingTop: "8vh",
+		padding: "4vh 4vw 1vh",
+		// height: "100vh",
+		// height: "100vh",
 
 		[theme.breakpoints.up("sm")]: {
-			width: "100vw",
-			height: "100vh",
+			// width: "100vw",
+			// height: "100vh",
+			padding: "2.5vh 4vw 2.5vh",
 			justify: "center",
 			alignItems: "center",
 			fontSize: "10em",
-
-			transform: "scale(0.8,0.8)",
-			padding: "5vh",
-			marginTop: "4vh",
+			padding: "",
+			transform: "scale(0.9,0.9)",
+			// padding: "5vh",
+			// marginTop: "4vh",
 		},
 		[theme.breakpoints.up("md")]: {
-			width: "100vw",
+			// width: "100vw",
 			justify: "center",
 			alignItems: "center",
 			fontSize: "9em",
-			transform: "scale(0.8,0.8)",
-			padding: "9vh 9vh 9vh",
+			transform: "scale(0.9,0.9)",
+			// padding: "9vh 9vh 9vh",
+			padding: "2vw",
 		},
 	},
 	gridItems: {
-		padding: "1rem 1rem .2rem",
+		padding: ".3rem .3rem .2rem",
 	},
 	gridItems1: {},
 	paper: {
 		color: "dimgrey",
-		padding: ".8rem 1rem",
+		padding: ".8rem .5rem",
 		// [theme.breakpoints.down("sm")]: {
 		// 	padding: "1rem",
 		// },
@@ -91,15 +96,19 @@ const useStyles = makeStyles((theme) => ({
 		// 	// height: theme.spacing(12),
 		// },
 		[theme.breakpoints.up("sm")]: {
-			width: "20vw",
-			height: "20vw",
+			width: "15vw",
+			height: "15vw",
 		},
 	},
 	mainPaper: {
 		// height: "100vh",
-		padding: "1em 0 1em",
+		height: "100%",
+		// height: "calc(100% + 56px)",
+		padding: "1.5vh 0 1vh",
+		// margin: "1.2rem",
+		// padding: "1em 0 1em",
 		backgroundColor: " rgba(255,255,255,.2)",
-
+		// backgroundColor: "rgba(0,0,0,.4)
 		// height: "100vh",
 		// padding: ".5em",
 		// backgroundColor: "green",
@@ -108,9 +117,17 @@ const useStyles = makeStyles((theme) => ({
 		// backgroundColor: "rgba(f,f,f,.5)",
 
 		// transform: "translateY(9vh)",
+		[theme.breakpoints.up("sm")]: {
+			marginTop: "15vh",
+			padding: "0",
+		},
+		[theme.breakpoints.up("md")]: {
+			marginTop: "16vh",
+			padding: "0",
+		},
 	},
 	titleAndAvatarGridContainer: {
-		padding: "1rem 1rem .5rem",
+		// padding: "1rem 1rem .1rem",
 		// padding: "1rem 4rem",
 
 		// backgroundColor: "aliceblue",
@@ -121,11 +138,11 @@ const useStyles = makeStyles((theme) => ({
 		// 	padding: ".25rem .3rem",
 		// },
 		[theme.breakpoints.up("md")]: {
-			padding: "1rem 4rem",
+			// padding: "1rem 4rem",
 		},
 	},
 	typographyText: {
-		padding: "0 1rem",
+		padding: "0 1.2rem",
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.4rem",
 		},
@@ -139,28 +156,25 @@ const useStyles = makeStyles((theme) => ({
 	typographyTextAboutMe: {
 		padding: "0 .2rem",
 		textAlign: "center",
-		fontSize: "1.1rem",
-		[theme.breakpoints.down("xs")]: {
-			fontSize: "6vw",
-		},
+		// fontSize: "1.1rem",
+		// [theme.breakpoints.down("xs")]: {
+		// 	fontSize: "6vw",
+		// },
 		[theme.breakpoints.up("sm")]: {
-			fontSize: "2.2rem",
+			fontSize: "3rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			fontSize: "2.7rem",
+			fontSize: "4rem",
 		},
 	},
 	aboutMeGridContainer: {
 		// backgroundColor: "orangessswqaswq",
 	},
 	avatarGridContainer: {
-		// justify: "flex-end",
-		// justify: "center",
-		// [theme.breakpoints.up("sm")]: {
-		// 	justify: "center",
-		// },
-		// 	[theme.breakpoints.down("xs")]: { justifyContent: "flex-end" },
-		// 	[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
+		[theme.breakpoints.up("sm")]: {
+			justifyContent: "flex-end",
+			// transform: "translateX(30px)",
+		},
 	},
 	aboutAvatarPaperGridItemContainer: {
 		// backgroundColor: "white",
@@ -177,24 +191,36 @@ const useStyles = makeStyles((theme) => ({
 	},
 	firstGridItem: {
 		// padding: ".5rem 0 .6rem .75rem",
-		backgroundColor: "aliceblue",
+		// backgroundColor: "aliceblue",
 		// justify: "space-evenly",
-
 		// alignItems: "stretch",
 	},
 	firstInnerGridItem: {},
+	innerPaper: {
+		padding: ".4em",
+		[theme.breakpoints.up("sm")]: {
+			padding: "5rem",
+		},
+		[theme.breakpoints.up("md")]: {},
+	},
 }));
 
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
+let darkTheme = createMuiTheme({
+	palette: {
+		type: "dark",
+	},
+});
+
+// let theme = createMuiTheme();
+let theme = responsiveFontSizes(darkTheme);
 
 const About = () => {
 	const classes = useStyles();
 
 	return (
 		<ThemeProvider theme={theme}>
-			<CssBaseline />
 			<Paper square className={classes.mainPaper} elevation={0}>
+				<CssBaseline />
 				<Grid
 					container
 					className={classes.gridContainer}
@@ -210,15 +236,16 @@ const About = () => {
 						item
 						container
 						justify="center"
-						className={classes.titleAndAvatarGridContainer}
+						className={`${classes.titleAndAvatarGridContainer} ${classes.gridItems}`}
 						// spacing={2}
 						style={{ margin: "0" }}
 					>
 						<Paper
 							style={{
 								// width: "100%",
-								backgroundColor: "aliceblue",
+								// backgroundColor: "aliceblue",
 								padding: "1rem",
+								width: "100%",
 							}}
 							elevation={1}
 						>
@@ -244,9 +271,11 @@ const About = () => {
 								>
 									<Paper
 										style={{
-											backgroundColor: "lightgrey",
+											backgroundColor: "lightgrey", //aliceblue
+											// backgroundColor: "lightgrey", //aliceblue
 											padding: ".4rem",
 										}}
+										className={classes.innerPaper}
 									>
 										<Grid
 											item
@@ -266,7 +295,7 @@ const About = () => {
 												className={classes.paper}
 												style={{
 													// backgroundColor: "aliceblue",
-													backgroundColor: "white",
+													// backgroundColor: "aliceblue",
 													color: "darkslategray",
 													textTransform: "lowercase",
 													fontWeight: "bold",
@@ -290,10 +319,9 @@ const About = () => {
 									item
 									container
 									xs={6}
-									justify="center"
+									justify="flex-end"
 									alignItems="center"
-									// className={classes.avatarGridContainer}
-									style={{ paddingLeft: "1em" }}
+									className={classes.avatarGridContainer}
 								>
 									{/* <Grid item> */}
 									<Paper
@@ -301,13 +329,13 @@ const About = () => {
 										style={{
 											backgroundColor: "lightgrey",
 											// width: "100%",
-											padding: ".3rem",
+											padding: ".4rem",
 										}}
 									>
 										<Grid
 											item
 											// direction="column"
-											// justify="center"
+											justify="flex-end"
 											xs={12}
 											className={
 												classes.aboutMeGridContainer

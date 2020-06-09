@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: "0 9vw",
 
 		textAlign: "center",
+		margin: "0",
 
 		[theme.breakpoints.up("lg")]: {
 			fontSize: "9em",
@@ -37,8 +38,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	typedItem: {},
 	typedFont: {
-		color: "white",
+		// color: "white",
+		color: "rgba(255,255,255, .81)",
+		color: "rgba(255,255,255, .81)", // dark mode
+		color: "rgba(68,68,68, .86)", // dark mode
+
 		textShadow: "1px 1px rgb(20,33,61)", //dark blue
+		// no textShadow when in light mode
 		// textShadow: "1.5px 1.5px rgb(240,169,80)",
 
 		// marginTop: "10%",
@@ -47,12 +53,19 @@ const useStyles = makeStyles((theme) => ({
 	},
 	mainPaper: {
 		height: "100vh",
-		backgroundColor: "rgba(0,0,0,.2)",
+		// backgroundColor: "rgba(0,0,0,.2)", //dark
+		backgroundColor: "rgba(255,255,255,.55)", //dark
 
 		// backdropFilter: "blur(4px)",
 		// backgroundColor: "rgba(f,f,f,.5)",
 	},
 }));
+
+const darkTheme = createMuiTheme({
+	palette: {
+		type: "dark",
+	},
+});
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);

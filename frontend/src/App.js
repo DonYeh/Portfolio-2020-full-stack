@@ -29,6 +29,12 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme, StylesProvider } from "@material-ui/core/styles";
 
+import {
+	createMuiTheme,
+	ThemeProvider,
+	responsiveFontSizes,
+} from "@material-ui/core/styles";
+
 import { Paper, Grid } from "@material-ui/core";
 
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -55,7 +61,7 @@ import AssignmentIndTwoToneIcon from "@material-ui/icons/AssignmentIndTwoTone";
 import AppsTwoToneIcon from "@material-ui/icons/AppsTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 
-const drawerWidth = 220;
+const drawerWidth = 210;
 
 const menuIcons = [
 	{
@@ -91,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
 		// backdropFilter: "blur(3px)",
 	},
 	list: {
-		width: 280,
+		width: 240,
 	},
 	drawer: {
 		[theme.breakpoints.up("sm")]: {
@@ -118,21 +124,18 @@ const useStyles = makeStyles((theme) => ({
 	toolbar: theme.mixins.toolbar,
 	drawerPaper: {
 		width: drawerWidth,
-		backgroundColor: "rgba(0,0,0,.5 )",
+		// backgroundColor: "rgba(0,0,0,.5 )",
+		// backgroundColor: "rgba(f,f,f,.5 )",
+		// backgroundColor: "rgba(#424242db)",
+		backgroundColor: "rgba(66,66,66,.88)",
 		backdropFilter: "blur(5px)",
 	},
 
 	content: {
 		// paddingTop: theme.mixins.toolbar,
 		flexGrow: 1,
-		// padding: "1rem", //adds padding to main content window view
-		// width: "100vw",
-		// backgroundColor: "aliceblue",
-		// height: "100vh",
-		// padding: theme.spacing(2),
-		// backdropFilter: "blur(3px)",
-		// backgroundColor: "rgba(0,0,0,.3)",
-		// padding: "1em",
+		// height: "100%",
+
 		backdropFilter: "blur(5px)",
 	},
 	// toolbar: {
@@ -149,11 +152,35 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		padding: theme.spacing(0, 1),
 		// necessary for content to be below app bar
-		...theme.mixins.toolbar,
+		// ...theme.mixins.toolbar,
 		justifyContent: "flex-start",
 		backgroundColor: "rgba(124,124,124, .2)",
+		// minHeight: "54px",
+	},
+	topListText: {
+		color: "purple",
+	},
+	mainAppPaper: {
+		// backgroundColor: "rgba(0,0,0,.4)",
+		// padding: "1rem",
+		margin: "1rem",
+		[theme.breakpoints.up("sm")]: {
+			margin: "5rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			margin: "6rem 10rem",
+		},
 	},
 }));
+
+const darkTheme = createMuiTheme({
+	palette: {
+		type: "dark",
+	},
+});
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(darkTheme);
 
 function App(props) {
 	const { window } = props;
@@ -168,15 +195,16 @@ function App(props) {
 	const drawerL = (
 		<div className={classes.drawer}>
 			{/* <div className={classes.toolbar} /> */}
-			{/* <Divider /> */}
+			<Divider />
 			<div className={classes.drawerHeader}>
 				<IconButton onClick={handleDrawerToggle}>
 					{theme.direction === "ltr" ? (
 						<ChevronLeftIcon
 							style={{
-								color: "sandybrown",
+								// color: "sandybrown",
+								color: "#e49059ed",
 								width: "1em",
-								height: "1em",
+								height: "1.2em",
 							}}
 						/>
 					) : (
@@ -189,13 +217,20 @@ function App(props) {
 				{menuIcons.map((menuIcon, key) => (
 					<Link to={menuIcon.listPath}>
 						<ListItem button key={key} onClick={handleDrawerToggle}>
-							<ListItemIcon style={{ color: "cadetblue" }}>
+							<ListItemIcon
+								style={{
+									color: "#5f9ea0c7",
+									// color: "cadetblue",
+									paddingLeft: "6px",
+								}}
+							>
 								{menuIcon.listIcon}
 							</ListItemIcon>
 							<ListItemText
 								primary={menuIcon.listText}
 								style={{
 									color: "aliceblue",
+									// color: "aliceblue",
 									fontWeight: "bold",
 								}}
 							/>
@@ -246,81 +281,88 @@ function App(props) {
 	return (
 		// <div className="App">
 		<StylesProvider injectFirst>
-			<BrowserRouter>
-				{/* <div className={classes.root}> */}
-				<CssBaseline />
-				<Paper style={{ backgroundColor: "rgba(0,0,0,.4)" }}>
-					<AppBar position="fixed" className={classes.appBar}>
-						<Toolbar
-							style={{
-								backgroundColor: "#fafafa",
-								color: "#345",
-							}}
-						>
-							<IconButton
-								color="inherit"
-								aria-label="open drawer"
-								edge="start"
-								onClick={handleDrawerToggle}
-								className={classes.menuButton}
+			<ThemeProvider theme={theme}>
+				<BrowserRouter>
+					{/* <div className={classes.root}> */}
+					<CssBaseline />
+					<Paper className={classes.mainAppPaper}>
+						<AppBar position="fixed" className={classes.appBar}>
+							<Toolbar
 								style={{
-									color: "sandybrown",
+									// backgroundColor: "#fafafa",
+									backgroundColor: "#ffffffe6",
+									color: "#345",
 								}}
 							>
-								<MenuIcon />
-							</IconButton>
-							<Typography variant="h6" noWrap>
-								Portfolio
-							</Typography>
-						</Toolbar>
-					</AppBar>
-					<nav
-						className={classes.drawer}
-						aria-label="mailbox folders"
-					>
-						{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-						<Hidden smUp implementation="css">
-							<Drawer
-								container={container}
-								variant="temporary"
-								anchor={
-									theme.direction === "rtl" ? "right" : "left"
-								}
-								open={mobileOpen}
-								onClose={handleDrawerToggle}
-								classes={{
-									paper: classes.drawerPaper,
-								}}
-								ModalProps={{
-									keepMounted: true, // Better open performance on mobile.
-								}}
-							>
-								{drawerL}
-							</Drawer>
-						</Hidden>
-						<Hidden xsDown implementation="js">
-							<Drawer
-								className={classes.root}
-								variant="permanent"
-								anchor="top"
-								open
-							>
-								{drawerT}
-							</Drawer>
-						</Hidden>
-					</nav>
-					<main className={classes.content}>
-						<Routes>
-							<Route path="/" element={<HomePage />} />
-							<Route path="about" element={<About />} />
-							<Route path="resume" element={<Resume />} />
-							<Route path="projects" element={<Projects />} />
-							<Route path="contact" element={<Contact />} />
-						</Routes>
-					</main>
-					{/* </div> */}
-				</Paper>
-			</BrowserRouter>
+								<IconButton
+									color="inherit"
+									aria-label="open drawer"
+									edge="start"
+									onClick={handleDrawerToggle}
+									className={classes.menuButton}
+									style={{
+										color: "#e49059ed",
+										// color: "sandybrown",
+									}}
+								>
+									<MenuIcon />
+								</IconButton>
+								<Typography variant="h6" noWrap>
+									Portfolio
+								</Typography>
+							</Toolbar>
+						</AppBar>
+						<nav
+							className={classes.drawer}
+							aria-label="mailbox folders"
+						>
+							{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+							<Hidden smUp implementation="css">
+								<Drawer
+									container={container}
+									variant="temporary"
+									anchor={
+										theme.direction === "rtl"
+											? "right"
+											: "left"
+									}
+									open={mobileOpen}
+									onClose={handleDrawerToggle}
+									classes={{
+										paper: classes.drawerPaper,
+									}}
+									ModalProps={{
+										keepMounted: true, // Better open performance on mobile.
+									}}
+								>
+									{drawerL}
+								</Drawer>
+							</Hidden>
+							<Hidden xsDown implementation="js">
+								<Drawer
+									className={classes.root}
+									variant="permanent"
+									anchor="top"
+									open
+									// style={{ color: 45" }}
+								>
+									{drawerT}
+								</Drawer>
+							</Hidden>
+						</nav>
+						<main className={classes.content}>
+							<Routes>
+								<Route path="/" element={<HomePage />} />
+								<Route path="about" element={<About />} />
+								<Route path="resume" element={<Resume />} />
+								<Route path="projects" element={<Projects />} />
+								<Route path="contact" element={<Contact />} />
+							</Routes>
+						</main>
+						{/* </div> */}
+					</Paper>
+				</BrowserRouter>
+			</ThemeProvider>
 		</StylesProvider>
 		// {/* </div> */}
 	);
