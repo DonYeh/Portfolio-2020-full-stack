@@ -121,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 
-	toolbar: theme.mixins.toolbar,
+	// toolbar: theme.mixins.toolbar,
 	drawerPaper: {
 		width: drawerWidth,
 		// backgroundColor: "rgba(0,0,0,.5 )",
@@ -150,7 +150,8 @@ const useStyles = makeStyles((theme) => ({
 	drawerHeader: {
 		display: "flex",
 		alignItems: "center",
-		padding: theme.spacing(0, 1),
+		height: "56px",
+		// padding: theme.spacing(0, 1),
 		// necessary for content to be below app bar
 		// ...theme.mixins.toolbar,
 		justifyContent: "flex-start",
@@ -198,7 +199,7 @@ function App(props) {
 	const drawerL = (
 		<div className={classes.drawer}>
 			{/* <div className={classes.toolbar} /> */}
-			<Divider />
+			{/* <Divider /> */}
 			<div className={classes.drawerHeader}>
 				<IconButton onClick={handleDrawerToggle}>
 					{theme.direction === "ltr" ? (
@@ -246,13 +247,14 @@ function App(props) {
 
 	const drawerT = (
 		// <div>
-		<div className={classes.displayFlex}>
+		<div className={classes.topDrawer}>
 			<List
 				style={{
 					// backgroundColor: "aliceblue",
 					backgroundColor: "white",
 					display: "flex",
 					width: "100vw",
+					height: "12vh",
 				}}
 			>
 				{menuIcons.map((menuIcon, key) => (
@@ -347,7 +349,7 @@ function App(props) {
 									variant="permanent"
 									anchor="top"
 									open
-									// style={{ color: 45" }}
+									// style={{ height: "15vh" }}
 								>
 									{drawerT}
 								</Drawer>

@@ -84,15 +84,16 @@ const useStyles = makeStyles((theme) => ({
 		// 	padding: "1.2rem 1.2rem 0rem",
 		// }}
 		[theme.breakpoints.up("sm")]: {
-			padding: "2.5rem",
-			// "&:nth-of-type(2n)": {
-			// 	padding: "0rem 2.5rem",
-			// },
+			padding: "2rem",
+			"&:nth-of-type(2n)": {
+				padding: "0rem 2rem",
+			},
 		},
 		[theme.breakpoints.up("md")]: {
 			padding: "2.5rem",
-			// "&:nth-of-type(2n)": {
-			padding: "0rem 2.5rem 0rem",
+			"&:nth-of-type(2n)": {
+				padding: "0rem 2.5rem",
+			},
 		},
 	},
 
@@ -181,6 +182,18 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.3rem",
 		},
+	},
+	firstGridItemTitle: {
+		fontSize: "1.4rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "2.5rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			fontSize: "3.55rem",
+		},
+	},
+	topDrawer: {
+		height: "53px",
 	},
 }));
 
@@ -290,6 +303,7 @@ const Contact = () => {
 											color: "darkslategrey",
 											paddingBottom: ".5rem",
 										}}
+										className={classes.firstGridItemTitle}
 									>
 										Let's build together
 									</Typography>
