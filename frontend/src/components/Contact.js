@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
 	// },
 	gridContainer: {
 		justify: "center",
-		padding: "7vh 1.2vw 1.2vh",
+		marginTop: "7vh",
+		// padding: "7vh 1.2vw 1.2vh",
 		// [theme.breakpoints.up("sm")]: {
 		// 	// marginTop: "14vh",
 		// 	// margin: "14vh 5vw 14vh",
@@ -57,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 		// margin: "0",
 
 		[theme.breakpoints.up("sm")]: {
-			padding: "8vh 3vw 1.2vh",
+			// padding: "8vh 3vw 1.2vh",
 		},
 		[theme.breakpoints.up("md")]: {
 			spacing: "3",
@@ -65,13 +66,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 	gridItem: {
 		// background: "white",
-		padding: ".8rem ",
+		// paddingTop: "7.5vh",
+		// padding: "1rem 1rem",
+		padding: "1.2rem",
+		// marginTop: "4.5vh",
+		backgroundColor: "aliceblue",
 		"&:nth-of-type(2n)": {
-			padding: "0rem .8rem 0rem",
+			padding: "0rem 1.2rem",
 		},
 
-		// style={{
-		backgroundColor: "aliceblue",
 		// 	padding: ".5rem 1.2rem 0rem",
 		// 	alignItems: "center",
 		// }}
@@ -81,57 +84,59 @@ const useStyles = makeStyles((theme) => ({
 		// 	padding: "1.2rem 1.2rem 0rem",
 		// }}
 		[theme.breakpoints.up("sm")]: {
-			padding: "1.5rem",
-			"&:nth-of-type(2n)": {
-				padding: "0rem 1.5rem 0rem",
-			},
+			padding: "2.5rem",
+			// "&:nth-of-type(2n)": {
+			// 	padding: "0rem 2.5rem",
+			// },
 		},
 		[theme.breakpoints.up("md")]: {
 			padding: "2.5rem",
-			"&:nth-of-type(2n)": {
-				padding: "0rem 2.5rem 0rem",
-			},
+			// "&:nth-of-type(2n)": {
+			padding: "0rem 2.5rem 0rem",
 		},
 	},
 
 	paper: {
 		// background: "white",
-		padding: "1rem 2rem",
+		padding: "1rem 1.5rem",
 		// marginTop: ".5rem",
 		[theme.breakpoints.up("sm")]: {
 			padding: "2rem 4rem",
 		},
+		[theme.breakpoints.up("md")]: {
+			padding: "1rem 4rem",
+		},
 	},
 	mainPaper: {
-		backgroundColor: "rgba(0,0,0,.3)",
-		padding: "3vh 2.5vw", // marginTop: "14vh",
-		height: "100vh",
+		// backgroundColor: "rgba(0,0,0,.3)",
+		// padding: "2vh 2vw", // marginTop: "14vh",
+		// height: "100vh",
 
 		[theme.breakpoints.up("sm")]: {
+			marginTop: "15vh",
 			// marginTop: "10vh",
 			// margin: "14vh 5vw 14vh",
-			padding: "11vh 9vw",
+			// padding: "11vh 9vw",
 			// padding: "2em",
 			// backgroundColor: "darkblue",
 		},
 		[theme.breakpoints.up("md")]: {
 			// marginTop: "10vh",
 			// margin: "14vh 5vw 14vh",
-			padding: "12vh 10vw",
-			height: "100vh",
-
+			// padding: "12vh 10vw",
+			// height: "100vh",
 			// padding: "2em",
 			// backgroundColor: "darkblue",
 		},
-		[theme.breakpoints.up("lg")]: {
-			// marginTop: "10vh",
-			// margin: "14vh 5vw 14vh",
-			padding: "14vh 10vw",
-			height: "100vh",
+		// [theme.breakpoints.up("lg")]: {
+		// 	// marginTop: "10vh",
+		// 	// margin: "14vh 5vw 14vh",
+		// 	padding: "14vh 10vw",
+		// 	height: "100vh",
 
-			// padding: "2em",
-			// backgroundColor: "darkblue",
-		},
+		// 	// padding: "2em",
+		// 	// backgroundColor: "darkblue",
+		// },
 	},
 	hasError: {
 		border: "1px solid #f44336",
@@ -161,6 +166,21 @@ const useStyles = makeStyles((theme) => ({
 	textField: {
 		width: "100%",
 		backgroundColor: "orange",
+	},
+	firstGridItemP: {
+		fontSize: "1rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.3rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			fontSize: "1.8rem",
+		},
+	},
+	labelTextField: {
+		fontSize: "1rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.3rem",
+		},
 	},
 }));
 
@@ -218,7 +238,8 @@ const darkTheme = createMuiTheme({
 });
 
 let theme = createMuiTheme();
-theme = responsiveFontSizes(darkTheme);
+// theme = responsiveFontSizes(darkTheme);
+theme = responsiveFontSizes(theme);
 
 const Contact = () => {
 	const classes = useStyles();
@@ -250,7 +271,7 @@ const Contact = () => {
 							container
 							justify="center"
 							alignItems="center"
-							// spacing={1}
+							// spacing={2}
 							className={classes.gridContainer}
 						>
 							<Grid
@@ -275,6 +296,7 @@ const Contact = () => {
 									<Typography
 										variant="body1"
 										color="textSecondary"
+										className={classes.firstGridItemP}
 									>
 										Have a project you're looking to get off
 										the ground? I'd love to hear from you.
@@ -328,7 +350,7 @@ const Contact = () => {
 														label="first name"
 														style={{
 															width: "96%",
-															// width: "100%",
+															fontSize: "1.4rem",
 														}}
 														as={TextField}
 														fullWidth
@@ -343,24 +365,16 @@ const Contact = () => {
 															}
 															onBlur={handleBlur}
 															fullWidth
-															// style={{
-															// 	width: "100%",
-															// }}
-															variant="filled"
-															// fullWidth
 															// className={
-															// 	classes.textField
-
-															// classes={{
-															// 	MuiInput: {
-															// 		formControl: {
-															// 			width:
-															// 				"99%",
-															// 			backgroundColor:
-															// 				"pink",
-															// 		},
-															// 	},
-															// }}
+															// 	classes.labelTextField
+															// }
+															InputProps={{
+																classes: {
+																	input:
+																		classes.labelTextField,
+																},
+															}}
+															variant="filled"
 														/>
 													</Field>
 													<Error

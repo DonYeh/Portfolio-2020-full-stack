@@ -162,8 +162,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	mainAppPaper: {
 		// backgroundColor: "rgba(0,0,0,.4)",
+		// backdropFilter: "blur(5px)",
+
 		// padding: "1rem",
-		margin: "1rem",
+		margin: "1.2rem",
 		[theme.breakpoints.up("sm")]: {
 			margin: "5rem",
 		},
@@ -180,7 +182,8 @@ const darkTheme = createMuiTheme({
 });
 
 let theme = createMuiTheme();
-theme = responsiveFontSizes(darkTheme);
+// theme = responsiveFontSizes(darkTheme);
+theme = responsiveFontSizes(theme);
 
 function App(props) {
 	const { window } = props;

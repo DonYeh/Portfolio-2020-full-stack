@@ -35,7 +35,11 @@ const useStyles = makeStyles((theme) => ({
 	// 	// paddingTop: "20rem",
 	// 	// marginTop: "15%",
 	// },
-	mainPaper: {},
+	mainPaper: {
+		[theme.breakpoints.up("sm")]: {
+			marginTop: "15vh",
+		},
+	},
 	mainGridContainer: {
 		// display: "flex",
 		// background: "black",
@@ -50,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 		// background: "pink",
 		// padding: "20% 11%",
 		[theme.breakpoints.up("sm")]: {
-			padding: "6% 5% 6%",
+			padding: "10% 5%",
 		},
 	},
 	media: {
@@ -60,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 
 	proj1: {},
 	projectsGridContainer: {
-		padding: ".5rem",
+		// padding: ".5rem",
 	},
 }));
 

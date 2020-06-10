@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		// flexDirection: "column",
 		width: "100vw",
-		backgroundColor: "white",
+		// backgroundColor: "white",
+		color: "rgba(255,255,255, .81)",
 		padding: "42% 1% 1%",
 		// paddingTop: "42%",
 	},
@@ -41,17 +42,16 @@ const useStyles = makeStyles((theme) => ({
 			justify: "center",
 			alignItems: "center",
 			fontSize: "10em",
-			padding: "",
-			transform: "scale(0.9,0.9)",
+			// padding: "",
+			// transform: "scale(0.9,0.9)",
 			// padding: "5vh",
 			// marginTop: "4vh",
 		},
 		[theme.breakpoints.up("md")]: {
 			// width: "100vw",
-			justify: "center",
-			alignItems: "center",
+
 			fontSize: "9em",
-			transform: "scale(0.9,0.9)",
+			// transform: "scale(0.9,0.9)",
 			// padding: "9vh 9vh 9vh",
 			padding: "2vw",
 		},
@@ -107,14 +107,14 @@ const useStyles = makeStyles((theme) => ({
 		padding: "1.5vh 0 1vh",
 		// margin: "1.2rem",
 		// padding: "1em 0 1em",
-		backgroundColor: " rgba(255,255,255,.2)",
+		// backgroundColor: " rgba(255,255,255,.2)",
+
 		// backgroundColor: "rgba(0,0,0,.4)
 		// height: "100vh",
 		// padding: ".5em",
 		// backgroundColor: "green",
 
-		// backdropFilter: "blur(4px)",
-		// backgroundColor: "rgba(f,f,f,.5)",
+		backdropFilter: "blur(4px)",
 
 		// transform: "translateY(9vh)",
 		[theme.breakpoints.up("sm")]: {
@@ -144,7 +144,7 @@ const useStyles = makeStyles((theme) => ({
 	typographyText: {
 		padding: "0 1.2rem",
 		[theme.breakpoints.up("sm")]: {
-			fontSize: "1.4rem",
+			fontSize: "1.3rem",
 		},
 		[theme.breakpoints.up("md")]: {
 			fontSize: "1.6rem",
@@ -212,7 +212,9 @@ let darkTheme = createMuiTheme({
 });
 
 // let theme = createMuiTheme();
-let theme = responsiveFontSizes(darkTheme);
+// let theme = responsiveFontSizes(darkTheme);
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 const About = () => {
 	const classes = useStyles();
@@ -224,7 +226,7 @@ const About = () => {
 				<Grid
 					container
 					className={classes.gridContainer}
-					// spacing={2}
+					spacing={2}
 					// direction="column"
 					justify="space-evenly"
 					// alignItems="center"

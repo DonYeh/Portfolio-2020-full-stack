@@ -18,6 +18,9 @@ import {
 } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 
+import Button from "@material-ui/core/Button";
+import SaveIcon from "@material-ui/icons/Save";
+
 import GetAppIcon from "@material-ui/icons/GetApp";
 // import { FullscreenExit } from "@material-ui/icons";
 
@@ -43,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 		// minHeight: "14vh",
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
-		paddingTop: "7vh",
+		paddingTop: "2.5rem",
 		background: "lightslategray",
 
 		[theme.breakpoints.up("sm")]: {
@@ -67,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
 		color: "white",
 
 		// background: "pink",
+	},
+	button: {
+		margin: theme.spacing(1),
 	},
 	boxTechnologies: {
 		// color: "cadetblue",
@@ -271,9 +277,9 @@ const useStyles = makeStyles((theme) => ({
 			position: "absolute",
 			border: "1px solid darkgrey ",
 
-			height: " 37%",
-			maxHeight: "113vh",
-			transform: "translate(10px)",
+			height: " 39.5%",
+			// maxHeight: "113vh",
+			// transform: "translate(10px)",
 
 			[theme.breakpoints.up("sm")]: {
 				// padding: "1rem",
@@ -318,7 +324,7 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			left: "1.6rem",
+			left: "1.2rem",
 			top: "calc(50% - 5px)",
 			borderStyle: "solid",
 			borderColor: "cadetblue cadetblue transparent transparent",
@@ -482,17 +488,26 @@ const Resume = () => {
 						// style={{ backgroundColor: "green" }}
 					>
 						<Grid item>
-							<GetAppIcon style={{ color: "cadetblue" }} />
+							{/* <GetAppIcon style={{ color: "cadetblue" }} /> */}
 							<Link
 								href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
 								// onClick={preventDefault}
 								// variant="body2"
 							>
 								{/* {3variant="body2"'} */}
-								<Typography variant="h5">
+								{/* <Typography variant="h5">
 									{" "}
 									Download Resume
-								</Typography>
+								</Typography> */}
+								<Button
+									variant="contained"
+									color="primary"
+									size="small"
+									className={classes.button}
+									startIcon={<SaveIcon />}
+								>
+									Download resume
+								</Button>
 							</Link>
 						</Grid>
 					</Grid>

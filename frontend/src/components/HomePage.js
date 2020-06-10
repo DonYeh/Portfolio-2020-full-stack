@@ -20,7 +20,7 @@ import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
 	mainGridContainer: {
-		paddingTop: "27vh",
+		paddingTop: "22vh",
 		// padding: "33% 0% 0%",
 	},
 
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
 	typedItem: {},
 	typedFont: {
 		// color: "white",
-		color: "rgba(255,255,255, .81)",
 		color: "rgba(255,255,255, .81)", // dark mode
 		color: "rgba(68,68,68, .86)", // dark mode
 
@@ -52,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 		// backgroundColor: "blue",
 	},
 	mainPaper: {
-		height: "100vh",
+		height: "95vh",
 		// backgroundColor: "rgba(0,0,0,.2)", //dark
 		backgroundColor: "rgba(255,255,255,.55)", //dark
 
