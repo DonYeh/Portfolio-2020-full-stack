@@ -8,37 +8,50 @@ import Button from "@material-ui/core/Button";
 
 import Navbar from "./Navbar";
 import Navbar3 from "./Navbar3";
-import { Typography, Box, Paper, Grid, Avatar, Card } from "@material-ui/core";
+import {
+	Typography,
+	Box,
+	Paper,
+	Grid,
+	Avatar,
+	Card,
+	CssBaseline,
+} from "@material-ui/core";
 import { FullscreenExit } from "@material-ui/icons";
 
 import portfolioImg from "../assets/donaldyehportoflioheader.png";
 import ChatrisImg from "../assets/tetris-game-retro-arcade-512.png";
 import movieExplorerGif from "../assets/newMovieGIFedited.gif";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: 400,
 		// background: "white",
 	},
-	mainBox: {
-		display: "flex",
+	// mainBox: {
+	// 	display: "flex",
 
-		// margin: "20rem 1.25rem 1.25rem 1.25rem",
-		// paddingTop: "20rem",
-		// marginTop: "15%",
-	},
+	// 	// margin: "20rem 1.25rem 1.25rem 1.25rem",
+	// 	// paddingTop: "20rem",
+	// 	// marginTop: "15%",
+	// },
+	mainPaper: {},
 	mainGridContainer: {
 		// display: "flex",
 		// background: "black",
 
 		// backdropFilter: "blur(5px)",
 		// backgroundColor: "rgba(0,0,0,.6)",
-
-		marginTop: "80em ",
-		padding: "2em",
-		height: "50%",
+		// padding: "16% 5%",
+		padding: "16% 5% 6%",
+		// marginTop: "80em ",
+		// padding: "2em",
+		// height: "50%",
 		// background: "pink",
-		padding: "20% 11%",
+		// padding: "20% 11%",
+		[theme.breakpoints.up("sm")]: {
+			padding: "6% 5% 6%",
+		},
 	},
 	media: {
 		// height: "0",
@@ -46,33 +59,38 @@ const useStyles = makeStyles({
 	},
 
 	proj1: {},
-});
+	projectsGridContainer: {
+		padding: ".5rem",
+	},
+}));
 
 export default function ImgMediaCard() {
 	const classes = useStyles();
 
 	return (
 		<>
-			<Box
-				className="classes.mainBox"
+			<CssBaseline />
+			<Paper
+				className={classes.mainPaper}
 				style={{ backdropFilter: "blur(5px)" }}
 			>
 				<Grid
-					className="classes.mainGridContainer"
+					className={classes.mainGridContainer}
 					container
 					justify="center"
 					alignContent="center"
 					// spacing={2}
-					style={{
-						padding: " 24% 11%",
-					}}
+					// style={{
+					// 	padding: " 24% 11%",
+					// }}
 				>
 					<Grid
 						container
 						item
 						// style={{ width: "100%" }}
 						justify="space-evenly"
-						spacing={7}
+						spacing={3}
+						className={classes.projectsGridContainer}
 					>
 						<Grid item>
 							<Box className="proj1">
@@ -85,7 +103,7 @@ export default function ImgMediaCard() {
 										<CardMedia
 											component="img"
 											alt="donaldyeh.dev"
-											height="260rem"
+											height="220rem"
 											src={portfolioImg}
 											// image="../assets/donaldyehportoflioheader.png"
 											title="donaldyeh.dev"
@@ -242,7 +260,7 @@ export default function ImgMediaCard() {
 					</Grid>
 					{/* </Paper> */}
 				</Grid>
-			</Box>
+			</Paper>
 		</>
 	);
 }

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		color: "sandybrown",
 		// padding: "1rem 0 1rem",
 		// marginTop: ".3rem",
-		padding: "1.2rem 0rem",
+		padding: ".9rem",
 		// paddingBottom: "1.2rem",
 		textTransform: "uppercase",
 		// zIndex: "1",
@@ -39,28 +39,22 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		// paddingTop: "7vh",
 		// paddingBottom: "2vh",
-		maxHeight: "18vh",
-		minHeight: "14vh",
+		// maxHeight: "18vh",
+		// minHeight: "14vh",
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
-
+		paddingTop: "7vh",
 		background: "lightslategray",
 
-		[theme.breakpoints.down("sm")]: {
-			// paddingTop: "18vw",
-			paddingTop: "8vh",
-
-			minHeight: "14vh",
-			alignItems: "flex-end",
-		},
 		[theme.breakpoints.up("sm")]: {
 			// paddingTop: "13vw",
 			// paddingBottom: ".10vh",
-			maxHeight: "15vh",
+			// maxHeight: "15vh",
 			// height: "99%",
 			// backgroundColor: "red",
-			minHeight: "14vh",
+			// minHeight: "14vh",
 			alignItems: "flex-end",
+			paddingTop: "2vh",
 		},
 		[theme.breakpoints.up("md")]: {
 			paddingTop: "5vh",
@@ -82,8 +76,8 @@ const useStyles = makeStyles((theme) => ({
 		background: "lightgrey",
 		// padding: "1.5em ",
 		// marginTop: "1rem",
-		margin: "1rem 0 0",
-		padding: "1rem 1.5rem 2rem",
+		margin: ".1rem 0 0",
+		padding: ".4rem .4rem 1rem",
 		// marginRight: "1.4rem",
 	},
 	heading2Title: {
@@ -113,20 +107,20 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "96vh",
-			minHeight: "47vh",
-			maxHeight: "95vh",
+			height: "25.4%",
+			// minHeight: "47vh",
+			// maxHeight: "95vh",
 
 			// maxHeight: "122vh",
 			border: "1px solid lightgrey ",
-			right: "5vw",
+			right: "4vw",
 			// top: "24px",
 			// top: 0,
 			transform: "translate(0rem, 4.3rem)",
-			[theme.breakpoints.down("sm")]: {
-				height: "122vh",
-				maxHeight: "112vh",
-			},
+			// [theme.breakpoints.down("sm")]: {
+			// 	height: "122vh",
+			// 	maxHeight: "112vh",
+			// },
 			[theme.breakpoints.up("sm")]: {
 				height: "124vh",
 				maxHeight: "50vh",
@@ -170,7 +164,7 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			right: "2.4rem",
+			right: "2.0rem",
 			top: "calc(50% - 5px)",
 			borderStyle: "solid",
 			borderColor: "sandybrown sandybrown transparent transparent",
@@ -229,12 +223,13 @@ const useStyles = makeStyles((theme) => ({
 	timeLineYear: {
 		textAlign: "center",
 		maxWidth: "4.5rem",
-		margin: "0 3rem 0 auto",
-		fontSize: "1.3rem",
+		margin: "0 2.5rem 0 auto",
+		fontSize: "1.1rem",
+		fontWeight: "bold",
 		background: "grey",
 		color: "#234",
-		lineHeight: 1,
-		padding: "0.6rem",
+		lineHeight: 0.5,
+		padding: "0.5rem",
 		// zIndex: "1",
 		"&:before": {
 			display: "none",
@@ -274,26 +269,12 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "195vh",
 			border: "1px solid darkgrey ",
-			maxHeight: "140vh",
-			// right: "4.3vw",
-			// paddingBottom: "40px",
-			// top: "44px",
-			// top: 0,
 
-			[theme.breakpoints.down("sm")]: {
-				// padding: "1rem",
-				// height: "99%",
+			height: " 37%",
+			maxHeight: "113vh",
+			transform: "translate(10px)",
 
-				height: " 144vh",
-				maxHeight: "113vh",
-				// maxHeight: "123vh",
-
-				// maxHeight: "113vh",
-
-				// maxHeight: "195vh",
-			},
 			[theme.breakpoints.up("sm")]: {
 				// padding: "1rem",
 				// height: "99%",
@@ -324,7 +305,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	timeLineItemE: {
 		// padding: "1rem",
-		padding: "1em 2em 1em 4em",
+		padding: "1rem 1rem 1rem 3rem",
 		// borderBottom: "2px solid tan",
 		position: "relative",
 		// margin: ".6rem 3rem .6rem .6rem",
@@ -371,12 +352,13 @@ const useStyles = makeStyles((theme) => ({
 	timeLineYearE: {
 		textAlign: "center",
 		maxWidth: "4.5rem",
-		margin: "0 auto 0 1.2rem",
-		fontSize: "1.3rem",
+		margin: "0 auto 0 1.5rem",
+		fontSize: "1.1rem",
 		background: "#234",
 		color: "lightgrey",
-		lineHeight: 1,
-		padding: ".6rem",
+		lineHeight: 0.5,
+		padding: ".5rem",
+		fontWeight: "bold",
 		// zIndex: "1",
 		"&:before": {
 			display: "none",
@@ -434,7 +416,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 
 		paddingTop: "1.5rem",
-		paddingBottom: "2.4rem",
+		// paddingBottom: "2.4rem",
 		backgroundColor: "white",
 		// marginBottom: "10rem",
 		// textTransform: "uppercase",
@@ -482,484 +464,497 @@ const Resume = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<CssBaseline />
-			<Grid
-				container
-				// direction="column"
-				justify="center"
-				// component="header"
-				className={classes.mainContainer}
-			>
+			<Paper className={classes.mainResumePaper}>
+				<CssBaseline />
 				<Grid
-					item
 					container
-					className={classes.downloadResume}
+					// direction="column"
 					justify="center"
-					alignContent="center"
-					// style={{ backgroundColor: "green" }}
+					// component="header"
+					className={classes.mainContainer}
 				>
-					<Grid item>
-						<GetAppIcon style={{ color: "cadetblue" }} />
+					<Grid
+						item
+						container
+						className={classes.downloadResume}
+						justify="center"
+						alignContent="flex-end"
+						// style={{ backgroundColor: "green" }}
+					>
+						<Grid item>
+							<GetAppIcon style={{ color: "cadetblue" }} />
+							<Link
+								href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
+								// onClick={preventDefault}
+								// variant="body2"
+							>
+								{/* {3variant="body2"'} */}
+								<Typography variant="h5">
+									{" "}
+									Download Resume
+								</Typography>
+							</Link>
+						</Grid>
 					</Grid>
-					<Grid item>
-						<Link
-							href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
-							// onClick={preventDefault}
-							// variant="body2"
-						>
-							{/* {3variant="body2"'} */}
-							<Typography variant="h5">
-								{" "}
-								Download Resume
-							</Typography>
-						</Link>
-					</Grid>
-				</Grid>
 
-				{/* <Box component="div" className={classes.timeLineBox}> */}
-				<Grid item container className={classes.timeLineBox}>
-					<Grid item xs={12}>
-						<Typography
-							variant="h4"
-							align="center"
-							className={classes.heading}
-						>
-							Education
-						</Typography>
-						<Typography
-							variant="h6"
-							className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-						>
-							2019
-						</Typography>
-
-						<Box component="div" className={classes.timeLineItem}>
-							<Typography
-								variant="h5"
-								align="center"
-								className={classes.subHeading}
-							>
-								Digital Crafts
-							</Typography>
-							<Typography
-								variant="h6"
-								align="center"
-								className={classes.subHeading2}
-								// style="{{ color: "tan"}}
-							>
-								Web Development Bootcamp
-							</Typography>
-							<Typography
-								variant="body1"
-								align="center"
-								style={{ color: "cadetblue" }}
-							>
-								Atlanta, GA
-							</Typography>
-
-							<Typography
-								variant="subtitle1"
-								align="center"
-								style={{ color: "grey" }}
-							>
-								Certificate in Full Stack software development
-							</Typography>
-						</Box>
-						<Typography
-							variant="h6"
-							className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-						>
-							2013
-						</Typography>
-						<Box component="div" className={classes.timeLineItem}>
-							<Typography
-								variant="h5"
-								align="center"
-								className={classes.subHeading}
-							>
-								Georgia Institute of Technology
-							</Typography>
-							<Typography
-								variant="h6"
-								align="center"
-								className={classes.subHeading2}
-								// style="{{ color: "tan"}}
-							>
-								Scheller College of Business
-							</Typography>
-							<Typography
-								variant="body1"
-								align="center"
-								style={{ color: "cadetblue" }}
-							>
-								Atlanta, GA
-							</Typography>
-
-							<Typography
-								variant="subtitle1"
-								align="center"
-								style={{ color: "grey" }}
-							>
-								Master of Business Administration
-							</Typography>
-						</Box>
-						<Typography
-							variant="h6"
-							className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-						>
-							2007
-						</Typography>
-						<Box component="div" className={classes.timeLineItem}>
-							<Typography
-								variant="h5"
-								align="center"
-								className={classes.subHeading}
-							>
-								Georgia Institute of Technology
-							</Typography>
-
-							<Typography
-								variant="h6"
-								align="center"
-								className={classes.subHeading2}
-								// style="{{ color: "tan"}}
-							>
-								School of Electrical and Computer Engineering
-							</Typography>
-
-							<Typography
-								variant="body1"
-								align="center"
-								style={{ color: "cadetblue" }}
-							>
-								Atlanta, GA
-							</Typography>
-
-							<Typography
-								variant="subtitle1"
-								align="center"
-								style={{ color: "grey" }}
-							>
-								Bachelor of Science in Electrical Engineering
-							</Typography>
-						</Box>
-					</Grid>
-				</Grid>
-				{/* </Box> */}
-				{/* <Box className={classes.boxTechnologies} justifyContent="center"> */}
-				<Grid
-					item
-					container
-					spacing={2}
-					justify="space-evenly"
-					// alignItems="flex-start"
-					alignItems="flex-end"
-					// alignContent="center"
-					// className={classes.papersGridContainer}
-					className={classes.boxTechnologies}
-					// wrap="wrap"
-					// style={{ backgroundColor: "purple" }}
-				>
-					<Grid item container justify="center">
+					{/* <Box component="div" className={classes.timeLineBox}> */}
+					<Grid item container className={classes.timeLineBox}>
 						<Grid item xs={12}>
 							<Typography
 								variant="h4"
 								align="center"
-								className={classes.heading2Title}
-								// display="block"
-								// style={{ color: "red" }}
+								className={classes.heading}
 							>
-								Technologies
+								Education
 							</Typography>
+							<Typography
+								variant="h6"
+								className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+							>
+								2019
+							</Typography>
+
+							<Box
+								component="div"
+								className={classes.timeLineItem}
+							>
+								<Typography
+									variant="h5"
+									align="center"
+									className={classes.subHeading}
+								>
+									Digital Crafts
+								</Typography>
+								<Typography
+									variant="h6"
+									align="center"
+									className={classes.subHeading2}
+									// style="{{ color: "tan"}}
+								>
+									Web Development Bootcamp
+								</Typography>
+								<Typography
+									variant="body1"
+									align="center"
+									style={{ color: "cadetblue" }}
+								>
+									Atlanta, GA
+								</Typography>
+
+								<Typography
+									variant="subtitle1"
+									align="center"
+									style={{ color: "grey" }}
+								>
+									Certificate in Full Stack software
+									development
+								</Typography>
+							</Box>
+							<Typography
+								variant="h6"
+								className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+							>
+								2013
+							</Typography>
+							<Box
+								component="div"
+								className={classes.timeLineItem}
+							>
+								<Typography
+									variant="h5"
+									align="center"
+									className={classes.subHeading}
+								>
+									Georgia Institute of Technology
+								</Typography>
+								<Typography
+									variant="h6"
+									align="center"
+									className={classes.subHeading2}
+									// style="{{ color: "tan"}}
+								>
+									Scheller College of Business
+								</Typography>
+								<Typography
+									variant="body1"
+									align="center"
+									style={{ color: "cadetblue" }}
+								>
+									Atlanta, GA
+								</Typography>
+
+								<Typography
+									variant="subtitle1"
+									align="center"
+									style={{ color: "grey" }}
+								>
+									Master of Business Administration
+								</Typography>
+							</Box>
+							<Typography
+								variant="h6"
+								className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+							>
+								2007
+							</Typography>
+							<Box
+								component="div"
+								className={classes.timeLineItem}
+							>
+								<Typography
+									variant="h5"
+									align="center"
+									className={classes.subHeading}
+								>
+									Georgia Institute of Technology
+								</Typography>
+
+								<Typography
+									variant="h6"
+									align="center"
+									className={classes.subHeading2}
+									// style="{{ color: "tan"}}
+								>
+									School of Electrical and Computer
+									Engineering
+								</Typography>
+
+								<Typography
+									variant="body1"
+									align="center"
+									style={{ color: "cadetblue" }}
+								>
+									Atlanta, GA
+								</Typography>
+
+								<Typography
+									variant="subtitle1"
+									align="center"
+									style={{ color: "grey" }}
+								>
+									Bachelor of Science in Electrical
+									Engineering
+								</Typography>
+							</Box>
 						</Grid>
 					</Grid>
+					{/* </Box> */}
+					{/* <Box className={classes.boxTechnologies} justifyContent="center"> */}
 					<Grid
 						item
-						justify="center"
 						container
-						xs={12}
-						sm={6}
-						md={4}
-						spacing={1}
-						className={classes.frontEndGridItem}
+						spacing={2}
+						justify="space-evenly"
+						// alignItems="flex-start"
+						alignItems="flex-end"
+						// alignContent="center"
+						// className={classes.papersGridContainer}
+						className={classes.boxTechnologies}
+						// wrap="wrap"
+						// style={{ backgroundColor: "purple" }}
 					>
-						{/* <Box className="feBox"></Box> */}
-						<Grid item xs={12}>
-							<Typography align="center">Front End</Typography>
+						<Grid item container justify="center">
+							<Grid item xs={12}>
+								<Typography
+									variant="h4"
+									align="center"
+									className={classes.heading2Title}
+									// display="block"
+									// style={{ color: "red" }}
+								>
+									Technologies
+								</Typography>
+							</Grid>
 						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={3}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								HTML5
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={3}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								CSS3
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Javascript
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Typescript
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								React
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								React Native
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Angular
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Material-UI
-							</Paper>
-						</Grid>
-					</Grid>
-
-					<Grid
-						item
-						xs={12}
-						sm={6}
-						md={4}
-						container
-						spacing={1}
-						justify="center"
-						className={classes.backEndGridItem}
-					>
-						<Grid item xs={12}>
-							<Typography align="center">Back End</Typography>
-						</Grid>
-
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								<div>Node</div>
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								<div>Express</div>
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Python
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								PostgreSQL
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								SQL
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								GraphQL
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								WebSockets
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								NGINX
-							</Paper>
-						</Grid>
-					</Grid>
-					<Grid
-						item
-						xs={12}
-						sm={6}
-						md={4}
-						container
-						justify="center"
-						spacing={1}
-						className={classes.toolsGridItem}
-					>
-						<Grid item xs={12}>
-							<Typography align="center">Tools</Typography>
+						<Grid
+							item
+							justify="center"
+							container
+							xs={12}
+							sm={6}
+							md={4}
+							spacing={1}
+							className={classes.frontEndGridItem}
+						>
+							{/* <Box className="feBox"></Box> */}
+							<Grid item xs={12}>
+								<Typography align="center">
+									Front End
+								</Typography>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={3}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									HTML5
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={3}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									CSS3
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Javascript
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Typescript
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									React
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									React Native
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Angular
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Material-UI
+								</Paper>
+							</Grid>
 						</Grid>
 
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								VS Code
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								AWS
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								NPM
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Git
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								GitHub
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Jasmine
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Mocha
-							</Paper>
-						</Grid>
-						<Grid item xs={4} sm={4} md={4}>
-							<Paper
-								elevation={2}
-								variant="outlined"
-								className={classes.paper}
-								// square
-							>
-								Webpack
-							</Paper>
-						</Grid>
+						<Grid
+							item
+							xs={12}
+							sm={6}
+							md={4}
+							container
+							spacing={1}
+							justify="center"
+							className={classes.backEndGridItem}
+						>
+							<Grid item xs={12}>
+								<Typography align="center">Back End</Typography>
+							</Grid>
 
-						{/* <Grid item xs={4} sm={4} md={4}>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									<div>Node</div>
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									<div>Express</div>
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Python
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									PostgreSQL
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									SQL
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									GraphQL
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									WebSockets
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									NGINX
+								</Paper>
+							</Grid>
+						</Grid>
+						<Grid
+							item
+							xs={12}
+							sm={6}
+							md={4}
+							container
+							justify="center"
+							spacing={1}
+							className={classes.toolsGridItem}
+						>
+							<Grid item xs={12}>
+								<Typography align="center">Tools</Typography>
+							</Grid>
+
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									VS Code
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									AWS
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									NPM
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Git
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									GitHub
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Jasmine
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Mocha
+								</Paper>
+							</Grid>
+							<Grid item xs={4} sm={4} md={4}>
+								<Paper
+									elevation={2}
+									variant="outlined"
+									className={classes.paper}
+									// square
+								>
+									Webpack
+								</Paper>
+							</Grid>
+
+							{/* <Grid item xs={4} sm={4} md={4}>
 								<Paper
 									elevation={2}
 									variant="outlined"
@@ -969,153 +964,158 @@ const Resume = () => {
 									html
 								</Paper>
 							</Grid> */}
-					</Grid>
-					{/* </Grid> */}
-				</Grid>
-				{/* </Box> */}
-				{/* <Box className={classes.experienceBox}> */}
-				<Grid
-					item
-					container
-					className={classes.experienceBox}
-					justify="center"
-				>
-					<Grid item>
-						<Typography
-							variant="h4"
-							align="center"
-							style={{
-								textTransform: "uppercase",
-								color: "cadetblue",
-							}}
-						>
-							Experience
-						</Typography>
-						{/* {/* </Grid> */}
-						{/* <Box component="div" className={classes.timeLineBoxE}> */}
-						<Grid item className={classes.timeLineBoxE}>
-							<Typography
-								variant="h6"
-								className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
-							>
-								2020
-							</Typography>
-							<Box
-								component="div"
-								className={classes.timeLineItemE}
-							>
-								<Typography
-									variant="h5"
-									align="center"
-									className={classes.subHeadingE}
-								>
-									Ton Ton Ramen & Yakitori
-								</Typography>
-								<Typography
-									variant="h6"
-									align="center"
-									className={classes.subHeading2E}
-									// style="{{ color: "tan"}}
-								>
-									Server
-								</Typography>
-								<Typography
-									variant="body1"
-									align="center"
-									style={{ color: "#234" }}
-								>
-									Atlanta, GA
-								</Typography>
-
-								<Typography
-									variant="subtitle1"
-									align="left"
-									style={{ color: "grey" }}
-								>
-									<div>
-										• Filled in as manager when needed -
-										responsibilities included resolving
-										customer issues, entering shift reports,
-										and taking inventory
-									</div>
-									<div>
-										• Developed valuable soft skills, which
-										included communication, teamwork,
-										multitasking, and working under pressure
-									</div>
-									<div>
-										• Trained new hires and created training
-										materials along with a checklist of
-										server side-duties
-									</div>
-								</Typography>
-							</Box>
-							<Typography
-								variant="h6"
-								className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
-							>
-								2018
-							</Typography>
-							<Box
-								component="div"
-								className={classes.timeLineItemE}
-							>
-								<Typography
-									variant="h5"
-									align="center"
-									className={classes.subHeadingE}
-								>
-									Elev8 Hire Solutions{" "}
-								</Typography>
-								<Typography
-									variant="h6"
-									align="center"
-									className={classes.subHeading2E}
-								>
-									IT Recruiter
-								</Typography>
-								<Typography
-									variant="body1"
-									align="center"
-									style={{
-										color: "#234",
-										// backgroundColor: "white",
-									}}
-								>
-									Atlanta, GA
-								</Typography>
-
-								<Typography
-									variant="subtitle1"
-									align="left"
-									style={{
-										color: "grey",
-										// backgroundColor: "yellow",
-									}}
-								>
-									<div>
-										• Performed full sles recruiting
-										lifecycle - from prospecting, job
-										selling, screening, offer negotiation,
-										and onboarding
-									</div>
-									<div>
-										• Communicated with hiring managers to
-										discover project requirements and ideal
-										candidates
-									</div>
-									<div>
-										• Maintained an accurate candidate
-										tracking system
-									</div>
-								</Typography>
-							</Box>
 						</Grid>
+						{/* </Grid> */}
+					</Grid>
+					{/* </Box> */}
+					{/* <Box className={classes.experienceBox}> */}
+					<Grid
+						item
+						container
+						className={classes.experienceBox}
+						justify="center"
+					>
+						<Grid item container justify="center">
+							<Grid item>
+								<Typography
+									variant="h4"
+									align="center"
+									style={{
+										textTransform: "uppercase",
+										color: "cadetblue",
+									}}
+								>
+									Experience
+								</Typography>
+							</Grid>
+
+							{/* {/* </Grid> */}
+							{/* <Box component="div" className={classes.timeLineBoxE}> */}
+							<Grid item className={classes.timeLineBoxE}>
+								<Typography
+									variant="h6"
+									className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
+								>
+									2020
+								</Typography>
+								<Box
+									component="div"
+									className={classes.timeLineItemE}
+								>
+									<Typography
+										variant="h5"
+										align="center"
+										className={classes.subHeadingE}
+									>
+										Ton Ton Ramen & Yakitori
+									</Typography>
+									<Typography
+										variant="h6"
+										align="center"
+										className={classes.subHeading2E}
+										// style="{{ color: "tan"}}
+									>
+										Server
+									</Typography>
+									<Typography
+										variant="body1"
+										align="center"
+										style={{ color: "#234" }}
+									>
+										Atlanta, GA
+									</Typography>
+
+									<Typography
+										variant="subtitle1"
+										align="left"
+										style={{ color: "grey" }}
+									>
+										<div>
+											• Filled in as manager when needed -
+											responsibilities included resolving
+											customer issues, entering shift
+											reports, and taking inventory
+										</div>
+										<div>
+											• Developed valuable soft skills,
+											which included communication,
+											teamwork, multitasking, and working
+											under pressure
+										</div>
+										<div>
+											• Trained new hires and created
+											training materials along with a
+											checklist of server side-duties
+										</div>
+									</Typography>
+								</Box>
+								<Typography
+									variant="h6"
+									className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
+								>
+									2018
+								</Typography>
+								<Box
+									component="div"
+									className={classes.timeLineItemE}
+								>
+									<Typography
+										variant="h5"
+										align="center"
+										className={classes.subHeadingE}
+									>
+										Elev8 Hire Solutions{" "}
+									</Typography>
+									<Typography
+										variant="h6"
+										align="center"
+										className={classes.subHeading2E}
+									>
+										IT Recruiter
+									</Typography>
+									<Typography
+										variant="body1"
+										align="center"
+										style={{
+											color: "#234",
+											// backgroundColor: "white",
+										}}
+									>
+										Atlanta, GA
+									</Typography>
+
+									<Typography
+										variant="subtitle1"
+										align="left"
+										style={{
+											color: "grey",
+											// backgroundColor: "yellow",
+										}}
+									>
+										<div>
+											• Performed full sles recruiting
+											lifecycle - from prospecting, job
+											selling, screening, offer
+											negotiation, and onboarding
+										</div>
+										<div>
+											• Communicated with hiring managers
+											to discover project requirements and
+											ideal candidates
+										</div>
+										<div>
+											• Maintained an accurate candidate
+											tracking system
+										</div>
+									</Typography>
+								</Box>
+							</Grid>
+						</Grid>
+						{/* </Box> */}
 					</Grid>
 					{/* </Box> */}
 				</Grid>
-				{/* </Box> */}
-			</Grid>
+			</Paper>
 		</ThemeProvider>
 	);
 };
