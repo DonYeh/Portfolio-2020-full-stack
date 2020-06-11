@@ -254,7 +254,7 @@ function App(props) {
 					backgroundColor: "white",
 					display: "flex",
 					width: "100vw",
-					height: "12vh",
+					// height: "12vh",
 				}}
 			>
 				{menuIcons.map((menuIcon, key) => (

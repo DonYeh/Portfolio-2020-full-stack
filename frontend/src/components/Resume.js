@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
 		padding: ".9rem",
 		// paddingBottom: "1.2rem",
 		textTransform: "uppercase",
+		[theme.breakpoints.up("sm")]: {
+			paddingTop: "1rem",
+		},
 		// zIndex: "1",
 	},
 	downloadResume: {
@@ -50,18 +53,19 @@ const useStyles = makeStyles((theme) => ({
 		background: "lightslategray",
 
 		[theme.breakpoints.up("sm")]: {
-			// paddingTop: "13vw",
+			// paddingTop: "1rem",
+			padding: "1rem 0rem .5rem",
 			// paddingBottom: ".10vh",
 			// maxHeight: "15vh",
 			// height: "99%",
 			// backgroundColor: "red",
 			// minHeight: "14vh",
 			alignItems: "flex-end",
-			paddingTop: "2vh",
+			// paddingTop: "4.4vh",
 		},
 		[theme.breakpoints.up("md")]: {
-			paddingTop: "5vh",
-			minHeight: "8.5vh",
+			// paddingTop: "5vh",
+			// minHeight: "8.5vh",
 		},
 	},
 	downloadResumeText: {
@@ -80,10 +84,14 @@ const useStyles = makeStyles((theme) => ({
 		// textTransform: "uppercase",
 		// margin: "0 10%",
 		background: "lightgrey",
+		fontSize: "smaller",
 		// padding: "1.5em ",
 		// marginTop: "1rem",
 		margin: ".1rem 0 0",
-		padding: ".4rem .4rem 1rem",
+		padding: ".4rem 0rem 1rem",
+		[theme.breakpoints.up("md")]: {
+			padding: ".4rem 0rem 1rem",
+		},
 		// marginRight: "1.4rem",
 	},
 	heading2Title: {
@@ -105,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		postion: "relative",
 		width: "100vw",
+		paddingBottom: "2vh",
 		// transform: "translate(0px, 1.2rem)",
 
 		// padding: ".5rem 0 1rem",
@@ -127,10 +136,10 @@ const useStyles = makeStyles((theme) => ({
 			// 	height: "122vh",
 			// 	maxHeight: "112vh",
 			// },
-			[theme.breakpoints.up("sm")]: {
-				height: "124vh",
-				maxHeight: "50vh",
-			},
+			// [theme.breakpoints.up("sm")]: {
+			// 	height: "124vh",
+			// 	maxHeight: "50vh",
+			// },
 		},
 		"&:after": {
 			content: "''",
@@ -138,12 +147,12 @@ const useStyles = makeStyles((theme) => ({
 			// top: "60px",
 			// clear: "both",
 		},
-		[theme.breakpoints.up("md")]: {
+		[theme.breakpoints.up("sm")]: {
 			// padding: "2rem",
 
 			"&:before": {
-				transform: "translate(0px, 7.3rem)",
-				height: "52vh",
+				transform: "translate(0px, 5.5rem)",
+				height: "60vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				maxHeight: "84vh",
@@ -156,9 +165,27 @@ const useStyles = makeStyles((theme) => ({
 			// 	// zIndex: "-1",
 			// },
 		},
+		[theme.breakpoints.up("md")]: {
+			// padding: "2rem",
+			paddingBottom: ".5rem",
+			"&:before": {
+				transform: "translate(0px, 5.6rem)",
+				height: "45.5vh",
+				left: "calc(50% - 1px)",
+				right: "auto",
+				// maxHeight: "84vh",
+				// zIndex: "-1",
+			},
+			// "&:after": {
+			// 	content: "''",
+			// height: "15%",
+			// 	clear: "both",
+			// 	// zIndex: "-1",
+			// },
+		},
 	},
 	timeLineItem: {
-		padding: "1em 2em 1em 2em",
+		padding: "1rem 1rem .5rem 1rem",
 		// borderBottom: "8px solid tan",
 		position: "relative",
 		// margin: ".6rem 3.8rem .6rem .6rem",
@@ -178,12 +205,13 @@ const useStyles = makeStyles((theme) => ({
 			transform: "rotate(45deg)",
 		},
 		[theme.breakpoints.up("sm")]: {
+			padding: "0rem 1rem ",
 			width: "44%",
-			margin: "1rem",
+			margin: "-.5rem .5rem",
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "27.3rem",
+				left: "15.3rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "sandybrown sandybrown transparent transparent",
@@ -192,12 +220,12 @@ const useStyles = makeStyles((theme) => ({
 			},
 			"&:nth-of-type(2n)": {
 				float: "right",
-				margin: "1rem",
+				margin: ".8rem .2rem .8rem 1rem",
 				borderColor: "tan",
 			},
 			"&:nth-of-type(2n):before": {
 				right: "auto",
-				left: "-0.5rem",
+				left: ".5rem",
 				borderColor: "transparent transparent sandybrown sandybrown",
 			},
 		},
@@ -207,7 +235,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "27.3rem",
+				left: "18.5rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "sandybrown sandybrown transparent transparent",
@@ -221,7 +249,7 @@ const useStyles = makeStyles((theme) => ({
 			},
 			"&:nth-of-type(2n):before": {
 				right: "auto",
-				left: "-0.5rem",
+				left: "-0.1rem",
 				borderColor: "transparent transparent sandybrown sandybrown",
 			},
 		},
@@ -239,6 +267,18 @@ const useStyles = makeStyles((theme) => ({
 		// zIndex: "1",
 		"&:before": {
 			display: "none",
+		},
+		[theme.breakpoints.up("sm")]: {
+			textAlign: "center",
+			margin: "0 auto",
+			zIndex: "1",
+			"&:nth-of-type(2n)": {
+				float: "none",
+				margin: "0 auto",
+			},
+			"&:nth-of-type(2n):before": {
+				display: "none",
+			},
 		},
 		[theme.breakpoints.up("md")]: {
 			textAlign: "center",
@@ -285,19 +325,14 @@ const useStyles = makeStyles((theme) => ({
 				// padding: "1rem",
 				// height: "99%",
 
-				height: "196vh",
-				maxHeight: "57vh",
+				height: "55vh",
 			},
-		},
 
-		[theme.breakpoints.up("md")]: {
-			// padding: "1rem",
-			// height: "99%",
+			[theme.breakpoints.up("md")]: {
+				// padding: " .5rem",
+				// height: "99%",
 
-			"&:before": {
-				// transform: "translate(0px, 6rem)",
-				// height: "56%",
-				maxHeight: "48vh",
+				height: "65vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
@@ -309,6 +344,7 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 	},
+
 	timeLineItemE: {
 		// padding: "1rem",
 		padding: "1rem 1rem 1rem 3rem",
@@ -332,11 +368,12 @@ const useStyles = makeStyles((theme) => ({
 			transform: "rotate(225deg)",
 		},
 		[theme.breakpoints.up("md")]: {
-			width: "45%",
+			padding: "1rem 1.2rem 1rem 2.1rem",
+			width: "48%",
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "27.3rem",
+				left: "18.5rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "cadetblue cadetblue transparent transparent",
@@ -345,12 +382,12 @@ const useStyles = makeStyles((theme) => ({
 			},
 			"&:nth-of-type(2n)": {
 				float: "right",
-				margin: "1rem",
-				borderColor: "tan",
+				// margin: "1rem",
+				borderColor: "purple",
 			},
 			"&:nth-of-type(2n):before": {
 				left: "auto",
-				left: ".2rem",
+				left: ".4rem",
 				borderColor: "transparent transparent cadetblue cadetblue",
 			},
 		},
@@ -413,7 +450,7 @@ const useStyles = makeStyles((theme) => ({
 		color: "cadetblue",
 		fontSize: "1.1em",
 		textAlign: "center",
-		padding: "theme.spacing(2.5)",
+		padding: ".5em",
 		overflow: "hidden",
 		textOverflow: "ellipsis",
 		// width: "1rem",
@@ -446,9 +483,8 @@ const useStyles = makeStyles((theme) => ({
 		// 	},
 		// },
 		[theme.breakpoints.up("md")]: {
-			paddingBottom: "2rem",
+			// paddingBottom: ".5rem",
 			// height: "99%",
-
 			// "&:after": {
 			// 	content: "''",
 			// 	height: "98%",
@@ -659,9 +695,9 @@ const Resume = () => {
 						item
 						container
 						spacing={2}
-						justify="space-evenly"
+						justify="center"
 						// alignItems="flex-start"
-						alignItems="flex-end"
+						alignItems="self-end"
 						// alignContent="center"
 						// className={classes.papersGridContainer}
 						className={classes.boxTechnologies}
@@ -752,9 +788,10 @@ const Resume = () => {
 									elevation={2}
 									variant="outlined"
 									className={classes.paper}
+									// className={classes.paperReactNative}
 									// square
 								>
-									React Native
+									Material-UI
 								</Paper>
 							</Grid>
 							<Grid item xs={4} sm={4} md={4}>
@@ -774,7 +811,7 @@ const Resume = () => {
 									className={classes.paper}
 									// square
 								>
-									Material-UI
+									React Native{" "}
 								</Paper>
 							</Grid>
 						</Grid>
