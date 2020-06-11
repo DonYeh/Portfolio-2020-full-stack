@@ -20,14 +20,16 @@ import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
 	mainGridContainer: {
-		paddingTop: "22vh",
+		// paddingTop: "22vh",
+		// backgroundColor: "rgba(255,255,255,.55)", //
+		height: "98%",
 		// padding: "33% 0% 0%",
 	},
 
 	typedContainer: {
 		// margin: theme.spacing(8),
 		// paddingTop: "5rem",
-		padding: "0 9vw",
+		padding: "0 7vw",
 
 		textAlign: "center",
 		margin: "0",
@@ -53,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 	mainPaper: {
 		height: "95vh",
 		// backgroundColor: "rgba(0,0,0,.2)", //dark
-		backgroundColor: "rgba(255,255,255,.55)", //dark
+		// backgroundColor: "rgba(255,255,255,.55)", //dark
 
 		// backdropFilter: "blur(4px)",
 		// backgroundColor: "rgba(f,f,f,.5)",
@@ -68,6 +70,7 @@ const darkTheme = createMuiTheme({
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
+// theme = responsiveFontSizes(darkTheme);
 
 const HomePage = () => {
 	const classes = useStyles();

@@ -147,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "1.3rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			fontSize: "1.6rem",
+			fontSize: "1.3rem",
 		},
 		// [theme.breakpoints.up("lg")]: {
 		// 	fontSize: "2em",

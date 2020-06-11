@@ -1,5 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+	makeStyles,
+	ThemeProvider,
+	responsiveFontSizes,
+	createMuiTheme,
+} from "@material-ui/core/styles";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -66,205 +71,242 @@ const useStyles = makeStyles((theme) => ({
 	projectsGridContainer: {
 		// padding: ".5rem",
 	},
+	projDescription: {
+		fontSize: "1rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.2rem",
+		},
+		[theme.breakpoints.up("md")]: {},
+	},
 }));
 
-export default function ImgMediaCard() {
+const darkTheme = createMuiTheme({
+	palette: {
+		type: "dark",
+	},
+});
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(darkTheme);
+// theme = responsiveFontSizes(theme);
+
+export default function Portfolio() {
 	const classes = useStyles();
 
 	return (
 		<>
-			<CssBaseline />
-			<Paper
-				className={classes.mainPaper}
-				style={{ backdropFilter: "blur(5px)" }}
-			>
-				<Grid
-					className={classes.mainGridContainer}
-					container
-					justify="center"
-					alignContent="center"
-					// spacing={2}
-					// style={{
-					// 	padding: " 24% 11%",
-					// }}
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<Paper
+					className={classes.mainPaper}
+					style={{ backdropFilter: "blur(5px)" }}
 				>
 					<Grid
+						className={classes.mainGridContainer}
 						container
-						item
-						// style={{ width: "100%" }}
-						justify="space-evenly"
-						spacing={3}
-						className={classes.projectsGridContainer}
+						justify="center"
+						alignContent="center"
+						// spacing={2}
+						// style={{
+						// 	padding: " 24% 11%",
+						// }}
 					>
-						<Grid item>
-							<Box className="proj1">
-								<Card
-									className={classes.root}
-									raised
-									// variant="outlined"
-								>
-									<CardActionArea>
-										<CardMedia
-											component="img"
-											alt="donaldyeh.dev"
-											height="220rem"
-											src={portfolioImg}
-											// image="../assets/donaldyehportoflioheader.png"
-											title="donaldyeh.dev"
-											className="classes.media"
-											component="img"
-										/>
-										<CardContent>
-											<Typography
-												gutterBottom
-												variant="h5"
-												// component="h2"
+						<Grid
+							container
+							item
+							// style={{ width: "100%" }}
+							justify="space-evenly"
+							spacing={3}
+							className={classes.projectsGridContainer}
+						>
+							<Grid item>
+								<Box className="proj1">
+									<Card
+										className={classes.root}
+										raised
+										// variant="outlined"
+									>
+										<CardActionArea>
+											<CardMedia
+												component="img"
+												alt="donaldyeh.dev"
+												height="220rem"
+												src={portfolioImg}
+												// image="../assets/donaldyehportoflioheader.png"
+												title="donaldyeh.dev"
+												className="classes.media"
+												component="img"
+											/>
+											<CardContent>
+												<Typography
+													gutterBottom
+													variant="h5"
+													// component="h2"
+												>
+													donaldyeh.dev
+												</Typography>
+												<Typography
+													variant="body2"
+													color="textSecondary"
+													component="p"
+													className={
+														classes.projDescription
+													}
+												>
+													This portfolio site is a
+													full stack Javascript app.
+													The front end is written in
+													React and leverages
+													Material-UI responsive
+													design. The back end
+													consists of Node, Express,
+													and Nodemailer, which is
+													used to send an email from
+													the contact form.
+												</Typography>
+											</CardContent>
+										</CardActionArea>
+										<CardActions>
+											<Button
+												size="small"
+												color="primary"
 											>
-												donaldyeh.dev
-											</Typography>
-											<Typography
-												variant="body2"
-												color="textSecondary"
-												component="p"
-											>
-												This portfolio site is a full
-												stack Javascript app. The front
-												end is written in React and
-												leverages Material-UI responsive
-												design. The back end consists of
-												Node, Express, and Nodemailer,
-												which is used to send an email
-												from the contact form.
-											</Typography>
-										</CardContent>
-									</CardActionArea>
-									<CardActions>
-										<Button size="small" color="primary">
-											Github
-										</Button>
-										{/* <Button
+												Github
+											</Button>
+											{/* <Button
 													size="small"
 													color="primary"
 												>
 													Learn More
 												</Button> */}
-									</CardActions>
-								</Card>
-							</Box>
-						</Grid>
+										</CardActions>
+									</Card>
+								</Box>
+							</Grid>
 
-						<Grid item>
-							<Box className="proj2">
-								<Card
-									className={classes.root}
-									// variant="outlined"
-									raised
-								>
-									<CardActionArea>
-										<CardMedia
-											component="img"
-											alt="puzzle blocks"
-											height="280rem"
-											// image="https://play.vg/g2_imgs/g2_6.gif"
-											src={ChatrisImg}
-											title="Video Chat + Tetris = Chatris"
-											className="classes.media"
-											// style={{ objectFit: "cover" }}
-										/>
-										<CardContent>
-											<Typography
-												gutterBottom
-												variant="h5"
-												component="h2"
+							<Grid item>
+								<Box className="proj2">
+									<Card
+										className={classes.root}
+										// variant="outlined"
+										raised
+									>
+										<CardActionArea>
+											<CardMedia
+												component="img"
+												alt="puzzle blocks"
+												height="280rem"
+												// image="https://play.vg/g2_imgs/g2_6.gif"
+												src={ChatrisImg}
+												title="Video Chat + Tetris = Chatris"
+												className="classes.media"
+												// style={{ objectFit: "cover" }}
+											/>
+											<CardContent>
+												<Typography
+													gutterBottom
+													variant="h5"
+													component="h2"
+												>
+													Chatris
+												</Typography>
+												<Typography
+													variant="body2"
+													color="textSecondary"
+													component="p"
+													className={
+														classes.projDescription
+													}
+												>
+													Chatris is a cross-platform,
+													full-stack mobile app that
+													allows you to enjoy a puzzle
+													game classic while
+													connecting with your friends
+													over live video and voice
+													chat. Chatris is built using
+													React Native, PostgreSQL,
+													Node, Express, and Socket.io
+												</Typography>
+											</CardContent>
+										</CardActionArea>
+										<CardActions>
+											<Button
+												size="small"
+												color="primary"
 											>
-												Chatris
-											</Typography>
-											<Typography
-												variant="body2"
-												color="textSecondary"
-												component="p"
-											>
-												Chatris is a cross-platform,
-												full-stack mobile app that
-												allows you to enjoy a puzzle
-												game classic while connecting
-												with your friends over live
-												video and voice chat. Chatris is
-												built using React Native,
-												PostgreSQL, Node, Express, and
-												Socket.io
-											</Typography>
-										</CardContent>
-									</CardActionArea>
-									<CardActions>
-										<Button size="small" color="primary">
-											Github link
-										</Button>
-										{/* <Button size="small" color="primary">
+												Github
+											</Button>
+											{/* <Button size="small" color="primary">
 										Learn More
 									</Button>  */}
-									</CardActions>
-								</Card>
-							</Box>
-						</Grid>
+										</CardActions>
+									</Card>
+								</Box>
+							</Grid>
 
-						<Grid item>
-							<Box className="proj3">
-								<Card
-									className={classes.root}
-									raised
-									// variant="outlined"
-								>
-									<CardActionArea>
-										<CardMedia
-											component="img"
-											alt="Movie Explorer gif"
-											height="280"
-											src={movieExplorerGif}
-											title="Movie Explorer"
-											className="classes.media"
-										/>
-										<CardContent>
-											<Typography
-												gutterBottom
-												variant="h5"
-												component="h2"
+							<Grid item>
+								<Box className="proj3">
+									<Card
+										className={classes.root}
+										raised
+										// variant="outlined"
+									>
+										<CardActionArea>
+											<CardMedia
+												component="img"
+												alt="Movie Explorer gif"
+												height="280"
+												src={movieExplorerGif}
+												title="Movie Explorer"
+												className="classes.media"
+											/>
+											<CardContent>
+												<Typography
+													gutterBottom
+													variant="h5"
+													component="h2"
+												>
+													Movie Explorer
+												</Typography>
+												<Typography
+													variant="body2"
+													color="textSecondary"
+													component="p"
+													className={
+														classes.projDescription
+													}
+												>
+													Movie Explorer allows you to
+													browse and discover movies.
+													It uses a responsive,
+													mobile-first design
+													featuring advanced filtering
+													and search functionality. It
+													is built with Javascript,
+													HTML, CSS and it calls the
+													OMDB and TMDB APIs for
+													up-to-date movie information
+													and trailers.
+												</Typography>
+											</CardContent>
+										</CardActionArea>
+										<CardActions>
+											<Button
+												size="small"
+												color="primary"
 											>
-												Movie Explorer
-											</Typography>
-											<Typography
-												variant="body2"
-												color="textSecondary"
-												component="p"
-											>
-												Movie Explorer allows you to
-												browse and discover movies. It
-												uses a responsive, mobile-first
-												design featuring advanced
-												filtering and search
-												functionality. It is built with
-												Javascript, HTML, CSS and it
-												calls the OMDB and TMDB APIs for
-												up-to-date movie information and
-												trailers.
-											</Typography>
-										</CardContent>
-									</CardActionArea>
-									<CardActions>
-										<Button size="small" color="primary">
-											Share
-										</Button>
-										<Button size="small" color="primary">
-											Learn More
-										</Button>
-									</CardActions>
-								</Card>
-							</Box>
+												Github
+											</Button>
+										</CardActions>
+									</Card>
+								</Box>
+							</Grid>
 						</Grid>
+						{/* </Paper> */}
 					</Grid>
-					{/* </Paper> */}
-				</Grid>
-			</Paper>
+				</Paper>
+			</ThemeProvider>
 		</>
 	);
 }

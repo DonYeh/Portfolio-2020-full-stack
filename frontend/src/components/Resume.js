@@ -211,12 +211,13 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "15.3rem",
+				// left: "15.3rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "sandybrown sandybrown transparent transparent",
 				borderWidth: "0.44rem",
 				transform: "rotate(45deg)",
+				right: "0rem",
 			},
 			"&:nth-of-type(2n)": {
 				float: "right",

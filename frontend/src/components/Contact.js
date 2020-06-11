@@ -168,32 +168,47 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 		backgroundColor: "orange",
 	},
+	labelTextField: {
+		fontSize: "1rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.3rem",
+		},
+
+		[theme.breakpoints.up("md")]: {
+			fontSize: "1.5rem",
+		},
+	},
+	firstGridItemTitle: {
+		fontSize: "1.4rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "2.2rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			fontSize: "2.8rem",
+		},
+	},
 	firstGridItemP: {
 		fontSize: "1rem",
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.3rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			fontSize: "1.8rem",
-		},
-	},
-	labelTextField: {
-		fontSize: "1rem",
-		[theme.breakpoints.up("sm")]: {
-			fontSize: "1.3rem",
-		},
-	},
-	firstGridItemTitle: {
-		fontSize: "1.4rem",
-		[theme.breakpoints.up("sm")]: {
-			fontSize: "2.5rem",
-		},
-		[theme.breakpoints.up("md")]: {
-			fontSize: "3.55rem",
+			fontSize: "1.5rem",
 		},
 	},
 	topDrawer: {
 		height: "53px",
+	},
+
+	thirdGridItemTitle: {
+		fontSize: " 1rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.3rem",
+		},
+
+		[theme.breakpoints.up("md")]: {
+			fontSize: "1.5rem",
+		},
 	},
 }));
 
@@ -251,8 +266,8 @@ const darkTheme = createMuiTheme({
 });
 
 let theme = createMuiTheme();
-// theme = responsiveFontSizes(darkTheme);
-theme = responsiveFontSizes(theme);
+theme = responsiveFontSizes(darkTheme);
+// theme = responsiveFontSizes(theme);
 
 const Contact = () => {
 	const classes = useStyles();
@@ -300,7 +315,7 @@ const Contact = () => {
 										variant="h6"
 										align="center"
 										style={{
-											color: "darkslategrey",
+											// color: "darkslategrey",
 											paddingBottom: ".5rem",
 										}}
 										className={classes.firstGridItemTitle}
@@ -637,6 +652,9 @@ const Contact = () => {
 											variant="h5"
 											align="center"
 											style={{ color: "darkslategrey" }}
+											className={
+												classes.thirdGridItemTitle
+											}
 										>
 											Let's Connect
 										</Typography>
