@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
 	makeStyles,
@@ -14,6 +14,14 @@ import {
 	CssBaseline,
 } from "@material-ui/core";
 import avatar from "../assets/IMG_1953.jpg";
+
+import {
+	orange,
+	lightBlue,
+	deepPurple,
+	deepOrange,
+} from "@material-ui/core/colors";
+
 // import { FullscreenExit } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
@@ -114,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
 		// padding: ".5em",
 		// backgroundColor: "green",
 
-		backdropFilter: "blur(4px)",
+		// backdropFilter: "blur(4px)",
 
 		// transform: "translateY(9vh)",
 		[theme.breakpoints.up("sm")]: {
@@ -180,12 +188,12 @@ const useStyles = makeStyles((theme) => ({
 		// backgroundColor: "white",
 
 		// height: "100vh",
-		backgroundColor: "rgba(0,0,0,.4)",
+		// backgroundColor: "rgba(0,0,0,.4)",
 		// paddingTop: "9vh",
 		padding: "9vh 0 1vh",
 
 		[theme.breakpoints.up("sm")]: {
-			backgroundColor: "white",
+			// backgroundColor: "white",
 		},
 		[theme.breakpoints.up("md")]: { padding: "1rem 4rem" },
 	},
@@ -205,24 +213,45 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-let darkTheme = createMuiTheme({
-	palette: {
-		type: "dark",
-	},
-});
-
-// let theme = createMuiTheme();
 // let theme = responsiveFontSizes(darkTheme);
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
+// let theme = createMuiTheme();
+// theme = responsiveFontSizes(theme);
+// theme = responsiveFontSizes(darkTheme);
 
-const About = () => {
+const About = ({ darkMode }) => {
+	const [aboutDarkMode, setAboutDarkMode] = useState(darkMode);
+
+	const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
+	const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+
+	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
+
+	let darkTheme = createMuiTheme({
+		palette: {
+			type: darkMode ? "dark" : "light",
+			primary: {
+				main: mainPrimaryColor,
+			},
+			secondary: {
+				main: mainSecondaryColor,
+			},
+		},
+	});
+
+	let theme = createMuiTheme({});
+	// let theme = createMuiTheme({
+	// 	palette: {
+	// 		type: themeMode === "light" ? "light" : "dark",
+	// 	},
+	// });
+
 	const classes = useStyles();
 
 	return (
-		<ThemeProvider theme={theme}>
+		// <ThemeProvider theme={darkTheme}>
+		<ThemeProvider theme={darkTheme}>
+			<CssBaseline />
 			<Paper square className={classes.mainPaper} elevation={0}>
-				<CssBaseline />
 				<Grid
 					container
 					className={classes.gridContainer}
@@ -273,7 +302,7 @@ const About = () => {
 								>
 									<Paper
 										style={{
-											backgroundColor: "lightgrey", //aliceblue
+											// backgroundColor: "lightgrey", //aliceblue
 											// backgroundColor: "lightgrey", //aliceblue
 											padding: ".4rem",
 										}}
@@ -287,9 +316,11 @@ const About = () => {
 											className={
 												classes.aboutMeGridContainer
 											}
-											style={{
-												backgroundColor: "purple",
-											}}
+											style={
+												{
+													// backgroundColor: "purple",
+												}
+											}
 										>
 											{/* <Grid item> */}
 											<Paper
@@ -329,7 +360,7 @@ const About = () => {
 									<Paper
 										elevation={4}
 										style={{
-											backgroundColor: "lightgrey",
+											// backgroundColor: "lightgrey",
 											// width: "100%",
 											padding: ".4rem",
 										}}

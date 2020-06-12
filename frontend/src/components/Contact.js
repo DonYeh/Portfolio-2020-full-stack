@@ -5,12 +5,13 @@ import {
 	Grid,
 	Paper,
 	Typography,
+	CssBaseline,
 } from "@material-ui/core";
 import Link from "@material-ui/core/Link";
 
 import { Form, Formik, Field, FieldProps } from "formik";
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Navbar3 from "./Navbar3";
 import { MyField } from "./MyField";
@@ -70,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 		// padding: "1rem 1rem",
 		padding: "1.2rem",
 		// marginTop: "4.5vh",
-		backgroundColor: "aliceblue",
+		// backgroundColor: "aliceblue",
 		"&:nth-of-type(2n)": {
 			padding: "0rem 1.2rem",
 		},
@@ -109,7 +110,8 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	mainPaper: {
-		// backgroundColor: "rgba(0,0,0,.3)",
+		// backgroundColor: "rgba(0,0,0,.65)",
+		backgroundColor: "rgba(255,255,255,.3)",
 		// padding: "2vh 2vw", // marginTop: "14vh",
 		// height: "100vh",
 
@@ -266,12 +268,16 @@ const darkTheme = createMuiTheme({
 });
 
 let theme = createMuiTheme();
-theme = responsiveFontSizes(darkTheme);
-// theme = responsiveFontSizes(theme);
+// theme = responsiveFontSizes(darkTheme);
+theme = responsiveFontSizes(theme);
 
-const Contact = () => {
+const Contact = (darkMode) => {
 	const classes = useStyles();
-	const [modalIsOpen, setModalIsOpen] = React.useState(false);
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+
+	const [contactDarkMode, setContactDarkMode] = useState(darkMode);
+
+	useEffect((darkMode) => setContactDarkMode(darkMode), [darkMode]);
 
 	const handleOpen = () => {
 		setModalIsOpen(true);
@@ -292,7 +298,10 @@ const Contact = () => {
 		<>
 			{/* <Navbar3 /> */}
 			{/* <ThemeProvider theme={formTheme}> */}
-			<ThemeProvider theme={darkTheme}>
+			{/* <ThemeProvider theme={contactDarkMode ? darkTheme : theme}> */}
+			{/* <ThemeProvider theme={darkTheme}> */}
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
 				<StylesProvider injectFirst>
 					<Paper className={classes.mainPaper}>
 						<Grid
@@ -651,7 +660,7 @@ const Contact = () => {
 										<Typography
 											variant="h5"
 											align="center"
-											style={{ color: "darkslategrey" }}
+											// style={{ color: "darkslategrey" }}
 											className={
 												classes.thirdGridItemTitle
 											}

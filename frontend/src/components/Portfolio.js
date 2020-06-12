@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
 	makeStyles,
 	ThemeProvider,
@@ -41,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
 	// 	// marginTop: "15%",
 	// },
 	mainPaper: {
+		backgroundColor: "rgba(255,255,255,.4)",
+		// backgroundColor: "rgba(0,0,0,.4)",
 		[theme.breakpoints.up("sm")]: {
 			marginTop: "15vh",
 		},
@@ -87,8 +89,8 @@ const darkTheme = createMuiTheme({
 });
 
 let theme = createMuiTheme();
-theme = responsiveFontSizes(darkTheme);
-// theme = responsiveFontSizes(theme);
+// theme = responsiveFontSizes(darkTheme);
+theme = responsiveFontSizes(theme);
 
 export default function Portfolio() {
 	const classes = useStyles();
@@ -99,7 +101,7 @@ export default function Portfolio() {
 				<CssBaseline />
 				<Paper
 					className={classes.mainPaper}
-					style={{ backdropFilter: "blur(5px)" }}
+					// style={{ backdropFilter: "blur(5px)" }}
 				>
 					<Grid
 						className={classes.mainGridContainer}

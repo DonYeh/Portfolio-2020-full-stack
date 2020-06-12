@@ -50,7 +50,9 @@ const useStyles = makeStyles((theme) => ({
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
 		paddingTop: "2.5rem",
-		background: "lightslategray",
+		// background: "lightslategray",
+		background: "rgba(0,0,0,.15)",
+		// background: "rgba(255,255,255,.55)",
 
 		[theme.breakpoints.up("sm")]: {
 			// paddingTop: "1rem",
@@ -507,8 +509,8 @@ const Resume = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
+			<CssBaseline />
 			<Paper className={classes.mainResumePaper}>
-				<CssBaseline />
 				<Grid
 					container
 					// direction="column"

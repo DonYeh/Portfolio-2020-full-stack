@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -48,18 +48,14 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 // 	InfoOutlined,
 // } from "@material-ui/icons";
 
-// import Home from "@material-ui/icons/HomeTwoTone";
-// import Apps from "@material-ui/icons/AppsTwoTone";
-// import AssignmentInd from "@material-ui/icons/AssignmentIndTwoTone";
-// import ContactMail from "@material-ui/icons/ContactMailTwoTone";
-// import InfoOutlined from "@material-ui/icons/InfoOutlinedTwoTone";
-// import HomeWorkSharp from "@material-ui/icons/HomeWorkSharp";
-
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
 import AssignmentIndTwoToneIcon from "@material-ui/icons/AssignmentIndTwoTone";
 import AppsTwoToneIcon from "@material-ui/icons/AppsTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
+
+import { Brightness2 } from "@material-ui/icons";
+import { Brightness7 } from "@material-ui/icons";
 
 const drawerWidth = 210;
 
@@ -163,6 +159,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	mainAppPaper: {
 		// backgroundColor: "rgba(0,0,0,.4)",
+		// backgroundCoslor: "rgba(255,255,255,.4)",
 		// backdropFilter: "blur(5px)",
 
 		// padding: "1rem",
@@ -182,19 +179,39 @@ const darkTheme = createMuiTheme({
 	},
 });
 
-let theme = createMuiTheme();
 // theme = responsiveFontSizes(darkTheme);
-theme = responsiveFontSizes(theme);
+// theme = responsiveFontSizes(theme);
 
 function App(props) {
 	const { window } = props;
 	const classes = useStyles();
-	const theme = useTheme();
-	const [mobileOpen, setMobileOpen] = React.useState(false);
+	// const theme = useTheme();
+	const [mobileOpen, setMobileOpen] = useState(false);
+
+	const [darkMode, setDarkMode] = useState(false);
+
+	// const [themeMode, setThemeMode] = useState("light");
+	// const [themeMode, setThemeMode] = React.useState("dark");
+
+	let theme = createMuiTheme({
+		palette: {
+			type: darkMode ? "dark" : "light",
+			primary: {
+				main: darkMode ? "#111" : "#fff",
+			},
+		},
+	});
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
+
+	// const handleLightMode = () => {
+	// 	setThemeMode("light");
+	// };
+	// const handleDarkMode = () => {
+	// 	setThemeMode("dark");
+	// };
 
 	const drawerL = (
 		<div className={classes.drawer}>
@@ -242,6 +259,7 @@ function App(props) {
 					</Link>
 				))}
 			</List>
+			<Divider />
 		</div>
 	);
 
@@ -251,7 +269,7 @@ function App(props) {
 			<List
 				style={{
 					// backgroundColor: "aliceblue",
-					backgroundColor: "white",
+					// backgroundColor: "white",
 					display: "flex",
 					width: "100vw",
 					// height: "12vh",
@@ -277,6 +295,8 @@ function App(props) {
 					</ListItem>
 				))}
 			</List>
+			<Divider />
+			<Typography>toggle here</Typography>
 		</div>
 	);
 
@@ -287,15 +307,18 @@ function App(props) {
 		// <div className="App">
 		<StylesProvider injectFirst>
 			<ThemeProvider theme={theme}>
+				<CssBaseline />
 				<BrowserRouter>
 					{/* <div className={classes.root}> */}
-					<CssBaseline />
 					<Paper className={classes.mainAppPaper}>
 						<AppBar position="fixed" className={classes.appBar}>
 							<Toolbar
+								darkMode={darkMode}
+								// setLightMode={handleLightMode}
+								// darkMode={handleDarkMode}
 								style={{
 									// backgroundColor: "#fafafa",
-									backgroundColor: "#ffffffe6",
+									// backgroundColor: "#ffffffe6",
 									color: "#345",
 								}}
 							>
@@ -315,6 +338,22 @@ function App(props) {
 								<Typography variant="h6" noWrap>
 									Portfolio
 								</Typography>
+								<div style={{ flex: 1 }} />
+								{darkMode ? (
+									<IconButton
+										color="inherit"
+										onClick={() => setDarkMode(!darkMode)}
+									>
+										<Brightness7 />
+									</IconButton>
+								) : (
+									<IconButton
+										color="inherit"
+										onClick={() => setDarkMode(!darkMode)}
+									>
+										<Brightness2 />
+									</IconButton>
+								)}
 							</Toolbar>
 						</AppBar>
 						<nav
@@ -357,11 +396,26 @@ function App(props) {
 						</nav>
 						<main className={classes.content}>
 							<Routes>
-								<Route path="/" element={<HomePage />} />
-								<Route path="about" element={<About />} />
-								<Route path="resume" element={<Resume />} />
-								<Route path="projects" element={<Projects />} />
-								<Route path="contact" element={<Contact />} />
+								<Route
+									path="/"
+									element={<HomePage darkMode={darkMode} />}
+								/>
+								<Route
+									path="about"
+									element={<About darkMode={darkMode} />}
+								/>
+								<Route
+									path="resume"
+									element={<Resume darkMode={darkMode} />}
+								/>
+								<Route
+									path="projects"
+									element={<Projects darkMode={darkMode} />}
+								/>
+								<Route
+									path="contact"
+									element={<Contact darkMode={darkMode} />}
+								/>
 							</Routes>
 						</main>
 						{/* </div> */}
