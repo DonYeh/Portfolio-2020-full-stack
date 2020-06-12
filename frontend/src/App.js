@@ -170,7 +170,7 @@ const useStyles = makeStyles((theme) => ({
 			margin: "5rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			margin: "6rem 10rem",
+			margin: "5rem",
 		},
 	},
 }));

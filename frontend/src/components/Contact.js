@@ -261,11 +261,6 @@ const validationSchema = Yup.object().shape({
 // 		},
 // 	},
 // });
-const darkTheme = createMuiTheme({
-	palette: {
-		type: "dark",
-	},
-});
 
 let theme = createMuiTheme();
 // theme = responsiveFontSizes(darkTheme);
@@ -293,6 +288,22 @@ const Contact = (darkMode) => {
 			setModalIsOpen(true);
 		}, 500);
 	};
+
+	const darkTheme = createMuiTheme({
+		overrides: {
+			MuiPaper: {
+				root: {
+					backgroundColor: darkMode
+						? "rgba(0,0,0,.6)"
+						: "rgba(255,255,255,.6)",
+					//   marginBottom: '10px'
+				},
+			},
+		},
+		palette: {
+			type: "dark",
+		},
+	});
 
 	return (
 		<>

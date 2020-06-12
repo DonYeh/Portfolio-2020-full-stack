@@ -36,17 +36,52 @@ const useStyles = makeStyles((theme) => ({
 		padding: "42% 1% 1%",
 		// paddingTop: "42%",
 	},
+
+	mainPaper: {
+		// height: "100vh",
+		// height: "calc(100%)",
+		// width: "100vw",
+		// height: "calc(100% + 56px)",
+		// padding: "1.5vh 0 1vh",
+		// margin: "1.2rem",
+		// padding: "1em 0 1em",
+		// backgroundColor: " rgba(255,255,255,.2)",
+
+		// backgroundColor: "rgba(0,0,0,.4)
+		// height: "100vh",
+		// padding: ".5em",
+		// backgroundColor: "green",
+
+		// backdropFilter: "blur(4px)",
+
+		// transform: "translateY(9vh)",
+		[theme.breakpoints.up("sm")]: {
+			marginTop: "15vh",
+			padding: "0",
+		},
+		[theme.breakpoints.up("md")]: {
+			marginTop: "13vh",
+			padding: "0",
+		},
+	},
+
 	gridContainer: {
 		alignItems: "center",
 		// paddingTop: "8vh",
-		padding: "4vh 4vw 1vh",
+		padding: "8vh 5vw",
+		// paddingTop: "8vh",
+		// padding: "4vh 4vw 1vh",
 		// height: "100vh",
 		// height: "100vh",
+		width: "100vw",
+		margin: "0",
 
 		[theme.breakpoints.up("sm")]: {
 			// width: "100vw",
 			// height: "100vh",
-			padding: "2.5vh 4vw 2.5vh",
+			width: "100%",
+			padding: "4.5vw",
+			// padding: "2.5vh 4vw 2.5vh",
 			justify: "center",
 			alignItems: "center",
 			fontSize: "10em",
@@ -58,10 +93,10 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("md")]: {
 			// width: "100vw",
 
-			fontSize: "9em",
+			// fontSize: "9em",
 			// transform: "scale(0.9,0.9)",
 			// padding: "9vh 9vh 9vh",
-			padding: "2vw",
+			padding: "8vw",
 		},
 	},
 	gridItems: {
@@ -108,32 +143,7 @@ const useStyles = makeStyles((theme) => ({
 			height: "15vw",
 		},
 	},
-	mainPaper: {
-		// height: "100vh",
-		height: "100%",
-		// height: "calc(100% + 56px)",
-		padding: "1.5vh 0 1vh",
-		// margin: "1.2rem",
-		// padding: "1em 0 1em",
-		// backgroundColor: " rgba(255,255,255,.2)",
 
-		// backgroundColor: "rgba(0,0,0,.4)
-		// height: "100vh",
-		// padding: ".5em",
-		// backgroundColor: "green",
-
-		// backdropFilter: "blur(4px)",
-
-		// transform: "translateY(9vh)",
-		[theme.breakpoints.up("sm")]: {
-			marginTop: "15vh",
-			padding: "0",
-		},
-		[theme.breakpoints.up("md")]: {
-			marginTop: "16vh",
-			padding: "0",
-		},
-	},
 	titleAndAvatarGridContainer: {
 		// padding: "1rem 1rem .1rem",
 		// padding: "1rem 4rem",
@@ -150,12 +160,13 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	typographyText: {
-		padding: "0 1.2rem",
+		padding: "0 1.5rem",
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.3rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			fontSize: "1.3rem",
+			padding: "1rem 2.4rem",
+			fontSize: "1.6rem",
 		},
 		// [theme.breakpoints.up("lg")]: {
 		// 	fontSize: "2em",
@@ -227,6 +238,16 @@ const About = ({ darkMode }) => {
 	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
 
 	let darkTheme = createMuiTheme({
+		overrides: {
+			MuiPaper: {
+				root: {
+					backgroundColor: darkMode
+						? "rgba(0,0,0,.6)"
+						: "rgba(255,255,255,.6)",
+					//   marginBottom: '10px'
+				},
+			},
+		},
 		palette: {
 			type: darkMode ? "dark" : "light",
 			primary: {
