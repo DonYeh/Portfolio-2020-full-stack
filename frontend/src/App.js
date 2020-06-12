@@ -57,6 +57,8 @@ import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 import { Brightness2 } from "@material-ui/icons";
 import { Brightness7 } from "@material-ui/icons";
 
+import Overlay from "./components/Overlay";
+
 const drawerWidth = 210;
 
 const menuIcons = [
@@ -159,11 +161,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	mainAppPaper: {
 		// backgroundColor: "rgba(0,0,0,.4)",
-		// backgroundCoslor: "rgba(255,255,255,.4)",
+		backgroundColor: "rgba(255,255,255,.4)",
 		// backdropFilter: "blur(5px)",
 
 		// padding: "1rem",
-		margin: "1.2rem",
+		// margin: "1.2rem",
 		[theme.breakpoints.up("sm")]: {
 			margin: "5rem",
 		},
@@ -398,6 +400,7 @@ function App(props) {
 							<Routes>
 								<Route
 									path="/"
+									// element={<HomePage darkMode={darkMode} />}
 									element={<HomePage darkMode={darkMode} />}
 								/>
 								<Route

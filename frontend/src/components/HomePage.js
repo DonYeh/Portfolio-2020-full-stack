@@ -31,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
 	mainGridContainer: {
 		// paddingTop: "22vh",
 		// backgroundColor: "rgba(255,255,255,.55)", //
-		height: "96vh",
+		height: "100vh",
 		// padding: "33% 0% 0%",
 	},
 
 	typedContainer: {
 		// margin: theme.spacing(8),
 		// paddingTop: "5rem",
-		padding: "0 2vw",
+		padding: "0 10vw",
 
 		textAlign: "center",
 		margin: "0",
@@ -76,12 +76,8 @@ const useStyles = makeStyles((theme) => ({
 		// backgroundColor: "rgba(f,f,f,.5)",
 	},
 	mainPaperDark: {
-		height: "93vh",
+		height: "100vh",
 		backgroundColor: "rgba(0,0,0,.2)",
-	},
-
-	mainGridContainerOverride: {
-		// backgroundColor: "pink",
 	},
 }));
 
@@ -102,18 +98,18 @@ const useStyles = makeStyles((theme) => ({
 // 	})
 // );
 
-let theme = createMuiTheme({
-	overrides: {
-		div: {
-			MuiPaper: {
-				root: {
-					backgroundColor: "purple",
-				},
-			},
-		},
-	},
-});
-theme = responsiveFontSizes(theme);
+// let theme = createMuiTheme({
+// 	overrides: {
+// 		div: {
+// 			MuiPaper: {
+// 				root: {
+// 					backgroundColor: "purple",
+// 				},
+// 			},
+// 		},
+// 	},
+// });
+// theme = responsiveFontSizes(theme);
 // theme = responsiveFontSizes(darkTheme);
 
 const HomePage = ({ darkMode }) => {
@@ -128,6 +124,17 @@ const HomePage = ({ darkMode }) => {
 
 	let darkTheme = responsiveFontSizes(
 		createMuiTheme({
+			overrides: {
+				MuiPaper: {
+					root: {
+						backgroundColor: darkMode
+							? "rgba(0,0,0,.6)"
+							: "rgba(255,255,255,.6)",
+						//   marginBottom: '10px'
+					},
+				},
+			},
+
 			palette: {
 				type: darkMode ? "dark" : "light",
 				primary: {
@@ -163,11 +170,6 @@ const HomePage = ({ darkMode }) => {
 						className={classes.mainGridContainer}
 						// alignItems="center"
 						// spacing={2}
-						classes={{
-							MuiPaper: {
-								root: classes.mainGridContainerOverride,
-							},
-						}}
 					>
 						<Grid item xs={2} />
 						<Grid
@@ -271,7 +273,7 @@ const HomePage = ({ darkMode }) => {
 										backDelay={250}
 										smartBackspace="true"
 										// cursorChar="        "
-										showCursor={true}
+										showCursor={false}
 										fadeOut="true"
 										loop
 										random
