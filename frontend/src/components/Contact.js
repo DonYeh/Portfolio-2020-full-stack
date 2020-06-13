@@ -373,9 +373,13 @@ const Contact = ({ darkMode }) => {
 											// color: "darkslategrey",
 											paddingBottom: ".5rem",
 
+											// color: darkMode
+											// 	? "rgba(255, 255, 255, 0.6)"
+											// 	: "rgba(0, 0, 0, 0.7)",
+
 											color: darkMode
-												? "rgba(255, 255, 255, 0.6)"
-												: "rgba(0, 0, 0, 0.7)",
+												? "#a9a9a9"
+												: "#1f512dd9",
 										}}
 										className={classes.firstGridItemTitle}
 									>
@@ -423,6 +427,7 @@ const Contact = ({ darkMode }) => {
 												touched,
 												handleChange,
 												handleBlur,
+												darkMode,
 											}) => (
 												<Form
 													style={
@@ -638,7 +643,7 @@ const Contact = ({ darkMode }) => {
 																}
 																style={{
 																	backgroundColor: darkMode
-																		? "rgba(180, 79, 9, 0.4)"
+																		? "#303030d6"
 																		: "rgba(255, 183, 77, 0.5)",
 																}}
 															>
@@ -646,7 +651,8 @@ const Contact = ({ darkMode }) => {
 																	variant=""
 																	style={{
 																		color: darkMode
-																			? "#a9a9a9"
+																			? // ? "#a9a9a9"
+																			  "#rgb(1, 65,19)"
 																			: "#1f512dd9",
 																	}}
 																>
@@ -667,6 +673,20 @@ const Contact = ({ darkMode }) => {
 															color: darkMode
 																? "rgba(255, 255, 255, 0.6)"
 																: "rgba(0, 0, 0, 0.7)",
+															backgroundColor: darkMode
+																? "rgba(0,0,0,.5)"
+																: "#e5e5e5",
+														}}
+														// BackdropProps={{
+														// 	backgroundColor:
+														// 		"purple",
+														// }}
+														BackdropProps={{
+															invisible: true,
+														}}
+														PaperProps={{
+															backgroundColor:
+																"brown",
 														}}
 													>
 														<Typography
@@ -675,6 +695,11 @@ const Contact = ({ darkMode }) => {
 															style={{
 																padding:
 																	"10vh 0 5vh",
+																color: darkMode
+																	? "#a9a9a9"
+																	: "#1f512dd9",
+																// backgroundColor:
+																// 	"black",
 															}}
 														>
 															Thanks for reaching
@@ -709,9 +734,21 @@ const Contact = ({ darkMode }) => {
 																			false
 																		)
 																	}
-																	style={{}}
+																	style={{
+																		backgroundColor: darkMode
+																			? "rgba(180, 79, 9, 0.4)"
+																			: "rgba(255, 183, 77, 0.5)",
+																	}}
 																>
-																	Close
+																	<Typography
+																		style={{
+																			color: darkMode
+																				? "#a9a9a9"
+																				: "#1f512dd9",
+																		}}
+																	>
+																		Close
+																	</Typography>
 																</Button>
 															</Grid>
 														</Grid>
@@ -761,9 +798,12 @@ const Contact = ({ darkMode }) => {
 												classes.thirdGridItemTitle
 											}
 											style={{
+												// color: darkMode
+												// 	? "rgba(255, 255, 255, 0.6)"
+												// 	: "rgba(0, 0, 0, 0.7)",
 												color: darkMode
-													? "rgba(255, 255, 255, 0.6)"
-													: "rgba(0, 0, 0, 0.7)",
+													? "#a9a9a9"
+													: "#1f512dd9",
 											}}
 										>
 											Let's Connect
