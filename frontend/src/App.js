@@ -280,7 +280,7 @@ function App(props) {
 			<Divider />
 			<List>
 				{menuIcons.map((menuIcon, key) => (
-					<Link to={menuIcon.listPath}>
+					<Link to={menuIcon.listPath} underline="hover">
 						<ListItem button key={key} onClick={handleDrawerToggle}>
 							<ListItemIcon
 								style={{
@@ -298,10 +298,11 @@ function App(props) {
 								primary={menuIcon.listText}
 								style={{
 									color: darkMode
-										? "rgba(137, 136, 136, 0.58)"
+										? "rgba(137, 136, 136, 0.98"
 										: "rgba(9, 63, 56, 0.79)",
 									// color: "aliceblue",
 									fontWeight: "bold",
+									textDecoration: "none",
 								}}
 							/>
 						</ListItem>
@@ -394,7 +395,7 @@ function App(props) {
 									style={{
 										color: darkMode
 											? "#d3d3d34f"
-											: grey[700],
+											: "#03482aeb",
 										fontWeight: "bold",
 									}}
 								>

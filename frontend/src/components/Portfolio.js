@@ -189,7 +189,9 @@ export default function Portfolio({ darkMode }) {
 													align="center"
 													variant="h4"
 													style={{
-														paddingLeft: "1rem",
+														color: darkMode
+															? "rgba(255, 255, 255, 0.6)"
+															: "rgba(0, 0, 0, 0.7)",
 													}}
 													// component="h2"
 												>
@@ -202,6 +204,11 @@ export default function Portfolio({ darkMode }) {
 													className={
 														classes.projDescription
 													}
+													style={{
+														color: darkMode
+															? "rgba(255, 255, 255, 0.46)"
+															: "rgba(0, 0, 0, 0.54)",
+													}}
 												>
 													This portfolio site is a
 													full stack Javascript app.
@@ -235,7 +242,7 @@ export default function Portfolio({ darkMode }) {
 															}
 															style={{
 																color: darkMode
-																	? "rgba(15, 92, 62, 0.7)"
+																	? "rgba(1, 131, 80, 0.86)"
 																	: "rgba(15, 92, 62, 0.8)",
 															}}
 														>
@@ -272,6 +279,11 @@ export default function Portfolio({ darkMode }) {
 													gutterBottom
 													variant="h4"
 													align="center"
+													style={{
+														color: darkMode
+															? "rgba(255, 255, 255, 0.6)"
+															: "rgba(0, 0, 0, 0.7)",
+													}}
 												>
 													Chatris
 												</Typography>
@@ -313,6 +325,11 @@ export default function Portfolio({ darkMode }) {
 															className={
 																classes.githubLink
 															}
+															style={{
+																color: darkMode
+																	? "rgba(1, 131, 80, 0.86)"
+																	: "rgba(15, 92, 62, 0.8)",
+															}}
 														>
 															Github
 														</Typography>
@@ -345,6 +362,11 @@ export default function Portfolio({ darkMode }) {
 													gutterBottom
 													variant="h4"
 													align="center"
+													style={{
+														color: darkMode
+															? "rgba(255, 255, 255, 0.6)"
+															: "rgba(0, 0, 0, 0.7)",
+													}}
 												>
 													Movie Explorer
 												</Typography>
@@ -387,6 +409,11 @@ export default function Portfolio({ darkMode }) {
 															className={
 																classes.githubLink
 															}
+															style={{
+																color: darkMode
+																	? "rgba(1, 131, 80, 0.86)"
+																	: "rgba(15, 92, 62, 0.8)",
+															}}
 														>
 															Github
 														</Typography>
