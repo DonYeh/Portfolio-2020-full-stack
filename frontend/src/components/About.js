@@ -350,7 +350,9 @@ const About = ({ darkMode }) => {
 														classes.typographyTextAboutMe
 													}
 													style={{
-														color: mainSecondaryColor,
+														color: darkMode
+															? "rgba(210, 129, 80, 0.7)"
+															: "rgba(9, 63, 56, 0.92)",
 													}}
 												>
 													About Me

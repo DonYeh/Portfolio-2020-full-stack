@@ -372,7 +372,7 @@ function App(props) {
 									onClick={handleDrawerToggle}
 									className={classes.menuButton}
 									style={{
-										color: "rgba(236, 108, 23, 0.93)",
+										color: "rgba(236, 108, 23, 0.7)",
 										// color: "#e49059ed",
 										// color: "sandybrown",
 									}}
@@ -384,7 +384,7 @@ function App(props) {
 									noWrap
 									style={{
 										color: darkMode
-											? "lightgrey"
+											? "#d3d3d34f"
 											: grey[700],
 										fontWeight: "bold",
 									}}
