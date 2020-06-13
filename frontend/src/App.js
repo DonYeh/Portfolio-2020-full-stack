@@ -56,7 +56,7 @@ import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 
 import { Brightness2 } from "@material-ui/icons";
 import { Brightness7 } from "@material-ui/icons";
-
+import Brightness4Icon from "@material-ui/icons/Brightness4";
 import Overlay from "./components/Overlay";
 
 import {
@@ -136,8 +136,8 @@ const useStyles = makeStyles((theme) => ({
 		// backgroundColor: "rgba(0,0,0,.5 )",
 		// backgroundColor: "rgba(f,f,f,.5 )",
 		// backgroundColor: "rgba(#424242db)",
-		backgroundColor: "rgba(66,66,66,.88)",
-		backdropFilter: "blur(5px)",
+		// backgroundColor: "rgba(66,66,66,.88)",
+		// backgroundColor: "rgba(236, 236, 236, 0.76)",
 	},
 
 	content: {
@@ -167,9 +167,9 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgba(124,124,124, .2)",
 		// minHeight: "54px",
 	},
-	topListText: {
-		color: "purple",
-	},
+	// topListText: {
+	// 	color: "purple",
+	// },
 	mainAppPaper: {
 		// backgroundColor: "rgba(0,0,0,.4)",
 		backgroundColor: "rgba(255,255,255,.4)",
@@ -220,7 +220,7 @@ function App(props) {
 	const mainPrimaryColor = darkMode ? grey[900] : orange[300];
 	// const mainPrimaryColor = darkMode ? black : white;
 	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
-	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
+	const mainSecondaryColor = darkMode ? orange[700] : orange[800];
 
 	let darkTheme = createMuiTheme({
 		overrides: {
@@ -265,7 +265,9 @@ function App(props) {
 						<ChevronLeftIcon
 							style={{
 								// color: "sandybrown",
-								color: "rgba(236, 108, 23, 0.7)",
+								color: darkMode
+									? "rgba(236, 108, 23, 0.5)"
+									: "rgba(236, 108, 23, 0.8)",
 								width: "1em",
 								height: "1.2em",
 							}}
@@ -283,7 +285,10 @@ function App(props) {
 							<ListItemIcon
 								style={{
 									// color: "#5f9ea0c7",
-									color: "orange",
+									color: darkMode
+										? "rgba(137, 136, 136, 0.5)"
+										: "rgba(137, 136, 136, 0.8)",
+
 									paddingLeft: "6px",
 								}}
 							>
@@ -292,7 +297,9 @@ function App(props) {
 							<ListItemText
 								primary={menuIcon.listText}
 								style={{
-									color: "aliceblue",
+									color: darkMode
+										? "rgba(137, 136, 136, 0.58)"
+										: "rgba(9, 63, 56, 0.79)",
 									// color: "aliceblue",
 									fontWeight: "bold",
 								}}
@@ -372,7 +379,9 @@ function App(props) {
 									onClick={handleDrawerToggle}
 									className={classes.menuButton}
 									style={{
-										color: "rgba(236, 108, 23, 0.7)",
+										color: darkMode
+											? "rgba(236, 108, 23, 0.5)"
+											: "rgba(236, 108, 23, 0.7)",
 										// color: "#e49059ed",
 										// color: "sandybrown",
 									}}
@@ -406,9 +415,9 @@ function App(props) {
 										color="inherit"
 										onClick={() => setDarkMode(!darkMode)}
 									>
-										<Brightness2
+										<Brightness4Icon
 											style={{
-												color: "rgba(9, 63, 56, 0.92)",
+												color: "rgba(59, 59, 59, 0.92)",
 											}}
 										/>
 									</IconButton>
@@ -436,6 +445,11 @@ function App(props) {
 									}}
 									ModalProps={{
 										keepMounted: true, // Better open performance on mobile.
+									}}
+									style={{
+										backgroundColor: darkMode
+											? "rgba(66,66,66,.88)"
+											: "rgba(236, 236, 236, 0.76)",
 									}}
 								>
 									{drawerL}

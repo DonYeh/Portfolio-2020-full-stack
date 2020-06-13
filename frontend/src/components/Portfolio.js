@@ -233,6 +233,11 @@ export default function Portfolio({ darkMode }) {
 															className={
 																classes.githubLink
 															}
+															style={{
+																color: darkMode
+																	? "rgba(15, 92, 62, 0.7)"
+																	: "rgba(15, 92, 62, 0.8)",
+															}}
 														>
 															Github
 														</Typography>

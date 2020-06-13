@@ -316,7 +316,7 @@ const HomePage = ({ darkMode }) => {
 								className={classes.typedFont}
 								style={{
 									color: darkMode
-										? "lightgray"
+										? "#015f0fb8"
 										: "rgba(9, 63, 56, 0.92)",
 								}}
 							>
