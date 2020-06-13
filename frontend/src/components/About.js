@@ -20,11 +20,15 @@ import {
 	lightBlue,
 	deepPurple,
 	deepOrange,
+	greyBlue,
+	green,
+	lightGreen,
+	teal,
 } from "@material-ui/core/colors";
 
 // import { FullscreenExit } from "@material-ui/icons";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme, darkMode) => ({
 	root: {
 		// backgroundColor: "black",
 	},
@@ -68,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
 	gridContainer: {
 		alignItems: "center",
 		// paddingTop: "8vh",
-		padding: "8vh 5vw",
+		padding: "8.9vh 5vw 8vh",
 		// paddingTop: "8vh",
 		// padding: "4vh 4vw 1vh",
 		// height: "100vh",
@@ -112,8 +116,6 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("sm")]: {
 			padding: "1 3rem",
 		},
-
-		// justifyContent: "space-evenly",
 	},
 	avatarContainer: {
 		// width: "100%",
@@ -128,16 +130,9 @@ const useStyles = makeStyles((theme) => ({
 		// maxWidth: "100%",
 	},
 	avatar: {
-		// textAlign: "center",
 		width: theme.spacing(10),
 		height: theme.spacing(10),
-		// [theme.breakpoints.down("sm")]: {
-		// 	width: "30vw",
-		// 	height: "30vw",
 
-		// 	// width: theme.spacing(12),
-		// 	// height: theme.spacing(12),
-		// },
 		[theme.breakpoints.up("sm")]: {
 			width: "15vw",
 			height: "15vw",
@@ -145,16 +140,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	titleAndAvatarGridContainer: {
-		// padding: "1rem 1rem .1rem",
-		// padding: "1rem 4rem",
-
-		// backgroundColor: "aliceblue",
-		// padding: "2vh",
-		// [theme.breakpoints.down("xs")]: {},
-		// paddingBottom: "3vh ",
-		// [theme.breakpoints.down("sm")]: {
-		// 	padding: ".25rem .3rem",
-		// },
 		[theme.breakpoints.up("md")]: {
 			// padding: "1rem 4rem",
 		},
@@ -168,9 +153,6 @@ const useStyles = makeStyles((theme) => ({
 			padding: "1rem 2.4rem",
 			fontSize: "1.6rem",
 		},
-		// [theme.breakpoints.up("lg")]: {
-		// 	fontSize: "2em",
-		// },
 	},
 	typographyTextAboutMe: {
 		padding: "0 .2rem",
@@ -217,6 +199,14 @@ const useStyles = makeStyles((theme) => ({
 	firstInnerGridItem: {},
 	innerPaper: {
 		padding: ".4em",
+		// backgroundColor: darkMode
+		// 	? "rgba(121,121,121,.13)"
+		// 	: "rgba(,255,255,.1)",
+		// backgroundColor: darkMode ? "rgba(0,0,0,.3)" : "orange",
+
+		backgroundColor: darkMode ? "rgba(0,0,0,.6)" : "rgba(121,121,121,.13)",
+		padding: ".4rem",
+
 		[theme.breakpoints.up("sm")]: {
 			padding: "5rem",
 		},
@@ -232,8 +222,10 @@ const useStyles = makeStyles((theme) => ({
 const About = ({ darkMode }) => {
 	const [aboutDarkMode, setAboutDarkMode] = useState(darkMode);
 
-	const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
-	const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+	// const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
+	const mainPrimaryColor = darkMode ? orange[800] : lightBlue[500];
+	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
 
 	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
 
@@ -266,7 +258,7 @@ const About = ({ darkMode }) => {
 	// 	},
 	// });
 
-	const classes = useStyles();
+	const classes = useStyles({ darkMode });
 
 	return (
 		// <ThemeProvider theme={darkTheme}>
@@ -277,12 +269,7 @@ const About = ({ darkMode }) => {
 					container
 					className={classes.gridContainer}
 					spacing={2}
-					// direction="column"
 					justify="space-evenly"
-					// alignItems="center"
-					// style={{ backgroundColor: "rgba(0,0,0,.5)" }}
-					// style={{ backgroundColor: "white" }}
-					// justify="center"
 				>
 					<Grid
 						item
@@ -323,8 +310,9 @@ const About = ({ darkMode }) => {
 								>
 									<Paper
 										style={{
-											// backgroundColor: "lightgrey", //aliceblue
-											// backgroundColor: "lightgrey", //aliceblue
+											backgroundColor: darkMode
+												? "rgba(0,0,0,.3)"
+												: "rgba(121,121,121,.15)",
 											padding: ".4rem",
 										}}
 										className={classes.innerPaper}
@@ -357,10 +345,13 @@ const About = ({ darkMode }) => {
 												}}
 											>
 												<Typography
-													variant="h4"
+													variant="h5"
 													className={
 														classes.typographyTextAboutMe
 													}
+													style={{
+														color: mainSecondaryColor,
+													}}
 												>
 													About Me
 												</Typography>
@@ -381,8 +372,9 @@ const About = ({ darkMode }) => {
 									<Paper
 										elevation={4}
 										style={{
-											// backgroundColor: "lightgrey",
-											// width: "100%",
+											backgroundColor: darkMode
+												? "rgba(0,0,0,.3)"
+												: "rgba(121,121,121,.15)",
 											padding: ".4rem",
 										}}
 									>

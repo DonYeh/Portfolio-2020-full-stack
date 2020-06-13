@@ -59,6 +59,17 @@ import { Brightness7 } from "@material-ui/icons";
 
 import Overlay from "./components/Overlay";
 
+import {
+	orange,
+	lightBlue,
+	deepPurple,
+	deepOrange,
+	grey,
+	blueGrey,
+	green,
+	teal,
+} from "@material-ui/core/colors";
+
 const drawerWidth = 210;
 
 const menuIcons = [
@@ -173,6 +184,7 @@ const useStyles = makeStyles((theme) => ({
 			margin: "5rem",
 		},
 	},
+	topToolbar: {},
 }));
 
 const darkTheme = createMuiTheme({
@@ -195,11 +207,39 @@ function App(props) {
 	// const [themeMode, setThemeMode] = useState("light");
 	// const [themeMode, setThemeMode] = React.useState("dark");
 
-	let theme = createMuiTheme({
+	// let theme = createMuiTheme({
+	// 	palette: {
+	// 		type: darkMode ? "dark" : "light",
+	// 		primary: {
+	// 			main: darkMode ? "#111" : "#fff",
+	// 		},
+	// 	},
+	// });
+
+	// const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
+	const mainPrimaryColor = darkMode ? grey[900] : orange[300];
+	// const mainPrimaryColor = darkMode ? black : white;
+	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
+
+	let darkTheme = createMuiTheme({
+		overrides: {
+			MuiPaper: {
+				root: {
+					backgroundColor: darkMode
+						? "rgba(0,0,0,.6)"
+						: "rgba(255,255,255,.6)",
+					//   marginBottom: '10px'
+				},
+			},
+		},
 		palette: {
 			type: darkMode ? "dark" : "light",
 			primary: {
-				main: darkMode ? "#111" : "#fff",
+				main: mainPrimaryColor,
+			},
+			secondary: {
+				main: mainSecondaryColor,
 			},
 		},
 	});
@@ -221,11 +261,11 @@ function App(props) {
 			{/* <Divider /> */}
 			<div className={classes.drawerHeader}>
 				<IconButton onClick={handleDrawerToggle}>
-					{theme.direction === "ltr" ? (
+					{darkTheme.direction === "ltr" ? (
 						<ChevronLeftIcon
 							style={{
 								// color: "sandybrown",
-								color: "#e49059ed",
+								color: mainPrimaryColor,
 								width: "1em",
 								height: "1.2em",
 							}}
@@ -242,8 +282,8 @@ function App(props) {
 						<ListItem button key={key} onClick={handleDrawerToggle}>
 							<ListItemIcon
 								style={{
-									color: "#5f9ea0c7",
-									// color: "cadetblue",
+									// color: "#5f9ea0c7",
+									color: "orange",
 									paddingLeft: "6px",
 								}}
 							>
@@ -286,8 +326,8 @@ function App(props) {
 					>
 						<ListItemIcon
 							style={{
-								// color: "#AFEEEE",
-								color: "slategrey",
+								color: mainSecondaryColor,
+								// color: "slategrey",
 								// boxShadow: "9", //this doesn't work
 							}}
 						>
@@ -308,7 +348,7 @@ function App(props) {
 	return (
 		// <div className="App">
 		<StylesProvider injectFirst>
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={darkTheme}>
 				<CssBaseline />
 				<BrowserRouter>
 					{/* <div className={classes.root}> */}
@@ -323,6 +363,7 @@ function App(props) {
 									// backgroundColor: "#ffffffe6",
 									color: "#345",
 								}}
+								className={classes.topToolbar}
 							>
 								<IconButton
 									color="inherit"
@@ -331,13 +372,23 @@ function App(props) {
 									onClick={handleDrawerToggle}
 									className={classes.menuButton}
 									style={{
-										color: "#e49059ed",
+										color: "rgba(236, 108, 23, 0.93)",
+										// color: "#e49059ed",
 										// color: "sandybrown",
 									}}
 								>
 									<MenuIcon />
 								</IconButton>
-								<Typography variant="h6" noWrap>
+								<Typography
+									variant="h6"
+									noWrap
+									style={{
+										color: darkMode
+											? "lightgrey"
+											: grey[700],
+										fontWeight: "bold",
+									}}
+								>
 									Portfolio
 								</Typography>
 								<div style={{ flex: 1 }} />
@@ -346,14 +397,20 @@ function App(props) {
 										color="inherit"
 										onClick={() => setDarkMode(!darkMode)}
 									>
-										<Brightness7 />
+										<Brightness7
+											style={{ color: "darkgrey" }}
+										/>
 									</IconButton>
 								) : (
 									<IconButton
 										color="inherit"
 										onClick={() => setDarkMode(!darkMode)}
 									>
-										<Brightness2 />
+										<Brightness2
+											style={{
+												color: "rgba(9, 63, 56, 0.92)",
+											}}
+										/>
 									</IconButton>
 								)}
 							</Toolbar>
@@ -368,7 +425,7 @@ function App(props) {
 									container={container}
 									variant="temporary"
 									anchor={
-										theme.direction === "rtl"
+										darkTheme.direction === "rtl"
 											? "right"
 											: "left"
 									}

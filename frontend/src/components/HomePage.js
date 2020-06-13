@@ -22,6 +22,7 @@ import {
 	lightBlue,
 	deepPurple,
 	deepOrange,
+	grey,
 } from "@material-ui/core/colors";
 
 // import { ViewColumn } from "@material-ui/icons";
@@ -65,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 		// marginTop: "10%",
 		// textAlign: "flex-start",
-		// backgroundColor: "blue",
+		// backgroundColor: "blue"
 	},
 	mainPaper: {
 		height: "93vh",
@@ -158,7 +159,7 @@ const HomePage = ({ darkMode }) => {
 			<Paper
 				square
 				className={
-					darkTheme ? "classes.mainPaperDark" : "classes.mainPaper"
+					darkMode ? "classes.mainPaperDark" : "classes.mainPaper"
 				}
 				// classes={root: }
 			>
@@ -183,6 +184,12 @@ const HomePage = ({ darkMode }) => {
 							<Typography
 								variant="h3"
 								className={classes.typedFont}
+								style={{
+									color: darkMode
+										? "lightgray"
+										: // : "rgba(95, 95, 95, 0.88)",
+										  grey[700],
+								}}
 							>
 								<Typed
 									strings={[
@@ -206,6 +213,12 @@ const HomePage = ({ darkMode }) => {
 							<Typography
 								variant="h3"
 								className={classes.typedFont}
+								style={{
+									color: darkMode
+										? "lightgrey"
+										: // : "rgba(95, 95, 95, 0.88)",
+										  grey[700],
+								}}
 							>
 								<Typed
 									strings={[
@@ -236,6 +249,12 @@ const HomePage = ({ darkMode }) => {
 							<Typography
 								variant="h3"
 								className={classes.typedFont}
+								style={{
+									color: darkMode
+										? "lightgray"
+										: // : "rgba(95, 95, 95, 0.88)",
+										  grey[700],
+								}}
 							>
 								<Typed
 									strings={["from^3"]}
@@ -255,6 +274,12 @@ const HomePage = ({ darkMode }) => {
 							<Typography
 								variant="h3"
 								className={classes.typedFont}
+								style={{
+									color: darkMode
+										? "lightgray"
+										: // : "rgba(95, 95, 95, 0.88)",
+										  grey[700],
+								}}
 							>
 								<Typed
 									strings={[
@@ -289,6 +314,11 @@ const HomePage = ({ darkMode }) => {
 							<Typography
 								variant="h3"
 								className={classes.typedFont}
+								style={{
+									color: darkMode
+										? "lightgray"
+										: "rgba(9, 63, 56, 0.92)",
+								}}
 							>
 								<Typed
 									strings={["Georgia^60 🍑"]}
