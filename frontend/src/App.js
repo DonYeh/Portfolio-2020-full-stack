@@ -265,7 +265,7 @@ function App(props) {
 						<ChevronLeftIcon
 							style={{
 								// color: "sandybrown",
-								color: mainPrimaryColor,
+								color: "rgba(236, 108, 23, 0.7)",
 								width: "1em",
 								height: "1.2em",
 							}}

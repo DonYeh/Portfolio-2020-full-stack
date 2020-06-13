@@ -28,38 +28,36 @@ import portfolioImg from "../assets/donaldyehportoflioheader.png";
 import ChatrisImg from "../assets/tetris-game-retro-arcade-512.png";
 import movieExplorerGif from "../assets/newMovieGIFedited.gif";
 
+import {
+	orange,
+	lightBlue,
+	deepPurple,
+	deepOrange,
+	greyBlue,
+	green,
+	lightGreen,
+	teal,
+	grey,
+} from "@material-ui/core/colors";
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: 400,
 		// background: "white",
 	},
-	// mainBox: {
-	// 	display: "flex",
 
-	// 	// margin: "20rem 1.25rem 1.25rem 1.25rem",
-	// 	// paddingTop: "20rem",
-	// 	// marginTop: "15%",
-	// },
 	mainPaper: {
-		backgroundColor: "rgba(255,255,255,.4)",
-		// backgroundColor: "rgba(0,0,0,.4)",
-		[theme.breakpoints.up("sm")]: {
-			marginTop: "15vh",
-		},
+		height: "93vh",
+		backgroundColor: "rgba(255,255,255,.55)", //dark
 	},
-	mainGridContainer: {
-		// display: "flex",
-		// background: "black",
+	mainPaperDark: {
+		height: "100vh",
+		backgroundColor: "rgba(0,0,0,.2)",
+	},
 
-		// backdropFilter: "blur(5px)",
-		// backgroundColor: "rgba(0,0,0,.6)",
-		// padding: "16% 5%",
+	mainGridContainer: {
 		padding: "16% 5% 6%",
-		// marginTop: "80em ",
-		// padding: "2em",
-		// height: "50%",
-		// background: "pink",
-		// padding: "20% 11%",
+
 		[theme.breakpoints.up("sm")]: {
 			padding: "10% 5%",
 		},
@@ -72,35 +70,77 @@ const useStyles = makeStyles((theme) => ({
 	proj1: {},
 	projectsGridContainer: {
 		// padding: ".5rem",
+		paddingTop: "2vh",
 	},
 	projDescription: {
 		fontSize: "1rem",
+		padding: ".5rem 1rem 0",
+
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.2rem",
 		},
 		[theme.breakpoints.up("md")]: {},
 	},
+	projectDescription: {
+		padding: "2.5vh 6vw .1vh",
+	},
+	githubLink: {
+		padding: "0 1em .5em ",
+	},
 }));
 
-const darkTheme = createMuiTheme({
-	palette: {
-		type: "dark",
-	},
-});
+// const darkTheme = createMuiTheme({
+// 	palette: {
+// 		type: "dark",
+// 	},
+// });
 
 let theme = createMuiTheme();
 // theme = responsiveFontSizes(darkTheme);
 theme = responsiveFontSizes(theme);
 
-export default function Portfolio() {
+export default function Portfolio({ darkMode }) {
 	const classes = useStyles();
+
+	const mainPrimaryColor = darkMode ? grey[900] : orange[300];
+
+	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
+
+	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
+
+	let darkTheme = responsiveFontSizes(
+		createMuiTheme({
+			overrides: {
+				MuiPaper: {
+					root: {
+						backgroundColor: darkMode
+							? "rgba(0,0,0,.6)"
+							: "rgba(255,255,255,.6)",
+						//   marginBottom: '10px'
+					},
+				},
+			},
+			palette: {
+				type: darkMode ? "dark" : "light",
+				primary: {
+					main: mainPrimaryColor,
+				},
+				secondary: {
+					main: mainSecondaryColor,
+				},
+			},
+		})
+	);
 
 	return (
 		<>
-			<ThemeProvider theme={theme}>
-				<CssBaseline />
+			<ThemeProvider theme={darkTheme}>
+				{/* <CssBaseline /> */}
 				<Paper
-					className={classes.mainPaper}
+					className={
+						darkMode ? "classes.mainPaperDark" : "classes.mainPaper"
+					}
 					// style={{ backdropFilter: "blur(5px)" }}
 				>
 					<Grid
@@ -139,10 +179,18 @@ export default function Portfolio() {
 												className="classes.media"
 												component="img"
 											/>
-											<CardContent>
+											<CardContent
+												classname={
+													classes.projectDescription
+												}
+											>
 												<Typography
 													gutterBottom
-													variant="h5"
+													align="center"
+													variant="h4"
+													style={{
+														paddingLeft: "1rem",
+													}}
 													// component="h2"
 												>
 													donaldyeh.dev
@@ -169,18 +217,28 @@ export default function Portfolio() {
 											</CardContent>
 										</CardActionArea>
 										<CardActions>
-											<Button
-												size="small"
-												color="primary"
-											>
-												Github
-											</Button>
-											{/* <Button
-													size="small"
-													color="primary"
-												>
-													Learn More
-												</Button> */}
+											<Grid container justify="flex-end">
+												<Grid item>
+													<Button
+														size="small"
+														// color="primary"
+														style={{
+															color:
+																"rgba(9, 63, 56, 0.92)",
+															display: "flex",
+														}}
+													>
+														<Typography
+															align="right"
+															className={
+																classes.githubLink
+															}
+														>
+															Github
+														</Typography>
+													</Button>
+												</Grid>
+											</Grid>
 										</CardActions>
 									</Card>
 								</Box>
@@ -207,8 +265,8 @@ export default function Portfolio() {
 											<CardContent>
 												<Typography
 													gutterBottom
-													variant="h5"
-													component="h2"
+													variant="h4"
+													align="center"
 												>
 													Chatris
 												</Typography>
@@ -233,15 +291,29 @@ export default function Portfolio() {
 											</CardContent>
 										</CardActionArea>
 										<CardActions>
-											<Button
-												size="small"
-												color="primary"
-											>
-												Github
-											</Button>
-											{/* <Button size="small" color="primary">
-										Learn More
-									</Button>  */}
+											{/* <Button></Button> */}
+											<Grid container justify="flex-end">
+												<Grid item>
+													<Button
+														size="small"
+														// color="primary"
+														style={{
+															color:
+																"rgba(9, 63, 56, 0.92)",
+															display: "flex",
+														}}
+													>
+														<Typography
+															align="right"
+															className={
+																classes.githubLink
+															}
+														>
+															Github
+														</Typography>
+													</Button>
+												</Grid>
+											</Grid>
 										</CardActions>
 									</Card>
 								</Box>
@@ -266,8 +338,8 @@ export default function Portfolio() {
 											<CardContent>
 												<Typography
 													gutterBottom
-													variant="h5"
-													component="h2"
+													variant="h4"
+													align="center"
 												>
 													Movie Explorer
 												</Typography>
@@ -294,12 +366,28 @@ export default function Portfolio() {
 											</CardContent>
 										</CardActionArea>
 										<CardActions>
-											<Button
-												size="small"
-												color="primary"
-											>
-												Github
-											</Button>
+											<Grid container justify="flex-end">
+												<Grid item>
+													<Button
+														size="small"
+														// color="primary"
+														style={{
+															color:
+																"rgba(9, 63, 56, 0.92)",
+															display: "flex",
+														}}
+													>
+														<Typography
+															align="right"
+															className={
+																classes.githubLink
+															}
+														>
+															Github
+														</Typography>
+													</Button>
+												</Grid>
+											</Grid>
 										</CardActions>
 									</Card>
 								</Box>
