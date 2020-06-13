@@ -31,6 +31,18 @@ import Modal from "react-modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 
+import {
+	orange,
+	lightBlue,
+	deepPurple,
+	deepOrange,
+	greyBlue,
+	green,
+	lightGreen,
+	teal,
+	grey,
+} from "@material-ui/core/colors";
+
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 Modal.setAppElement("#root"); //fixes the warning that react-modal: App element is not defined
 
@@ -40,7 +52,9 @@ const useStyles = makeStyles((theme) => ({
 	// },
 	gridContainer: {
 		justify: "center",
-		marginTop: "7vh",
+		// marginTop: "7vh",
+		padding: "8vh 1vw 8vh",
+
 		// padding: "7vh 1.2vw 1.2vh",
 		// [theme.breakpoints.up("sm")]: {
 		// 	// marginTop: "14vh",
@@ -110,8 +124,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	mainPaper: {
+		// height: "93vh",
 		// backgroundColor: "rgba(0,0,0,.65)",
-		backgroundColor: "rgba(255,255,255,.3)",
+		// backgroundColor: "rgba(255,255,255,.3)",
 		// padding: "2vh 2vw", // marginTop: "14vh",
 		// height: "100vh",
 
@@ -204,6 +219,7 @@ const useStyles = makeStyles((theme) => ({
 
 	thirdGridItemTitle: {
 		fontSize: " 1rem",
+		// paddingBottom: "6vh",
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.3rem",
 		},
@@ -266,13 +282,41 @@ let theme = createMuiTheme();
 // theme = responsiveFontSizes(darkTheme);
 theme = responsiveFontSizes(theme);
 
-const Contact = (darkMode) => {
+const Contact = ({ darkMode }) => {
 	const classes = useStyles();
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
-	const [contactDarkMode, setContactDarkMode] = useState(darkMode);
+	// const [contactDarkMode, setContactDarkMode] = useState(darkMode);
 
-	useEffect((darkMode) => setContactDarkMode(darkMode), [darkMode]);
+	// useEffect((darkMode) => setContactDarkMode(darkMode), [darkMode]);
+
+	const mainPrimaryColor = darkMode ? orange[800] : lightBlue[500];
+	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
+
+	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
+
+	let darkTheme = createMuiTheme({
+		overrides: {
+			MuiPaper: {
+				root: {
+					backgroundColor: darkMode
+						? "rgba(0,0,0,.6)"
+						: "rgba(255,255,255,.6)",
+					//   marginBottom: '10px'
+				},
+			},
+		},
+		palette: {
+			type: darkMode ? "dark" : "light",
+			primary: {
+				main: mainPrimaryColor,
+			},
+			secondary: {
+				main: mainSecondaryColor,
+			},
+		},
+	});
 
 	const handleOpen = () => {
 		setModalIsOpen(true);
@@ -289,32 +333,16 @@ const Contact = (darkMode) => {
 		}, 500);
 	};
 
-	const darkTheme = createMuiTheme({
-		overrides: {
-			MuiPaper: {
-				root: {
-					backgroundColor: darkMode
-						? "rgba(0,0,0,.6)"
-						: "rgba(255,255,255,.6)",
-					//   marginBottom: '10px'
-				},
-			},
-		},
-		palette: {
-			type: "dark",
-		},
-	});
-
 	return (
 		<>
 			{/* <Navbar3 /> */}
 			{/* <ThemeProvider theme={formTheme}> */}
 			{/* <ThemeProvider theme={contactDarkMode ? darkTheme : theme}> */}
 			{/* <ThemeProvider theme={darkTheme}> */}
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={darkTheme}>
 				<CssBaseline />
 				<StylesProvider injectFirst>
-					<Paper className={classes.mainPaper}>
+					<Paper square className={classes.mainPaper}>
 						<Grid
 							container
 							justify="center"
@@ -330,13 +358,24 @@ const Contact = (darkMode) => {
 
 								// style={{ backgroundColor: "pink" }}
 							>
-								<Paper className={classes.paper}>
+								<Paper
+									className={classes.paper}
+									style={{
+										backgroundColor: darkMode
+											? "rgba(0, 0, 0, 0.5)"
+											: "rgba(255, 255, 255, 0.5)",
+									}}
+								>
 									<Typography
 										variant="h6"
 										align="center"
 										style={{
 											// color: "darkslategrey",
 											paddingBottom: ".5rem",
+
+											color: darkMode
+												? "rgba(255, 255, 255, 0.6)"
+												: "rgba(0, 0, 0, 0.7)",
 										}}
 										className={classes.firstGridItemTitle}
 									>
@@ -586,12 +625,36 @@ const Contact = (darkMode) => {
 															}
 														/>
 													</div>
-													<Button
-														type="submit"
-														onClick={handleModal}
+													<Grid
+														container
+														justify="center"
 													>
-														submit
-													</Button>
+														<Grid item>
+															<Button
+																type="submit"
+																variant="outlined"
+																onClick={
+																	handleModal
+																}
+																style={{
+																	backgroundColor: darkMode
+																		? "rgba(180, 79, 9, 0.4)"
+																		: "rgba(255, 183, 77, 0.5)",
+																}}
+															>
+																<Typography
+																	variant=""
+																	style={{
+																		color: darkMode
+																			? "#a9a9a9"
+																			: "#1f512dd9",
+																	}}
+																>
+																	submit
+																</Typography>
+															</Button>
+														</Grid>
+													</Grid>
 
 													<Modal
 														isOpen={modalIsOpen}
@@ -601,20 +664,27 @@ const Contact = (darkMode) => {
 															)
 														}
 														style={{
-															overlay: {
-																backgroundColor:
-																	"gainsboro",
-															},
-															content: {
-																color: "#234",
-															},
+															color: darkMode
+																? "rgba(255, 255, 255, 0.6)"
+																: "rgba(0, 0, 0, 0.7)",
 														}}
 													>
-														<h2>
+														<Typography
+															variant="h5"
+															align="center"
+															style={{
+																padding:
+																	"10vh 0 5vh",
+															}}
+														>
 															Thanks for reaching
 															out!
-														</h2>
-														<p>
+														</Typography>
+
+														<Typography
+															variant="body1"
+															align="center"
+														>
 															You should be
 															receiving a
 															confirmation email
@@ -622,17 +692,29 @@ const Contact = (darkMode) => {
 															to hear back from me
 															in the next few
 															days.
-														</p>
-
-														<Button
-															onClick={() =>
-																setModalIsOpen(
-																	false
-																)
-															}
+														</Typography>
+														<Grid
+															container
+															justify="center"
+															style={{
+																paddingTop:
+																	"4vh",
+															}}
 														>
-															X Close
-														</Button>
+															<Grid item>
+																<Button
+																	variant="outlined"
+																	onClick={() =>
+																		setModalIsOpen(
+																			false
+																		)
+																	}
+																	style={{}}
+																>
+																	Close
+																</Button>
+															</Grid>
+														</Grid>
 													</Modal>
 
 													{/* <pre>
@@ -667,7 +749,10 @@ const Contact = (darkMode) => {
 										padding: ".75rem .2rem 1rem",
 									}}
 								>
-									<Grid item>
+									<Grid
+										item
+										style={{ paddingBottom: ".5rem" }}
+									>
 										<Typography
 											variant="h5"
 											align="center"
@@ -675,6 +760,11 @@ const Contact = (darkMode) => {
 											className={
 												classes.thirdGridItemTitle
 											}
+											style={{
+												color: darkMode
+													? "rgba(255, 255, 255, 0.6)"
+													: "rgba(0, 0, 0, 0.7)",
+											}}
 										>
 											Let's Connect
 										</Typography>
@@ -694,8 +784,9 @@ const Contact = (darkMode) => {
 												{/* {'variant="body2"'} */}
 												<LinkedInIcon
 													style={{
-														color:
-															"rgba(67,118,178)",
+														color: darkMode
+															? "rgba(67,118,178,.5)"
+															: "rgba(67,118,178)",
 													}}
 												/>
 											</Link>
@@ -710,7 +801,9 @@ const Contact = (darkMode) => {
 												{/* {'variant="body2"'} */}
 												<GitHubIcon
 													style={{
-														color: "rgba(42,45,49)",
+														color: darkMode
+															? "rgba(100, 100, 100, 0.7)"
+															: "rgba(42,45,49)",
 													}}
 												/>
 											</Link>
@@ -725,8 +818,9 @@ const Contact = (darkMode) => {
 												{/* {'variant="body2"'} */}
 												<TwitterIcon
 													style={{
-														color:
-															"rgb(94, 160,239)",
+														color: darkMode
+															? "rgba(94, 160,239,.5"
+															: "rgb(94, 160,239)",
 													}}
 												/>
 											</Link>

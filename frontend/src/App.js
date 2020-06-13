@@ -178,10 +178,10 @@ const useStyles = makeStyles((theme) => ({
 		// padding: "1rem",
 		// margin: "1.2rem",
 		[theme.breakpoints.up("sm")]: {
-			margin: "5rem",
+			// margin: "5rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			margin: "5rem",
+			// margin: "5rem",
 		},
 	},
 	topToolbar: {},
@@ -394,7 +394,7 @@ function App(props) {
 									noWrap
 									style={{
 										color: darkMode
-											? "#d3d3d34f"
+											? "rgba(211, 211, 211, 0.65)"
 											: "#03482aeb",
 										fontWeight: "bold",
 									}}

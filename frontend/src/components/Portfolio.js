@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	mainGridContainer: {
-		padding: "16% 5% 6%",
+		padding: "16% 10% 8%",
 
 		[theme.breakpoints.up("sm")]: {
 			padding: "10% 5%",
@@ -85,7 +85,10 @@ const useStyles = makeStyles((theme) => ({
 		padding: "2.5vh 6vw .1vh",
 	},
 	githubLink: {
-		padding: "0 1em .5em ",
+		// padding: "0 1em .5em ",
+	},
+	myCardContent: {
+		backgroundColor: "rgba(0, 0, 0, 0.5)",
 	},
 }));
 
@@ -183,6 +186,11 @@ export default function Portfolio({ darkMode }) {
 												classname={
 													classes.projectDescription
 												}
+												style={{
+													backgroundColor: darkMode
+														? "rgba(0, 0, 0, 0.5)"
+														: "rgba(255, 255, 255, 0.5)",
+												}}
 											>
 												<Typography
 													gutterBottom
@@ -274,7 +282,16 @@ export default function Portfolio({ darkMode }) {
 												className="classes.media"
 												// style={{ objectFit: "cover" }}
 											/>
-											<CardContent>
+											<CardContent
+												className={
+													classes.myCardContent
+												}
+												style={{
+													backgroundColor: darkMode
+														? "rgba(0, 0, 0, 0.5)"
+														: "rgba(255, 255, 255, 0.5)",
+												}}
+											>
 												<Typography
 													gutterBottom
 													variant="h4"
@@ -357,7 +374,13 @@ export default function Portfolio({ darkMode }) {
 												title="Movie Explorer"
 												className="classes.media"
 											/>
-											<CardContent>
+											<CardContent
+												style={{
+													backgroundColor: darkMode
+														? "rgba(0, 0, 0, 0.5)"
+														: "rgba(255, 255, 255, 0.5)",
+												}}
+											>
 												<Typography
 													gutterBottom
 													variant="h4"
