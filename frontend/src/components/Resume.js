@@ -888,8 +888,14 @@ const useStyles = makeStyles((theme) => ({
 	eduDesc: { color: "rgba(80, 80, 80, 0.89)", padding: "0 1.5rem" },
 	eduDescDark: { color: "#c8c8c8a3", padding: "0 1.5rem" },
 
-	experienceTitle: { color: "rgba(85, 101, 99, 0.91)" },
-	experienceTitleDark: { color: "rgba(255, 223, 196, 0.61)" },
+	experienceTitle: {
+		color: "rgba(85, 101, 99, 0.91)",
+		textTransform: "uppercase",
+	},
+	experienceTitleDark: {
+		color: "rgba(255, 223, 196, 0.61)",
+		textTransform: "uppercase",
+	},
 }));
 
 // const LinkBehavior = React.forwardRef((props, ref) => (

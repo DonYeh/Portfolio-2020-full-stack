@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
 	drawer: {
 		[theme.breakpoints.up("sm")]: {
 			// width: "100vw",
-			flexShrink: 0,
+			flexShrink: 1,
 		},
 	},
 	// toolbar: {
@@ -184,9 +184,19 @@ const useStyles = makeStyles((theme) => ({
 			// margin: "5rem",
 		},
 	},
-	// topToolbar: {
-	// 	backgroundColor: "rgba(255,255,255,.6)",
-	// },
+	topToolbar: {
+		backgroundColor: "rgba(185, 198, 201, .9)",
+	},
+	topToolbarDark: {
+		backgroundColor: "rgba(20, 23, 23, 0.8)",
+	},
+
+	topDrawer: { backgroundColor: "rgba(185,198,201,.9)" },
+	// topDrawer: { backgroundColor: "rgba(181, 197, 200, 0.5)" },
+	topDrawerDark: {
+		backgroundColor: "rgba(20, 23, 23, 0.7)",
+		color: "rgba(109, 109, 109, 0.85)",
+	},
 }));
 
 const darkTheme = createMuiTheme({
@@ -237,12 +247,12 @@ function App(props) {
 		},
 		palette: {
 			type: darkMode ? "dark" : "light",
-			primary: {
-				main: mainPrimaryColor,
-			},
-			secondary: {
-				main: mainSecondaryColor,
-			},
+			// primary: {
+			// 	main: mainPrimaryColor,
+			// },
+			// secondary: {
+			// 	main: mainSecondaryColor,
+			// },
 		},
 	});
 
@@ -317,13 +327,14 @@ function App(props) {
 
 	const drawerT = (
 		// <div>
-		<div className={classes.topDrawer}>
+		<div className={darkMode ? classes.topDrawerDark : classes.topDrawer}>
 			<List
 				style={{
 					// backgroundColor: "aliceblue",
-					// backgroundColor: "white",
+					// backgroundColor: "rgba(185, 198, 201, .9)",
+					// backgroundColor: " rgba(200, 221, 226, 0.6)",
 					display: "flex",
-					width: "100vw",
+					// width: "85vw",
 					// height: "12vh",
 				}}
 			>
@@ -336,9 +347,9 @@ function App(props) {
 					>
 						<ListItemIcon
 							style={{
-								color: mainSecondaryColor,
-								// color: "slategrey",
-								// boxShadow: "9", //this doesn't work
+								color: darkMode
+									? "rgba(255, 255, 255, 0.6)"
+									: "rgba(95, 95, 95, 0.7)",
 							}}
 						>
 							{menuIcon.listIcon}
@@ -347,8 +358,6 @@ function App(props) {
 					</ListItem>
 				))}
 			</List>
-			<Divider />
-			<Typography>toggle here</Typography>
 		</div>
 	);
 
@@ -366,21 +375,25 @@ function App(props) {
 						<AppBar
 							position="fixed"
 							className={classes.appBar}
-							style={{ backgroundColor: "rgba(255,255,255,.9)" }}
+							// style={{ backgroundColor: "rgba(255,255,255,.9)" }}
 						>
 							<Toolbar
-								darkMode={darkMode}
+								// darkMode={darkMode}
 								// setLightMode={handleLightMode}
 								// darkMode={handleDarkMode}
-								style={{
-									// backgroundColor: "#fafafa",
-									// backgroundColor: "#ffffffe6",
-									backgroundColor: darkMode
-										? "rgba(20, 23, 23, 0.99)"
-										: "rgba(185, 198, 201, .9)",
-									// : "rgba(255,255,255,.8)",
-								}}
-								className={classes.topToolbar}
+								// style={{
+								// 	// backgroundColor: "#fafafa",
+								// 	// backgroundColor: "#ffffffe6",
+								// 	backgroundColor: darkMode
+								// 		? "rgba(20, 23, 23, 0.99)"
+								// 		: "rgba(185, 198, 201, .9)",
+								// 	// : "rgba(255,255,255,.8)",
+								// }}
+								className={
+									darkMode
+										? classes.topToolbarDark
+										: classes.topToolbar
+								}
 							>
 								<IconButton
 									color="inherit"
@@ -411,27 +424,100 @@ function App(props) {
 									Portfolio
 								</Typography>
 								<div style={{ flex: 1 }} />
-								{darkMode ? (
-									<IconButton
-										color="inherit"
-										onClick={() => setDarkMode(!darkMode)}
+
+								<Hidden xsDown implementation="js">
+									<Drawer
+										className={classes.displayFlex}
+										variant="permanent"
+										anchor="top"
+										open
+										style={{
+											width: "100%",
+											// color: "rgba(0,0,0,.5)",
+											color: "blue",
+										}}
 									>
-										<Brightness7
-											style={{ color: "darkgrey" }}
-										/>
-									</IconButton>
-								) : (
-									<IconButton
-										color="inherit"
-										onClick={() => setDarkMode(!darkMode)}
-									>
-										<Brightness4Icon
+										{drawerT}
+										<div
 											style={{
-												color: "rgba(59, 59, 59, 0.92)",
+												display: "flex",
+												justifyContent: "flex-end",
+												backgroundColor: darkMode
+													? "rgba(51, 64, 75, 0.95)"
+													: "rgba(193, 221, 229, 0.5)",
 											}}
-										/>
-									</IconButton>
-								)}
+										>
+											{darkMode ? (
+												<IconButton
+													color="inherit"
+													backgroundColor="inherit"
+													onClick={() =>
+														setDarkMode(!darkMode)
+													}
+												>
+													<Brightness7
+														style={{
+															color: "darkgrey",
+														}}
+													/>
+												</IconButton>
+											) : (
+												<IconButton
+													color="inherit"
+													backgroundColor="inherit"
+													onClick={() =>
+														setDarkMode(!darkMode)
+													}
+												>
+													<Brightness4Icon
+														style={{
+															color:
+																"rgba(59, 59, 59, 0.92)",
+														}}
+													/>
+												</IconButton>
+											)}
+										</div>
+									</Drawer>
+								</Hidden>
+								<div
+									style={{
+										flex: 1,
+										display: "flex",
+										justifyContent: "flex-end",
+										backgroundColor: "",
+									}}
+								>
+									{darkMode ? (
+										<IconButton
+											color="inherit"
+											backgroundColor="inherit"
+											onClick={() =>
+												setDarkMode(!darkMode)
+											}
+											style={{ zIndex: "2" }}
+										>
+											<Brightness7
+												style={{ color: "darkgrey" }}
+											/>
+										</IconButton>
+									) : (
+										<IconButton
+											color="inherit"
+											backgroundColor="inherit"
+											onClick={() =>
+												setDarkMode(!darkMode)
+											}
+										>
+											<Brightness4Icon
+												style={{
+													color:
+														"rgba(59, 59, 59, 0.92)",
+												}}
+											/>
+										</IconButton>
+									)}
+								</div>
 							</Toolbar>
 						</AppBar>
 						<nav
@@ -471,7 +557,7 @@ function App(props) {
 									variant="permanent"
 									anchor="top"
 									open
-									// style={{ height: "15vh" }}
+									style={{ backgroundColor: "purple" }}
 								>
 									{drawerT}
 								</Drawer>

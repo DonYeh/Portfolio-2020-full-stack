@@ -145,7 +145,8 @@ const useStyles = makeStyles((theme) => ({
 		// height: "100vh",
 
 		[theme.breakpoints.up("sm")]: {
-			marginTop: "15vh",
+			marginTop: "5vh",
+			height: "100vh",
 			// marginTop: "10vh",
 			// margin: "14vh 5vw 14vh",
 			// padding: "11vh 9vw",

@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 
 	mainPaper: {
 		// height: "100vh",
+		height: "100vh",
 		// height: "calc(100%)",
 		// width: "100vw",
 		// height: "calc(100% + 56px)",
@@ -61,12 +62,13 @@ const useStyles = makeStyles((theme, darkMode) => ({
 
 		// transform: "translateY(9vh)",
 		[theme.breakpoints.up("sm")]: {
-			marginTop: "15vh",
-			padding: "0",
+			height: "91vh",
+			marginTop: "9vh",
+			padding: "5vh 0vw 0vh",
 		},
 		[theme.breakpoints.up("md")]: {
-			marginTop: "13vh",
-			padding: "0",
+			marginTop: "4vh",
+			padding: "2vh 4vw",
 		},
 	},
 
@@ -158,10 +160,11 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		padding: "0 1.5rem",
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "1.3rem",
+			padding: "1rem 3rem",
 		},
 		[theme.breakpoints.up("md")]: {
+			fontSize: "1.4rem",
 			padding: "1rem 2.4rem",
-			fontSize: "1.6rem",
 		},
 	},
 	typographyTextAboutMe: {
@@ -219,9 +222,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		// backgroundColor:
 		padding: ".4rem",
 
-		[theme.breakpoints.up("sm")]: {
-			padding: "5rem",
-		},
+		[theme.breakpoints.up("sm")]: {},
 		[theme.breakpoints.up("md")]: {},
 	},
 	innerPaperDark: {
@@ -229,9 +230,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		backgroundColor: "rgba(37, 41, 42, 0.8)",
 		padding: ".4rem",
 
-		[theme.breakpoints.up("sm")]: {
-			padding: "5rem",
-		},
+		[theme.breakpoints.up("sm")]: {},
 		[theme.breakpoints.up("md")]: {},
 	},
 	aboutPaper: {

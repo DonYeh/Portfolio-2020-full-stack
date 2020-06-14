@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 	typedContainer: {
 		// margin: theme.spacing(8),
 		// paddingTop: "5rem",
-		padding: "0 10vw",
+		padding: "0 8vw",
 
 		textAlign: "center",
 		margin: "0",
@@ -171,13 +171,13 @@ const HomePage = ({ darkMode }) => {
 					// alignItems="center"
 					// spacing={2}
 				>
-					<Grid item xs={2} />
+					<Grid item xs={12} />
 					<Grid
 						item
 						sm={8}
 						container
 						justify="center"
-						alignItems="center"
+						// alignItems="center"
 						spacing={1}
 						className={classes.typedContainer}
 					>
@@ -230,7 +230,7 @@ const HomePage = ({ darkMode }) => {
 										"I'm a problem solver^700",
 									]}
 									typeSpeed={15}
-									startDelay={6300}
+									startDelay={6700}
 									backSpeed={22}
 									smartBackspace="true"
 									random
@@ -295,7 +295,7 @@ const HomePage = ({ darkMode }) => {
 									backDelay={250}
 									smartBackspace="true"
 									// cursorChar="        "
-									showCursor={false}
+									showCursor={true}
 									fadeOut="true"
 									loop
 									random
@@ -329,7 +329,7 @@ const HomePage = ({ darkMode }) => {
 							</Typography>
 						</Grid>
 					</Grid>
-					<Grid item xs={2} />
+					<Grid item xs={12} />
 				</Grid>
 			</Paper>
 			{/* </ThemeProvider> */}
