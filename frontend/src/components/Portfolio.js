@@ -70,7 +70,14 @@ const useStyles = makeStyles((theme) => ({
 	proj1: {},
 	projectsGridContainer: {
 		// padding: ".5rem",
+		margin: "0",
 		paddingTop: "2vh",
+		[theme.breakpoints.up("sm")]: {
+			paddingTop: "9vh",
+		},
+		[theme.breakpoints.up("md")]: {
+			paddingTop: "3vh",
+		},
 	},
 	projDescription: {
 		fontSize: "1rem",
@@ -187,7 +194,7 @@ export default function Portfolio({ darkMode }) {
 							item
 							// style={{ width: "100%" }}
 							justify="space-evenly"
-							spacing={3}
+							spacing={5}
 							className={classes.projectsGridContainer}
 						>
 							<Grid item>
@@ -201,7 +208,7 @@ export default function Portfolio({ darkMode }) {
 											<CardMedia
 												component="img"
 												alt="donaldyeh.dev"
-												height="220rem"
+												height="280rem"
 												src={portfolioImg}
 												// image="../assets/donaldyehportoflioheader.png"
 												title="donaldyeh.dev"
@@ -309,6 +316,7 @@ export default function Portfolio({ darkMode }) {
 										className={classes.root}
 										// variant="outlined"
 										raised
+										// style={{ margin: "1.3rem 0rem" }}
 									>
 										<CardActionArea>
 											<CardMedia

@@ -85,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("sm")]: {
 			// paddingTop: "1rem",
 			padding: "1rem 0rem .5rem",
+			marginTop: "13.3vh",
 			// paddingBottom: ".10vh",
 			// maxHeight: "15vh",
 			// height: "99%",
@@ -94,8 +95,7 @@ const useStyles = makeStyles((theme) => ({
 			// paddingTop: "4.4vh",
 		},
 		[theme.breakpoints.up("md")]: {
-			// paddingTop: "5vh",
-			// minHeight: "8.5vh",
+			marginTop: "8.3vh", // minHeight: "8.5vh",
 		},
 	},
 
@@ -103,6 +103,8 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgba(27, 30, 30, 0.88)",
 		display: "flex",
 		color: "rgba(118, 147, 151, 0.8)",
+		// marginTop: "13.3vh",
+
 		// paddingTop: "7vh",
 		// paddingBottom: "2vh",
 		// maxHeight: "18vh",
@@ -117,6 +119,8 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("sm")]: {
 			// paddingTop: "1rem",
 			padding: "1rem 0rem .5rem",
+			marginTop: "13.3vh",
+
 			// paddingBottom: ".10vh",
 			// maxHeight: "15vh",
 			// height: "99%",
@@ -126,6 +130,7 @@ const useStyles = makeStyles((theme) => ({
 			// paddingTop: "4.4vh",
 		},
 		[theme.breakpoints.up("md")]: {
+			marginTop: "8.3vh",
 			// paddingTop: "5vh",
 			// minHeight: "8.5vh",
 		},
@@ -148,6 +153,7 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(1),
 	},
 	boxTechnologies: {
+		margin: "0",
 		// color: "cadetblue",
 		// padding: "1rem 0 0",
 		// textTransform: "uppercase",
@@ -156,14 +162,15 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "smaller",
 		// padding: "1.5em ",
 		// marginTop: "1rem",
-		margin: ".1rem 0 0",
-		padding: ".4rem 0rem 1rem",
+		// margin: ".1rem 0 0",
+		padding: ".5rem 0rem 1rem",
 		[theme.breakpoints.up("md")]: {
-			padding: ".4rem 0rem 1rem",
+			// padding: ".4rem 0rem 1rem",
 		},
 		// marginRight: "1.4rem",
 	},
 	boxTechnologiesDark: {
+		margin: "0",
 		// color: "cadetblue",
 		// padding: "1rem 0 0",
 		// textTransform: "uppercase",
@@ -173,10 +180,10 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "smaller",
 		// padding: "1.5em ",
 		// marginTop: "1rem",
-		margin: ".1rem 0 0",
-		padding: ".4rem 0rem 1rem",
+		// margin: ".1rem 0 0",
+		padding: ".5rem 0rem 1rem",
 		[theme.breakpoints.up("md")]: {
-			padding: ".4rem 0rem 1rem",
+			// padding: ".5rem 0rem 1rem",
 		},
 		// marginRight: "1.4rem",
 	},
@@ -217,12 +224,12 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		postion: "relative",
 		width: "100vw",
-		paddingBottom: "2vh",
+		paddingBottom: "3.3vh",
 
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "25.5%",
+			height: "25.6%",
 			border: "1px solid rgba(82, 84, 84, 0.7)",
 			right: "4vw",
 
@@ -236,7 +243,7 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				transform: "translate(0px, 5.5rem)",
-				height: "60vh",
+				height: "50.5vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				maxHeight: "84vh",
@@ -246,7 +253,7 @@ const useStyles = makeStyles((theme) => ({
 			paddingBottom: ".5rem",
 			"&:before": {
 				transform: "translate(0px, 5.6rem)",
-				height: "45.5vh",
+				height: "41.2vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 			},
@@ -256,12 +263,12 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		postion: "relative",
 		width: "100vw",
-		paddingBottom: "2vh",
+		paddingBottom: "3.3vh",
 
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "25.5%",
+			height: "25.6%",
 
 			border: "1px solid lightgrey ",
 			right: "4vw",
@@ -276,7 +283,7 @@ const useStyles = makeStyles((theme) => ({
 
 			"&:before": {
 				transform: "translate(0px, 5.5rem)",
-				height: "60vh",
+				height: "50.5vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				maxHeight: "84vh",
@@ -286,7 +293,7 @@ const useStyles = makeStyles((theme) => ({
 			paddingBottom: ".5rem",
 			"&:before": {
 				transform: "translate(0px, 5.6rem)",
-				height: "45.5vh",
+				height: "41.2vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 			},
@@ -294,7 +301,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	timeLineItem: {
-		padding: "1rem 1rem .5rem 1rem",
+		padding: "1rem 1.2rem .5rem 1.2rem",
 		// borderBottom: "8px solid tan",
 		position: "relative",
 		// margin: ".6rem 3.8rem .6rem .6rem",
@@ -346,7 +353,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "18.5rem",
+				// left: "18.5rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "sandybrown sandybrown transparent transparent",
@@ -367,7 +374,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	timeLineItemDark: {
-		padding: "1rem 1rem .5rem 1rem",
+		padding: "1rem 1.2rem .5rem 1.2rem",
 		// borderBottom: "8px solid tan",
 		position: "relative",
 		// margin: ".6rem 3.8rem .6rem .6rem",
@@ -419,7 +426,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "18.5rem",
+				// left: "18.5rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "sandybrown sandybrown transparent transparent",
@@ -552,7 +559,7 @@ const useStyles = makeStyles((theme) => ({
 			position: "absolute",
 			border: "1px solid darkgrey ",
 
-			height: " 37.5%",
+			height: "34.6%",
 			// maxHeight: "113vh",
 			// transform: "translate(10px)",
 
@@ -567,7 +574,7 @@ const useStyles = makeStyles((theme) => ({
 				// padding: " .5rem",
 				// height: "99%",
 
-				height: "65vh",
+				height: "48vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
@@ -595,7 +602,7 @@ const useStyles = makeStyles((theme) => ({
 			position: "absolute",
 			border: "1px solid rgba(169, 169, 169, 0.3)",
 
-			height: " 37.5%",
+			height: "34.6%",
 			// maxHeight: "113vh",
 			// transform: "translate(10px)",
 
@@ -610,7 +617,7 @@ const useStyles = makeStyles((theme) => ({
 				// padding: " .5rem",
 				// height: "99%",
 
-				height: "65vh",
+				height: "48vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				// zIndex: "-1",
