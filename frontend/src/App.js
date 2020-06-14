@@ -57,7 +57,7 @@ import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 import { Brightness2 } from "@material-ui/icons";
 import { Brightness7 } from "@material-ui/icons";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
-import Overlay from "./components/Overlay";
+// import Overlay from "./components/Overlay";
 
 import {
 	orange,
@@ -184,7 +184,9 @@ const useStyles = makeStyles((theme) => ({
 			// margin: "5rem",
 		},
 	},
-	topToolbar: {},
+	// topToolbar: {
+	// 	backgroundColor: "rgba(255,255,255,.6)",
+	// },
 }));
 
 const darkTheme = createMuiTheme({
@@ -361,7 +363,11 @@ function App(props) {
 				<BrowserRouter>
 					{/* <div className={classes.root}> */}
 					<Paper className={classes.mainAppPaper}>
-						<AppBar position="fixed" className={classes.appBar}>
+						<AppBar
+							position="fixed"
+							className={classes.appBar}
+							style={{ backgroundColor: "rgba(255,255,255,.9)" }}
+						>
 							<Toolbar
 								darkMode={darkMode}
 								// setLightMode={handleLightMode}
@@ -369,7 +375,10 @@ function App(props) {
 								style={{
 									// backgroundColor: "#fafafa",
 									// backgroundColor: "#ffffffe6",
-									color: "#345",
+									backgroundColor: darkMode
+										? "rgba(20, 23, 23, 0.99)"
+										: "rgba(185, 198, 201, .9)",
+									// : "rgba(255,255,255,.8)",
 								}}
 								className={classes.topToolbar}
 							>
@@ -381,8 +390,8 @@ function App(props) {
 									className={classes.menuButton}
 									style={{
 										color: darkMode
-											? "rgba(236, 108, 23, 0.5)"
-											: "rgba(236, 108, 23, 0.7)",
+											? "rgba(236, 148, 90, 0.7)"
+											: "rgba(227, 136, 33, 0.85)",
 										// color: "#e49059ed",
 										// color: "sandybrown",
 									}}
@@ -395,7 +404,7 @@ function App(props) {
 									style={{
 										color: darkMode
 											? "rgba(211, 211, 211, 0.65)"
-											: "#03482aeb",
+											: "rgba(40, 40, 40, 0.7)",
 										fontWeight: "bold",
 									}}
 								>

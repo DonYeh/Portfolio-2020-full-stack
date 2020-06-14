@@ -81,14 +81,40 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.up("md")]: {},
 	},
+	projDescriptionDark: {
+		fontSize: "1rem",
+		padding: ".5rem 1rem 0",
+		backgroundColor: "rgba(23, 26, 26, 0.8)",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "1.2rem",
+		},
+		[theme.breakpoints.up("md")]: {},
+	},
+
 	projectDescription: {
 		padding: "2.5vh 6vw .1vh",
 	},
 	githubLink: {
-		// padding: "0 1em .5em ",
+		color: "rgba(251, 119, 9, 0.8)",
 	},
+	githubLinkDark: {
+		// color: "rgba(245, 140, 53, 0.72)",
+		color: "rgba(255, 141, 46, 0.8)",
+	},
+
 	myCardContent: {
-		backgroundColor: "rgba(0, 0, 0, 0.5)",
+		// backgroundColor: "rgba(0, 0, 0, 0.5)",
+		backgroundColor: "rgba(218, 228, 230, 0.8)",
+	},
+	myCardContentDark: {
+		// backgroundColor: "rgba(0, 0, 0, 0.5)",
+		backgroundColor: "rgba(33, 37, 37, 0.9)",
+	},
+	projTitles: {
+		color: "rgba(45, 45, 45, 0.8)",
+	},
+	projTitlesDark: {
+		color: "rgba(251, 183, 83, 0.7)",
 	},
 }));
 
@@ -183,25 +209,33 @@ export default function Portfolio({ darkMode }) {
 												component="img"
 											/>
 											<CardContent
-												classname={
-													classes.projectDescription
+												className={
+													darkMode
+														? classes.myCardContentDark
+														: classes.myCardContent
 												}
-												style={{
-													backgroundColor: darkMode
-														? "rgba(0, 0, 0, 0.5)"
-														: "rgba(255, 255, 255, 0.5)",
-												}}
+
+												// style={{
+												// 	backgroundColor: darkMode
+												// 		? "rgba(0, 0, 0, 0.5)"
+												// 		: "rgba(255, 255, 255, 0.5)",
+												// }}
 											>
 												<Typography
 													gutterBottom
 													align="center"
 													variant="h4"
-													style={{
-														color: darkMode
-															? "rgba(255, 255, 255, 0.6)"
-															: "rgba(0, 0, 0, 0.7)",
-													}}
+													// style={{
+													// 	color: darkMode
+													// 		? "rgba(255, 255, 255, 0.6)"
+													// 		: "rgba(0, 0, 0, 0.7)",
+													// }}
 													// component="h2"
+													className={
+														darkMode
+															? classes.projTitlesDark
+															: classes.projTitles
+													}
 												>
 													donaldyeh.dev
 												</Typography>
@@ -236,23 +270,28 @@ export default function Portfolio({ darkMode }) {
 												<Grid item>
 													<Button
 														size="small"
+														className={
+															darkMode
+																? classes.githubLinkDark
+																: classes.githubLink
+														}
 														// color="primary"
-														style={{
-															color:
-																"rgba(9, 63, 56, 0.92)",
-															display: "flex",
-														}}
+														// style={{
+														// 	color:
+														// 		"rgba(9, 63, 56, 0.92)",
+														// 	display: "flex",
+														// }}
 													>
 														<Typography
 															align="right"
 															className={
 																classes.githubLink
 															}
-															style={{
-																color: darkMode
-																	? "rgba(1, 131, 80, 0.86)"
-																	: "rgba(15, 92, 62, 0.8)",
-															}}
+															// style={{
+															// 	color: darkMode
+															// 		? "rgba(1, 131, 80, 0.86)"
+															// 		: "rgba(15, 92, 62, 0.8)",
+															// }}
 														>
 															Github
 														</Typography>
@@ -284,23 +323,30 @@ export default function Portfolio({ darkMode }) {
 											/>
 											<CardContent
 												className={
-													classes.myCardContent
+													darkMode
+														? classes.myCardContentDark
+														: classes.myCardContent
 												}
-												style={{
-													backgroundColor: darkMode
-														? "rgba(0, 0, 0, 0.5)"
-														: "rgba(255, 255, 255, 0.5)",
-												}}
+												// style={{
+												// 	backgroundColor: darkMode
+												// 		? "rgba(0, 0, 0, 0.5)"
+												// 		: "rgba(255, 255, 255, 0.5)",
+												// }}
 											>
 												<Typography
 													gutterBottom
 													variant="h4"
 													align="center"
-													style={{
-														color: darkMode
-															? "rgba(255, 255, 255, 0.6)"
-															: "rgba(0, 0, 0, 0.7)",
-													}}
+													// style={{
+													// 	color: darkMode
+													// 		? "rgba(255, 255, 255, 0.6)"
+													// 		: "rgba(0, 0, 0, 0.7)",
+													// }}
+													className={
+														darkMode
+															? classes.projTitlesDark
+															: classes.projTitles
+													}
 												>
 													Chatris
 												</Typography>
@@ -331,22 +377,27 @@ export default function Portfolio({ darkMode }) {
 													<Button
 														size="small"
 														// color="primary"
-														style={{
-															color:
-																"rgba(9, 63, 56, 0.92)",
-															display: "flex",
-														}}
+														// style={{
+														// 	color:
+														// 		"rgba(9, 63, 56, 0.92)",
+														// 	display: "flex",
+														// }}
+														className={
+															darkMode
+																? classes.githubLinkDark
+																: classes.githubLink
+														}
 													>
 														<Typography
 															align="right"
 															className={
 																classes.githubLink
 															}
-															style={{
-																color: darkMode
-																	? "rgba(1, 131, 80, 0.86)"
-																	: "rgba(15, 92, 62, 0.8)",
-															}}
+															// style={{
+															// 	color: darkMode
+															// 		? "rgba(1, 131, 80, 0.86)"
+															// 		: "rgba(15, 92, 62, 0.8)",
+															// }}
 														>
 															Github
 														</Typography>
@@ -375,21 +426,26 @@ export default function Portfolio({ darkMode }) {
 												className="classes.media"
 											/>
 											<CardContent
-												style={{
-													backgroundColor: darkMode
-														? "rgba(0, 0, 0, 0.5)"
-														: "rgba(255, 255, 255, 0.5)",
-												}}
+												className={
+													darkMode
+														? classes.myCardContentDark
+														: classes.myCardContent
+												}
 											>
 												<Typography
 													gutterBottom
 													variant="h4"
 													align="center"
-													style={{
-														color: darkMode
-															? "rgba(255, 255, 255, 0.6)"
-															: "rgba(0, 0, 0, 0.7)",
-													}}
+													// style={{
+													// 	color: darkMode
+													// 		? "rgba(255, 255, 255, 0.6)"
+													// 		: "rgba(45, 45, 45, 0.8)",
+													// }}
+													className={
+														darkMode
+															? classes.projTitlesDark
+															: classes.projTitles
+													}
 												>
 													Movie Explorer
 												</Typography>
@@ -421,23 +477,18 @@ export default function Portfolio({ darkMode }) {
 													<Button
 														size="small"
 														// color="primary"
-														style={{
-															color:
-																"rgba(9, 63, 56, 0.92)",
-															display: "flex",
-														}}
+														// style={{
+														// 	color:
+														// 		"rgba(9, 63, 56, 0.92)",
+														// 	display: "flex",
+														// }}
+														className={
+															darkMode
+																? classes.githubLinkDark
+																: classes.githubLink
+														}
 													>
-														<Typography
-															align="right"
-															className={
-																classes.githubLink
-															}
-															style={{
-																color: darkMode
-																	? "rgba(1, 131, 80, 0.86)"
-																	: "rgba(15, 92, 62, 0.8)",
-															}}
-														>
+														<Typography align="right">
 															Github
 														</Typography>
 													</Button>

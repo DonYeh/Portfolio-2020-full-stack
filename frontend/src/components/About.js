@@ -111,9 +111,18 @@ const useStyles = makeStyles((theme, darkMode) => ({
 	paper: {
 		color: "dimgrey",
 		padding: ".8rem .5rem",
+		backgroundColor: "rgba(255,255,255,.89)",
 		// [theme.breakpoints.down("sm")]: {
 		// 	padding: "1rem",
 		// },
+		[theme.breakpoints.up("sm")]: {
+			padding: "1 3rem",
+		},
+	},
+	paperDark: {
+		color: "dimgrey",
+		padding: ".8rem .5rem",
+		backgroundColor: "rgba(33, 37, 38, 0.92)",
 		[theme.breakpoints.up("sm")]: {
 			padding: "1 3rem",
 		},
@@ -170,8 +179,9 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		},
 	},
 	aboutMeGridContainer: {
-		// backgroundColor: "orangessswqaswq",
+		// backgroundColor: "rgba(184, 205, 213, 0.9)",
 	},
+	aboutMeGridContainerDark: {},
 	avatarGridContainer: {
 		[theme.breakpoints.up("sm")]: {
 			justifyContent: "flex-end",
@@ -200,18 +210,39 @@ const useStyles = makeStyles((theme, darkMode) => ({
 	firstInnerGridItem: {},
 	innerPaper: {
 		padding: ".4em",
+		backgroundColor: "rgba(240, 249, 252, 0.8)",
 		// backgroundColor: darkMode
 		// 	? "rgba(121,121,121,.13)"
 		// 	: "rgba(,255,255,.1)",
 		// backgroundColor: darkMode ? "rgba(0,0,0,.3)" : "orange",
 
-		backgroundColor: darkMode ? "rgba(0,0,0,.6)" : "rgba(121,121,121,.13)",
+		// backgroundColor:
 		padding: ".4rem",
 
 		[theme.breakpoints.up("sm")]: {
 			padding: "5rem",
 		},
 		[theme.breakpoints.up("md")]: {},
+	},
+	innerPaperDark: {
+		padding: ".4em",
+		backgroundColor: "rgba(37, 41, 42, 0.8)",
+		padding: ".4rem",
+
+		[theme.breakpoints.up("sm")]: {
+			padding: "5rem",
+		},
+		[theme.breakpoints.up("md")]: {},
+	},
+	aboutPaper: {
+		// backgroundColor: "rgba(227, 237, 240, 0.8)",
+		backgroundColor: "rgba(231, 238, 240, 0.9)",
+		padding: ".7rem",
+	},
+	aboutPaperDark: {
+		padding: ".7rem",
+
+		backgroundColor: "rgba(26, 28, 28, 0.88)",
 	},
 }));
 
@@ -312,8 +343,8 @@ const About = ({ darkMode }) => {
 									<Paper
 										style={{
 											backgroundColor: darkMode
-												? "rgba(0,0,0,.3)"
-												: "rgba(121,121,121,.15)",
+												? "rgba(37, 41, 42, 0.8)"
+												: "rgba(240, 249, 252, 0.8)",
 											padding: ".4rem",
 										}}
 										className={classes.innerPaper}
@@ -334,16 +365,13 @@ const About = ({ darkMode }) => {
 										>
 											{/* <Grid item> */}
 											<Paper
-												elevation={1}
-												className={classes.paper}
-												style={{
-													// backgroundColor: "aliceblue",
-													// backgroundColor: "aliceblue",
-													color: "darkslategray",
-													textTransform: "lowercase",
-													fontWeight: "bold",
-													width: "100%",
-												}}
+												elevation={3}
+												square
+												className={
+													darkMode
+														? classes.aboutPaperDark
+														: classes.aboutPaper
+												}
 											>
 												<Typography
 													variant="h5"
@@ -352,8 +380,8 @@ const About = ({ darkMode }) => {
 													}
 													style={{
 														color: darkMode
-															? "rgba(210, 129, 80, 0.7)"
-															: "rgba(9, 63, 56, 0.92)",
+															? "rgba(191, 191, 191, 0.62)"
+															: "rgba(100, 100, 100, 0.9)",
 													}}
 												>
 													About Me
@@ -373,13 +401,18 @@ const About = ({ darkMode }) => {
 								>
 									{/* <Grid item> */}
 									<Paper
-										elevation={4}
-										style={{
-											backgroundColor: darkMode
-												? "rgba(0,0,0,.3)"
-												: "rgba(121,121,121,.15)",
-											padding: ".4rem",
-										}}
+										elevation={3}
+										// style={{
+										// 	backgroundColor: darkMode
+										// 		? "rgba(0,0,0,.3)"
+										// 		: "rgba(121,121,121,.15)",
+										// 	padding: ".4rem",
+										// }}
+										className={
+											darkMode
+												? classes.innerPaperDark
+												: classes.innerPaper
+										}
 									>
 										<Grid
 											item
@@ -394,7 +427,7 @@ const About = ({ darkMode }) => {
 												src={avatar}
 												alt="Donaldpicture"
 												className={classes.avatar}
-												variant="rounded"
+												variant="square"
 											/>
 										</Grid>
 									</Paper>
@@ -404,7 +437,12 @@ const About = ({ darkMode }) => {
 					</Grid>
 					{/* </Grid> */}
 					<Grid item className={classes.gridItems}>
-						<Paper elevation={3} className={classes.paper}>
+						<Paper
+							elevation={3}
+							className={
+								darkMode ? classes.paperDark : classes.paper
+							}
+						>
 							<Typography
 								variant="body1"
 								className={classes.typographyText}
@@ -420,7 +458,9 @@ const About = ({ darkMode }) => {
 					<Grid item className={classes.gridItems}>
 						<Paper
 							elevation={3}
-							className={classes.paper}
+							className={
+								darkMode ? classes.paperDark : classes.paper
+							}
 							style={{ color: "dimgrey" }}
 						>
 							<Typography
@@ -442,7 +482,9 @@ const About = ({ darkMode }) => {
 					>
 						<Paper
 							elevation={3}
-							className={classes.paper}
+							className={
+								darkMode ? classes.paperDark : classes.paper
+							}
 							style={{ color: "dimgrey" }}
 						>
 							<Typography

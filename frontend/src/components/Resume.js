@@ -24,6 +24,18 @@ import SaveIcon from "@material-ui/icons/Save";
 import GetAppIcon from "@material-ui/icons/GetApp";
 // import { FullscreenExit } from "@material-ui/icons";
 
+import {
+	orange,
+	lightBlue,
+	deepPurple,
+	deepOrange,
+	greyBlue,
+	green,
+	lightGreen,
+	teal,
+	grey,
+} from "@material-ui/core/colors";
+
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		// width: "100vw",
@@ -33,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 		color: "sandybrown",
 		// padding: "1rem 0 1rem",
 		// marginTop: ".3rem",
-		padding: ".9rem",
+		padding: ".7rem",
 		// paddingBottom: "1.2rem",
 		textTransform: "uppercase",
 		[theme.breakpoints.up("sm")]: {
@@ -49,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
 		// minHeight: "14vh",
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
-		paddingTop: "2.5rem",
+		paddingTop: "3.5rem",
 		// background: "lightslategray",
-		background: "rgba(0,0,0,.15)",
+		// background: "rgba(0,0,0,.15)",
 		// background: "rgba(255,255,255,.55)",
 
 		[theme.breakpoints.up("sm")]: {
@@ -124,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "25.4%",
+			height: "23.8%",
 			// minHeight: "47vh",
 			// maxHeight: "95vh",
 
@@ -133,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
 			right: "4vw",
 			// top: "24px",
 			// top: 0,
-			transform: "translate(0rem, 4.3rem)",
+			transform: "translate(0rem, 3.2rem)",
 			// [theme.breakpoints.down("sm")]: {
 			// 	height: "122vh",
 			// 	maxHeight: "112vh",
@@ -450,7 +462,17 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 	},
 	paper: {
-		color: "cadetblue",
+		color: "rgb(55, 94, 95)",
+		fontSize: "1.1em",
+		textAlign: "center",
+		padding: ".5em",
+		overflow: "hidden",
+		textOverflow: "ellipsis",
+		// width: "1rem",
+	},
+	paperDark: {
+		// color: "rgba(23, 77, 130, 0.89)",
+		color: "rgb(110, 141, 143)",
 		fontSize: "1.1em",
 		textAlign: "center",
 		padding: ".5em",
@@ -495,6 +517,10 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 	},
+	// technologyGridItems: { color: "#18395bc2" },
+	technologyGridItems: { color: "rgba(100, 131, 163, 0.99)" },
+	// technologyGridItemsDark: { color: "rgba(67, 179, 243, 0.72)" },
+	technologyGridItemsDark: { color: "#b3835a" },
 }));
 
 // const LinkBehavior = React.forwardRef((props, ref) => (
@@ -504,11 +530,40 @@ const useStyles = makeStyles((theme) => ({
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
-const Resume = () => {
+const Resume = ({ darkMode }) => {
 	const classes = useStyles();
 
+	const mainPrimaryColor = darkMode ? grey[900] : orange[300];
+
+	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
+	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
+
+	let darkTheme = responsiveFontSizes(
+		createMuiTheme({
+			overrides: {
+				MuiPaper: {
+					root: {
+						backgroundColor: darkMode
+							? "rgba(0,0,0,.6)"
+							: "rgba(255,255,255,.6)",
+						//   marginBottom: '10px'
+					},
+				},
+			},
+			palette: {
+				type: darkMode ? "dark" : "light",
+				primary: {
+					main: mainPrimaryColor,
+				},
+				secondary: {
+					main: mainSecondaryColor,
+				},
+			},
+		})
+	);
+
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={darkTheme}>
 			<CssBaseline />
 			<Paper className={classes.mainResumePaper}>
 				<Grid
@@ -524,6 +579,11 @@ const Resume = () => {
 						className={classes.downloadResume}
 						justify="center"
 						alignContent="flex-end"
+						style={{
+							backgroundColor: darkMode
+								? "rgba(49, 53, 60, 0.96)"
+								: "rgba(255,255,255,.5)",
+						}}
 						// style={{ backgroundColor: "green" }}
 					>
 						<Grid item>
@@ -540,10 +600,15 @@ const Resume = () => {
 								</Typography> */}
 								<Button
 									variant="contained"
-									color="primary"
+									// color="primary"
 									size="small"
 									className={classes.button}
 									startIcon={<SaveIcon />}
+									style={{
+										backgroundColor: darkMode
+											? "rgba(144, 144, 144, 0.5)"
+											: "rgba(255,255,255,.5)",
+									}}
 								>
 									Download resume
 								</Button>
@@ -552,7 +617,16 @@ const Resume = () => {
 					</Grid>
 
 					{/* <Box component="div" className={classes.timeLineBox}> */}
-					<Grid item container className={classes.timeLineBox}>
+					<Grid
+						item
+						container
+						className={classes.timeLineBox}
+						style={{
+							backgroundColor: darkMode
+								? "#242424b8"
+								: "#f5f5f52e",
+						}}
+					>
 						<Grid item xs={12}>
 							<Typography
 								variant="h4"
@@ -590,7 +664,11 @@ const Resume = () => {
 								<Typography
 									variant="body1"
 									align="center"
-									style={{ color: "cadetblue" }}
+									style={{
+										color: darkMode
+											? "rgba(163, 213, 212, 0.69)"
+											: "rgba(163, 213, 212, 0.97)",
+									}}
 								>
 									Atlanta, GA
 								</Typography>
@@ -598,7 +676,11 @@ const Resume = () => {
 								<Typography
 									variant="subtitle1"
 									align="center"
-									style={{ color: "grey" }}
+									style={{
+										color: darkMode
+											? "#c8c8c8a3"
+											: "#c8c8c8",
+									}}
 								>
 									Certificate in Full Stack software
 									development
@@ -632,7 +714,11 @@ const Resume = () => {
 								<Typography
 									variant="body1"
 									align="center"
-									style={{ color: "cadetblue" }}
+									style={{
+										color: darkMode
+											? "rgba(163, 213, 212, 0.69)"
+											: "rgba(163, 213, 212, 0.97)",
+									}}
 								>
 									Atlanta, GA
 								</Typography>
@@ -640,7 +726,11 @@ const Resume = () => {
 								<Typography
 									variant="subtitle1"
 									align="center"
-									style={{ color: "grey" }}
+									style={{
+										color: darkMode
+											? "#c8c8c8a3"
+											: "#c8c8c8",
+									}}
 								>
 									Master of Business Administration
 								</Typography>
@@ -676,7 +766,11 @@ const Resume = () => {
 								<Typography
 									variant="body1"
 									align="center"
-									style={{ color: "cadetblue" }}
+									style={{
+										color: darkMode
+											? "rgba(163, 213, 212, 0.69)"
+											: "rgba(163, 213, 212, 0.97)",
+									}}
 								>
 									Atlanta, GA
 								</Typography>
@@ -684,7 +778,11 @@ const Resume = () => {
 								<Typography
 									variant="subtitle1"
 									align="center"
-									style={{ color: "grey" }}
+									style={{
+										color: darkMode
+											? "#c8c8c8a3"
+											: "#c8c8c8",
+									}}
 								>
 									Bachelor of Science in Electrical
 									Engineering
@@ -705,7 +803,11 @@ const Resume = () => {
 						// className={classes.papersGridContainer}
 						className={classes.boxTechnologies}
 						// wrap="wrap"
-						// style={{ backgroundColor: "purple" }}
+						style={{
+							backgroundColor: darkMode
+								? "rgba(56, 55, 55, 0.66)"
+								: "rgba(255,255,255,.5)",
+						}}
 					>
 						<Grid item container justify="center">
 							<Grid item xs={12}>
@@ -714,7 +816,12 @@ const Resume = () => {
 									align="center"
 									className={classes.heading2Title}
 									// display="block"
-									// style={{ color: "red" }}
+									style={{
+										color: darkMode
+											? // ? "rgb(89, 130, 171)"
+											  "rgb(120, 151, 155"
+											: "rgba(255,255,255,.8)",
+									}}
 								>
 									Technologies
 								</Typography>
@@ -732,89 +839,180 @@ const Resume = () => {
 						>
 							{/* <Box className="feBox"></Box> */}
 							<Grid item xs={12}>
-								<Typography align="center">
+								<Typography
+									align="center"
+									style={{
+										color: darkMode
+											? "rgba(255, 255, 255, 0.6)"
+											: "rgba(0, 0, 0, 0.7)",
+									}}
+								>
 									Front End
 								</Typography>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								style={{
+									color: darkMode
+										? "rgba(255,255,255,.4)"
+										: "rgba(0,0,0,.5)",
+								}}
+							>
 								<Paper
 									elevation={3}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									HTML5
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={3}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									CSS3
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Javascript
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Typescript
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									React
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// className={classes.paperReactNative}
 									// square
 								>
 									Material-UI
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Angular
 								</Paper>
 							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
+							<Grid
+								item
+								xs={4}
+								sm={4}
+								md={4}
+								className={classes.technologyGridItems}
+							>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
-									React Native{" "}
+									React Native
 								</Paper>
 							</Grid>
 						</Grid>
@@ -830,14 +1028,27 @@ const Resume = () => {
 							className={classes.backEndGridItem}
 						>
 							<Grid item xs={12}>
-								<Typography align="center">Back End</Typography>
+								<Typography
+									align="center"
+									style={{
+										color: darkMode
+											? "rgba(255, 255, 255, 0.6)"
+											: "rgba(0, 0, 0, 0.7)",
+									}}
+								>
+									Back End
+								</Typography>
 							</Grid>
 
 							<Grid item xs={4} sm={4} md={4}>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									<div>Node</div>
@@ -847,7 +1058,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									<div>Express</div>
@@ -857,7 +1072,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Python
@@ -867,7 +1086,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									PostgreSQL
@@ -877,7 +1100,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									SQL
@@ -887,7 +1114,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									GraphQL
@@ -897,7 +1128,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									WebSockets
@@ -907,7 +1142,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									NGINX
@@ -925,14 +1164,27 @@ const Resume = () => {
 							className={classes.toolsGridItem}
 						>
 							<Grid item xs={12}>
-								<Typography align="center">Tools</Typography>
+								<Typography
+									align="center"
+									style={{
+										color: darkMode
+											? "rgba(255, 255, 255, 0.6)"
+											: "rgba(0, 0, 0, 0.7)",
+									}}
+								>
+									Tools
+								</Typography>
 							</Grid>
 
 							<Grid item xs={4} sm={4} md={4}>
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									VS Code
@@ -942,7 +1194,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									AWS
@@ -953,6 +1209,11 @@ const Resume = () => {
 									elevation={2}
 									variant="outlined"
 									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									NPM
@@ -962,7 +1223,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Git
@@ -972,7 +1237,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									GitHub
@@ -982,7 +1251,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Jasmine
@@ -992,7 +1265,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Mocha
@@ -1002,7 +1279,11 @@ const Resume = () => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 									// square
 								>
 									Webpack
@@ -1029,6 +1310,11 @@ const Resume = () => {
 						container
 						className={classes.experienceBox}
 						justify="center"
+						style={{
+							backgroundColor: darkMode
+								? "#1d2227fc"
+								: "rgba(255,255,255,.4)",
+						}}
 					>
 						<Grid item container justify="center">
 							<Grid item>
@@ -1037,7 +1323,10 @@ const Resume = () => {
 									align="center"
 									style={{
 										textTransform: "uppercase",
-										color: "cadetblue",
+										color: darkMode
+											? "rgba(255, 223, 196, 0.61)"
+											: // : "#ffdfc4eb",
+											  "rgba(4, 58, 5, 0.82)",
 									}}
 								>
 									Experience
@@ -1061,6 +1350,11 @@ const Resume = () => {
 										variant="h5"
 										align="center"
 										className={classes.subHeadingE}
+										style={{
+											color: darkMode
+												? "rgba(244, 164, 96, 0.78)"
+												: "#07182af5",
+										}}
 									>
 										Ton Ton Ramen & Yakitori
 									</Typography>
@@ -1068,7 +1362,11 @@ const Resume = () => {
 										variant="h6"
 										align="center"
 										className={classes.subHeading2E}
-										// style="{{ color: "tan"}}
+										style={{
+											color: darkMode
+												? "rgba(117, 143, 169,.9"
+												: "rgba(255, 255, 255, 0.88)",
+										}}
 									>
 										Server
 									</Typography>
@@ -1083,7 +1381,12 @@ const Resume = () => {
 									<Typography
 										variant="subtitle1"
 										align="left"
-										style={{ color: "grey" }}
+										style={{
+											color: darkMode
+												? // ? "rgba(71, 71, 71, 0.6)"
+												  "rgba(184, 184, 184, 0.6)"
+												: "#ffffffa6",
+										}}
 									>
 										<div>
 											• Filled in as manager when needed -
@@ -1118,6 +1421,11 @@ const Resume = () => {
 										variant="h5"
 										align="center"
 										className={classes.subHeadingE}
+										style={{
+											color: darkMode
+												? "rgba(244, 164, 96, 0.78)"
+												: "#07182af5",
+										}}
 									>
 										Elev8 Hire Solutions{" "}
 									</Typography>
@@ -1125,6 +1433,11 @@ const Resume = () => {
 										variant="h6"
 										align="center"
 										className={classes.subHeading2E}
+										style={{
+											color: darkMode
+												? "rgba(117, 143, 169,.9"
+												: "rgba(255, 255, 255, 0.88)",
+										}}
 									>
 										IT Recruiter
 									</Typography>
@@ -1142,9 +1455,18 @@ const Resume = () => {
 									<Typography
 										variant="subtitle1"
 										align="left"
+										// style={{
+										// 	color: darkMode
+										// 		? // ? "rgba(71, 71, 71, 0.6)"
+										// 		  "rgba(0, 0, 0, 0.5)"
+										// 		: "rgba(71, 71, 71, 0.91)",
+										// }}
+
 										style={{
-											color: "grey",
-											// backgroundColor: "yellow",
+											color: darkMode
+												? // ? "rgba(71, 71, 71, 0.6)"
+												  "rgba(255, 255, 255, 0.65)"
+												: "#ffffffa6",
 										}}
 									>
 										<div>

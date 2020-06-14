@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
 		// color: "rgba(255,255,255, .81)", // dark mode
 		// color: "rgba(68,68,68, .86)", // dark mode
 		fontWeight: "bold",
+		color: "rgba(51, 51, 51, 0.9)",
 		// textShadow: "1px 1px rgb(20,33,61)", //dark blue
 		// no textShadow when in light mode
 		// textShadow: "1.5px 1.5px rgb(240,169,80)",
@@ -215,9 +216,8 @@ const HomePage = ({ darkMode }) => {
 								className={classes.typedFont}
 								style={{
 									color: darkMode
-										? "lightgrey"
-										: // : "rgba(95, 95, 95, 0.88)",
-										  grey[700],
+										? "rgba(211, 211, 211, 0.9"
+										: "rgba(95, 95, 95, 0.88)",
 								}}
 							>
 								<Typed
@@ -252,8 +252,7 @@ const HomePage = ({ darkMode }) => {
 								style={{
 									color: darkMode
 										? "lightgray"
-										: // : "rgba(95, 95, 95, 0.88)",
-										  grey[700],
+										: "rgba(95, 95, 95, 0.88)",
 								}}
 							>
 								<Typed
@@ -316,8 +315,8 @@ const HomePage = ({ darkMode }) => {
 								className={classes.typedFont}
 								style={{
 									color: darkMode
-										? "#015f0fb8"
-										: "rgba(9, 63, 56, 0.92)",
+										? "rgba(1, 95, 15, 0.88)"
+										: "rgba(9, 63, 56, 0.73)",
 								}}
 							>
 								<Typed

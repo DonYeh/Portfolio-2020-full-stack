@@ -113,7 +113,21 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	paper: {
-		// background: "white",
+		backgroundColor: "rgba(213, 223, 226, 0.8)",
+		width: "100%",
+		padding: "1rem 1.5rem",
+		// marginTop: ".5rem",
+		[theme.breakpoints.up("sm")]: {
+			padding: "2rem 4rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			padding: "1rem 4rem",
+		},
+	},
+	paperDark: {
+		backgroundColor: "rgba(37, 41, 41, 0.9)",
+		width: "100%",
+
 		padding: "1rem 1.5rem",
 		// marginTop: ".5rem",
 		[theme.breakpoints.up("sm")]: {
@@ -146,15 +160,6 @@ const useStyles = makeStyles((theme) => ({
 			// padding: "2em",
 			// backgroundColor: "darkblue",
 		},
-		// [theme.breakpoints.up("lg")]: {
-		// 	// marginTop: "10vh",
-		// 	// margin: "14vh 5vw 14vh",
-		// 	padding: "14vh 10vw",
-		// 	height: "100vh",
-
-		// 	// padding: "2em",
-		// 	// backgroundColor: "darkblue",
-		// },
 	},
 	hasError: {
 		border: "1px solid #f44336",
@@ -196,6 +201,18 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	firstGridItemTitle: {
+		// color: "rgba(90, 90, 90, 0.88)",
+		color: "rgba(84, 84, 84, 0.9)",
+		fontSize: "1.4rem",
+		[theme.breakpoints.up("sm")]: {
+			fontSize: "2.2rem",
+		},
+		[theme.breakpoints.up("md")]: {
+			fontSize: "2.8rem",
+		},
+	},
+	firstGridItemTitleDark: {
+		color: "#a9a9a9",
 		fontSize: "1.4rem",
 		[theme.breakpoints.up("sm")]: {
 			fontSize: "2.2rem",
@@ -359,12 +376,16 @@ const Contact = ({ darkMode }) => {
 								// style={{ backgroundColor: "pink" }}
 							>
 								<Paper
-									className={classes.paper}
-									style={{
-										backgroundColor: darkMode
-											? "rgba(0, 0, 0, 0.5)"
-											: "rgba(255, 255, 255, 0.5)",
-									}}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
+									// style={{
+									// 	backgroundColor: darkMode
+									// 		? "rgba(0, 0, 0, 0.5)"
+									// 		: "rgba(255, 255, 255, 0.5)",
+									// }}
 								>
 									<Typography
 										variant="h6"
@@ -378,10 +399,14 @@ const Contact = ({ darkMode }) => {
 											// 	: "rgba(0, 0, 0, 0.7)",
 
 											color: darkMode
-												? "#a9a9a9"
-												: "#1f512dd9",
+												? "rgba(191, 191, 191, 0.62)"
+												: "rgba(100, 100, 100, 0.9)",
 										}}
-										className={classes.firstGridItemTitle}
+										className={
+											darkMode
+												? classes.firstGridItemTitleDark
+												: classes.firstGridItemTitle
+										}
 									>
 										Let's build together
 									</Typography>
@@ -409,7 +434,13 @@ const Contact = ({ darkMode }) => {
 								className={classes.gridItem}
 							>
 								<Grid item xs={12}>
-									<Paper className={classes.paper}>
+									<Paper
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
 										<Formik
 											initialValues={{
 												firstName: "",
@@ -427,7 +458,6 @@ const Contact = ({ darkMode }) => {
 												touched,
 												handleChange,
 												handleBlur,
-												darkMode,
 											}) => (
 												<Form
 													style={
@@ -637,14 +667,14 @@ const Contact = ({ darkMode }) => {
 														<Grid item>
 															<Button
 																type="submit"
-																variant="outlined"
+																// variant="outlined"
 																onClick={
 																	handleModal
 																}
 																style={{
 																	backgroundColor: darkMode
-																		? "#303030d6"
-																		: "rgba(255, 183, 77, 0.5)",
+																		? "rgba(26, 29, 29, 0.9)"
+																		: "rgba(179, 188, 191, 0.9)",
 																}}
 															>
 																<Typography
@@ -652,8 +682,8 @@ const Contact = ({ darkMode }) => {
 																	style={{
 																		color: darkMode
 																			? // ? "#a9a9a9"
-																			  "#rgb(1, 65,19)"
-																			: "#1f512dd9",
+																			  "rgba(251, 182, 83, 0.65)"
+																			: "rgba(60, 60, 60, 0.9)",
 																	}}
 																>
 																	submit
@@ -688,6 +718,7 @@ const Contact = ({ darkMode }) => {
 															backgroundColor:
 																"brown",
 														}}
+														disablePortal
 													>
 														<Typography
 															variant="h5"
@@ -781,10 +812,15 @@ const Contact = ({ darkMode }) => {
 								// }}
 							>
 								<Paper
-									style={{
-										width: "100%",
-										padding: ".75rem .2rem 1rem",
-									}}
+									// style={{
+									// 	width: "100%",
+									// 	padding: ".75rem .2rem 1rem",
+									// }}
+									className={
+										darkMode
+											? classes.paperDark
+											: classes.paper
+									}
 								>
 									<Grid
 										item
@@ -802,8 +838,8 @@ const Contact = ({ darkMode }) => {
 												// 	? "rgba(255, 255, 255, 0.6)"
 												// 	: "rgba(0, 0, 0, 0.7)",
 												color: darkMode
-													? "#a9a9a9"
-													: "#1f512dd9",
+													? "rgba(154, 154, 154, 0.9)"
+													: "rgba(75, 69, 60, 0.75)",
 											}}
 										>
 											Let's Connect
