@@ -39,10 +39,10 @@ import {
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		// width: "100vw",
-		background: "#234",
+		background: "#234darkMode ? classes.headingDark : ",
 	},
 	heading: {
-		color: "sandybrown",
+		color: "rgba(4, 78, 80, 0.8)",
 		// padding: "1rem 0 1rem",
 		// marginTop: ".3rem",
 		padding: ".7rem",
@@ -53,16 +53,31 @@ const useStyles = makeStyles((theme) => ({
 		},
 		// zIndex: "1",
 	},
+
+	headingDark: {
+		color: "rgba(244, 164, 96, 0.8)",
+		// padding: "1rem 0 1rem",
+		// marginTop: ".3rem",
+		padding: ".7rem",
+		// paddingBottom: "1.2rem",
+		textTransform: "uppercase",
+		[theme.breakpoints.up("sm")]: {
+			paddingTop: "1rem",
+		},
+		// zIndex: "1",
+	},
+
 	downloadResume: {
-		backgroundColor: "rgba(25, 31, 35, 0.91)",
+		backgroundColor: "rgba(122, 132, 142, 0.9)",
 		display: "flex",
+		color: "rgba(0,0,0,.6)",
 		// paddingTop: "7vh",
 		// paddingBottom: "2vh",
 		// maxHeight: "18vh",
 		// minHeight: "14vh",
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
-		paddingTop: "4.5rem",
+		paddingTop: "4rem",
 		// background: "lightslategray",
 		// background: "rgba(0,0,0,.15)",
 		// background: "rgba(255,255,255,.55)",
@@ -85,15 +100,16 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	downloadResumeDark: {
-		backgroundColor: "rgba(25, 31, 35, 0.91)",
+		backgroundColor: "rgba(27, 30, 30, 0.88)",
 		display: "flex",
+		color: "rgba(118, 147, 151, 0.8)",
 		// paddingTop: "7vh",
 		// paddingBottom: "2vh",
 		// maxHeight: "18vh",
 		// minHeight: "14vh",
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
-		paddingTop: "4.5rem",
+		paddingTop: "4rem",
 		// background: "lightslategray",
 		// background: "rgba(0,0,0,.15)",
 		// background: "rgba(255,255,255,.55)",
@@ -122,11 +138,11 @@ const useStyles = makeStyles((theme) => ({
 
 		// background: "pink",
 	},
-	downloadResumeButton: {},
+	downloadResumeButton: { backgroundColor: "rgba(179, 189, 191, 0.9)" },
 	downloadResumeButtonDark: {
 		padding: "",
 		color: "rgba(118, 147, 151, 0.8)",
-		backgroundColor: "rgb(33, 37, 37)",
+		backgroundColor: "rgba(25, 28, 28, 0.9)",
 	},
 	button: {
 		margin: theme.spacing(1),
@@ -136,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
 		// padding: "1rem 0 0",
 		// textTransform: "uppercase",
 		// margin: "0 10%",
-		background: "lightgrey",
+		background: "rgba(255, 255, 255, 0.77)",
 		fontSize: "smaller",
 		// padding: "1.5em ",
 		// marginTop: "1rem",
@@ -147,13 +163,37 @@ const useStyles = makeStyles((theme) => ({
 		},
 		// marginRight: "1.4rem",
 	},
+	boxTechnologiesDark: {
+		// color: "cadetblue",
+		// padding: "1rem 0 0",
+		// textTransform: "uppercase",
+		// margin: "0 10%",
+		backgroundColor: "rgba(56, 55, 55, 0.81)",
+
+		fontSize: "smaller",
+		// padding: "1.5em ",
+		// marginTop: "1rem",
+		margin: ".1rem 0 0",
+		padding: ".4rem 0rem 1rem",
+		[theme.breakpoints.up("md")]: {
+			padding: ".4rem 0rem 1rem",
+		},
+		// marginRight: "1.4rem",
+	},
+
 	heading2Title: {
 		// paddingTop: ".75rem",
-		color: "#234",
+		color: "rgba(80, 100, 102, 0.9)",
 		textTransform: "uppercase",
 	},
+	heading2TitleDark: {
+		// paddingTop: ".75rem",
+		color: "rgba(120, 151, 155, .9)",
+		textTransform: "uppercase",
+	},
+
 	subHeading2: {
-		color: "slategrey",
+		color: "rgba(90, 90, 90, 0.9)",
 		padding: "0",
 		// textTransform: "upper"
 	},
@@ -162,7 +202,8 @@ const useStyles = makeStyles((theme) => ({
 		color: "rgba(255, 218, 185, 0.5882352941176471)",
 	},
 	subHeading: {
-		color: "rgba(185, 185, 185, 0.88)",
+		// color: "rgba(34, 51, 68, 0.81)",
+		color: "rgba(77, 81, 86, 0.93)",
 		padding: "0",
 		textTransform: "uppercase",
 	},
@@ -177,38 +218,18 @@ const useStyles = makeStyles((theme) => ({
 		postion: "relative",
 		width: "100vw",
 		paddingBottom: "2vh",
-		// transform: "translate(0px, 1.2rem)",
 
-		// padding: ".5rem 0 1rem",
-		// margin: "0 auto",
-		// backgroundColor: "pink",
 		"&:before": {
 			content: "''",
 			position: "absolute",
-			height: "23.8%",
-			// minHeight: "47vh",
-			// maxHeight: "95vh",
-
-			// maxHeight: "122vh",
-			border: "1px solid lightgrey ",
+			height: "25.5%",
+			border: "1px solid rgba(82, 84, 84, 0.7)",
 			right: "4vw",
-			// top: "24px",
-			// top: 0,
+
 			transform: "translate(0rem, 3.2rem)",
-			// [theme.breakpoints.down("sm")]: {
-			// 	height: "122vh",
-			// 	maxHeight: "112vh",
-			// },
-			// [theme.breakpoints.up("sm")]: {
-			// 	height: "124vh",
-			// 	maxHeight: "50vh",
-			// },
 		},
 		"&:after": {
 			content: "''",
-			// position: "absolute",
-			// top: "60px",
-			// clear: "both",
 		},
 		[theme.breakpoints.up("sm")]: {
 			// padding: "2rem",
@@ -219,34 +240,59 @@ const useStyles = makeStyles((theme) => ({
 				left: "calc(50% - 1px)",
 				right: "auto",
 				maxHeight: "84vh",
-				// zIndex: "-1",
 			},
-			// "&:after": {
-			// 	content: "''",
-			// height: "15%",
-			// 	clear: "both",
-			// 	// zIndex: "-1",
-			// },
 		},
 		[theme.breakpoints.up("md")]: {
-			// padding: "2rem",
 			paddingBottom: ".5rem",
 			"&:before": {
 				transform: "translate(0px, 5.6rem)",
 				height: "45.5vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
-				// maxHeight: "84vh",
-				// zIndex: "-1",
 			},
-			// "&:after": {
-			// 	content: "''",
-			// height: "15%",
-			// 	clear: "both",
-			// 	// zIndex: "-1",
-			// },
 		},
 	},
+	timeLineBoxDark: {
+		display: "flex",
+		postion: "relative",
+		width: "100vw",
+		paddingBottom: "2vh",
+
+		"&:before": {
+			content: "''",
+			position: "absolute",
+			height: "25.5%",
+
+			border: "1px solid lightgrey ",
+			right: "4vw",
+
+			transform: "translate(0rem, 3.2rem)",
+		},
+		"&:after": {
+			content: "''",
+		},
+		[theme.breakpoints.up("sm")]: {
+			// padding: "2rem",
+
+			"&:before": {
+				transform: "translate(0px, 5.5rem)",
+				height: "60vh",
+				left: "calc(50% - 1px)",
+				right: "auto",
+				maxHeight: "84vh",
+			},
+		},
+		[theme.breakpoints.up("md")]: {
+			paddingBottom: ".5rem",
+			"&:before": {
+				transform: "translate(0px, 5.6rem)",
+				height: "45.5vh",
+				left: "calc(50% - 1px)",
+				right: "auto",
+			},
+		},
+	},
+
 	timeLineItem: {
 		padding: "1rem 1rem .5rem 1rem",
 		// borderBottom: "8px solid tan",
@@ -399,8 +445,8 @@ const useStyles = makeStyles((theme) => ({
 		margin: "0 2.5rem 0 auto",
 		fontSize: "1.1rem",
 		fontWeight: "bold",
-		background: "grey",
-		color: "#234",
+		background: "rgba(137, 137, 137, 0.4)",
+		color: "rgba(70, 70, 70, 0.71)",
 		lineHeight: 0.5,
 		padding: "0.5rem",
 		// zIndex: "1",
@@ -432,11 +478,52 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
+	timeLineYearDark: {
+		textAlign: "center",
+		maxWidth: "4.5rem",
+		margin: "0 2.5rem 0 auto",
+		fontSize: "1.1rem",
+		fontWeight: "bold",
+		background: "rgba(29, 35, 39, 0.84)",
+		color: "rgba(144, 144, 144, 0.61)",
+		lineHeight: 0.5,
+		padding: "0.5rem",
+		// zIndex: "1",
+		"&:before": {
+			display: "none",
+		},
+		[theme.breakpoints.up("sm")]: {
+			textAlign: "center",
+			margin: "0 auto",
+			zIndex: "1",
+			"&:nth-of-type(2n)": {
+				float: "none",
+				margin: "0 auto",
+			},
+			"&:nth-of-type(2n):before": {
+				display: "none",
+			},
+		},
+		[theme.breakpoints.up("md")]: {
+			textAlign: "center",
+			margin: "0 auto",
+			zIndex: "1",
+			"&:nth-of-type(2n)": {
+				float: "none",
+				margin: "0 auto",
+			},
+			"&:nth-of-type(2n):before": {
+				display: "none",
+			},
+		},
+	},
+
 	subHeading2E: {
-		color: "peachpuff",
+		color: "rgba(99, 99, 99, 0.91)",
 	},
 	subHeading2EDark: {
-		color: "#rgba(117, 143, 169, 0.96)",
+		// color: "#rgba(117, 143, 169, 0.96)",
+		color: "rgba(143, 154, 173, 0.92)",
 	},
 
 	subHeadingE: {
@@ -464,6 +551,49 @@ const useStyles = makeStyles((theme) => ({
 			content: "''",
 			position: "absolute",
 			border: "1px solid darkgrey ",
+
+			height: " 37.5%",
+			// maxHeight: "113vh",
+			// transform: "translate(10px)",
+
+			[theme.breakpoints.up("sm")]: {
+				// padding: "1rem",
+				// height: "99%",
+
+				height: "55vh",
+			},
+
+			[theme.breakpoints.up("md")]: {
+				// padding: " .5rem",
+				// height: "99%",
+
+				height: "65vh",
+				left: "calc(50% - 1px)",
+				right: "auto",
+				// zIndex: "-1",
+			},
+			// "&:after": {
+			// 	content: "''",
+			// 	height: "98%",
+			// 	clear: "both",
+			// },
+		},
+	},
+	timeLineBoxEDark: {
+		// display: "flex",
+		postion: "relative",
+		width: "100vw",
+		// flexGrow: "1",
+		// flexDirection: "column",
+		// transform: "translate(0px, .5rem)",
+		// height: "96%",
+		padding: "1.3rem",
+		margin: "0 auto",
+		// backgroundColor: "purple",
+		"&:before": {
+			content: "''",
+			position: "absolute",
+			border: "1px solid rgba(169, 169, 169, 0.3)",
 
 			height: " 37.5%",
 			// maxHeight: "113vh",
@@ -596,8 +726,10 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: "4.5rem",
 		margin: "0 auto 0 1.5rem",
 		fontSize: "1.1rem",
-		background: "#234",
-		color: "lightgrey",
+		background: "rgba(34, 51, 68, 0.3)",
+		// color: "rgba(34, 51, 68, 0.4)",
+
+		color: "rgba(49, 49, 49, 0.47)",
 		lineHeight: 0.5,
 		padding: ".5rem",
 		fontWeight: "bold",
@@ -675,6 +807,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	paper: {
 		color: "rgb(55, 94, 95)",
+		backgroundColor: "rgba(229, 234, 236, 0.8)",
 		fontSize: "1.1em",
 		textAlign: "center",
 		padding: ".5em",
@@ -685,6 +818,7 @@ const useStyles = makeStyles((theme) => ({
 	paperDark: {
 		// color: "rgba(23, 77, 130, 0.89)",
 		color: "rgb(110, 141, 143)",
+		backgroundColor: "rgba(29, 33, 33, 0.6)",
 		fontSize: "1.1em",
 		textAlign: "center",
 		padding: ".5em",
@@ -694,31 +828,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	experienceBox: {
 		width: "100%",
-
-		paddingTop: "1.5rem",
-		// paddingBottom: "2.4rem",
-		backgroundColor: "white",
-		// marginBottom: "10rem",
-		// textTransform: "uppercase",
+		paddingTop: "1.2rem",
+		// backgroundColor: "rgba(255, 240, 220, 0.4)",
+		backgroundColor: "rgba(251, 246, 239, 0.77)",
 		color: "#234",
-		// [theme.breakpoints.up("md")]: {
-		// 	paddingBottom: "19rem",
 
-		// 	"&:before": {
-		// 		transform: "translate(0px, 5rem)",
-		// 		height: "78%",
-		// 		left: "calc(50% - 1px)",
-		// 		right: "auto",
-		// 		// zIndex: "-1",
-		// 	},
-		// 	"&:after": {
-		// 		content: "''",
-		// 		height: "15%",
-		// 		clear: "both",
-		// 		// zIndex: "-1",
-		// 		background: "red",
-		// 	},
-		// },
 		[theme.breakpoints.up("md")]: {
 			// paddingBottom: ".5rem",
 			// height: "99%",
@@ -729,25 +843,53 @@ const useStyles = makeStyles((theme) => ({
 			// },
 		},
 	},
-	// technologyGridItems: { color: "#18395bc2" },
+	experienceBoxDark: {
+		width: "100%",
+		paddingTop: "1.2rem",
+		backgroundColor: "rgba(29, 34, 39, 0.8)",
+		color: "#234",
+
+		[theme.breakpoints.up("md")]: {
+			// paddingBottom: ".5rem",
+			// height: "99%",
+			// "&:after": {
+			// 	content: "''",
+			// 	height: "98%",
+			// 	clear: "both",
+			// },
+		},
+	},
+
 	technologyGridItems: { color: "rgba(100, 131, 163, 0.99)" },
 	// technologyGridItemsDark: { color: "rgba(67, 179, 243, 0.72)" },
 	technologyGridItemsDark: { color: "#b3835a" },
 
-	locationE: {},
+	location: {
+		// color: "rgba(78, 77, 77, 0.9)",
+		color: "rgba(2, 90, 80, 0.88)",
+	},
+	locationDark: {
+		color: "rgba(163, 213, 212, 0.69)",
+	},
+	locationE: { color: "rgba(0, 95, 105, 0.8196078431372549)" },
 	locationEDark: {
 		color: "rgba(219, 189, 161, 0.7)",
 	},
 
-	jobDescription: {},
+	jobDescription: { color: "rgba(88, 88, 88, 0.88)" },
 	jobDescriptionDark: {
 		color: "rgba(184, 184, 184, 0.68)",
 	},
 
-	techFE: {},
+	techFE: { color: "rgba(95, 95, 95, 0.9)" },
 	techFEDark: {
 		color: "rgba(255,255,255,.55)",
 	},
+	eduDesc: { color: "rgba(80, 80, 80, 0.89)", padding: "0 1.5rem" },
+	eduDescDark: { color: "#c8c8c8a3", padding: "0 1.5rem" },
+
+	experienceTitle: { color: "rgba(85, 101, 99, 0.91)" },
+	experienceTitleDark: { color: "rgba(255, 223, 196, 0.61)" },
 }));
 
 // const LinkBehavior = React.forwardRef((props, ref) => (
@@ -817,7 +959,7 @@ const Resume = ({ darkMode }) => {
 						// }}
 						// style={{ backgroundColor: "green" }}
 					>
-						<Grid item style={{ paddingBottom: "1rem" }}>
+						<Grid item style={{ paddingBottom: ".5rem" }}>
 							{/* <GetAppIcon style={{ color: "cadetblue" }} /> */}
 							<Link
 								href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
@@ -867,25 +1009,37 @@ const Resume = ({ darkMode }) => {
 							<Typography
 								variant="h4"
 								align="center"
-								className={classes.heading}
+								className={
+									darkMode
+										? classes.headingDark
+										: classes.heading
+								}
 								style={{
 									color: darkMode
 										? "rgba(244, 164, 96, 0.8)"
-										: "rgba(100, 100, 100, .9)",
+										: "rgba(4, 78, 80, 0.8)",
 								}}
 							>
 								Education
 							</Typography>
 							<Typography
 								variant="h6"
-								className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+								className={
+									darkMode
+										? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
+										: `${classes.timeLineYear} ${classes.timeLineItem}`
+								}
 							>
 								2019
 							</Typography>
 
 							<Box
 								component="div"
-								className={classes.timeLineItem}
+								className={
+									darkMode
+										? classes.timeLineItemDark
+										: classes.timeLineItem
+								}
 							>
 								<Typography
 									variant="h5"
@@ -913,11 +1067,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="body1"
 									align="center"
-									style={{
-										color: darkMode
-											? "rgba(163, 213, 212, 0.69)"
-											: "rgba(163, 213, 212, 0.97)",
-									}}
+									className={
+										darkMode
+											? classes.locationDark
+											: classes.location
+									}
 								>
 									Atlanta, GA
 								</Typography>
@@ -925,11 +1079,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="subtitle1"
 									align="center"
-									style={{
-										color: darkMode
-											? "#c8c8c8a3"
-											: "#c8c8c8",
-									}}
+									className={
+										darkMode
+											? classes.eduDescDark
+											: classes.eduDesc
+									}
 								>
 									Certificate in Full Stack software
 									development
@@ -937,7 +1091,11 @@ const Resume = ({ darkMode }) => {
 							</Box>
 							<Typography
 								variant="h6"
-								className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+								className={
+									darkMode
+										? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
+										: `${classes.timeLineYear} ${classes.timeLineItem}`
+								}
 							>
 								2013
 							</Typography>
@@ -959,7 +1117,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="h6"
 									align="center"
-									className={classes.subHeading2}
+									className={
+										darkMode
+											? classes.subHeading2Dark
+											: classes.subHeading2
+									}
 									// style="{{ color: "tan"}}
 								>
 									Scheller College of Business
@@ -967,11 +1129,16 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="body1"
 									align="center"
-									style={{
-										color: darkMode
-											? "rgba(163, 213, 212, 0.69)"
-											: "rgba(163, 213, 212, 0.97)",
-									}}
+									className={
+										darkMode
+											? classes.locationDark
+											: classes.location
+									}
+									// style={{
+									// 	color: darkMode
+									// 		? "rgba(163, 213, 212, 0.69)"
+									// 		: "rgba(163, 213, 212, 0.97)",
+									// }}
 								>
 									Atlanta, GA
 								</Typography>
@@ -983,18 +1150,22 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="subtitle1"
 									align="center"
-									style={{
-										color: darkMode
-											? "#c8c8c8a3"
-											: "#c8c8c8",
-									}}
+									className={
+										darkMode
+											? classes.eduDescDark
+											: classes.eduDesc
+									}
 								>
 									Master of Business Administration
 								</Typography>
 							</Box>
 							<Typography
 								variant="h6"
-								className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+								className={
+									darkMode
+										? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
+										: `${classes.timeLineYear} ${classes.timeLineItem}`
+								}
 							>
 								2007
 							</Typography>
@@ -1017,7 +1188,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="h6"
 									align="center"
-									className={classes.subHeading2}
+									className={
+										darkMode
+											? classes.subHeading2Dark
+											: classes.subHeading2
+									}
 									// style="{{ color: "tan"}}
 								>
 									School of Electrical and Computer
@@ -1027,11 +1202,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="body1"
 									align="center"
-									style={{
-										color: darkMode
-											? "rgba(163, 213, 212, 0.69)"
-											: "rgba(163, 213, 212, 0.97)",
-									}}
+									className={
+										darkMode
+											? classes.locationDark
+											: classes.location
+									}
 								>
 									Atlanta, GA
 								</Typography>
@@ -1039,11 +1214,17 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="subtitle1"
 									align="center"
-									style={{
-										color: darkMode
-											? "#c8c8c8a3"
-											: "#c8c8c8",
-									}}
+									// style={{
+									// 	color: darkMode
+									// 		? "#c8c8c8a3"
+									// 		: "#c8c8c8",
+									// }}
+
+									className={
+										darkMode
+											? classes.eduDescDark
+											: classes.eduDesc
+									}
 								>
 									Bachelor of Science in Electrical
 									Engineering
@@ -1062,27 +1243,28 @@ const Resume = ({ darkMode }) => {
 						alignItems="self-end"
 						// alignContent="center"
 						// className={classes.papersGridContainer}
-						className={classes.boxTechnologies}
+						className={
+							darkMode
+								? classes.boxTechnologiesDark
+								: classes.boxTechnologies
+						}
 						// wrap="wrap"
-						style={{
-							backgroundColor: darkMode
-								? "rgba(56, 55, 55, 0.66)"
-								: "rgba(255,255,255,.5)",
-						}}
+						// style={{
+						// 	backgroundColor: darkMode
+						// 		? "rgba(56, 55, 55, 0.66)"
+						// 		: "rgba(255,255,255,.5)",
+						// }}
 					>
 						<Grid item container justify="center">
 							<Grid item xs={12}>
 								<Typography
 									variant="h4"
 									align="center"
-									className={classes.heading2Title}
-									// display="block"
-									style={{
-										color: darkMode
-											? // ? "rgb(89, 130, 171)"
-											  "rgb(120, 151, 155"
-											: "rgba(255,255,255,.8)",
-									}}
+									className={
+										darkMode
+											? classes.heading2TitleDark
+											: classes.heading2Title
+									}
 								>
 									Technologies
 								</Typography>
@@ -1586,26 +1768,35 @@ const Resume = ({ darkMode }) => {
 					<Grid
 						item
 						container
-						className={classes.experienceBox}
+						className={
+							darkMode
+								? classes.experienceBoxDark
+								: classes.experienceBox
+						}
 						justify="center"
-						style={{
-							backgroundColor: darkMode
-								? "#1d2227fc"
-								: "rgba(255,255,255,.4)",
-						}}
+						// style={{
+						// 	backgroundColor: darkMode
+						// 		? "#1d2227fc"
+						// 		: "rgba(255,255,255,.4)",
+						// }}
 					>
 						<Grid item container justify="center">
 							<Grid item>
 								<Typography
 									variant="h4"
 									align="center"
-									style={{
-										textTransform: "uppercase",
-										color: darkMode
-											? "rgba(255, 223, 196, 0.61)"
-											: // : "#ffdfc4eb",
-											  "rgba(4, 58, 5, 0.82)",
-									}}
+									// style={{
+									// 	textTransform: "uppercase",
+									// 	color: darkMode
+									// 		? "rgba(255, 223, 196, 0.61)"
+									// 		: // : "#ffdfc4eb",
+									// 		  "rgba(82, 82, 82, 0.82)",
+									// }}
+									className={
+										darkMode
+											? classes.experienceTitleDark
+											: classes.experienceTitle
+									}
 								>
 									Experience
 								</Typography>
@@ -1613,7 +1804,14 @@ const Resume = ({ darkMode }) => {
 
 							{/* {/* </Grid> */}
 							{/* <Box component="div" className={classes.timeLineBoxE}> */}
-							<Grid item className={classes.timeLineBoxE}>
+							<Grid
+								item
+								className={
+									darkMode
+										? classes.timeLineBoxEDark
+										: classes.timeLineBoxE
+								}
+							>
 								<Typography
 									variant="h6"
 									className={
@@ -1651,12 +1849,15 @@ const Resume = ({ darkMode }) => {
 									<Typography
 										variant="h6"
 										align="center"
-										className={classes.subHeading2E}
-										style={{
-											color: darkMode
-												? "rgba(143, 154, 173, 0.92)"
-												: "rgba(255, 255, 255, 0.88)",
-										}}
+										className={
+											darkMode
+												? classes.subHeading2EDark
+												: classes.subHeading2E
+										}
+										// style={{
+										// 	color: darkMode
+										// 		? "rgba(143, 154, 173, 0.92)"
+										// 		: "rgba(255, 255, 255, 0.88)",
 									>
 										Server
 									</Typography>
@@ -1724,24 +1925,22 @@ const Resume = ({ darkMode }) => {
 									<Typography
 										variant="h5"
 										align="center"
-										className={classes.subHeadingE}
-										style={{
-											color: darkMode
-												? "rgba(244, 164, 96, 0.78)"
-												: "#07182af5",
-										}}
+										className={
+											darkMode
+												? classes.subHeadingEDark
+												: classes.subHeadingE
+										}
 									>
 										Elev8 Hire Solutions{" "}
 									</Typography>
 									<Typography
 										variant="h6"
 										align="center"
-										className={classes.subHeading2E}
-										style={{
-											color: darkMode
-												? "rgba(117, 143, 169,.9"
-												: "rgba(255, 255, 255, 0.88)",
-										}}
+										className={
+											darkMode
+												? classes.subHeading2EDark
+												: classes.subHeading2E
+										}
 									>
 										IT Recruiter
 									</Typography>
