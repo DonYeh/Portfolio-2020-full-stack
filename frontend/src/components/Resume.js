@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 		// zIndex: "1",
 	},
 	downloadResume: {
+		backgroundColor: "rgba(25, 31, 35, 0.91)",
 		display: "flex",
 		// paddingTop: "7vh",
 		// paddingBottom: "2vh",
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 		// minHeight: "14vh",
 		// alignItems: "center",
 		// padding: "4rem 0 1.2rem",
-		paddingTop: "3.5rem",
+		paddingTop: "4.5rem",
 		// background: "lightslategray",
 		// background: "rgba(0,0,0,.15)",
 		// background: "rgba(255,255,255,.55)",
@@ -82,12 +83,50 @@ const useStyles = makeStyles((theme) => ({
 			// minHeight: "8.5vh",
 		},
 	},
+
+	downloadResumeDark: {
+		backgroundColor: "rgba(25, 31, 35, 0.91)",
+		display: "flex",
+		// paddingTop: "7vh",
+		// paddingBottom: "2vh",
+		// maxHeight: "18vh",
+		// minHeight: "14vh",
+		// alignItems: "center",
+		// padding: "4rem 0 1.2rem",
+		paddingTop: "4.5rem",
+		// background: "lightslategray",
+		// background: "rgba(0,0,0,.15)",
+		// background: "rgba(255,255,255,.55)",
+
+		[theme.breakpoints.up("sm")]: {
+			// paddingTop: "1rem",
+			padding: "1rem 0rem .5rem",
+			// paddingBottom: ".10vh",
+			// maxHeight: "15vh",
+			// height: "99%",
+			// backgroundColor: "red",
+			// minHeight: "14vh",
+			alignItems: "flex-end",
+			// paddingTop: "4.4vh",
+		},
+		[theme.breakpoints.up("md")]: {
+			// paddingTop: "5vh",
+			// minHeight: "8.5vh",
+		},
+	},
+
 	downloadResumeText: {
 		// width: "50%",
 		// paddingTop: "1rem",
 		color: "white",
 
 		// background: "pink",
+	},
+	downloadResumeButton: {},
+	downloadResumeButtonDark: {
+		padding: "",
+		color: "rgba(118, 147, 151, 0.8)",
+		backgroundColor: "rgb(33, 37, 37)",
 	},
 	button: {
 		margin: theme.spacing(1),
@@ -114,15 +153,25 @@ const useStyles = makeStyles((theme) => ({
 		textTransform: "uppercase",
 	},
 	subHeading2: {
-		color: "peachpuff",
+		color: "slategrey",
 		padding: "0",
 		// textTransform: "upper"
 	},
+	subHeading2Dark: {
+		// color: "rgba(255, 218, 185, 0.77)",
+		color: "rgba(255, 218, 185, 0.5882352941176471)",
+	},
 	subHeading: {
-		color: "white",
+		color: "rgba(185, 185, 185, 0.88)",
 		padding: "0",
 		textTransform: "uppercase",
 	},
+	subHeadingDark: {
+		color: "rgba(185, 185, 185, 0.88)",
+		padding: "0",
+		textTransform: "uppercase",
+	},
+
 	timeLineBox: {
 		display: "flex",
 		postion: "relative",
@@ -214,7 +263,8 @@ const useStyles = makeStyles((theme) => ({
 			right: "2.0rem",
 			top: "calc(50% - 5px)",
 			borderStyle: "solid",
-			borderColor: "sandybrown sandybrown transparent transparent",
+			borderColor:
+				"rgba(244, 164, 96, 0.8) rgba(244, 164, 96, 0.8) transparent transparent",
 			borderWidth: ".44rem",
 			transform: "rotate(45deg)",
 		},
@@ -269,6 +319,80 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
+
+	timeLineItemDark: {
+		padding: "1rem 1rem .5rem 1rem",
+		// borderBottom: "8px solid tan",
+		position: "relative",
+		// margin: ".6rem 3.8rem .6rem .6rem",
+		clear: "both",
+		"&:after": {
+			content: "''",
+			position: "absolute",
+		},
+		"&:before": {
+			content: "''",
+			position: "absolute",
+			right: "2.0rem",
+			top: "calc(50% - 5px)",
+			borderStyle: "solid",
+			borderColor:
+				"rgba(244, 164, 96, 0.8) rgba(244, 164, 96, 0.8) transparent transparent",
+			borderWidth: ".44rem",
+			transform: "rotate(45deg)",
+		},
+		[theme.breakpoints.up("sm")]: {
+			padding: "0rem 1rem ",
+			width: "44%",
+			margin: "-.5rem .5rem",
+			"&:before": {
+				content: "''",
+				position: "absolute",
+				// left: "15.3rem",
+				top: "calc(50% - 5px)",
+				borderStyle: "solid",
+				borderColor: "sandybrown sandybrown transparent transparent",
+				borderWidth: "0.44rem",
+				transform: "rotate(45deg)",
+				right: "0rem",
+			},
+			"&:nth-of-type(2n)": {
+				float: "right",
+				margin: ".8rem .2rem .8rem 1rem",
+				borderColor: "tan",
+			},
+			"&:nth-of-type(2n):before": {
+				right: "auto",
+				left: ".5rem",
+				borderColor: "transparent transparent sandybrown sandybrown",
+			},
+		},
+		[theme.breakpoints.up("md")]: {
+			width: "44%",
+			margin: "1rem",
+			"&:before": {
+				content: "''",
+				position: "absolute",
+				left: "18.5rem",
+				top: "calc(50% - 5px)",
+				borderStyle: "solid",
+				borderColor: "sandybrown sandybrown transparent transparent",
+				borderWidth: "0.44rem",
+				transform: "rotate(45deg)",
+			},
+			"&:nth-of-type(2n)": {
+				float: "right",
+				margin: "1rem",
+				borderColor: "tan",
+			},
+			"&:nth-of-type(2n):before": {
+				right: "auto",
+				left: "-0.1rem",
+				borderColor: "transparent transparent sandybrown sandybrown",
+			},
+		},
+	},
+
 	timeLineYear: {
 		textAlign: "center",
 		maxWidth: "4.5rem",
@@ -309,10 +433,19 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	subHeading2E: {
-		color: "#234",
+		color: "peachpuff",
 	},
+	subHeading2EDark: {
+		color: "#rgba(117, 143, 169, 0.96)",
+	},
+
 	subHeadingE: {
 		color: "sandybrown",
+		padding: "0",
+		textTransform: "uppercase",
+	},
+	subHeadingEDark: {
+		color: "rgba(244, 164, 96, 0.7)",
 		padding: "0",
 		textTransform: "uppercase",
 	},
@@ -332,7 +465,7 @@ const useStyles = makeStyles((theme) => ({
 			position: "absolute",
 			border: "1px solid darkgrey ",
 
-			height: " 39.5%",
+			height: " 37.5%",
 			// maxHeight: "113vh",
 			// transform: "translate(10px)",
 
@@ -407,6 +540,57 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
+	timeLineItemEDark: {
+		// padding: "1rem",
+		padding: "1rem 1rem 1rem 3rem",
+		// borderBottom: "2px solid tan",
+		position: "relative",
+		// margin: ".6rem 3rem .6rem .6rem",
+		clear: "both",
+		// backgroundColor: "white",
+		"&:after": {
+			content: "''",
+			position: "absolute",
+		},
+		"&:before": {
+			content: "''",
+			position: "absolute",
+			left: "1.2rem",
+			top: "calc(50% - 5px)",
+			borderStyle: "solid",
+			borderColor:
+				"rgba(95, 158, 160, 0.8) rgba(95, 158, 160, 0.8) transparent transparent",
+			borderWidth: "0.44rem",
+			transform: "rotate(225deg)",
+		},
+		[theme.breakpoints.up("md")]: {
+			padding: "1rem 1.2rem 1rem 2.1rem",
+			width: "48%",
+			"&:before": {
+				content: "''",
+				position: "absolute",
+				left: "18.5rem",
+				top: "calc(50% - 5px)",
+				borderStyle: "solid",
+				borderColor:
+					"rgba(95, 158, 160, 0.8) rgba(95, 158, 160, 0.8) transparent transparent",
+				borderWidth: "0.44rem",
+				transform: "rotate(45deg)",
+			},
+			"&:nth-of-type(2n)": {
+				float: "right",
+				// margin: "1rem",
+				borderColor: "purple",
+			},
+			"&:nth-of-type(2n):before": {
+				left: "auto",
+				left: ".4rem",
+				borderColor:
+					"transparent transparent rgba(95, 158, 160, 0.8) rgba(95, 158, 160, 0.8)",
+			},
+		},
+	},
+
 	timeLineYearE: {
 		textAlign: "center",
 		maxWidth: "4.5rem",
@@ -434,6 +618,34 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
+	timeLineYearEDark: {
+		textAlign: "center",
+		maxWidth: "4.5rem",
+		margin: "0 auto 0 1.5rem",
+		fontSize: "1.1rem",
+		background: "#234",
+		color: "rgba(211, 211, 211, 0.69)",
+		lineHeight: 0.5,
+		padding: ".5rem",
+		fontWeight: "bold",
+		// zIndex: "1",
+		"&:before": {
+			display: "none",
+		},
+		[theme.breakpoints.up("md")]: {
+			textAlign: "center",
+			margin: "0 auto",
+			zIndex: "1",
+			"&:nth-of-type(2n)": {
+				float: "none",
+				margin: "0 auto",
+			},
+			"&:nth-of-type(2n):before": {
+				display: "none",
+			},
+		},
+	},
+
 	papersGridContainer: {
 		display: "flex",
 		// justify: "space-evenly",
@@ -521,6 +733,21 @@ const useStyles = makeStyles((theme) => ({
 	technologyGridItems: { color: "rgba(100, 131, 163, 0.99)" },
 	// technologyGridItemsDark: { color: "rgba(67, 179, 243, 0.72)" },
 	technologyGridItemsDark: { color: "#b3835a" },
+
+	locationE: {},
+	locationEDark: {
+		color: "rgba(219, 189, 161, 0.7)",
+	},
+
+	jobDescription: {},
+	jobDescriptionDark: {
+		color: "rgba(184, 184, 184, 0.68)",
+	},
+
+	techFE: {},
+	techFEDark: {
+		color: "rgba(255,255,255,.55)",
+	},
 }));
 
 // const LinkBehavior = React.forwardRef((props, ref) => (
@@ -576,17 +803,21 @@ const Resume = ({ darkMode }) => {
 					<Grid
 						item
 						container
-						className={classes.downloadResume}
+						className={
+							darkMode
+								? classes.downloadResumeDark
+								: classes.downloadResume
+						}
 						justify="center"
 						alignContent="flex-end"
-						style={{
-							backgroundColor: darkMode
-								? "rgba(49, 53, 60, 0.96)"
-								: "rgba(255,255,255,.5)",
-						}}
+						// style={{
+						// 	backgroundColor: darkMode
+						// 		? "rgba(49, 53, 60, 0.96)"
+						// 		: "rgba(255,255,255,.5)",
+						// }}
 						// style={{ backgroundColor: "green" }}
 					>
-						<Grid item>
+						<Grid item style={{ paddingBottom: "1rem" }}>
 							{/* <GetAppIcon style={{ color: "cadetblue" }} /> */}
 							<Link
 								href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
@@ -604,11 +835,16 @@ const Resume = ({ darkMode }) => {
 									size="small"
 									className={classes.button}
 									startIcon={<SaveIcon />}
-									style={{
-										backgroundColor: darkMode
-											? "rgba(144, 144, 144, 0.5)"
-											: "rgba(255,255,255,.5)",
-									}}
+									// style={{
+									// 	backgroundColor: darkMode
+									// 		? "rgba(144, 144, 144, 0.5)"
+									// 		: "rgba(255,255,255,.5)",
+									// }}
+									className={
+										darkMode
+											? classes.downloadResumeButtonDark
+											: classes.downloadResumeButton
+									}
 								>
 									Download resume
 								</Button>
@@ -623,8 +859,8 @@ const Resume = ({ darkMode }) => {
 						className={classes.timeLineBox}
 						style={{
 							backgroundColor: darkMode
-								? "#242424b8"
-								: "#f5f5f52e",
+								? "rgba(36, 41, 41, 0.9)"
+								: "rgba(208, 219, 222, 0.9)",
 						}}
 					>
 						<Grid item xs={12}>
@@ -632,6 +868,11 @@ const Resume = ({ darkMode }) => {
 								variant="h4"
 								align="center"
 								className={classes.heading}
+								style={{
+									color: darkMode
+										? "rgba(244, 164, 96, 0.8)"
+										: "rgba(100, 100, 100, .9)",
+								}}
 							>
 								Education
 							</Typography>
@@ -649,14 +890,22 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="h5"
 									align="center"
-									className={classes.subHeading}
+									className={
+										darkMode
+											? classes.subHeadingDark
+											: classes.subHeading
+									}
 								>
 									Digital Crafts
 								</Typography>
 								<Typography
 									variant="h6"
 									align="center"
-									className={classes.subHeading2}
+									className={
+										darkMode
+											? classes.subHeading2Dark
+											: classes.subHeading2
+									}
 									// style="{{ color: "tan"}}
 								>
 									Web Development Bootcamp
@@ -699,7 +948,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="h5"
 									align="center"
-									className={classes.subHeading}
+									className={
+										darkMode
+											? classes.subHeadingDark
+											: classes.subHeading
+									}
 								>
 									Georgia Institute of Technology
 								</Typography>
@@ -723,6 +976,10 @@ const Resume = ({ darkMode }) => {
 									Atlanta, GA
 								</Typography>
 
+								{/* 
+	subHeadingDark: {
+		color: "subHeadingDark",
+	}, */}
 								<Typography
 									variant="subtitle1"
 									align="center"
@@ -748,7 +1005,11 @@ const Resume = ({ darkMode }) => {
 								<Typography
 									variant="h5"
 									align="center"
-									className={classes.subHeading}
+									className={
+										darkMode
+											? classes.subHeadingDark
+											: classes.subHeading
+									}
 								>
 									Georgia Institute of Technology
 								</Typography>
@@ -841,11 +1102,17 @@ const Resume = ({ darkMode }) => {
 							<Grid item xs={12}>
 								<Typography
 									align="center"
-									style={{
-										color: darkMode
-											? "rgba(255, 255, 255, 0.6)"
-											: "rgba(0, 0, 0, 0.7)",
-									}}
+									// style={{
+									// 	color: darkMode
+									// 		? // ? "rgba(255, 255, 255, 0.55)"
+									// 		  "rgba(255, 255, 255, 0.6)"
+									// 		: "rgba(0, 0, 0, 0.7)",
+									// }}
+									className={
+										darkMode
+											? classes.techFEDark
+											: classes.techFE
+									}
 								>
 									Front End
 								</Typography>
@@ -1030,11 +1297,17 @@ const Resume = ({ darkMode }) => {
 							<Grid item xs={12}>
 								<Typography
 									align="center"
-									style={{
-										color: darkMode
-											? "rgba(255, 255, 255, 0.6)"
-											: "rgba(0, 0, 0, 0.7)",
-									}}
+									// style={{
+									// 	color: darkMode
+									// 		? "rgba(255, 255, 255, 0.6)"
+									// 		: "rgba(0, 0, 0, 0.7)",
+									// }}
+
+									className={
+										darkMode
+											? classes.techFEDark
+											: classes.techFE
+									}
 								>
 									Back End
 								</Typography>
@@ -1166,11 +1439,16 @@ const Resume = ({ darkMode }) => {
 							<Grid item xs={12}>
 								<Typography
 									align="center"
-									style={{
-										color: darkMode
-											? "rgba(255, 255, 255, 0.6)"
-											: "rgba(0, 0, 0, 0.7)",
-									}}
+									// style={{
+									// 	color: darkMode
+									// 		? "rgba(255, 255, 255, 0.6)"
+									// 		: "rgba(0, 0, 0, 0.7)",
+									// }}
+									className={
+										darkMode
+											? classes.techFEDark
+											: classes.techFE
+									}
 								>
 									Tools
 								</Typography>
@@ -1338,23 +1616,35 @@ const Resume = ({ darkMode }) => {
 							<Grid item className={classes.timeLineBoxE}>
 								<Typography
 									variant="h6"
-									className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
+									className={
+										darkMode
+											? `${classes.timeLineYearEDark} ${classes.timeLineItemEDark}`
+											: `${classes.timeLineYearE} ${classes.timeLineItemE}`
+									}
 								>
 									2020
 								</Typography>
 								<Box
 									component="div"
-									className={classes.timeLineItemE}
+									className={
+										darkMode
+											? classes.timeLineItemEDark
+											: classes.timeLineItemE
+									}
 								>
 									<Typography
 										variant="h5"
 										align="center"
-										className={classes.subHeadingE}
-										style={{
-											color: darkMode
-												? "rgba(244, 164, 96, 0.78)"
-												: "#07182af5",
-										}}
+										className={
+											darkMode
+												? classes.subHeadingEDark
+												: classes.subHeadingE
+										}
+										// style={{
+										// 	color: darkMode
+										// 		? "rgba(244, 164, 96, 0.78)"
+										// 		: "#07182af5",
+										// }}
 									>
 										Ton Ton Ramen & Yakitori
 									</Typography>
@@ -1364,7 +1654,7 @@ const Resume = ({ darkMode }) => {
 										className={classes.subHeading2E}
 										style={{
 											color: darkMode
-												? "rgba(117, 143, 169,.9"
+												? "rgba(143, 154, 173, 0.92)"
 												: "rgba(255, 255, 255, 0.88)",
 										}}
 									>
@@ -1373,7 +1663,16 @@ const Resume = ({ darkMode }) => {
 									<Typography
 										variant="body1"
 										align="center"
-										style={{ color: "#234" }}
+										// style={{
+										// 	color: darkMode
+										// 		? "rgba(219, 189, 161, 0.9)"
+										// 		: "",
+										// }}
+										className={
+											darkMode
+												? classes.locationEDark
+												: classes.locationE
+										}
 									>
 										Atlanta, GA
 									</Typography>
@@ -1381,12 +1680,17 @@ const Resume = ({ darkMode }) => {
 									<Typography
 										variant="subtitle1"
 										align="left"
-										style={{
-											color: darkMode
-												? // ? "rgba(71, 71, 71, 0.6)"
-												  "rgba(184, 184, 184, 0.6)"
-												: "#ffffffa6",
-										}}
+										// style={{
+										// 	color: darkMode
+										// 		? // ? "rgba(71, 71, 71, 0.6)"
+										// 		  "rgba(184, 184, 184, 0.6)"
+										// 		: "#ffffffa6",
+										// }}
+										className={
+											darkMode
+												? classes.jobDescriptionDark
+												: classes.jobDescription
+										}
 									>
 										<div>
 											• Filled in as manager when needed -
@@ -1444,10 +1748,15 @@ const Resume = ({ darkMode }) => {
 									<Typography
 										variant="body1"
 										align="center"
-										style={{
-											color: "#234",
-											// backgroundColor: "white",
-										}}
+										// style={{
+										// 	color: "#234",
+										// 	// backgroundColor: "white",
+										// }}
+										className={
+											darkMode
+												? classes.locationEDark
+												: classes.locationE
+										}
 									>
 										Atlanta, GA
 									</Typography>
@@ -1462,12 +1771,17 @@ const Resume = ({ darkMode }) => {
 										// 		: "rgba(71, 71, 71, 0.91)",
 										// }}
 
-										style={{
-											color: darkMode
-												? // ? "rgba(71, 71, 71, 0.6)"
-												  "rgba(255, 255, 255, 0.65)"
-												: "#ffffffa6",
-										}}
+										// style={{
+										// 	color: darkMode
+										// 		? // ? "rgba(71, 71, 71, 0.6)"
+										// 		  "rgba(255, 255, 255, 0.65)"
+										// 		: "#ffffffa6",
+										// }}
+										className={
+											darkMode
+												? classes.jobDescriptionDark
+												: classes.jobDescription
+										}
 									>
 										<div>
 											• Performed full sles recruiting

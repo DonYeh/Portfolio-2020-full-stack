@@ -268,8 +268,8 @@ function App(props) {
 							style={{
 								// color: "sandybrown",
 								color: darkMode
-									? "rgba(236, 108, 23, 0.5)"
-									: "rgba(236, 108, 23, 0.8)",
+									? "rgba(236, 148, 90, 0.7)"
+									: "rgba(227, 136, 33, 0.85)",
 								width: "1em",
 								height: "1.2em",
 							}}

@@ -849,7 +849,7 @@ const Contact = ({ darkMode }) => {
 									<Grid
 										container
 										justify="space-evenly"
-										style={{ paddingTop: ".5rem" }}
+										style={{ paddingTop: ".2rem" }}
 									>
 										<Grid item>
 											<Link
@@ -878,7 +878,7 @@ const Contact = ({ darkMode }) => {
 												<GitHubIcon
 													style={{
 														color: darkMode
-															? "rgba(100, 100, 100, 0.7)"
+															? "rgba(109, 109, 109, 0.7)"
 															: "rgba(42,45,49)",
 													}}
 												/>

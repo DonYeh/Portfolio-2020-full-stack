@@ -196,7 +196,7 @@ const HomePage = ({ darkMode }) => {
 									strings={[
 										"Hello^2",
 										"Hi!^4 👋",
-										"I'm Donald^2",
+										"I'm Donald^1",
 									]}
 									typeSpeed={26}
 									startDelay={2000}
@@ -230,7 +230,7 @@ const HomePage = ({ darkMode }) => {
 										"I'm a problem solver^700",
 									]}
 									typeSpeed={15}
-									startDelay={6500}
+									startDelay={6300}
 									backSpeed={22}
 									smartBackspace="true"
 									random
