@@ -246,7 +246,7 @@ const useStyles = makeStyles((theme) => ({
 				height: "50.5vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
-				maxHeight: "84vh",
+				maxHeight: "25.5%",
 			},
 		},
 		[theme.breakpoints.up("md")]: {
@@ -256,6 +256,7 @@ const useStyles = makeStyles((theme) => ({
 				height: "41.2vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
+				maxHeight: "28%",
 			},
 		},
 	},
@@ -452,7 +453,7 @@ const useStyles = makeStyles((theme) => ({
 		margin: "0 2.5rem 0 auto",
 		fontSize: "1.1rem",
 		fontWeight: "bold",
-		background: "rgba(137, 137, 137, 0.4)",
+		background: "rgb(182, 187, 189)",
 		color: "rgba(70, 70, 70, 0.71)",
 		lineHeight: 0.5,
 		padding: "0.5rem",
@@ -568,6 +569,7 @@ const useStyles = makeStyles((theme) => ({
 				// height: "99%",
 
 				height: "55vh",
+				maxHeight: "26.2%",
 			},
 
 			[theme.breakpoints.up("md")]: {
@@ -577,6 +579,7 @@ const useStyles = makeStyles((theme) => ({
 				height: "48vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
+				maxHeight: "34%",
 				// zIndex: "-1",
 			},
 			// "&:after": {
@@ -658,7 +661,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "18.5rem",
+				left: "28rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor: "cadetblue cadetblue transparent transparent",
@@ -706,7 +709,7 @@ const useStyles = makeStyles((theme) => ({
 			"&:before": {
 				content: "''",
 				position: "absolute",
-				left: "18.5rem",
+				left: "28rem",
 				top: "calc(50% - 5px)",
 				borderStyle: "solid",
 				borderColor:

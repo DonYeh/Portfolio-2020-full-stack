@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 	typedContainer: {
 		// margin: theme.spacing(8),
 		// paddingTop: "5rem",
-		padding: "0 8vw",
+		padding: "0 10vw",
 
 		textAlign: "center",
 		margin: "0",
@@ -183,7 +183,7 @@ const HomePage = ({ darkMode }) => {
 					>
 						<Grid item xs={12} className={classes.typedItem}>
 							<Typography
-								variant="h3"
+								variant="h4"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -193,13 +193,28 @@ const HomePage = ({ darkMode }) => {
 								}}
 							>
 								<Typed
-									strings={[
-										"Hello^2",
-										"Hi!^4 👋",
-										"I'm Donald^1",
-									]}
+									strings={["Hello^5", "Hi^4 👋"]}
 									typeSpeed={26}
-									startDelay={2000}
+									startDelay={2500}
+									showCursor={false}
+								/>
+							</Typography>
+						</Grid>
+						<Grid item xs={12} className={classes.typedItem}>
+							<Typography
+								variant="h4"
+								className={classes.typedFont}
+								style={{
+									color: darkMode
+										? "lightgray"
+										: // : "rgba(95, 95, 95, 0.88)",
+										  grey[700],
+								}}
+							>
+								<Typed
+									strings={["I'm Donald"]}
+									typeSpeed={26}
+									startDelay={4400}
 									showCursor={false}
 								/>
 							</Typography>
@@ -212,7 +227,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h3"
+								variant="h4"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -222,20 +237,22 @@ const HomePage = ({ darkMode }) => {
 							>
 								<Typed
 									strings={[
-										"I'm a full stack developer ^11800",
-										"I'm a software engineer ^700",
-										"I'm a coder ^700",
-										"I'm a techie ^700",
-										"I'm a builder ^700",
-										"I'm a problem solver^700",
+										"I'm a full stack developer ⌨️ ^11800",
+										"I'm a software engineer 💻 ^800",
+										"I'm a coder ^800",
+										"I'm a techie 👨🏻‍💻^800",
+										"I'm a builder 👷🏼‍♂️^800",
+										"I'm a problem solver 🔎^800",
+										"I'm a dog dad 🐶🧔🏻",
 									]}
-									typeSpeed={15}
-									startDelay={6700}
+									typeSpeed={14}
+									startDelay={5400}
 									backSpeed={22}
 									smartBackspace="true"
 									random
 									loop
 									showCursor={false}
+									// cursorChar={" ‎‎‎‎      "}
 								/>
 							</Typography>
 						</Grid>
@@ -247,7 +264,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h3"
+								variant="h4"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -258,7 +275,7 @@ const HomePage = ({ darkMode }) => {
 								<Typed
 									strings={["from^3"]}
 									typeSpeed={18}
-									startDelay={7300}
+									startDelay={6200}
 									showCursor={false}
 								/>
 							</Typography>
@@ -271,7 +288,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h3"
+								variant="h4"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -286,15 +303,15 @@ const HomePage = ({ darkMode }) => {
 										"ATL^900",
 										"A-Town^900",
 										"the A^900",
-										"Hotlanta^400...(please don't ever call it Hotlanta)^650",
-										"Atlanta^1800",
+										"Hotlanta^400...(please don't ever call it Hotlanta) 🙅🏻‍♂️^650",
+										"Atlanta  ^1800",
 									]}
 									typeSpeed={11}
-									startDelay={7750}
+									startDelay={7000}
 									backSpeed={15}
 									backDelay={250}
 									smartBackspace="true"
-									// cursorChar="        "
+									cursorChar={" ‎‎‎‎      "}
 									showCursor={true}
 									fadeOut="true"
 									loop
@@ -311,7 +328,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h3"
+								variant="h4"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -322,7 +339,7 @@ const HomePage = ({ darkMode }) => {
 								<Typed
 									strings={["Georgia^60 🍑"]}
 									typeSpeed={11}
-									startDelay={16200}
+									startDelay={15700}
 									backSpeed={55}
 									showCursor={false}
 								/>

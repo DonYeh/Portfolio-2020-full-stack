@@ -70,7 +70,9 @@ import {
 	teal,
 } from "@material-ui/core/colors";
 
-const drawerWidth = 210;
+import HomePage2 from "./components/HomePage2";
+
+const drawerWidth = 240;
 
 const menuIcons = [
 	{
@@ -133,11 +135,22 @@ const useStyles = makeStyles((theme) => ({
 	// toolbar: theme.mixins.toolbar,
 	drawerPaper: {
 		width: drawerWidth,
+		// backgroundColor: "rgb(232, 244, 246)",
 		// backgroundColor: "rgba(0,0,0,.5 )",
 		// backgroundColor: "rgba(f,f,f,.5 )",
 		// backgroundColor: "rgba(#424242db)",
 		// backgroundColor: "rgba(66,66,66,.88)",
 		// backgroundColor: "rgba(236, 236, 236, 0.76)",
+		backgroundColor: "rgba(184, 198, 201, 0.95)",
+		// filter: "blur(2px)",
+	},
+	drawerPaperDark: {
+		width: drawerWidth,
+		// backgroundColor: "rgb(232, 244, 246)",
+		// backgroundColor: "rgba(0,0,0,.5 )",
+		// backgroundColor: "rgba(f,f,f,.5 )",
+		// backgroundColor: "rgba(#424242db)",
+		backgroundColor: "rgba(18, 20, 21, 0.95)",
 	},
 
 	content: {
@@ -159,12 +172,25 @@ const useStyles = makeStyles((theme) => ({
 	drawerHeader: {
 		display: "flex",
 		alignItems: "center",
-		height: "56px",
+		height: "57px",
 		// padding: theme.spacing(0, 1),
 		// necessary for content to be below app bar
 		// ...theme.mixins.toolbar,
 		justifyContent: "flex-start",
-		backgroundColor: "rgba(124,124,124, .2)",
+
+		// backgroundColor: "rgba(92, 99, 101, 0.9)",
+		backgroundColor: "rgba(92, 99, 101, 0.4)",
+		// minHeight: "54px",
+	},
+	drawerHeaderDark: {
+		display: "flex",
+		alignItems: "center",
+		height: "57px",
+		// padding: theme.spacing(0, 1),
+		// necessary for content to be below app bar
+		// ...theme.mixins.toolbar,
+		justifyContent: "flex-start",
+		backgroundColor: "rgba(4, 4, 5, .9)",
 		// minHeight: "54px",
 	},
 	// topListText: {
@@ -191,12 +217,23 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgba(20, 23, 23, 0.8)",
 	},
 
-	topDrawer: { backgroundColor: "rgba(185,198,201,.9)" },
+	topDrawer: {
+		backgroundColor: "rgba(185,198,201,.9)",
+		padding: "0rem 1rem 0rem 2.5rem",
+	},
 	// topDrawer: { backgroundColor: "rgba(181, 197, 200, 0.5)" },
 	topDrawerDark: {
-		backgroundColor: "rgba(20, 23, 23, 0.7)",
+		backgroundColor: "rgba(20, 23, 23, 0.85)",
 		color: "rgba(109, 109, 109, 0.85)",
+		padding: "0rem 1rem 0rem 2.5rem",
 	},
+	topDrawerListItemText: { color: "rgba(69, 69, 69, 0.85)" },
+	topDrawerListItemTextDark: { color: "rgba(255, 153, 49, 0.8)" },
+	topDrawerListItemIcon: { color: "rgba(95, 95, 95, 0.7)" },
+	topDrawerListItemIconDark: { color: "rgba(172,172,172,.6)" },
+	// leftDrawer: { backgroundColor: "rgba(185,198,201,.9)" },
+	leftDrawer: { backgroundColor: "", height: "100%" },
+	leftDrawerDark: { backgroundColor: "rgba(20, 23, 23, 0.8)" },
 }));
 
 const darkTheme = createMuiTheme({
@@ -244,6 +281,13 @@ function App(props) {
 					//   marginBottom: '10px'
 				},
 			},
+			MuiAppBar: {
+				colorPrimary: {
+					backgroundColor: darkMode
+						? "rgba(38, 41, 42, 0.9)"
+						: "rgba(204, 216, 219, 0.9)",
+				},
+			},
 		},
 		palette: {
 			type: darkMode ? "dark" : "light",
@@ -268,10 +312,14 @@ function App(props) {
 	// };
 
 	const drawerL = (
-		<div className={classes.drawer}>
+		<div className={darkMode ? classes.leftDrawerDark : classes.leftDrawer}>
 			{/* <div className={classes.toolbar} /> */}
 			{/* <Divider /> */}
-			<div className={classes.drawerHeader}>
+			<div
+				className={
+					darkMode ? classes.drawerHeaderDark : classes.drawerHeader
+				}
+			>
 				<IconButton onClick={handleDrawerToggle}>
 					{darkTheme.direction === "ltr" ? (
 						<ChevronLeftIcon
@@ -279,7 +327,8 @@ function App(props) {
 								// color: "sandybrown",
 								color: darkMode
 									? "rgba(236, 148, 90, 0.7)"
-									: "rgba(227, 136, 33, 0.85)",
+									: "rgba(204, 108, 0, 0.9)",
+								// : "rgba(227, 136, 33, 0.85)",
 								width: "1em",
 								height: "1.2em",
 							}}
@@ -299,7 +348,7 @@ function App(props) {
 									// color: "#5f9ea0c7",
 									color: darkMode
 										? "rgba(137, 136, 136, 0.5)"
-										: "rgba(137, 136, 136, 0.8)",
+										: "rgba(102, 102, 102, 0.8)",
 
 									paddingLeft: "6px",
 								}}
@@ -310,8 +359,8 @@ function App(props) {
 								primary={menuIcon.listText}
 								style={{
 									color: darkMode
-										? "rgba(137, 136, 136, 0.98"
-										: "rgba(9, 63, 56, 0.79)",
+										? "rgba(137, 136, 136, 0.98)"
+										: "rgba(60, 60, 60, 0.85)",
 									// color: "aliceblue",
 									fontWeight: "bold",
 									textDecoration: "none",
@@ -321,7 +370,6 @@ function App(props) {
 					</Link>
 				))}
 			</List>
-			<Divider />
 		</div>
 	);
 
@@ -330,12 +378,8 @@ function App(props) {
 		<div className={darkMode ? classes.topDrawerDark : classes.topDrawer}>
 			<List
 				style={{
-					// backgroundColor: "aliceblue",
-					// backgroundColor: "rgba(185, 198, 201, .9)",
-					// backgroundColor: " rgba(200, 221, 226, 0.6)",
 					display: "flex",
-					// width: "85vw",
-					// height: "12vh",
+					// padding: "0 .5rem",
 				}}
 			>
 				{menuIcons.map((menuIcon, key) => (
@@ -344,19 +388,60 @@ function App(props) {
 						key={key}
 						component={Link}
 						to={menuIcon.listPath}
+						disableGutters
 					>
 						<ListItemIcon
-							style={{
-								color: darkMode
-									? "rgba(255, 255, 255, 0.6)"
-									: "rgba(95, 95, 95, 0.7)",
-							}}
+							className={
+								darkMode
+									? classes.topDrawerListItemIconDark
+									: classes.topDrawerListItemIcon
+							}
 						>
 							{menuIcon.listIcon}
 						</ListItemIcon>
-						<ListItemText primary={menuIcon.listText} />
+						<ListItemText
+							primary={menuIcon.listText}
+							className={
+								darkMode
+									? classes.topDrawerListItemTextDark
+									: classes.topDrawerListItemText
+							}
+						/>
 					</ListItem>
 				))}
+
+				<div
+					style={{
+						flex: 1,
+						display: "flex",
+						justifyContent: "flex-end",
+						padding: "0rem .5rem",
+						// backgroundColor: "",
+						// paddingRight: ".2vw",
+					}}
+				>
+					{darkMode ? (
+						<IconButton
+							color="inherit"
+							backgroundColor="inherit"
+							onClick={() => setDarkMode(!darkMode)}
+						>
+							<Brightness7 style={{ color: "darkgrey" }} />
+						</IconButton>
+					) : (
+						<IconButton
+							color="inherit"
+							backgroundColor="inherit"
+							onClick={() => setDarkMode(!darkMode)}
+						>
+							<Brightness4Icon
+								style={{
+									color: "rgba(59, 59, 59, 0.92)",
+								}}
+							/>
+						</IconButton>
+					)}
+				</div>
 			</List>
 		</div>
 	);
@@ -378,17 +463,6 @@ function App(props) {
 							// style={{ backgroundColor: "rgba(255,255,255,.9)" }}
 						>
 							<Toolbar
-								// darkMode={darkMode}
-								// setLightMode={handleLightMode}
-								// darkMode={handleDarkMode}
-								// style={{
-								// 	// backgroundColor: "#fafafa",
-								// 	// backgroundColor: "#ffffffe6",
-								// 	backgroundColor: darkMode
-								// 		? "rgba(20, 23, 23, 0.99)"
-								// 		: "rgba(185, 198, 201, .9)",
-								// 	// : "rgba(255,255,255,.8)",
-								// }}
 								className={
 									darkMode
 										? classes.topToolbarDark
@@ -428,96 +502,61 @@ function App(props) {
 								<Hidden xsDown implementation="js">
 									<Drawer
 										className={classes.displayFlex}
-										variant="permanent"
+										// variant="permanent"
+										variant="persistent"
 										anchor="top"
 										open
 										style={{
 											width: "100%",
-											// color: "rgba(0,0,0,.5)",
-											color: "blue",
+											// backgroundColor: "pink",
+											// // color: "rgba(0,0,0,.5)",
 										}}
 									>
 										{drawerT}
-										<div
-											style={{
-												display: "flex",
-												justifyContent: "flex-end",
-												backgroundColor: darkMode
-													? "rgba(51, 64, 75, 0.95)"
-													: "rgba(193, 221, 229, 0.5)",
-											}}
-										>
-											{darkMode ? (
-												<IconButton
-													color="inherit"
-													backgroundColor="inherit"
-													onClick={() =>
-														setDarkMode(!darkMode)
-													}
-												>
-													<Brightness7
-														style={{
-															color: "darkgrey",
-														}}
-													/>
-												</IconButton>
-											) : (
-												<IconButton
-													color="inherit"
-													backgroundColor="inherit"
-													onClick={() =>
-														setDarkMode(!darkMode)
-													}
-												>
-													<Brightness4Icon
-														style={{
-															color:
-																"rgba(59, 59, 59, 0.92)",
-														}}
-													/>
-												</IconButton>
-											)}
-										</div>
 									</Drawer>
 								</Hidden>
-								<div
-									style={{
-										flex: 1,
-										display: "flex",
-										justifyContent: "flex-end",
-										backgroundColor: "",
-									}}
-								>
-									{darkMode ? (
-										<IconButton
-											color="inherit"
-											backgroundColor="inherit"
-											onClick={() =>
-												setDarkMode(!darkMode)
-											}
-											style={{ zIndex: "2" }}
-										>
-											<Brightness7
-												style={{ color: "darkgrey" }}
-											/>
-										</IconButton>
-									) : (
-										<IconButton
-											color="inherit"
-											backgroundColor="inherit"
-											onClick={() =>
-												setDarkMode(!darkMode)
-											}
-										>
-											<Brightness4Icon
-												style={{
-													color:
-														"rgba(59, 59, 59, 0.92)",
-												}}
-											/>
-										</IconButton>
-									)}
-								</div>
+								<Hidden smUp>
+									<div
+										style={{
+											flex: 1,
+											display: "flex",
+											justifyContent: "flex-end",
+											backgroundColor: "inherit",
+											// paddingRight: ".2vw",
+										}}
+									>
+										{darkMode ? (
+											<IconButton
+												color="inherit"
+												backgroundColor="inherit"
+												onClick={() =>
+													setDarkMode(!darkMode)
+												}
+											>
+												<Brightness7
+													style={{
+														color: "darkgrey",
+													}}
+												/>
+											</IconButton>
+										) : (
+											<IconButton
+												color="inherit"
+												backgroundColor="inherit"
+												onClick={() =>
+													setDarkMode(!darkMode)
+												}
+											>
+												<Brightness4Icon
+													style={{
+														color:
+															"rgba(59, 59, 59, 0.92)",
+													}}
+												/>
+											</IconButton>
+										)}
+									</div>
+								</Hidden>
 							</Toolbar>
 						</AppBar>
 						<nav
@@ -537,29 +576,15 @@ function App(props) {
 									open={mobileOpen}
 									onClose={handleDrawerToggle}
 									classes={{
-										paper: classes.drawerPaper,
+										paper: darkMode
+											? classes.drawerPaperDark
+											: classes.drawerPaper,
 									}}
 									ModalProps={{
 										keepMounted: true, // Better open performance on mobile.
 									}}
-									style={{
-										backgroundColor: darkMode
-											? "rgba(66,66,66,.88)"
-											: "rgba(236, 236, 236, 0.76)",
-									}}
 								>
 									{drawerL}
-								</Drawer>
-							</Hidden>
-							<Hidden xsDown implementation="js">
-								<Drawer
-									className={classes.root}
-									variant="permanent"
-									anchor="top"
-									open
-									style={{ backgroundColor: "purple" }}
-								>
-									{drawerT}
 								</Drawer>
 							</Hidden>
 						</nav>
@@ -606,54 +631,3 @@ App.propTypes = {
 };
 
 export default App;
-
-// import React from "react";
-// import "./App.css";
-
-// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-// import CssBaseline from "@material-ui/core/CssBaseline";
-
-// import Home from "./components/Home";
-// import Resume from "./components/Resume";
-// import Portfolio from "./components/Portfolio";
-// import Contact from "./components/Contact";
-// import About from "./components/About";
-
-// import Navbar3 from "./components/Navbar3";
-
-// function App() {
-// 	return (
-// 		<Router>
-// 			<CssBaseline>
-// 				<div style={{ display: "flex" }}>
-// 					<Navbar3 />
-// 					<Switch>
-// 						<Route exact path="/" component={Home} />
-// 						<Route path="/about" component={About} />
-// 						<Route path="/resume" component={Resume} />
-// 						<Route path="/portfolio" component={Portfolio} />
-// 						<Route path="/contact" component={Contact} />
-// 					</Switch>
-// 					{/* <div>content here</div> */}
-// 				</div>
-// 			</CssBaseline>
-// 		</Router>
-// 	);
-// }
-
-// export default App;
-
-// // React router v6
-// // function app() {
-// // 	return (
-// // <div>
-// // <BrowserRouter>
-// // <Routes>
-// // 		<Route path ='/' element={<Home prop />}>
-// // </Routes>
-// // </BrowserRouter>
-
-// // </div>
-
-// // 	)
-// // }

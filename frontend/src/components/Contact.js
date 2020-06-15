@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.up("sm")]: {
 			// padding: "8vh 3vw 1.2vh",
+			padding: "10vh 10vw .5vh",
 		},
 		[theme.breakpoints.up("md")]: {
 			spacing: "3",
@@ -143,10 +144,11 @@ const useStyles = makeStyles((theme) => ({
 		// backgroundColor: "rgba(255,255,255,.3)",
 		// padding: "2vh 2vw", // marginTop: "14vh",
 		// height: "100vh",
+		height: "100%",
 
 		[theme.breakpoints.up("sm")]: {
-			marginTop: "5vh",
-			height: "100vh",
+			marginTop: "3vh",
+			height: "97vh",
 			// marginTop: "10vh",
 			// margin: "14vh 5vw 14vh",
 			// padding: "11vh 9vw",

@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 			// width: "100vw",
 			// height: "100vh",
 			width: "100%",
-			padding: "4.5vw",
+			padding: "2vh 10vw",
 			// padding: "2.5vh 4vw 2.5vh",
 			justify: "center",
 			alignItems: "center",
@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		// 	padding: "1rem",
 		// },
 		[theme.breakpoints.up("sm")]: {
-			padding: "1 3rem",
+			padding: "1rem",
 		},
 	},
 	paperDark: {
@@ -164,7 +164,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		},
 		[theme.breakpoints.up("md")]: {
 			fontSize: "1.4rem",
-			padding: "1rem 2.4rem",
+			padding: "1rem 3.3rem",
 		},
 	},
 	typographyTextAboutMe: {
@@ -175,10 +175,10 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		// 	fontSize: "6vw",
 		// },
 		[theme.breakpoints.up("sm")]: {
-			fontSize: "3rem",
+			fontSize: "2.5rem",
 		},
 		[theme.breakpoints.up("md")]: {
-			fontSize: "4rem",
+			fontSize: "3rem",
 		},
 	},
 	aboutMeGridContainer: {
@@ -188,6 +188,12 @@ const useStyles = makeStyles((theme, darkMode) => ({
 	avatarGridContainer: {
 		[theme.breakpoints.up("sm")]: {
 			justifyContent: "flex-end",
+			paddingRight: "4vw",
+			// transform: "translateX(30px)",
+		},
+		[theme.breakpoints.up("sm")]: {
+			justifyContent: "flex-end",
+			paddingRight: "5vw",
 			// transform: "translateX(30px)",
 		},
 	},
