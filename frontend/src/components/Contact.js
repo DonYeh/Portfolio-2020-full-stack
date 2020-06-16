@@ -280,7 +280,7 @@ const Contact = ({ darkMode }) => {
 		console.log(actions);
 		handleModal();
 		actions.resetForm();
-		let res = await axios.post("api/sendMail", values).then(
+		let res = await axios.post("api.donaldyeh.dev/api/sendMail", values).then(
 			(response) => {
 				console.log(response);
 				setModalIsOpen(true);
