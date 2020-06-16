@@ -109,11 +109,6 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	mainPaper: {
-		// height: "93vh",
-		// backgroundColor: "rgba(0,0,0,.65)",
-		// backgroundColor: "rgba(255,255,255,.3)",
-		// padding: "2vh 2vw", // marginTop: "14vh",
-		// height: "100vh",
 		height: "100%",
 
 		[theme.breakpoints.up("sm")]: {
@@ -220,12 +215,12 @@ const validationSchema = Yup.object().shape({
 	email: Yup.string()
 		.email("Must be a valid email address")
 		.max(255, "Must be shorter than 255 characters")
-		.required("must enter an email so that I can email you back"),
+		.required("Must enter an email"),
 
 	message: Yup.string()
 		.max(255, "Must be shorter than 255 characters")
 		.required(
-			"Must enter a message. I'm not a mind reader...at least, not yet"
+			"Must enter a message. I'm not a mind reader...at least, not yet 🧙‍♂️"
 		),
 });
 
@@ -237,11 +232,9 @@ const Contact = ({ darkMode }) => {
 	const classes = useStyles();
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
-	const mainPrimaryColor = darkMode ? orange[800] : lightBlue[500];
+	const mainPrimaryColor = darkMode ? orange[400] : orange[600];
 	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
 	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
-
-	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
 
 	let darkTheme = createMuiTheme({
 		overrides: {
@@ -279,42 +272,21 @@ const Contact = ({ darkMode }) => {
 		}, 500);
 	};
 
-	// const handleSubmit = async (values, actions) => {
-	// 	console.log(actions);
-	// 	let res = await axios.post("api/sendMail", values).then(
-	// 		(response) => {
-	// 			console.log(response);
-	// 			handleModal();
-	// 			// handleReset();
-	// 			// handleSave(params, () => {
-	// 			// actions.setSubmitting(false);
-	// 			// handleReset();
-	// 			// setSubmitting(false);
-	// 			// 		setSubmitting(false);
-	// 			// });
+	const handleSubmit = async (values, actions) => {
+		console.log(actions);
+		actions.resetForm();
+		let res = await axios.post("api/sendMail", values).then(
+			(response) => {
+				console.log(response);
+				setModalIsOpen(true);
+				actions.setSubmitting(false);
+			},
 
-	// 			// setSubmitting(false);
-
-	// 			// resetForm({
-	// 			// 	firstName: "",
-	// 			// 	lastName: "",
-	// 			// 	email: "",
-	// 			// 	message: "",
-	// 			actions.setSubmitting(false);
-	// 		},
-
-	// 		(error) => {
-	// 			console.log(error);
-	// 		}
-
-	// 		// console.log(
-	// 		// 	`inside handleSubmit: values:${values.json()},actions:${actions.json()}`
-	// 		// 	);
-	// 		// );
-	// 		// alert(JSON.stringify(values, null, 2));
-	// 		// actions.setSubmitting(false);
-	// 	);
-	// };
+			(error) => {
+				console.log(error);
+			}
+		);
+	};
 
 	return (
 		<>
@@ -409,74 +381,7 @@ const Contact = ({ darkMode }) => {
 												email: "",
 												message: "",
 											}}
-											onSubmit={async (
-												values,
-												actions
-											) => {
-												console.log(actions);
-												actions.resetForm();
-												let res = await axios
-													.post(
-														"api/sendMail",
-														values
-													)
-													.then(
-														(response) => {
-															console.log(
-																response
-															);
-															setModalIsOpen(
-																true
-															); // handleReset();
-															// handleSave(params, () => {
-															// actions.setSubmitting(false);
-															// handleReset();
-															// setSubmitting(false);
-															// 		setSubmitting(false);
-															// });
-
-															// setSubmitting(false);
-
-															// resetForm({
-															// 	firstName: "",
-															// 	lastName: "",
-															// 	email: "",
-															// 	message: "",
-															actions.setSubmitting(
-																false
-															);
-														},
-
-														(error) => {
-															console.log(error);
-														}
-
-														// console.log(
-														// 	`inside handleSubmit: values:${values.json()},actions:${actions.json()}`
-														// 	);
-														// );
-														// alert(JSON.stringify(values, null, 2));
-														// actions.setSubmitting(false);
-													);
-											}}
-											// onSubmit={(
-											// 	values,
-											// 	actions,
-											// 	{ resetForm }
-											// ) =>
-											// 	handleSubmit(values, actions, {
-											// 		resetForm,
-											// 	})
-											// }
-											// onSubmit={(
-											// 	values,
-											// 	{ setSubmitting, resetForm }
-											// ) => {
-											// 	handleSubmit(params, () => {
-											// 		resetForm(initialValues);
-											// 		setSubmitting(false);
-											// 	});
-											// }}
+											onSubmit={handleSubmit}
 											validationSchema={validationSchema}
 											fullWidth
 										>
@@ -490,12 +395,11 @@ const Contact = ({ darkMode }) => {
 												handleSubmit,
 											}) => (
 												<Form
-													style={
-														{
-															// backgroundColor: "red",
-														}
-													}
-													onSubmit={handleSubmit}
+													style={{}}
+													onSubmit={() => {
+														handleSubmit();
+														handleModal();
+													}}
 													// onReset={handleReset}
 												>
 													{/* <div> */}
@@ -552,7 +456,6 @@ const Contact = ({ darkMode }) => {
 														label="last name"
 														style={{
 															width: "96%",
-															// minWidth: "81%",
 														}}
 														as={TextField}
 													>
@@ -696,9 +599,9 @@ const Contact = ({ darkMode }) => {
 															<Button
 																type="submit"
 																// variant="outlined"
-																onClick={
-																	handleModal
-																}
+																// onClick={
+																// 	handleModal
+																// }
 																style={{
 																	backgroundColor: darkMode
 																		? "rgba(26, 29, 29, 0.9)"
@@ -745,10 +648,6 @@ const Contact = ({ darkMode }) => {
 															},
 															outline: 0,
 														}}
-														// BackdropProps={{
-														// 	backgroundColor:
-														// 		"purple",
-														// }}
 														BackdropProps={{
 															invisible: true,
 														}}
@@ -856,9 +755,6 @@ const Contact = ({ darkMode }) => {
 																				false
 																			)
 																		}
-																		// onClick={
-																		// 	handleModal
-																		// }
 																		style={{
 																			backgroundColor: darkMode
 																				? "rgba(234, 144, 88, 0.9)"
@@ -901,16 +797,8 @@ const Contact = ({ darkMode }) => {
 								// spacing={3}
 								className={classes.gridItem}
 								justify="center"
-								// style={{
-								// 	backgroundColor: "aliceblue",
-								// 	padding: "2.5rem 3rem 2.5rem",
-								// }}
 							>
 								<Paper
-									// style={{
-									// 	width: "100%",
-									// 	padding: ".75rem .2rem 1rem",
-									// }}
 									className={
 										darkMode
 											? classes.paperDark
