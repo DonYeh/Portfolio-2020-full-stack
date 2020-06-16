@@ -70,7 +70,7 @@ import {
 	teal,
 } from "@material-ui/core/colors";
 
-import HomePage2 from "./components/HomePage2";
+// import HomePage2 from "./components/HomePage2";
 
 const drawerWidth = 240;
 

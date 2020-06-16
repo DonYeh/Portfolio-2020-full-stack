@@ -280,17 +280,19 @@ const Contact = ({ darkMode }) => {
 		console.log(actions);
 		handleModal();
 		actions.resetForm();
-		let res = await axios.post("api.donaldyeh.dev/api/sendMail", values).then(
-			(response) => {
-				console.log(response);
-				setModalIsOpen(true);
-				actions.setSubmitting(false);
-			},
+		let res = await axios
+			.post("api.donaldyeh.dev/api/sendMail", values)
+			.then(
+				(response) => {
+					console.log(response);
+					setModalIsOpen(true);
+					actions.setSubmitting(false);
+				},
 
-			(error) => {
-				console.log(error);
-			}
-		);
+				(error) => {
+					console.log(error);
+				}
+			);
 	};
 
 	return (
