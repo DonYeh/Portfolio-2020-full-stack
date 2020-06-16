@@ -227,9 +227,10 @@ const useStyles = makeStyles((theme) => ({
 		color: "rgba(109, 109, 109, 0.85)",
 		padding: "0rem 1rem 0rem 2.5rem",
 	},
-	topDrawerListItemText: { color: "rgba(69, 69, 69, 0.85)" },
+	topDrawerListItemText: { color: "rgba(70, 70, 70, 0.9)" },
 	topDrawerListItemTextDark: { color: "rgba(255, 153, 49, 0.8)" },
-	topDrawerListItemIcon: { color: "rgba(95, 95, 95, 0.7)" },
+	// topDrawerListItemIcon: { color: "rgba(95, 95, 95, 0.7)" },
+	topDrawerListItemIcon: { color: "rgba(234, 137, 35, 0.7)" },
 	topDrawerListItemIconDark: { color: "rgba(172,172,172,.6)" },
 	// leftDrawer: { backgroundColor: "rgba(185,198,201,.9)" },
 	leftDrawer: { backgroundColor: "", height: "100%" },
@@ -348,7 +349,8 @@ function App(props) {
 									// color: "#5f9ea0c7",
 									color: darkMode
 										? "rgba(137, 136, 136, 0.5)"
-										: "rgba(102, 102, 102, 0.8)",
+										: // : "rgba(102, 102, 102, 0.8)",
+										  "rgba(226, 120, 10, 0.8)",
 
 									paddingLeft: "6px",
 								}}
@@ -359,7 +361,8 @@ function App(props) {
 								primary={menuIcon.listText}
 								style={{
 									color: darkMode
-										? "rgba(137, 136, 136, 0.98)"
+										? // ? "rgba(137, 136, 136, 0.98)"
+										  "rgba(255, 153, 49, 0.8)"
 										: "rgba(60, 60, 60, 0.85)",
 									// color: "aliceblue",
 									fontWeight: "bold",

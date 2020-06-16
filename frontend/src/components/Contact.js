@@ -402,7 +402,7 @@ const Contact = ({ darkMode }) => {
 											// 	: "rgba(0, 0, 0, 0.7)",
 
 											color: darkMode
-												? "rgba(191, 191, 191, 0.62)"
+												? "rgba(191, 191, 191, 0.75)"
 												: "rgba(100, 100, 100, 0.9)",
 										}}
 										className={
@@ -706,9 +706,19 @@ const Contact = ({ darkMode }) => {
 															color: darkMode
 																? "rgba(255, 255, 255, 0.6)"
 																: "rgba(0, 0, 0, 0.7)",
-															backgroundColor: darkMode
-																? "rgba(0,0,0,.5)"
-																: "#e5e5e5",
+
+															overlay: {
+																backgroundColor: darkMode
+																	? "rgba(37, 41, 41, 0.9)"
+																	: "rgba(213, 223, 226, 0.8)",
+															},
+															content: {
+																backgroundColor: darkMode
+																	? // ? "rgba(20, 23, 23, 0.8)"
+																	  "rgba(35, 38, 39, 0.88)"
+																	: "rgba(187, 200, 203, 0.9)",
+															},
+															outline: 0,
 														}}
 														// BackdropProps={{
 														// 	backgroundColor:
@@ -719,71 +729,125 @@ const Contact = ({ darkMode }) => {
 														}}
 														PaperProps={{
 															backgroundColor:
-																"brown",
+																"rgba(0,0,0,.5)",
 														}}
 														disablePortal
 													>
-														<Typography
-															variant="h5"
-															align="center"
-															style={{
-																padding:
-																	"10vh 0 5vh",
-																color: darkMode
-																	? "#a9a9a9"
-																	: "#1f512dd9",
-																// backgroundColor:
-																// 	"black",
-															}}
-														>
-															Thanks for reaching
-															out!
-														</Typography>
-
-														<Typography
-															variant="body1"
-															align="center"
-														>
-															You should be
-															receiving a
-															confirmation email
-															soon and can expect
-															to hear back from me
-															in the next few
-															days.
-														</Typography>
 														<Grid
 															container
-															justify="center"
-															style={{
-																paddingTop:
-																	"4vh",
-															}}
+															spacing={2}
+															alignItems="center"
 														>
-															<Grid item>
-																<Button
-																	variant="outlined"
-																	onClick={() =>
-																		setModalIsOpen(
-																			false
-																		)
-																	}
+															<Grid
+																item
+																style={{
+																	paddingTop:
+																		"6vh",
+																}}
+															>
+																<Paper
 																	style={{
 																		backgroundColor: darkMode
-																			? "rgba(180, 79, 9, 0.4)"
-																			: "rgba(255, 183, 77, 0.5)",
+																			? "rgba(29, 31, 33, 0.9)"
+																			: "rgba(169, 182, 185, 0.9)",
 																	}}
 																>
 																	<Typography
+																		variant="h5"
+																		align="center"
 																		style={{
+																			padding:
+																				"5vh 10vw 5vh",
 																			color: darkMode
-																				? "#a9a9a9"
-																				: "#1f512dd9",
+																				? // ? "rgba(134, 134, 134, 0.9)"
+																				  // : "rgba(64, 64, 64, 0.88)",	color: darkMode
+																				  "rgba(144, 144, 144, 0.88)"
+																				: "rgba(54, 54, 54, 0.85)",
+																			// 	"black",
 																		}}
 																	>
-																		Close
+																		Thanks
+																		for
+																		reaching
+																		out!
 																	</Typography>
-																</Button>
+																</Paper>
+															</Grid>
+															<Grid item>
+																<Paper
+																	r
+																	style={{
+																		backgroundColor: darkMode
+																			? "rgba(29, 31, 33, 0.9)"
+																			: "rgba(169, 182, 185, 0.9)",
+																	}}
+																>
+																	<Typography
+																		variant="body1"
+																		align="center"
+																		style={{
+																			padding:
+																				"4vh 8vw 4vh",
+																			color: darkMode
+																				? "rgba(144, 144, 144, 0.88)"
+																				: "rgba(54, 54, 54, 0.85)",
+
+																			// 	"black",
+																		}}
+																	>
+																		You
+																		should
+																		be
+																		receiving
+																		a
+																		confirmation
+																		email
+																		soon and
+																		can
+																		expect
+																		to hear
+																		back
+																		from me
+																		in the
+																		next few
+																		days.
+																	</Typography>
+																</Paper>
+															</Grid>
+															<Grid
+																item
+																container
+																justify="center"
+																style={{
+																	paddingTop:
+																		"3vh",
+																}}
+															>
+																<Grid item>
+																	<Button
+																		variant="outlined"
+																		onClick={() =>
+																			setModalIsOpen(
+																				false
+																			)
+																		}
+																		style={{
+																			backgroundColor: darkMode
+																				? "rgba(234, 144, 88, 0.9)"
+																				: "rgba(255, 183, 77, 0.5)",
+																		}}
+																	>
+																		<Typography
+																			style={{
+																				color: darkMode
+																					? "rgba(53, 53, 53, 0.9)"
+																					: "#1f512dd9",
+																			}}
+																		>
+																			Close
+																		</Typography>
+																	</Button>
+																</Grid>
 															</Grid>
 														</Grid>
 													</Modal>
