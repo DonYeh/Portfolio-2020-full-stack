@@ -201,6 +201,10 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "1.5rem",
 		},
 	},
+	modalCloseButtonGridContainer: {
+		paddingTop: "1.5vh",
+		width: "50%",
+	},
 }));
 
 const validationSchema = Yup.object().shape({
@@ -274,6 +278,7 @@ const Contact = ({ darkMode }) => {
 
 	const handleSubmit = async (values, actions) => {
 		console.log(actions);
+		handleModal();
 		actions.resetForm();
 		let res = await axios.post("api/sendMail", values).then(
 			(response) => {
@@ -396,10 +401,11 @@ const Contact = ({ darkMode }) => {
 											}) => (
 												<Form
 													style={{}}
-													onSubmit={() => {
-														handleSubmit();
-														handleModal();
-													}}
+													onSubmit={handleSubmit}
+													// onSubmit={() => {
+													// 	handleSubmit();
+													// 	handleModal();
+													// }}
 													// onReset={handleReset}
 												>
 													{/* <div> */}
@@ -660,13 +666,20 @@ const Contact = ({ darkMode }) => {
 														<Grid
 															container
 															spacing={2}
+															justify="center"
 															alignItems="center"
+															style={{
+																padding:
+																	"5vh 10vw",
+															}}
 														>
 															<Grid
 																item
 																style={{
 																	paddingTop:
 																		"6vh",
+																	width:
+																		"100%",
 																}}
 															>
 																<Paper
@@ -742,10 +755,13 @@ const Contact = ({ darkMode }) => {
 																item
 																container
 																justify="center"
-																style={{
-																	paddingTop:
-																		"3vh",
-																}}
+																// style={{
+																// paddingTop:
+																// 	"3vh",
+																// }}
+																className={
+																	classes.modalCloseButtonGridContainer
+																}
 															>
 																<Grid item>
 																	<Button
