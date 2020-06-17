@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8f101ab6.chunk.css",
+    "main.js": "/static/js/main.69619ddf.chunk.js",
+    "main.js.map": "/static/js/main.69619ddf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fc75219d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fc75219d.js.map",
+    "static/js/2.919d5903.chunk.js": "/static/js/2.919d5903.chunk.js",
+    "static/js/2.919d5903.chunk.js.map": "/static/js/2.919d5903.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.56f5643b007da7ae01bd98ef04b513fb.js": "/precache-manifest.56f5643b007da7ae01bd98ef04b513fb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.8f101ab6.chunk.css.map": "/static/css/main.8f101ab6.chunk.css.map",
+    "static/js/2.919d5903.chunk.js.LICENSE.txt": "/static/js/2.919d5903.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/Atlant.25e1dee1.jpg",
+    "static/media/IMG_1953.jpg": "/static/media/IMG_1953.3f78cd61.jpg",
+    "static/media/donaldyehportoflioheader.png": "/static/media/donaldyehportoflioheader.3275f016.png",
+    "static/media/newMovieGIFedited.gif": "/static/media/newMovieGIFedited.84fdcf77.gif",
+    "static/media/tetris-game-retro-arcade-512.png": "/static/media/tetris-game-retro-arcade-512.750bdd31.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc75219d.js",
+    "static/js/2.919d5903.chunk.js",
+    "static/css/main.8f101ab6.chunk.css",
+    "static/js/main.69619ddf.chunk.js"
+  ]
+}
